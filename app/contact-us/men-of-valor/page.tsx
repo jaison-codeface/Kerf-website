@@ -23,8 +23,8 @@ const page = () => {
             integrity.
             <br /><br />
             If you are a man who is looking to grow in your faith and become the
-            best man you can be, we encourage you to join our "Men of
-            Excellence" ministry. We would love to help you on your journey. We
+            best man you can be, we encourage you to join our &quot;Men of
+            Excellence&quot; ministry. We would love to help you on your journey. We
             want to shed light on the remarkable qualities and contributions of
             our Men of Excellence.
           </>
