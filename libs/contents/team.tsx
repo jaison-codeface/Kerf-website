@@ -14,7 +14,6 @@ type Data = {
     link: string;
     icon: any;
   }[];
-  readMoreLink: string;
   RequestToSpeak?: {
     title: string;
     btns: {
@@ -23,6 +22,7 @@ type Data = {
       mode: "night" | "day";
     }[];
   };
+  slug: string;
 }[];
 
 const teamData: Data = [
@@ -57,7 +57,8 @@ const teamData: Data = [
         icon: instagram,
       },
     ],
-    readMoreLink: "",
+
+    slug: "james-henry-logan-jr",
   },
   {
     title: "Dr. Loretta Sanders",
@@ -96,7 +97,7 @@ const teamData: Data = [
         icon: instagram,
       },
     ],
-    readMoreLink: "",
+
     RequestToSpeak: {
       title: "Request Pastor Loretta to speak",
       btns: [
@@ -104,6 +105,7 @@ const teamData: Data = [
         { link: "", title: "Contact", mode: "day" },
       ],
     },
+    slug: "loretta-sanders",
   },
 ];
 

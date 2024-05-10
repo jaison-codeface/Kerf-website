@@ -4,7 +4,7 @@ import { NormalBtn } from "./buttons";
 
 type Props = {
   title?: string;
-  subtitle?: string;
+  subtitle?: string | JSX.Element;
   description?: string;
   btn1?: { title?: string; link?: string };
   btn2?: { title?: string; link?: string };
@@ -35,7 +35,11 @@ const HeroSectionBottom = ({
         {description && <HeadSubtitle>{description}</HeadSubtitle>}
         {(btn1 || btn2) && (
           <div className="flex items-center justify-start md:gap-6 sm:gap-4 gap-2  max-sm:flex-wrap">
-            {btn1 && <NormalBtn href={btn1?.link} className="max-sm:w-full">{btn1?.title}</NormalBtn>}
+            {btn1 && (
+              <NormalBtn href={btn1?.link} className="max-sm:w-full">
+                {btn1?.title}
+              </NormalBtn>
+            )}
             {btn2 && (
               <NormalBtn mode="day" href={btn2?.link} className="max-sm:w-full">
                 {btn2?.title}

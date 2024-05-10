@@ -9,19 +9,33 @@ const HeroSection = ({
   subtitle,
   title,
   author,
+  imageContain,
 }: {
   title: string;
   subtitle: string;
   heroSectionImage: StaticImageData;
-  author: string;
+  author: string | JSX.Element;
+  imageContain?: boolean | undefined;
 }) => {
   return (
     <section className="flex flex-col justify-end w-full">
-      <Image
-        src={heroSectionImage}
-        alt=""
-        className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]"
-      />
+      {imageContain ? (
+        <SectionWrapper>
+          <div className=" mt-28">
+            <Image
+              src={heroSectionImage}
+              alt=""
+              className="object-contain object-left h-full w-max -z-10 sm:max-h-[80vh] rounded-[10px] overflow-hidden"
+            />
+          </div>
+        </SectionWrapper>
+      ) : (
+        <Image
+          src={heroSectionImage}
+          alt=""
+          className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]"
+        />
+      )}
 
       <SectionWrapper classBottom={main_padding.y}>
         <HeroSectionBottom

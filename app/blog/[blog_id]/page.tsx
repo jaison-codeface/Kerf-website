@@ -10,8 +10,6 @@ const page = ({ params }: any) => {
 
   const index = blogData.findIndex((item) => item.slug === params.blog_id);
 
-  console.log(index);
-
   const buttons = [
     {
       title: "Prev",
@@ -30,15 +28,22 @@ const page = ({ params }: any) => {
     <Layout>
       <HeroSection
         heroSectionImage={data.heroSectionImage}
-        author={`${data.date} - Blog - By ${data.author}`}
+        author={
+          <>
+            {data.date} - Blog - By&nbsp;
+            <Link href={`/author/${data.author.slug}`} shallow>
+              {data.author.title}
+            </Link>
+          </>
+        }
         subtitle={data.subtitle}
         title={data.title}
+        imageContain={data.imageContain}
       />
-      <SectionWrapper
-        classBottom={` text-lg leading-[150%] md:max-w-[70%] ml-0 `}
-        classTop="justify-start"
-      >
-        {data.description}
+      <SectionWrapper classBottom={``} classTop="justify-start">
+        <p className=" text-lg leading-[150%] md:max-w-[70%] ml-0 ">
+          {data.description}
+        </p>
       </SectionWrapper>
 
       <SectionWrapper
@@ -47,7 +52,11 @@ const page = ({ params }: any) => {
         {buttons.map((item, idx) => (
           <div key={idx}>
             {item.link && (
-              <Link href={item.link} shallow className="font-semibold text-primary text-lg">
+              <Link
+                href={item.link}
+                shallow
+                className="font-semibold text-primary text-lg"
+              >
                 {item.title}
               </Link>
             )}

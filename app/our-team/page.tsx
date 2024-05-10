@@ -68,7 +68,7 @@ const page = () => {
                   ))}
                 </div>
                 <Link
-                  href={item.readMoreLink}
+                  href={`/blog/${item.slug}`}
                   shallow
                   className="text-base underline"
                 >
