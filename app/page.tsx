@@ -1,3 +1,4 @@
+"use client";
 import HeroSection from "@/components/Home/HeroSection";
 import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
@@ -10,8 +11,20 @@ import Journey from "@/components/Home/Journey";
 import VisionAndMission from "@/components/Home/VisionAndMission";
 import JoinUs from "@/components/Home/JoinUs";
 import Ministering from "@/components/Home/Ministering";
+import { useEffect, useState } from "react";
+import Loading from "./loading";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(true);
+    }, 800);
+  }, []);
+
+  if (!isLoading) return <Loading />;
+
   return (
     <Layout>
       <HeroSection />
