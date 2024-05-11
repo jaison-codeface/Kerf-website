@@ -21,6 +21,8 @@ const WomenOfDestinyBreakfast = () => {
       <Image
         src={mainImage}
         alt=""
+        data-aos="fade-up"
+        data-aos-duration="700"
         loading="lazy"
         placeholder="blur"
         className="w-full rounded-[10px] ld:mt-16 md:mt-14 sm:mt-12 mt-6 lg:aspect-[16/7] aspect-video object-cover"

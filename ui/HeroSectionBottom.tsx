@@ -18,7 +18,11 @@ const HeroSectionBottom = ({
 }: Props) => {
   return (
     <div className="w-full grid md:grid-cols-2 lg:gap-20 md:gap-14 sm:gap-6 gap-4">
-      <div className="flex flex-col gap-1">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="flex flex-col gap-1"
+      >
         {subtitle && (
           <HeadSubtitle className="md:text-xl text-lg text-secondary font-bold md:hidden">
             {subtitle}
@@ -31,7 +35,11 @@ const HeroSectionBottom = ({
           </HeadSubtitle>
         )}
       </div>
-      <div className="flex flex-col gap-6">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="flex flex-col gap-6"
+      >
         {description && <HeadSubtitle>{description}</HeadSubtitle>}
         {(btn1 || btn2) && (
           <div className="flex items-center justify-start md:gap-6 sm:gap-4 gap-2  max-sm:flex-wrap">

@@ -10,7 +10,7 @@ const HeroSection = () => {
     <section className="flex flex-col justify-end w-full">
       <Image
         src={bg}
-        alt=""
+        alt="" 
         className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh] object-top "
       />
 

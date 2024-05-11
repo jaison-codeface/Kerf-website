@@ -44,7 +44,7 @@ const bottomLinks = [
 const Footer = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.t} flex-col items-center`}>
-      <Link href="/" scroll shallow>
+      <Link href="/" scroll shallow data-aos="fade-up" data-aos-duration="700">
         <Image
           src={logo}
           alt=""

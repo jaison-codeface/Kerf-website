@@ -39,19 +39,33 @@ const Journey = () => {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className={`md:max-w-[70%]  ${idx % 2 === 0 ? "mr-auto" : "ml-auto"}`}
+            className={`md:max-w-[70%]  ${
+              idx % 2 === 0 ? "mr-auto" : "ml-auto"
+            }`}
           >
             <Image
               src={item.image}
               alt=""
+              data-aos="fade-up"
+              data-aos-duration="700"
               loading="lazy"
               placeholder="blur"
               className="w-full object-cover rounded-[10px] overflow-hidden"
             />
-            <h2 className="text-2xl leading-[140%] font-bold mt-4">
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="700"
+              className="text-2xl leading-[140%] font-bold mt-4"
+            >
               {item.title}
             </h2>
-            <p className="text-base leading-[150%]">{item.description}</p>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="700"
+              className="text-base leading-[150%]"
+            >
+              {item.description}
+            </p>
           </div>
         ))}
       </div>

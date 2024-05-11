@@ -26,11 +26,16 @@ const page = ({ params }: any) => {
         title={aboutAuthor.title}
         imageContain={aboutAuthor.imageContain}
       />
-      <SectionWrapper classBottom={`${main_padding.y} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}>
+      <SectionWrapper
+        classBottom={`${main_padding.y} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
+      >
         {blogs.map((item, idx) => (
           <Link
             href={`/blog/${item.slug}`}
             key={idx}
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay={idx * 300}
             className="bg-off-white rounded-[10px] overflow-hidden"
           >
             <Image
@@ -40,11 +45,23 @@ const page = ({ params }: any) => {
               className="w-full aspect-[16/12] h-auto object-cover rounded-b-[10px]"
             />
             <div className="px-6 py-8">
-              <h2 className="text-lg font-semibold text-primary leading-[150%]">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="text-lg font-semibold text-primary leading-[150%]"
+              >
                 {item.title}
               </h2>
 
-              <p className="mt-2 text-sm leading-[150%] line-clamp-3">{item.subtitle}</p>
+              <p
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="mt-2 text-sm leading-[150%] line-clamp-3"
+              >
+                {item.subtitle}
+              </p>
             </div>
           </Link>
         ))}

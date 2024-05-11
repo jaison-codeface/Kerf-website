@@ -41,8 +41,20 @@ const JoinUs = () => {
 
       <div className="flex items-center justify-center gap-4 w-max max-w-full mt-6">
         {socialMedia.map((item, idx) => (
-          <Link key={idx} href={item.link} target="_blank" className="p-3  rounded-md bg-off-white aspect-square shrink-0 flex items-center justify-center ">
-            <Image src={item.icon} alt=""  className="h-4 w-auto object-contain aspect-square"/>
+          <Link
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay={idx * 300}
+            key={idx}
+            href={item.link}
+            target="_blank"
+            className="p-3  rounded-md bg-off-white aspect-square shrink-0 flex items-center justify-center "
+          >
+            <Image
+              src={item.icon}
+              alt=""
+              className="h-4 w-auto object-contain aspect-square"
+            />
           </Link>
         ))}
       </div>

@@ -38,10 +38,33 @@ const VisionAndMission = () => {
             key={idx}
             className="border border-tertiary flex flex-col rounded-[10px] overflow-hidden"
           >
-            <Image src={item.image} alt="" loading="lazy" placeholder="blur" className="aspect-[16/12] object-cover" />
+            <Image
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              src={item.image}
+              alt=""
+              loading="lazy"
+              placeholder="blur"
+              className="aspect-[16/12] object-cover"
+            />
             <div className="flex flex-col px-6 py-6">
-              <h3 className="font-bold lg:text-3xl md:text-2xl text-xl">{item.title}</h3>
-              <p className="md:mt-3 mt-1 text-base leading-[150%]">{item.subtitle}</p>
+              <h3
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="font-bold lg:text-3xl md:text-2xl text-xl"
+              >
+                {item.title}
+              </h3>
+              <p
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="md:mt-3 mt-1 text-base leading-[150%]"
+              >
+                {item.subtitle}
+              </p>
             </div>
           </div>
         ))}

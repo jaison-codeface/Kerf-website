@@ -9,6 +9,8 @@ const HeadTitle = ({
   className?: string;
 }) => (
   <h1
+    data-aos="fade-up"
+    data-aos-duration="700"
     className={twMerge(
       "font-bold text-primary lg:leading-[120%] md:leading-[120%] leading-[120%] lg:text-5xl md:text-4xl text-3xl",
       className
@@ -25,7 +27,14 @@ const HeadSubtitle = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <p className={twMerge("text-tertiary md:text-lg text-base md:leading-[150%]  leading-[150%]", className)}>
+  <p
+    data-aos="fade-up"
+    data-aos-duration="700"
+    className={twMerge(
+      "text-tertiary md:text-lg text-base md:leading-[150%]  leading-[150%]",
+      className
+    )}
+  >
     {" "}
     {children}
   </p>

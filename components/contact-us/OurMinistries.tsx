@@ -31,18 +31,29 @@ const OurMinistries = () => {
           <Link
             href={`/contact-us/${item.slug}`}
             shallow
-            key={idx} suppressHydrationWarning
+            key={idx}
+            suppressHydrationWarning
             className="flex items-center justify-start gap-4 bg-off-white rounded-[10px] sm:px-8 px-2 py-6 w-full"
           >
             <Image
               src={item.logo}
               alt=""
+              data-aos="fade-up"
+              data-aos-duration="700"
               loading="lazy"
               className="h-24 w-auto aspect-square object-contain"
             />
             <div className="flex flex-col ">
-              <h4 className="text-xl text-primary font-bold">{item.title}</h4>
+              <h4
+                data-aos="fade-up"
+                data-aos-duration="700"
+                className="text-xl text-primary font-bold"
+              >
+                {item.title}
+              </h4>
               <a
+                data-aos="fade-up"
+                data-aos-duration="700"
                 href={`mailto:${item.email}`}
                 className="font-medium max-sm:text-sm"
               >

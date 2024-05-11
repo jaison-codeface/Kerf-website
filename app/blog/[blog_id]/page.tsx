@@ -41,7 +41,11 @@ const page = ({ params }: any) => {
         imageContain={data.imageContain}
       />
       <SectionWrapper classBottom={``} classTop="justify-start">
-        <p className=" text-lg leading-[150%] md:max-w-[70%] ml-0 ">
+        <p
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className=" text-lg leading-[150%] md:max-w-[70%] ml-0 "
+        >
           {data.description}
         </p>
       </SectionWrapper>
@@ -50,7 +54,12 @@ const page = ({ params }: any) => {
         classBottom={` ${main_padding.y} flex w-full justify-between gap-6 items-center`}
       >
         {buttons.map((item, idx) => (
-          <div key={idx}>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay={idx * 300}
+            key={idx}
+          >
             {item.link && (
               <Link
                 href={item.link}

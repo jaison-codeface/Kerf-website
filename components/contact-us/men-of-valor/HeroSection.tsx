@@ -24,7 +24,9 @@ const HeroSection = () => {
           anchoring values that uplift and empower individuals to excel with
           honor and compassion.
         </HeadSubtitle>
-        <p className="grid lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8   sm:py-10 rounded-[10px] sm:text-lg text-sm">
+        <p data-aos="fade-up"
+                data-aos-duration="700"
+                 className="grid lg:mt-16 md:mt-14 mt-6 w-full sm:bg-off-white sm:px-8   sm:py-10 rounded-[10px] sm:text-lg text-sm">
           Welcome to our Christian community, where we strive to honor and
           celebrate the remarkable men of excellence who embody the teachings
           and values of our Lord and Savior, Jesus Christ. Faithful Servants:

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
 import { NormalBtn } from "@/ui/buttons";
@@ -20,10 +20,20 @@ const About = ({
       classBottom={`${main_padding.y} grid `}
     >
       <div className="lg:gap-16 md:gap-12 gap-6 grid md:grid-cols-2 items-center max-w-[1440px] ">
-        <Image src={logo} alt="" loading="lazy" className="aspect-square max-h-[400px] w-auto object-contain" />
-        <div>
+        <Image
+          data-aos="fade-up"
+          data-aos-duration="700"
+          src={logo}
+          alt=""
+          loading="lazy"
+          className="aspect-square max-h-[400px] w-auto object-contain"
+        />
+        <div data-aos="fade-up" data-aos-duration="700">
           <p>{description}</p>
-          <NormalBtn onClick={() => router.push("/contact-us")} className="mt-6 max-sm:w-full">
+          <NormalBtn
+            onClick={() => router.push("/contact-us")}
+            className="mt-6 max-sm:w-full"
+          >
             Contact Us
           </NormalBtn>
         </div>

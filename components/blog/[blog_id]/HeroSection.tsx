@@ -21,7 +21,12 @@ const HeroSection = ({
     <section className="flex flex-col justify-end w-full">
       {imageContain ? (
         <SectionWrapper>
-          <div className=" mt-28">
+          <div
+            className=" mt-28"
+            data-aos="fade-up"
+            data-aos-duration="700"
+           
+          >
             <Image
               src={heroSectionImage}
               alt=""

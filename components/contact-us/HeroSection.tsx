@@ -39,9 +39,31 @@ const HeroSection = () => {
             key={idx}
             className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-center px-1 py-8"
           >
-            <Image src={item.icon} alt="" loading="lazy" className="h-8 w-auto object-contain" />
-            <h2 className="text-primary font-bold text-2xl mt-3">{item.title}</h2>
-            <Link href={item.link} target="_blank" className="mt-2 text-base max-w-[200px] text-center ">
+            <Image
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              src={item.icon}
+              alt=""
+              loading="lazy"
+              className="h-8 w-auto object-contain"
+            />
+            <h2
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              className="text-primary font-bold text-2xl mt-3"
+            >
+              {item.title}
+            </h2>
+            <Link
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay={idx * 300}
+              href={item.link}
+              target="_blank"
+              className="mt-2 text-base max-w-[200px] text-center "
+            >
               {item.subtitle}
             </Link>
           </div>

@@ -23,6 +23,8 @@ const LeftContentRightImg = ({
   return (
     <div className="grid md:grid-cols-2 lg:gap-20 md:gap-14 gap-6 items-center">
       <div
+        data-aos="fade-up"
+        data-aos-duration="700"
         className={`flex flex-col justify-start ${
           direction === "opposite" && "md:order-1"
         } `}
@@ -32,9 +34,17 @@ const LeftContentRightImg = ({
         <div>
           {(btn1 || btn2) && (
             <div className="flex items-center justify-start md:gap-6 gap-3 md:mt-6 mt-3">
-              {btn1 && <NormalBtn href={btn1?.link} className="max-md:w-full">{btn1?.title}</NormalBtn>}
+              {btn1 && (
+                <NormalBtn href={btn1?.link} className="max-md:w-full">
+                  {btn1?.title}
+                </NormalBtn>
+              )}
               {btn2 && (
-                <NormalBtn mode="day" href={btn2?.link} className="max-md:w-full">
+                <NormalBtn
+                  mode="day"
+                  href={btn2?.link}
+                  className="max-md:w-full"
+                >
                   {btn2?.title}
                 </NormalBtn>
               )}
@@ -42,7 +52,11 @@ const LeftContentRightImg = ({
           )}
         </div>
       </div>
-      <div className="bg-red-400 aspect-square rounded-[10px] overflow-hidden flex items-center justify-center relative z-0">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="700"
+        className="bg-red-400 aspect-square rounded-[10px] overflow-hidden flex items-center justify-center relative z-0"
+      >
         <Image
           src={image}
           alt=""

@@ -40,6 +40,8 @@ const Guiding = () => {
         <Swiper
           slidesPerView={"auto"}
           spaceBetween={20}
+          data-aos="fade-up"
+          data-aos-duration="700"
           pagination={{
             clickable: true,
             el: "#paginationSwiper",
@@ -81,9 +83,18 @@ const Guiding = () => {
         </Swiper>
 
         <div className="flex items-center justify-between gap-3 mt-3">
-          <div id="paginationSwiper" className="" />
-          <div className="flex  items-center justify-center gap-2 ">
-            <button ref={navigationPrevRef} >
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            id="paginationSwiper"
+            className=""
+          />
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex  items-center justify-center gap-2 "
+          >
+            <button ref={navigationPrevRef}>
               <Image
                 src={arrow}
                 alt=""
@@ -91,7 +102,7 @@ const Guiding = () => {
               />
             </button>
             <button ref={navigationNextRef}>
-            <Image
+              <Image
                 src={arrow}
                 alt=""
                 className="w-auto h-10 object-contain aspect-square "

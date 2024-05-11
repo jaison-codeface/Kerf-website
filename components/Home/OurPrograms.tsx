@@ -55,6 +55,9 @@ const OurPrograms = () => {
           <Link
             key={idx}
             href={item.link}
+            data-aos="fade-up"
+            data-aos-duration="400"
+            data-aos-delay={idx * 300}
             className="bg-off-white rounded-[10px] overflow-hidden flex flex-col  items-center justify-between pt-4"
           >
             <div />
@@ -64,7 +67,9 @@ const OurPrograms = () => {
               loading="lazy"
               className="h-[120px] w-auto aspect-square object-contain px-3"
             />
-            <p className="bg-secondary px-4 py-2  w-full text-center text-white font-semibold text-sm">{item.title}</p>
+            <p className="bg-secondary px-4 py-2  w-full text-center text-white font-semibold text-sm">
+              {item.title}
+            </p>
           </Link>
         ))}
       </div>

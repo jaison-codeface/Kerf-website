@@ -27,19 +27,44 @@ const page = () => {
                 alt=""
                 loading="lazy"
                 placeholder="blur"
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
                 className=" rounded-[10px] overflow-hidden  aspect-[16/17] max-h-[900px] object-cover object-top"
               />
-              <p className="md:mt-6 mt-3 font-semibold text-secondary text-sm">
+              <p
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="md:mt-6 mt-3 font-semibold text-secondary text-sm"
+              >
                 {item.position}
               </p>
-              <h2 className="mt-1 lg:text-3xl text-2xl font-bold text-primary">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-delay={idx * 300}
+                className="mt-1 lg:text-3xl text-2xl font-bold text-primary"
+              >
                 {item.title}
               </h2>
               <HeadSubtitle className="mt-2 ">{item.description}</HeadSubtitle>
               {item.RequestToSpeak && (
                 <div className="flex flex-col w-full mt-6">
-                  <h3 className="md:text-2xl text-xl ">{item.RequestToSpeak.title}</h3>
-                  <div className="mt-2 flex items-center justify-start gap-4">
+                  <h3
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay={idx * 300}
+                    className="md:text-2xl text-xl "
+                  >
+                    {item.RequestToSpeak.title}
+                  </h3>
+                  <div
+                    data-aos="fade-up"
+                    data-aos-duration="700"
+                    data-aos-delay={idx * 300}
+                    className="mt-2 flex items-center justify-start gap-4"
+                  >
                     {item.RequestToSpeak.btns.map((btn, btnIdx) => (
                       <NormalBtn key={btnIdx} href={btn.link} mode={btn.mode}>
                         {btn.title}
@@ -55,6 +80,9 @@ const page = () => {
                       key={socialMediaIdx}
                       href={socialMedia.link}
                       shallow
+                      data-aos="fade-up"
+                      data-aos-duration="700"
+                      data-aos-delay={idx * 300}
                       target="_blank"
                       className="w-8 h-8 flex items-center justify-center border border-tertiary rounded-md"
                     >
@@ -70,6 +98,9 @@ const page = () => {
                 <Link
                   href={`/blog/${item.slug}`}
                   shallow
+                  data-aos="fade-up"
+                  data-aos-duration="700"
+                  data-aos-delay={idx * 300}
                   className="text-base underline"
                 >
                   Read More
