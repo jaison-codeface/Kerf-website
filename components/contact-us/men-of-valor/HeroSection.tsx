@@ -19,7 +19,7 @@ const HeroSection = () => {
         <HeadTitle className="text-center max-w-[800px]">
           Man of Valour
         </HeadTitle>
-        <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[600px] text-secondary">
+        <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
           Our Men of Excellence inspires faith, integrity, and purpose,
           anchoring values that uplift and empower individuals to excel with
           honor and compassion.

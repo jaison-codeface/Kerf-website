@@ -25,17 +25,17 @@ const data = [
 const Journey = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[700px]">
+      <HeadTitle className="text-center max-w-[900px]">
         Leving Grace Assembly&apos;s Journey
       </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[700px] text-secondary">
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         Walking the path illuminated by faith, our ministry has grown from
         humble beginnings into a beacon of spiritual nourishment, embracing
         diversity and reaching countless lives through transformative teachings,
         compassionate outreach, and an unwavering dedication to living out
         God&apos;s purpose.
       </HeadSubtitle>
-      <div className="lg:mt-16 md:mt-14 mt-6 flex flex-col w-full justify-center items-center gap-16">
+      <div className="lg:mt-16 md:mt-14 mt-6 flex flex-col w-full justify-center items-center sm:gap-24 gap-16">
         {data.map((item, idx) => (
           <div
             key={idx}
@@ -55,7 +55,7 @@ const Journey = () => {
             <h2
               data-aos="fade-up"
               data-aos-duration="700"
-              className="text-2xl leading-[140%] font-bold mt-4"
+              className="text-2xl leading-[190%] font-bold mt-6 text-secondary"
             >
               {item.title}
             </h2>

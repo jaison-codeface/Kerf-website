@@ -4,12 +4,15 @@ import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import { teamData } from "@/libs/contents";
 import Image from "next/image";
+import { NormalBtn } from "@/ui/buttons";
+import { useRouter } from "next/navigation";
 
 const Ministering = () => {
+  const router = useRouter();
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[700px]">Ministering</HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[700px] text-secondary">
+      <HeadTitle className="text-center max-w-[900px]">Ministering</HeadTitle>
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         Meet the faithful shepherds who, through divine wisdom and unwavering
         devotion, minister to our congregation - guiding souls, nurturing
         spiritual growth, and embodying Christ&apos;s loving embrace.
@@ -18,7 +21,7 @@ const Ministering = () => {
         {teamData.map((item, idx) => (
           <div
             key={idx}
-            className="border border-tertiary flex flex-col rounded-[10px] overflow-hidden"
+            className="border border-black flex flex-col rounded-[10px] overflow-hidden"
           >
             <Image
               src={item.image}
@@ -43,10 +46,17 @@ const Ministering = () => {
                 data-aos="fade-up"
                 data-aos-duration="700"
                 data-aos-delay={idx * 300}
-                className="md:mt-3 mt-1 text-base leading-[150%]"
+                className="md:mt-2 mt-1 text-base leading-[150%]"
               >
                 {item.position}
               </p>
+
+              <NormalBtn
+                onClick={() => router.push(`/blog/${item.slug}`)}
+                className="mt-4 sm:w-max max-w-full"
+              >
+                Read More
+              </NormalBtn>
             </div>
           </div>
         ))}

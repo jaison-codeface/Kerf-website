@@ -1,3 +1,4 @@
+"use client";
 import SectionWrapper from "@/components/SectionWrapper";
 import Layout from "@/components/layout";
 import { teamData } from "@/libs/contents";
@@ -6,16 +7,18 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import { NormalBtn } from "@/ui/buttons";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
-const page = () => {
+const Page = () => {
+  const router = useRouter();
   return (
     <Layout>
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col items-center mt-40`}
       >
-        <HeadTitle className="text-center max-w-[600px]">Our Team</HeadTitle>
-        <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[600px] text-secondary">
+        <HeadTitle className="text-center max-w-[900px]">Our Team</HeadTitle>
+        <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
           Beacons of faith embodying divine purpose - meet our devoted
           ministers, leaders, and support staff.
         </HeadSubtitle>
@@ -36,7 +39,7 @@ const page = () => {
                 data-aos="fade-up"
                 data-aos-duration="700"
                 data-aos-delay={idx * 300}
-                className="md:mt-6 mt-3 font-semibold text-secondary text-sm"
+                className="md:mt-6 mt-3 font-semibold text-black text-sm"
               >
                 {item.position}
               </p>
@@ -84,7 +87,7 @@ const page = () => {
                       data-aos-duration="700"
                       data-aos-delay={idx * 300}
                       target="_blank"
-                      className="w-8 h-8 flex items-center justify-center border border-tertiary rounded-md"
+                      className="w-8 h-8 flex items-center justify-center border border-black rounded-md"
                     >
                       <Image
                         src={socialMedia.icon}
@@ -95,16 +98,15 @@ const page = () => {
                     </Link>
                   ))}
                 </div>
-                <Link
-                  href={`/blog/${item.slug}`}
-                  shallow
+                <NormalBtn
+                  onClick={() => router.push(`/blog/${item.slug}`)}
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={idx * 300}
-                  className="text-base underline"
+                  className="text-base"
                 >
                   Read More
-                </Link>
+                </NormalBtn>
               </div>
             </div>
           ))}
@@ -114,4 +116,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

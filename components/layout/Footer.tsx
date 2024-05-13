@@ -66,7 +66,7 @@ const Footer = () => {
       </menu>
 
       <div
-        className={`w-full border-t border-tertiary py-4 mt-16 flex items-center sm:justify-between justify-center lg:gap-20 md:gap-14 gap-6 flex-wrap max-sm:text-center`}
+        className={`w-full border-t border-black py-4 mt-16 flex items-center sm:justify-between justify-center lg:gap-20 md:gap-14 gap-6 flex-wrap max-sm:text-center`}
       >
         <p className="text-sm">
           Copyrights © {new Date().getFullYear()}. All Rights Reserved. <br />

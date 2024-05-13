@@ -22,7 +22,7 @@ const OurMinistries = () => {
       <HeadTitle className="text-center max-w-[800px]">
         Connect With Our Ministries
       </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[600px] text-secondary">
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         Tap into the vast spiritual resources we offer through engaging
         ministries that guide, uplift, and bring souls together.
       </HeadSubtitle>

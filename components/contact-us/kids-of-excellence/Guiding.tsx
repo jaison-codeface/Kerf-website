@@ -29,7 +29,7 @@ const Guiding = () => {
       <HeadTitle className="text-center max-w-[800px]">
         Guiding &apos;Our Kids Of Excellence&apos;
       </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[600px] text-secondary">
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         These young souls are not merely the future of our communities; they are
         vessels of immense potential, entrusted to us by the Almighty Himself.
         Through purposeful guidance and a steadfast commitment to instilling the

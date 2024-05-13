@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import { HeadSubtitle, HeadTitle } from "./Typography";
 import { NormalBtn } from "./buttons";
+import { usePathname } from "next/navigation";
 
 type Props = {
   title?: string;
@@ -16,6 +18,7 @@ const HeroSectionBottom = ({
   subtitle,
   title,
 }: Props) => {
+  const pathname = usePathname();
   return (
     <div className="w-full grid md:grid-cols-2 lg:gap-20 md:gap-14 sm:gap-6 gap-4">
       <div
@@ -28,9 +31,19 @@ const HeroSectionBottom = ({
             {subtitle}
           </HeadSubtitle>
         )}
-        {title && <HeadTitle>{title}</HeadTitle>}
+        {title && (
+          <HeadTitle
+            className={
+              pathname === "/"
+                ? "lg:text-[5rem] md:text-[4.5rem] text-3xl tracking-tight"
+                : ""
+            }
+          >
+            {title}
+          </HeadTitle>
+        )}
         {subtitle && (
-          <HeadSubtitle className="text-xl text-secondary font-bold max-md:hidden">
+          <HeadSubtitle className="text-xl text-secondary font-bold max-md:hidden italic">
             {subtitle}
           </HeadSubtitle>
         )}
@@ -40,7 +53,7 @@ const HeroSectionBottom = ({
         data-aos-duration="700"
         className="flex flex-col gap-6"
       >
-        {description && <HeadSubtitle>{description}</HeadSubtitle>}
+        {/* {description && <HeadSubtitle>{description}</HeadSubtitle>} */}
         {(btn1 || btn2) && (
           <div className="flex items-center justify-start md:gap-6 sm:gap-4 gap-2  max-sm:flex-wrap">
             {btn1 && (

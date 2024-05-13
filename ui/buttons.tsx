@@ -20,11 +20,13 @@ const NormalBtn = ({
   const handleClick = () => href && router.push(href);
   return (
     <button
-    // @ts-ignore
+      // @ts-ignore
       onClick={(handleClick, onClick)}
       className={twMerge(
-        `px-8 py-2 border border-tertiary  font-semibold sm:text-sm text-xs rounded-md capitalize ${
-          mode === "night" ? "bg-tertiary text-white" : "bg-white text-tertiary"
+        `px-8 py-2 border border-black font-semibold sm:text-sm text-xs rounded-md capitalize ${
+          mode === "night"
+            ? "bg-secondary border-secondary text-white hover:bg-transparent hover:border-black hover:text-black duration-300"
+            : "bg-white text-black hover:bg-secondary hover:border-secondary hover:text-white duration-300"
         }`,
         className
       )}

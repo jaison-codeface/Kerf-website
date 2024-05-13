@@ -12,11 +12,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
     if (typeof document !== "undefined") {
       AOS.init({
         once: true,
+        disable : true
       });
     }
   }, []);
   return (
-    <main className="flex flex-col w-full flex-1 items-center justify-center text-tertiary relative z-0 bg-white">
+    <main className="flex flex-col w-full flex-1 items-center justify-center text-black relative z-0 bg-white">
       <Header />
       {children}
       <Footer />

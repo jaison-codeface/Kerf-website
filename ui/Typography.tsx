@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import { twJoin, twMerge } from "tailwind-merge";
 
 const HeadTitle = ({
   children,
@@ -11,8 +11,8 @@ const HeadTitle = ({
   <h1
     data-aos="fade-up"
     data-aos-duration="700"
-    className={twMerge(
-      "font-bold text-primary lg:leading-[120%] md:leading-[120%] leading-[120%] lg:text-5xl md:text-4xl text-3xl",
+    className={twJoin(
+      "font-bold text-secondary lg:leading-[120%] md:leading-[120%] leading-[120%] lg:text-5xl md:text-4xl text-3xl",
       className
     )}
   >
@@ -31,7 +31,7 @@ const HeadSubtitle = ({
     data-aos="fade-up"
     data-aos-duration="700"
     className={twMerge(
-      "text-tertiary md:text-lg text-base md:leading-[150%]  leading-[150%]",
+      "text-black md:text-lg text-base md:leading-[190%]  leading-[190%]",
       className
     )}
   >

@@ -17,19 +17,19 @@ const About = ({
   return (
     <SectionWrapper
       classTop="bg-off-white"
-      classBottom={`${main_padding.y} grid `}
+      classBottom={`${main_padding.y} `}
     >
-      <div className="lg:gap-16 md:gap-12 gap-6 grid md:grid-cols-2 items-center max-w-[1440px] ">
+      <div className="lg:gap-16 md:gap-12 gap-6 flex max-md:flex-col w-full  items-center max-w-[1440px] ">
         <Image
           data-aos="fade-up"
           data-aos-duration="700"
           src={logo}
           alt=""
           loading="lazy"
-          className="aspect-square max-h-[400px] w-auto object-contain"
+          className="aspect-square max-h-[400px] object-contain md:w-[40%] w-full"
         />
         <div data-aos="fade-up" data-aos-duration="700">
-          <p>{description}</p>
+          <p className="leading-[190%]">{description}</p>
           <NormalBtn
             onClick={() => router.push("/contact-us")}
             className="mt-6 max-sm:w-full"

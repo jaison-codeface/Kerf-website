@@ -25,10 +25,10 @@ const data = [
 const VisionAndMission = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[700px]">
+      <HeadTitle className="text-center max-w-[900px]">
         Vision and Mission
       </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[700px] text-secondary">
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         He foundational ideals that steer our efforts to uplift lives and foster
         profound connections.
       </HeadSubtitle>
@@ -36,7 +36,7 @@ const VisionAndMission = () => {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className="border border-tertiary flex flex-col rounded-[10px] overflow-hidden"
+            className="border border-black flex flex-col rounded-[10px] overflow-hidden"
           >
             <Image
               data-aos="fade-up"

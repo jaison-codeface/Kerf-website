@@ -2,6 +2,8 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { HeadSubtitle, HeadTitle } from "./Typography";
 import { NormalBtn } from "./buttons";
+import Link from "next/link";
+import PlayBtnIcon from "@/assets/icons/PlayBtnIcon";
 
 type Props = {
   title?: string | JSX.Element;
@@ -10,6 +12,8 @@ type Props = {
   btn2?: { title?: string; link?: string };
   direction?: "opposite" | "normal";
   image: StaticImageData;
+  imageLink?: string;
+  playBtn?: boolean;
 };
 
 const LeftContentRightImg = ({
@@ -19,6 +23,8 @@ const LeftContentRightImg = ({
   title,
   direction = "normal",
   image,
+  playBtn,
+  imageLink,
 }: Props) => {
   return (
     <div className="grid md:grid-cols-2 lg:gap-20 md:gap-14 gap-6 items-center">
@@ -52,20 +58,40 @@ const LeftContentRightImg = ({
           )}
         </div>
       </div>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="700"
-        className="bg-red-400 aspect-square rounded-[10px] overflow-hidden flex items-center justify-center relative z-0"
-      >
-        <Image
-          src={image}
-          alt=""
-          fill
-          className="object-cover"
-          placeholder="empty"
-          loading="lazy"
-        />
-      </div>
+      {imageLink ? (
+        <Link
+          href={imageLink}
+          target="_blank"
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="bg-red-400 aspect-square rounded-[10px] overflow-hidden flex items-center justify-center relative z-0"
+        >
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover -z-10 "
+            placeholder="empty"
+            loading="lazy"
+          />
+          <PlayBtnIcon className="" />
+        </Link>
+      ) : (
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="bg-red-400 aspect-square rounded-[10px] overflow-hidden flex items-center justify-center relative z-0"
+        >
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover -z-10 "
+            placeholder="empty"
+            loading="lazy"
+          />
+        </div>
+      )}
     </div>
   );
 };

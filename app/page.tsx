@@ -39,6 +39,8 @@ export default function Home() {
             title: "who we are",
           }}
           image={our_churchImg}
+          playBtn={true}
+          imageLink="ddsaf"
         />
       </SectionWrapper>
       <SectionWrapper classBottom={main_padding.y}>

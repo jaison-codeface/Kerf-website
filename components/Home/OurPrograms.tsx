@@ -41,10 +41,10 @@ const data = [
 const OurPrograms = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
-      <HeadTitle className="max-w-[600px] text-center">
+      <HeadTitle className="max-w-[900px] text-center">
         Ministries at Loving grace assembly
       </HeadTitle>
-      <HeadSubtitle className="text-center text-secondary sm:mt-4 mt-2 max-w-[600px]">
+      <HeadSubtitle className="text-center text-black sm:mt-4 mt-2 max-w-[900px]">
         Offering expatriates nurturing pathways to deepen their faith, discover
         divine purpose through immersive study of sacred texts, and cultivate
         spiritual growth guided by transformative teachings.
@@ -58,7 +58,7 @@ const OurPrograms = () => {
             data-aos="fade-up"
             data-aos-duration="400"
             data-aos-delay={idx * 300}
-            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col  items-center justify-between pt-4"
+            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-between pt-4"
           >
             <div />
             <Image
@@ -67,7 +67,7 @@ const OurPrograms = () => {
               loading="lazy"
               className="h-[120px] w-auto aspect-square object-contain px-3"
             />
-            <p className="bg-secondary px-4 py-2  w-full text-center text-white font-semibold text-sm">
+            <p className="bg-secondary sm:px-6 px-4 py-2  w-full text-center text-white font-semibold sm:text-sm text-xs">
               {item.title}
             </p>
           </Link>

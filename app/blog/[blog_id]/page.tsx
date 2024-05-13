@@ -64,7 +64,7 @@ const page = ({ params }: any) => {
               <Link
                 href={item.link}
                 shallow
-                className="font-semibold text-primary text-lg"
+                className=" text-black text-sm px-4 py-2 hover:border-secondary hover:bg-secondary hover:text-white duration-300 border-black border rounded-lg"
               >
                 {item.title}
               </Link>

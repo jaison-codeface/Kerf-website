@@ -17,7 +17,7 @@ const JoinUs = () => {
   return (
     <SectionWrapper
       classTop="relative z-0 bg-black"
-      classBottom={`${main_padding.y} flex-col items-center`}
+      classBottom={` sm:py-24 py-14 flex-col items-center`}
     >
       <Image
         src={bg}

@@ -9,10 +9,10 @@ import Image from "next/image";
 const WomenOfDestinyBreakfast = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} items-center flex-col`}>
-      <HeadTitle className="text-center max-w-[700px]">
+      <HeadTitle className="text-center max-w-[900px]">
         Women Of Destiny Breakfast
       </HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[700px] text-secondary">
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         A gathering where women unite to find strength, wisdom, and
         encouragement as they explore their unique paths and divine purposes
         through uplifting fellowship, inspiring stories, and spiritual

@@ -28,8 +28,8 @@ const HeroSection = () => {
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-center mt-40`}
     >
-      <HeadTitle className="text-center max-w-[600px]">Contact us</HeadTitle>
-      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[600px] text-secondary">
+      <HeadTitle className="text-center max-w-[900px]">Contact us</HeadTitle>
+      <HeadSubtitle className="sm:mt-4 mt-2 text-center max-w-[900px] text-black">
         Join our faith community by getting in touch - we&apos;re here to
         listen, support, and guide you towards personal and spiritual growth.
       </HeadSubtitle>
@@ -37,7 +37,7 @@ const HeroSection = () => {
         {data.map((item, idx) => (
           <div
             key={idx}
-            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-center px-1 py-8"
+            className="bg-off-white rounded-[10px] overflow-hidden flex flex-col items-center justify-start px-6 py-12"
           >
             <Image
               data-aos="fade-up"
