@@ -14,7 +14,7 @@ const HeroSection = ({
   title: string;
   subtitle?: string;
   heroSectionImage: StaticImageData;
-  author: string | JSX.Element;
+  author?: string | JSX.Element;
   imageContain?: boolean | undefined;
 }) => {
   return (
