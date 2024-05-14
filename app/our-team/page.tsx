@@ -99,7 +99,7 @@ const Page = () => {
                   ))}
                 </div>
                 <NormalBtn
-                  onClick={() => router.push(`/blog/${item.slug}`)}
+                  onClick={() => router.push(`/our-team/${item.slug}`)}
                   data-aos="fade-up"
                   data-aos-duration="700"
                   data-aos-delay={idx * 300}

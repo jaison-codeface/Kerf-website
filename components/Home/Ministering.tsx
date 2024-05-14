@@ -52,7 +52,7 @@ const Ministering = () => {
               </p>
 
               <NormalBtn
-                onClick={() => router.push(`/blog/${item.slug}`)}
+                onClick={() => router.push(`/our-team/${item.slug}`)}
                 className="mt-4 sm:w-max max-w-full"
               >
                 Read More

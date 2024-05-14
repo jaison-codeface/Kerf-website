@@ -7,7 +7,7 @@ import { NormalBtn } from "@/ui/buttons";
 import NavMobile from "./NavMobile";
 import { blogData } from "@/libs/contents";
 
-const blogSubLinks = blogData.slice(0, 3).map((item) => {
+const blogSubLinks = [...blogData].slice(0, 3).map((item) => {
   const d = {
     title: item.title,
     link: `/blog/${item.slug}`,

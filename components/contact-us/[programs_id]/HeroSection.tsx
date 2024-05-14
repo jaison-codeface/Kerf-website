@@ -28,10 +28,12 @@ const HeroSection = ({
         className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]  "
       />
 
-      <SectionWrapper classBottom={main_padding.y} classTop={`${kids_of_excellence && "bg-off-white"}`}>
+      <SectionWrapper
+        classBottom={main_padding.y}
+        classTop={`${kids_of_excellence && "bg-off-white"}`}
+      >
         <HeroSectionBottom
           title={title}
-          description={subtitle}
           subtitle={statement ? "Statement" : ""}
         />
       </SectionWrapper>

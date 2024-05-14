@@ -1,5 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
+import NavigationBtns from "@/components/blog/[blog_id]/NavigationBtns";
+import RecentBlogs from "@/components/blog/[blog_id]/RecentBlogs";
 import Layout from "@/components/layout";
 import { blogData } from "@/libs/contents";
 import main_padding from "@/styles/padding";
@@ -29,49 +31,30 @@ const page = ({ params }: any) => {
       <HeroSection
         heroSectionImage={data.heroSectionImage}
         author={
-          <>
-            {data.date} - Blog - By&nbsp;
-            <Link href={`/author/${data.author.slug}`} shallow>
-              {data.author.title}
-            </Link>
-          </>
+          data.date && (
+            <>
+              {data.date} - Blog - By&nbsp;
+              <Link href={`/author/${data.author.slug}`} shallow>
+                {data.author.title}
+              </Link>
+            </>
+          )
         }
-        subtitle={data.subtitle}
         title={data.title}
-        imageContain={data.imageContain}
       />
-      <SectionWrapper classBottom={``} classTop="justify-start">
+      <SectionWrapper classBottom={`md:gap-20 gap-10 max-md:flex-col ${main_padding.b}`} classTop="justify-start ">
         <p
           data-aos="fade-up"
           data-aos-duration="700"
-          className=" text-lg leading-[150%] md:max-w-[70%] ml-0 "
+          className=" text-lg leading-[190%] md:max-w-[70%] ml-0 "
         >
           {data.description}
         </p>
+
+        <RecentBlogs />
       </SectionWrapper>
 
-      <SectionWrapper
-        classBottom={` ${main_padding.y} flex w-full justify-between gap-6 items-center`}
-      >
-        {buttons.map((item, idx) => (
-          <div
-            data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-delay={idx * 300}
-            key={idx}
-          >
-            {item.link && (
-              <Link
-                href={item.link}
-                shallow
-                className=" text-black text-sm px-4 py-2 hover:border-secondary hover:bg-secondary hover:text-white duration-300 border-black border rounded-lg"
-              >
-                {item.title}
-              </Link>
-            )}
-          </div>
-        ))}
-      </SectionWrapper>
+      <NavigationBtns buttons={buttons} />
     </Layout>
   );
 };

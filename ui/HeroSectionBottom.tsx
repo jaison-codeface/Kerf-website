@@ -43,7 +43,7 @@ const HeroSectionBottom = ({
           </HeadTitle>
         )}
         {subtitle && (
-          <HeadSubtitle className="text-xl text-secondary font-bold max-md:hidden italic">
+          <HeadSubtitle className="text-xl text-black font-bold max-md:hidden italic">
             {subtitle}
           </HeadSubtitle>
         )}
@@ -53,7 +53,7 @@ const HeroSectionBottom = ({
         data-aos-duration="700"
         className="flex flex-col gap-6"
       >
-        {/* {description && <HeadSubtitle>{description}</HeadSubtitle>} */}
+        {description && <HeadSubtitle>{description}</HeadSubtitle>}
         {(btn1 || btn2) && (
           <div className="flex items-center justify-start md:gap-6 sm:gap-4 gap-2  max-sm:flex-wrap">
             {btn1 && (
