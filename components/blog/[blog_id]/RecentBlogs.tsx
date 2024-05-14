@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const RecentBlogs = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col md:max-w-[280px]">
       <h3 className="text-lg text-secondary font-semibold ">Recent Blogs</h3>
-      <div className="flex flex-col gap-6 mt-4">
+      <div className="flex flex-col gap-6 mt-4 ">
         {[...blogData].splice(0, 4).map((item, idx) => (
           <Link
             key={idx}

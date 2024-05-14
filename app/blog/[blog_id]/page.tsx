@@ -43,13 +43,13 @@ const page = ({ params }: any) => {
         title={data.title}
       />
       <SectionWrapper
-        classBottom={`md:gap-20 gap-10 max-md:flex-col ${main_padding.b}`}
+        classBottom={`md:gap-20 gap-10 max-md:flex-col md:justify-between  ${main_padding.b}`}
         classTop="justify-start "
       >
         <p
           data-aos="fade-up"
           data-aos-duration="700"
-          className=" text-lg leading-[190%] md:max-w-[70%] ml-0 "
+          className=" text-lg leading-[190%] md:max-w-[70%]"
         >
           {data.description}
         </p>
