@@ -11,7 +11,7 @@ const loading = () => {
         <Image
           src={logo}
           alt=""
-          placeholder="blur"
+          placeholder="empty"
           priority
           className="h-full w-full object-contain"
         />
