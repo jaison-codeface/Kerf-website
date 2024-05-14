@@ -4,7 +4,7 @@ import React from "react";
 
 const Curser = () => {
   const { x, y } = useMousePosition();
-  const size = 384;
+  const size = 684;
   return (
     <main className="h-full w-full inset-0 fixed top-0 left-0 -z-10 bg-white max-md:hidden pointer-events-none ">
       <motion.div
@@ -17,7 +17,7 @@ const Curser = () => {
           x: `${x - size / 2}px`,
           y: `${y - size / 2}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+        transition={{ type: "tween", ease: "linear", duration: 2, delay: 0.5 }}
       >
         <svg
           width="1256"
