@@ -1,7 +1,7 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import HeroSection from "@/components/blog/[blog_id]/HeroSection";
 import Layout from "@/components/layout";
-import { blogData } from "@/libs/contents";
+import { blogData, teamData } from "@/libs/contents";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle } from "@/ui/Typography";
 import Image from "next/image";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import React from "react";
 
 const page = ({ params }: any) => {
-  const aboutAuthor = blogData.filter(
+  const aboutAuthor = teamData.filter(
     (item) => item.slug === params.author_id
   )[0];
 
@@ -20,14 +20,13 @@ const page = ({ params }: any) => {
   return (
     <Layout>
       <HeroSection
-        heroSectionImage={aboutAuthor.heroSectionImage}
+        heroSectionImage={aboutAuthor.image}
         author={""}
-        subtitle={aboutAuthor.subtitle}
         title={aboutAuthor.title}
-        imageContain={aboutAuthor.imageContain}
+        imageContain={true}
       />
       <SectionWrapper
-        classBottom={`${main_padding.y} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
+        classBottom={`${main_padding.b} grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6`}
       >
         {blogs.map((item, idx) => (
           <Link
