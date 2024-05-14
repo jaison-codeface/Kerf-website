@@ -6,7 +6,7 @@ const Curser = () => {
   const { x, y } = useMousePosition();
   const size = 384;
   return (
-    <main className="h-full w-full inset-0 fixed top-0 left-0 -z-10 bg-white ">
+    <main className="h-full w-full inset-0 fixed top-0 left-0 -z-10 bg-white max-md:hidden pointer-events-none ">
       <motion.div
         style={{
           width: size + "px",
