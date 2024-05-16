@@ -7,6 +7,12 @@ import { blogData } from "@/libs/contents";
 import main_padding from "@/styles/padding";
 import Link from "next/link";
 
+export function generateStaticParams() {
+  return blogData.map((item) => ({
+    blog_id: item.slug,
+  }));
+}
+
 const page = ({ params }: any) => {
   const data = blogData.filter((item) => item.slug === params.blog_id)[0];
 

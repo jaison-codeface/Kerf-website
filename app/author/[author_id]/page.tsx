@@ -8,6 +8,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+export  function generateStaticParams() {
+  return teamData.map((team) => ({
+    author_id: team.slug,
+  }));
+}
+
 const page = ({ params }: any) => {
   const aboutAuthor = teamData.filter(
     (item) => item.slug === params.author_id
