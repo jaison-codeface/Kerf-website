@@ -1,32 +1,42 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
+import { HeadSubtitle, SectionDescription } from "@/ui/Typography";
+
+import dummi from "@/assets/images/home/hero session e.png";
 import Image from "next/image";
-import bg from "@/assets/images/Home/hero section bg.webp";
-import HeroSectionBottom from "@/ui/HeroSectionBottom";
-import main_padding from "@/styles/padding";
+import RosePetalTexture from "@/ui/rosePetalTexture";
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col justify-end w-full">
-      <Image
-        src={bg}
-        alt="" 
-        className="object-cover h-full w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh] object-top "
-      />
-
-      <SectionWrapper classBottom={main_padding.y}>
-        <HeroSectionBottom
-          title="Welcome to Loving Grace Assembly"
-          description="Loving Grace Assembly, born from spiritual fasting, provides expatriates a nurturing community to study scripture, discover purpose, and deepen their faith through transformative teachings and divine wisdom."
-          btn1={{
-            title: "become a member",
-          }}
-          btn2={{
-            title: "Experience more sermons",
-          }}
+    <SectionWrapper
+      classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"
+      classBottom="h-full justify-center min-h-svh grid md:grid-cols-2 max-md:pt-40 md:gap-0 gap-10 items-center"
+    >
+      <div className="flex flex-col ">
+        <h1
+          data-aos="fade-up"
+          className="text-kerf-blue-dark md:text-5xl text-4xl font-bold  "
+        >
+          Pioneers in complex <br />
+          ENT procedures
+        </h1>
+        <SectionDescription className="md:mt-4 mt-2">
+          Your health is everything
+        </SectionDescription>
+      </div>
+      <div className="flex items-center justify-center w-full h-full relative z-0 overflow-visible ">
+        <Image
+          src={dummi}
+          alt=""
+          priority
+          className="object-contain h-full -z-0  object-bottom"
         />
-      </SectionWrapper>
-    </section>
+      </div>
+
+      {/* textures */}
+      <RosePetalTexture className="rotate-180 top-0 right-0" />
+      <RosePetalTexture className="-bottom-40 left-0" />
+    </SectionWrapper>
   );
 };
 

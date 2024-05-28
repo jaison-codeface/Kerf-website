@@ -1,135 +1,74 @@
+import main_padding from "@/styles/padding";
 import { NormalBtn } from "@/ui/buttons";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import arrowDown from "@/assets/icons/arrow down.svg";
 
-type Props = {
-  links: (
-    | {
-        title: string;
-        link: string;
-        subLinks?: undefined;
-      }
-    | {
-        title: string;
-        link: string;
-        subLinks: {
-          title: string;
-          link: string;
-        }[];
-      }
-  )[];
-  setExpand: React.Dispatch<React.SetStateAction<number>>;
-  expand: number;
-};
-const NavMobile = ({ links, expand, setExpand }: Props) => {
+const NavMobile = ({
+  links,
+}: {
+  links: {
+    title: string;
+    link: string;
+  }[];
+}) => {
   const [toggle, setToggle] = useState(false);
   return (
     <>
-      <div className="flex items-center justify-center w-[45px] h-[45px] lg:hidden">
+      <div
+        className={`flex items-center justify-center w-[50px] h-[50px] lg:hidden  p-2 border-2 border-kerf-blue rounded-lg`}
+      >
+        {/* toggle button */}
         <svg
           onClick={() => setToggle(!toggle)}
-          width="73"
-          height="73"
-          viewBox="0 0 73 73"
+          width="48"
+          height="36"
+          viewBox="0 0 40 28"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
         >
-          <line
-            x1={toggle ? "12.1994" : "13.97"}
-            y1={toggle ? "14.916" : "15.03"}
-            x2={toggle ? "58.916" : "49.4213"}
-            y2={toggle ? "59.8006" : "15.03"}
-            stroke="#DD3333"
-            strokeWidth="5.94"
-            strokeLinecap="round"
-            className="duration-300"
-          />
-          <line
-            x1="23.0244"
-            y1="37.03"
-            x2="58.4757"
-            y2="37.03"
-            stroke="#DD3333"
-            strokeWidth="5.94"
-            strokeLinecap="round"
-            className={`${toggle && "opacity-0"} `}
-          />
-          <line
-            x1={toggle ? "14" : "13.97"}
-            y1={toggle ? "57.7998" : "59.03"}
-            x2={toggle ? "56.7998" : "49.4213"}
-            y2={toggle ? "15" : "59.03"}
-            stroke="#DD3333"
-            strokeWidth="5.94"
-            strokeLinecap="round"
-          />
+          {toggle ? (
+            <path
+              d="M1.5 26.5L39.75 1.5M1.5 1.5L39.75 26.5"
+              stroke="#148FBC"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          ) : (
+            <>
+              <path
+                d="M1.25 14H38.75"
+                stroke="#33CCCC"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1.25 1.5H26.25M13.75 26.5H38.75"
+                stroke="#148FBC"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </>
+          )}
         </svg>
       </div>
 
       {/*  */}
 
       <div
-        className={`flex flex-col left-0 items-start justify-start gap-4 absolute top-20 bg-white/90 backdrop-blur-sm  px-2 py-4 rounded-[10px] shadow-md z-50 w-[90vw] lg:hidden duration-300 ${
+        className={`flex flex-col right-6 items-end justify-start gap-3 absolute top-32 bg-kerf-blue-light/50 backdrop-blur-sm  pr-4 pl-10 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 ${
           toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}
       >
-        <menu className="flex flex-col items-start justify-start gap-2 ">
-          {links.map((item, idx) => (
-            <li
-              onClick={() => (expand !== idx ? setExpand(idx) : setExpand(0))}
-              key={idx}
-              className="font-semibold text-sm cursor-pointer"
-            >
-              {item.subLinks ? (
-                <div className="relative z-0 flex flex-col items-start justify-center">
-                  <span className="flex items-center justify-start gap-1">
-                    {item.title}
-                    <Image
-                      src={arrowDown}
-                      alt={""}
-                      width={12}
-                      height={7}
-                      className={`h-[7px] w-auto object-contain duration-300 ${
-                        expand === idx && "rotate-180"
-                      }`}
-                    />
-                  </span>
-                  {/*  */}
-                  {expand === idx && (
-                    <div className="flex flex-col items-start pl-4 justify-center gap-3 py-2">
-                      {item.subLinks.map((subLink, subLinkIdx) => (
-                        <Link
-                          key={subLinkIdx}
-                          onClick={() => {
-                            setExpand(0), setToggle(false);
-                          }}
-                          href={subLink.link}
-                          shallow
-                          className="text-center "
-                        >
-                          {subLink.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <Link href={item.link} onClick={() => setToggle(false)}>
-                  {item.title}
-                </Link>
-              )}
-            </li>
-          ))}
-        </menu>
-        <NormalBtn
-          mode="day"
-          onClick={() => setToggle(false)}
-          className="bg-transparent w-full "
-        >
-          Live
-        </NormalBtn>
+        {links.map((item, idx) => (
+          <Link key={idx} href={item.link} shallow>
+            {item.title}
+          </Link>
+        ))}
       </div>
     </>
   );

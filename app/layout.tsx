@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "@/styles/globals.css";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const montserrat = Montserrat({ weight: ["500", "700",'400'], subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Loving Assembly",
+  title: "",
   description: "",
   manifest: "favicon_io/site.webmanifest",
 };
@@ -21,7 +21,7 @@ export default function RootLayout({
       className="scroll-smooth antialiased"
       suppressHydrationWarning
     >
-      <body className={manrope.className}>{children}</body>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }

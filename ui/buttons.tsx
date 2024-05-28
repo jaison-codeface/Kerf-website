@@ -2,37 +2,40 @@
 import React, { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 
 const NormalBtn = ({
   children,
   onClick,
   href,
-  mode = "night",
+  mode = "blue",
   className,
 }: {
   children: ReactNode;
-  onClick?: any;
+  onClick?: () => void;
   href?: string;
-  mode?: "night" | "day";
+  mode?: "blue" | "green";
   className?: string;
 }) => {
   const router = useRouter();
-  const handleClick = () => href && router.push(href);
+
   return (
-    <button
+    <Link
       // @ts-ignore
-      onClick={(handleClick, onClick)}
+      onClick={onClick}
+      data-aos="fade-up"
+      href={href ? href : "javascript:void(0)"}
       className={twMerge(
-        `px-8 py-2 border border-black font-semibold sm:text-sm text-xs rounded-md capitalize ${
-          mode === "night"
-            ? "bg-secondary border-secondary text-white hover:bg-transparent hover:border-black hover:text-black duration-300"
+        `px-8 py-3  font-bold rounded-lg capitalize ${
+          mode === "blue"
+            ? "bg-secondary border-secondary text-white bg-kerf-blue duration-300 hover:opacity-75"
             : "bg-white text-black hover:bg-secondary hover:border-secondary hover:text-white duration-300"
         }`,
         className
       )}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 

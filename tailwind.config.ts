@@ -11,10 +11,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#ED2500",
-        secondary: "#521575",
-        tertiary: "#383838",
-        "off-white": "#F0F0F0",
+        kerf: {
+          blue: {
+            DEFAULT: "#148FBC",
+            dark: "#000033",
+            light :"#98cbe5"
+          },
+          teal: {
+            DEFAULT: "#33CCCC",
+            light: "#99FFFF",
+          },
+        },
       },
     },
   },
