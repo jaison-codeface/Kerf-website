@@ -9,11 +9,11 @@ import SectionWrapper from "@/components/SectionWrapper";
 const links = [
   {
     title: "Home",
-    link: "",
+    link: "/",
   },
   {
     title: "About",
-    link: "",
+    link: "/about_us",
   },
   {
     title: "Services",

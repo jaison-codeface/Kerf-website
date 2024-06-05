@@ -15,11 +15,14 @@ const config: Config = {
           blue: {
             DEFAULT: "#148FBC",
             dark: "#000033",
-            light :"#98cbe5"
+            light: "#98cbe5",
           },
           teal: {
             DEFAULT: "#33CCCC",
             light: "#99FFFF",
+          },
+          off: {
+            gray: "#e9eef2",
           },
         },
       },

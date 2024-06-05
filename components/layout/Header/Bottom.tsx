@@ -1,19 +1,35 @@
 import SectionWrapper from "@/components/SectionWrapper";
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import logo from "@/assets/images/logo.webp";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-
-
-const Bottom = ({links}:{links : {
-  title: string;
-  link: string;
-}[] }) => {
+const Bottom = ({
+  links,
+}: {
+  links: {
+    title: string;
+    link: string;
+  }[];
+}) => {
   const [index, setIndex] = useState(0);
+  const pathname = usePathname();
+
+  useMemo(() => {
+    for (let i = 0; i < links.length; i++) {
+      if (
+        links[i].link.includes(
+          pathname.split("/").length > 0 ? pathname : pathname.split("/")[1]
+        )
+      ) {
+        return setIndex(i);
+      }
+    }
+  }, [links, pathname]);
 
   return (
-    <div className="flex  items-center justify-between gap-20">
+    <div className="flex  items-center justify-between gap-20 w-full">
       <Link href="/">
         <Image
           src={logo}

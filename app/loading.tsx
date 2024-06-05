@@ -6,7 +6,7 @@ const loading = () => {
     <div className="w-screen h-svh bg-off-white flex items-center justify-center ">
       <div
         role="status"
-        className="flex items-center justify-center sm:h-40 h-20 max-w-sm  rounded-lg animate-pulse"
+        className="flex items-center justify-center sm:h-20 max-w-sm  rounded-lg animate-pulse"
       >
         <Image
           src={logo}
