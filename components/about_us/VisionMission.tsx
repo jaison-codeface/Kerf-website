@@ -24,13 +24,15 @@ const VisionMission = () => {
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-2 md:gap-20 gap-10 items-center  z-50`}
     >
-      <div className=" grid max-h-[620px]">
+      <div data-aos="fade-up" className=" grid max-h-[620px]">
         <ImageInBorder mainImage={mainImage} className="overflow-hidden" />
       </div>
       <div className="grid grid-rows-2 gap-6 ">
         {data.map((item, idx) => (
           <div
             key={idx}
+            data-aos="fade-up"
+            data-delay={idx * 50}
             className={`${
               idx === 0 ? "bg-[#dffeff]" : "bg-[#e9ecf1]"
             } px-8 py-10 w-full h-full rounded-2xl`}

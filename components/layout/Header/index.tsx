@@ -29,7 +29,7 @@ const links = [
   },
   {
     title: "Contact Us",
-    link: "",
+    link: "/contact_us",
   },
 ];
 

@@ -60,9 +60,10 @@ const Testimonials = () => {
         data-aos="fade-up"
         data-aos-duration="700"
         loop
-        // autoplay={{
-        //   delay: 3500,
-        // }}
+        autoplay={{
+          delay: 3500,
+        }}
+        
         speed={1200}
         navigation={{
           enabled: true,

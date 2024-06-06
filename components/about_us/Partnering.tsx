@@ -31,8 +31,8 @@ const Partnering = () => {
           <span className=" font-light">partnering with le,</span> <br />
           Medical insurance
         </HeadTitle>
-        <span className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full" />
-        <p className="text-xl">
+        <span data-aos="fade-up" className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full" />
+        <p data-aos="fade-up" className="text-xl">
           We work with leading medical insurance country, if you have any
           qoustions call on <b>8008254268</b>.
         </p>

@@ -2,31 +2,30 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import { SectionDescription } from "@/ui/Typography";
 import RosePetalTexture from "@/ui/rosePetalTexture";
-import dummi from "@/assets/images/home/hero session e.png";
-import Image from "next/image";
+
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import phoneFill from "@/assets/icons/phone fill.svg";
 
-const HeroSection = () => {
-  const breadcrumbs = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "About Overview",
-      link: "javascript.void(0)",
-    },
-  ];
+type Props = {
+  breadcrumbs: {
+    title: string;
+    link: string;
+  }[];
+  bgImage: string | StaticImageData;
+  title: string | JSX.Element;
+};
+
+const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
   return (
     <>
       <SectionWrapper
-        classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0 overflow-hidden"
+        classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0 overflow-x-clip"
         classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10 items-center "
       >
         <div className="flex items-end justify-end w-max h-full relative z-0  ">
           <Image
-            src={dummi}
+            src={bgImage}
             alt=""
             priority
             className="object-contain h-[420px] -z-0  object-right-top"
@@ -40,8 +39,8 @@ const HeroSection = () => {
       <SectionWrapper classTop="-translate-y-1/2">
         <div className="bg-[#e9eef2] bg-off-gray md:px-20 px-8 md:py-10 py-6  w-full rounded-3xl flex items-center  justify-between max-md:flex-col gap-6">
           <div className="flex flex-col md:items-start items-center">
-            <h1 className="md:text-3xl text-2xl font-bold text-[#020c2a]">
-              About Us - <span className="font-medium">Overview</span>
+            <h1 className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium">
+              {title}
             </h1>
             <span className="flex items-center md:mt-6 mt-2">
               {breadcrumbs.map((item, idx) => (
@@ -53,7 +52,9 @@ const HeroSection = () => {
                   }`}
                 >
                   {item.title}{" "}
-                  {idx < breadcrumbs.length - 1 && <>&nbsp; &#62; &nbsp;</>}
+                  {idx < breadcrumbs.length - 1 && (
+                    <span className="text-[#4b5175]">&nbsp; &#62; &nbsp;</span>
+                  )}
                 </Link>
               ))}
             </span>
