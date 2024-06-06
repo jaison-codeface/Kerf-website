@@ -85,7 +85,7 @@ const OurCenters = () => {
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-start z-50`}>
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
       <HeadTitle className="mt-1">Our Centers</HeadTitle>
-      <div className="grid grid-cols-3 gap-10 mt-16">
+      <div className="grid grid-cols-3 gap-20 mt-16">
         {data.map((item, idx) => (
           <div
             key={idx}
@@ -94,7 +94,7 @@ const OurCenters = () => {
             }}
             className="px-4 py-8 rounded-xl flex flex-col text-black"
           >
-            <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-2 after:rounded-full">{item.title}</h2>
+            <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">{item.title}</h2>
             <div className="mt-8 flex flex-col gap-5">
               {item.links.map((link, i) => (
                 <Link
