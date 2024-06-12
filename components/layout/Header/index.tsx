@@ -18,12 +18,61 @@ const links = [
   {
     title: "Treatments",
     link: "",
+    dropDown: [
+      {
+        title: "Ear",
+        links: [
+          {
+            title: "Tympanoplasty",
+            link: "/departments/Tympanoplasty",
+          },
+          {
+            title: "Mastoidectomy",
+            link: "/departments/Tympanoplasty",
+          },
+        ],
+      },
+      {
+        title: "Nose",
+        links: [
+          {
+            title: "Endoscopic sinus surgery",
+            link: "/departments/Tympanoplasty",
+          },
+          {
+            title: "Mastoidectomy",
+            link: "/departments/Tympanoplasty",
+          },
+        ],
+      },
+      {
+        title: "throat",
+        links: [
+          {
+            title: "Pain relievers",
+            link: "/departments/Pain relievers",
+          },
+          {
+            title: "Decongestants",
+            link: "/departments/Decongestants",
+          },
+          {
+            title: "Antibiotics",
+            link: "/departments/Antibiotics",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Departments",
     link: "",
   },
- 
+  {
+    title: "Carers",
+    link: "",
+  },
+
   {
     title: "Contact Us",
     link: "/contact_us",
