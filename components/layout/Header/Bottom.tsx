@@ -13,7 +13,7 @@ const Bottom = ({
     link: string;
   }[];
 }) => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState<number | null>(0);
   const pathname = usePathname();
 
   useMemo(() => {
@@ -24,7 +24,7 @@ const Bottom = ({
         )
       ) {
         return setIndex(i);
-      }
+      } else setIndex(null);
     }
   }, [links, pathname]);
 

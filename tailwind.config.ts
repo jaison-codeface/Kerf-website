@@ -26,6 +26,9 @@ const config: Config = {
           },
         },
       },
+      fontFamily: {
+        primary: "var(--font--montserrat)",
+      },
     },
   },
   plugins: [],

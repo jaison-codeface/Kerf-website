@@ -28,7 +28,7 @@ const ContactUs = () => {
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
       <HeadTitle className="mt-1">Explore our world</HeadTitle>
-      <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
+      <div  className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
         <Image
           src={mainImage}
           alt=""

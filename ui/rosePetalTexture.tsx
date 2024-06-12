@@ -7,7 +7,7 @@ const RosePetalTexture = ({ className }: { className?: string }) => {
       src={roseTexture}
       alt=""
       className={twMerge(
-        `absolute object-contain w-[25vw]  -z-10`,
+        `absolute object-contain w-[25vw]  -z-10 pointer-events-none`,
         className
       )}
     />

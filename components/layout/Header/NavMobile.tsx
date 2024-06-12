@@ -32,25 +32,25 @@ const NavMobile = ({
             <path
               d="M1.5 26.5L39.75 1.5M1.5 1.5L39.75 26.5"
               stroke="#148FBC"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           ) : (
             <>
               <path
                 d="M1.25 14H38.75"
                 stroke="#33CCCC"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M1.25 1.5H26.25M13.75 26.5H38.75"
                 stroke="#148FBC"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </>
           )}

@@ -75,7 +75,7 @@ const Blogs = () => {
             <SwiperSlide
               key={idx}
               
-              className="relative z-0 !flex flex-col items-start justify-end !w-[280px] px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black"
+              className="relative z-0 !flex flex-col items-start justify-end !w-[280px] px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg"
             >
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}

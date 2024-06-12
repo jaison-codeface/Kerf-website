@@ -3,6 +3,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import React from "react";
 import dummi from "@/assets/images/home/hero session e.png";
 import OurCenters from "@/components/contact_us/OurCenters ";
+import GetDirection from "@/components/contact_us/GetDirection";
 
 const page = () => {
   const breadcrumbs = [
@@ -23,6 +24,7 @@ const page = () => {
         title="Contact Us"
       />
       <OurCenters />
+      <GetDirection />
     </Layout>
   );
 };

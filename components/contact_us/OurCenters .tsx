@@ -85,10 +85,12 @@ const OurCenters = () => {
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-start z-50`}>
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
       <HeadTitle className="mt-1">Our Centers</HeadTitle>
-      <div className="grid grid-cols-3 gap-20 mt-16">
+      <div className="grid md:grid-cols-3 sm:grid-cols-2 lg:gap-20 sm:gap-10 gap-6 md:mt-16 mt-6">
         {data.map((item, idx) => (
           <div
             key={idx}
+            data-aos="fade-up"
+            data-delay={idx * 50}
             style={{
               backgroundColor: item.bgColor,
             }}
@@ -108,7 +110,7 @@ const OurCenters = () => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-[14px] w-auto aspect-square object-contain saturate-0"
+                    className="h-[14px] w-auto aspect-square object-contain saturate-0 brightness-0"
                   />
                   {link.title}
                 </Link>

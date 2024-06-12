@@ -16,17 +16,14 @@ const links = [
     link: "/about_us",
   },
   {
-    title: "Services",
+    title: "Treatments",
     link: "",
   },
   {
-    title: "Facilities",
+    title: "Departments",
     link: "",
   },
-  {
-    title: "Blog",
-    link: "",
-  },
+ 
   {
     title: "Contact Us",
     link: "/contact_us",

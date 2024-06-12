@@ -39,14 +39,19 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
       <SectionWrapper classTop="-translate-y-1/2">
         <div className="bg-[#e9eef2] bg-off-gray md:px-20 px-8 md:py-10 py-6  w-full rounded-3xl flex items-center  justify-between max-md:flex-col gap-6">
           <div className="flex flex-col md:items-start items-center">
-            <h1 className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium">
+            <h1
+              data-aos="fade-up"
+              className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium"
+            >
               {title}
             </h1>
             <span className="flex items-center md:mt-6 mt-2">
               {breadcrumbs.map((item, idx) => (
                 <Link
                   key={idx}
-                  href={item.link}
+                  href={item.link ? item.link : "javascript:void(0)"}
+                  data-aos="fade-up"
+                  data-delay={idx * 50}
                   className={` text-base font-medium ${
                     idx === 0 ? "text-blue-600" : "text-[#4b5175]"
                   }`}
@@ -62,6 +67,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
           <Link
             href=""
             suppressHydrationWarning
+            data-aos="fade-up"
             className="flex items-center max-md:w-full justify-start  gap-4 px-6 py-3 bg-white rounded-xl font-bold text-base"
           >
             <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] flex items-center justify-center rounded-lg">
