@@ -19,7 +19,7 @@ const NavMobile = ({
     }[];
   }[];
 }) => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [dropDown, setDropDown] = useState<any>([0, 0]);
   return (
     <>

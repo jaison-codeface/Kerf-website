@@ -56,26 +56,40 @@ const Blogs = () => {
     >
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
       <HeadTitle className="mt-1">Blogs</HeadTitle>
-      <div  data-aos="fade-up" className="flex w-screen md:mt-16 mt-8">
+      <div data-aos="fade-up" className="flex w-screen md:mt-16 mt-8">
         <Swiper
-          slidesPerView={"auto"}
+          slidesPerView={1}
           spaceBetween={30}
           data-aos="fade-up"
           data-aos-duration="700"
-       
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
           loop
           autoplay={{
             delay: 3500,
           }}
           speed={1200}
-          modules={[ Autoplay]}
+          modules={[Autoplay]}
           className="mySwiper"
         >
           {data.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              
-              className="relative z-0 !flex flex-col items-start justify-end !w-[280px] px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg"
+              className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg"
             >
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}
