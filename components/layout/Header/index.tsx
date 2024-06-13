@@ -24,11 +24,11 @@ const links = [
         links: [
           {
             title: "Tympanoplasty",
-            link: "/departments/Tympanoplasty",
+            link: "/treatments/Tympanoplasty",
           },
           {
             title: "Mastoidectomy",
-            link: "/departments/Tympanoplasty",
+            link: "/treatments/Tympanoplasty",
           },
         ],
       },
@@ -37,11 +37,11 @@ const links = [
         links: [
           {
             title: "Endoscopic sinus surgery",
-            link: "/departments/Tympanoplasty",
+            link: "/treatments/Tympanoplasty",
           },
           {
             title: "Mastoidectomy",
-            link: "/departments/Tympanoplasty",
+            link: "/treatments/Tympanoplasty",
           },
         ],
       },
@@ -50,15 +50,15 @@ const links = [
         links: [
           {
             title: "Pain relievers",
-            link: "/departments/Pain relievers",
+            link: "/treatments/Pain relievers",
           },
           {
             title: "Decongestants",
-            link: "/departments/Decongestants",
+            link: "/treatments/Decongestants",
           },
           {
             title: "Antibiotics",
-            link: "/departments/Antibiotics",
+            link: "/treatments/Antibiotics",
           },
         ],
       },

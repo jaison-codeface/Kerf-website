@@ -32,7 +32,13 @@ const Bottom = ({
         )
       ) {
         return setIndex(i);
-      } else setIndex(null);
+      } else if (
+        links[i].dropDown?.some((item) =>
+          item.links.some((i) => i.link === decodeURIComponent(pathname))
+        )
+      ) {
+        return setIndex(i);
+      }
     }
   }, [links, pathname]);
 
@@ -78,8 +84,8 @@ const Bottom = ({
               )}
             </Link>
             {item.dropDown && (
-              <div className="pt-16 absolute  z-50 top-0">
-                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 py-5 rounded-2xl group-hover:translate-y-0 -translate-y-[900px] duration-300">
+              <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
+                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 py-5 rounded-2xl ">
                   <div className="flex items-center justify-center gap-10">
                     {item.dropDown.map((drop, dropIdx) => (
                       <button

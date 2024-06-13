@@ -10,9 +10,17 @@ const NavMobile = ({
   links: {
     title: string;
     link: string;
+    dropDown?: {
+      title: string;
+      links: {
+        title: string;
+        link: string;
+      }[];
+    }[];
   }[];
 }) => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  const [dropDown, setDropDown] = useState<any>([0, 0]);
   return (
     <>
       <div
@@ -65,8 +73,83 @@ const NavMobile = ({
         }`}
       >
         {links.map((item, idx) => (
-          <Link key={idx} href={item.link} shallow>
-            {item.title}
+          <Link
+            key={idx}
+            suppressHydrationWarning
+            href={item.link ? item.link : "javascript:void(0)"}
+            shallow
+            className="flex flex-col items-end gap-2"
+          >
+            <p
+              onClick={() =>
+                dropDown[0] === idx
+                  ? setDropDown([null, null])
+                  : setDropDown([idx, dropDown[1]])
+              }
+              className="inline-flex items-center justify-center gap-1"
+            >
+              {item.dropDown && (
+                <svg
+                  className={`h-[10px] w-auto duration-300 rotate-180 ${
+                    dropDown[0] === idx && "rotate-90"
+                  }`}
+                  viewBox="0 0 8 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7.02001 5.4919L5.05001 3.52188L1.84001 0.31188C1.16 -0.35812 0 0.12188 0 1.08188V7.3119V12.9219C0 13.8819 1.16 14.3619 1.84001 13.6819L7.02001 8.5019C7.85001 7.6819 7.85001 6.3219 7.02001 5.4919Z"
+                    fill="#292D32"
+                  />
+                </svg>
+              )}
+              {item.title}{" "}
+            </p>
+            {item.dropDown && (
+              <menu
+                className={`pr-4 flex flex-col items-end gap-1 ${
+                  dropDown[0] !== idx && "hidden"
+                }`}
+              >
+                {item.dropDown.map((drop, dropIdx) => (
+                  <li
+                    onClick={() => setDropDown([dropDown[0], dropIdx])}
+                    key={dropIdx}
+                    className="flex flex-col items-end"
+                  >
+                    <p className="inline-flex items-center gap-1">
+                      {item.dropDown && (
+                        <svg
+                          className={`h-[10px] w-auto duration-300 rotate-180 ${
+                            dropDown[1] === dropIdx && "rotate-90"
+                          }`}
+                          viewBox="0 0 8 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7.02001 5.4919L5.05001 3.52188L1.84001 0.31188C1.16 -0.35812 0 0.12188 0 1.08188V7.3119V12.9219C0 13.8819 1.16 14.3619 1.84001 13.6819L7.02001 8.5019C7.85001 7.6819 7.85001 6.3219 7.02001 5.4919Z"
+                            fill="#292D32"
+                          />
+                        </svg>
+                      )}{" "}
+                      {drop.title}
+                    </p>
+                    <span
+                      className={` flex-col items-end gap-1 ${
+                        dropDown[1] === dropIdx ? "flex" : "hidden"
+                      }`}
+                    >
+                      {drop.links.map((link, linkIdx) => (
+                        <Link key={linkIdx} href={link.link} className="pr-4">
+                          {link.title}
+                        </Link>
+                      ))}
+                    </span>
+                  </li>
+                ))}
+              </menu>
+            )}
           </Link>
         ))}
       </div>

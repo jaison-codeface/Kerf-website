@@ -10,7 +10,9 @@ const RequestYourAppointment = () => {
       action=""
       className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 py-5 rounded-2xl gap-6"
     >
-      <h2 className="text-base font-semibold text-center">Request Your Appointment</h2>
+      <h2 className="text-base font-semibold text-center">
+        Request Your Appointment
+      </h2>
       <div className="flex flex-col gap-4 w-full">
         <Input title="name" required />
         <Input title="phone" type="tel" required />
@@ -94,7 +96,8 @@ const SelectInput = ({
         name={title}
         id=""
         // disabled
-        value={value}
+
+        defaultValue={value}
         onMouseDown={() => setToggle((prev) => !prev)}
         placeholder={placeholder ? placeholder : title}
         className="px-4 py-2 bg-white outline-none capitalize  border border-gray-200 rounded-lg   text-sm font-medium cursor-pointer caret-transparent"
@@ -110,9 +113,9 @@ const SelectInput = ({
       >
         <path
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           d="m1 1 4 4 4-4"
         />
       </svg>

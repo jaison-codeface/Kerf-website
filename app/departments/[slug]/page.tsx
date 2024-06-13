@@ -2,11 +2,9 @@ import Layout from "@/components/layout";
 import HeroSection from "@/components/sections/HeroSection";
 import React from "react";
 import dummi from "@/assets/images/home/hero session e.png";
-import SectionWrapper from "@/components/SectionWrapper";
-import main_padding from "@/styles/padding";
+import Content from "@/components/departments/[slug]/Content";
 import Doctor from "@/components/sections/Doctor";
 import Blogs from "@/components/sections/Blogs";
-import Content from "@/components/departments/[slug]/Content";
 
 const page = () => {
   const breadcrumbs = [
@@ -15,12 +13,12 @@ const page = () => {
       link: "/",
     },
     {
-      title: "Departments",
-      link: "",
+      title: "Treatments",
+      link: "javascript:void(0)",
     },
     {
-      title: "Otology",
-      link: "",
+      title: "Orthopedic",
+      link: "javascript:void(0)",
     },
   ];
 
@@ -118,9 +116,14 @@ const page = () => {
       written: "onship between",
     },
   ];
+
   return (
     <Layout>
-      <HeroSection breadcrumbs={breadcrumbs} bgImage={dummi} title="Otology" />
+      <HeroSection
+        breadcrumbs={breadcrumbs}
+        bgImage={dummi}
+        title="Doctors Details View"
+      />
       <Content />
       <Doctor doctors={doctors} />
       <Blogs blogs={blogs} />
