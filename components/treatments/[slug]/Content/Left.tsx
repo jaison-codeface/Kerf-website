@@ -12,6 +12,7 @@ const Left = () => {
         alt=""
         data-aos="fade-up"
         width={1200}
+        
         height={600}
         className="md:aspect-[16/7] aspect-video rounded-xl overflow-hidden object-cover "
       />

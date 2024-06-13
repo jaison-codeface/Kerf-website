@@ -10,7 +10,7 @@ const RequestYourAppointment = () => {
       action=""
       className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 py-5 rounded-2xl gap-6"
     >
-      <h2 className="text-base font-semibold text-center">
+      <h2 data-aos="fade-up" className="text-base font-semibold text-center">
         Request Your Appointment
       </h2>
       <div className="flex flex-col gap-4 w-full">
@@ -49,15 +49,15 @@ const Input = ({
   type?: HTMLInputTypeAttribute;
 }) => {
   return (
-    <label className="w-full flex flex-col gap-0.5  ">
-      <p
+    <label  className="w-full flex flex-col gap-0.5  ">
+      <p data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
         }  capitalize text-sm font-medium`}
       >
         {title}
       </p>
-      <input
+      <input data-aos="fade-up"
         required={required}
         type={type}
         name={title}
@@ -84,14 +84,14 @@ const SelectInput = ({
 
   return (
     <label className="w-full flex flex-col gap-0.5 relative z-auto ">
-      <p
+      <p data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
         }  capitalize text-sm font-medium`}
       >
         {title}
       </p>
-      <input
+      <input data-aos="fade-up"
         required={required}
         name={title}
         id=""

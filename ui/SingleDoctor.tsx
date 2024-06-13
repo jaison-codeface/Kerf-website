@@ -6,7 +6,7 @@ const SingleDoctor = ({ item, idx }: { item: any; idx: any }) => {
   return (
     <div
       data-aos="fade-up"
-      data-delay={idx * 50}
+      data-aos-delay={50*idx}
       className="relative z-0 w-full bg-[#e6e6e6] rounded-lg overflow-hidden flex flex-col items-start justify-end text-white  group px-6 pt-10 min-h-[260px]"
     >
       <div className="absolute w-full flex flex-col overflow-hidden left-0 bottom-0 px-4 py-6">

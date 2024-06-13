@@ -90,7 +90,7 @@ const OurCenters = () => {
           <div
             key={idx}
             data-aos="fade-up"
-            data-delay={idx * 50}
+            data-aos-delay={50*idx}
             style={{
               backgroundColor: item.bgColor,
             }}

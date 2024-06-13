@@ -41,7 +41,7 @@ const Partnering = () => {
         {data.map((item, idx) => (
           <Image
             data-aos="fade-up"
-            data-delay={idx * 50}
+            data-aos-delay={50*idx}
             key={idx}
             src={item}
             alt=""

@@ -51,7 +51,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
                   key={idx}
                   href={item.link ? item.link : "javascript:void(0)"}
                   data-aos="fade-up"
-                  data-delay={idx * 50}
+                  data-aos-delay={50*idx}
                   className={` text-base font-medium ${
                     idx === 0 ? "text-blue-600" : "text-[#4b5175]"
                   }`}

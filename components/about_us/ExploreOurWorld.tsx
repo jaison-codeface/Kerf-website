@@ -1,8 +1,9 @@
-import React from "react";
+"use client"
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
 import second from "@/assets/images/about_us/secod session.webp";
+import CountUp from "react-countup";
 
 const ExploreOurWorld = () => {
   return (
@@ -63,7 +64,7 @@ const ExploreOurWorld = () => {
         </svg>
         <div className="bg-[#d7ece3] rounded-[20px] p-4 absolute left-0 bottom-0 w-[28%] aspect-square">
           <div className="border-2 border-white rounded-[16px] h-full w-full justify-center flex flex-col items-center text-center text-[#415061]">
-            <h2 className="font-black text-[183%] ">5k+</h2>
+            <h2 className="font-black text-[133%] "> <CountUp duration={2} enableScrollSpy scrollSpyOnce  className="counter" end={5000} />+</h2>
             <p className="text-[62%] leading-[130%] font-light uppercase ">
               Patient&apos;s <br /> review
             </p>

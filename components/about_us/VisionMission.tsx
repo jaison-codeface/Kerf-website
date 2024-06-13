@@ -32,7 +32,7 @@ const VisionMission = () => {
           <div
             key={idx}
             data-aos="fade-up"
-            data-delay={idx * 50}
+            data-aos-delay={50*idx}
             className={`${
               idx === 0 ? "bg-[#dffeff]" : "bg-[#e9ecf1]"
             } px-8 py-10 w-full h-full rounded-2xl`}
