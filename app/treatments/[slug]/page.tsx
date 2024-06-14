@@ -32,7 +32,7 @@ const page = () => {
       buttons: [
         {
           title: "view profile",
-          link: "",
+          link: "doctors/gdggdgg",
         },
         {
           title: "book an appointment",

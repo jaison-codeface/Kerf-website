@@ -16,7 +16,7 @@ const SingleDoctor = ({ item, idx }: { item: any; idx: any }) => {
           {item.buttons.map((btn: any, btnIdx: any) => (
             <Link
               key={btnIdx}
-              href={btn.link ? `${btn.link}` : "javascript:void(0)"}
+              href={btn.link ? `/${btn.link}` : "javascript:void(0)"}
               className="w-full bg-[#369de0] px-2 py-2 font-normal rounded-full grid place-content-center text-center sm:text-sm text-xs"
             >
               {btn.title}
