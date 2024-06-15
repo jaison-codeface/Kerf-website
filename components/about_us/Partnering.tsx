@@ -31,7 +31,10 @@ const Partnering = () => {
           <span className=" font-light">partnering with le,</span> <br />
           Medical insurance
         </HeadTitle>
-        <span data-aos="fade-up" className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full" />
+        <span
+          data-aos="fade-up"
+          className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full"
+        />
         <p data-aos="fade-up" className="text-xl">
           We work with leading medical insurance country, if you have any
           qoustions call on <b>8008254268</b>.
@@ -41,7 +44,7 @@ const Partnering = () => {
         {data.map((item, idx) => (
           <Image
             data-aos="fade-up"
-            data-aos-delay={50*idx}
+            data-aos-delay={50 * idx}
             key={idx}
             src={item}
             alt=""

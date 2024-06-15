@@ -5,9 +5,8 @@ import "@/styles/globals.css";
 const montserrat = Montserrat({
   weight: ["200", "300", "500", "700", "900", "400"],
   subsets: ["latin"],
-  preload : false,
-  variable : "--font--montserrat"
-  
+  preload: false,
+  variable: "--font--montserrat",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +26,9 @@ export default function RootLayout({
       className="scroll-smooth antialiased"
       suppressHydrationWarning
     >
-      <body className={`${montserrat.className} ${montserrat.variable}`}>{children}</body>
+      <body className={`${montserrat.className} ${montserrat.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

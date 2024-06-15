@@ -158,8 +158,12 @@ const page = ({ params }: { params: any }) => {
               security risk because
             </li>
           </ul>
-          <Link href={"" } className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500">
-          book appointment</Link>
+          <Link
+            href={""}
+            className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500"
+          >
+            book appointment
+          </Link>
         </div>
         {/* textures */}
         <RosePetalTexture className="rotate-180 bottom-0 right-0" />

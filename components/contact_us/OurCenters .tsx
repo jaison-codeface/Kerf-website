@@ -90,13 +90,15 @@ const OurCenters = () => {
           <div
             key={idx}
             data-aos="fade-up"
-            data-aos-delay={50*idx}
+            data-aos-delay={50 * idx}
             style={{
               backgroundColor: item.bgColor,
             }}
             className="px-4 py-8 rounded-xl flex flex-col text-black"
           >
-            <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">{item.title}</h2>
+            <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
+              {item.title}
+            </h2>
             <div className="mt-8 flex flex-col gap-5">
               {item.links.map((link, i) => (
                 <Link

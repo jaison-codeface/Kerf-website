@@ -12,7 +12,6 @@ const Left = () => {
         alt=""
         data-aos="fade-up"
         width={1200}
-        
         height={600}
         className="md:aspect-[16/7] aspect-video rounded-xl overflow-hidden object-cover "
       />
@@ -87,7 +86,6 @@ const Left = () => {
           security risk because it allows arbitrary JavaScript code to be
           executed when the link is clicked.
         </p>
-        
       </div>
     </div>
   );

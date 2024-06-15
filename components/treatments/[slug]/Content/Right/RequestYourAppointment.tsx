@@ -49,15 +49,17 @@ const Input = ({
   type?: HTMLInputTypeAttribute;
 }) => {
   return (
-    <label  className="w-full flex flex-col gap-0.5  ">
-      <p data-aos="fade-up"
+    <label className="w-full flex flex-col gap-0.5  ">
+      <p
+        data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
         }  capitalize text-sm font-medium`}
       >
         {title}
       </p>
-      <input data-aos="fade-up"
+      <input
+        data-aos="fade-up"
         required={required}
         type={type}
         name={title}
@@ -84,14 +86,16 @@ const SelectInput = ({
 
   return (
     <label className="w-full flex flex-col gap-0.5 relative z-auto ">
-      <p data-aos="fade-up"
+      <p
+        data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
         }  capitalize text-sm font-medium`}
       >
         {title}
       </p>
-      <input data-aos="fade-up"
+      <input
+        data-aos="fade-up"
         required={required}
         name={title}
         id=""

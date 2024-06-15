@@ -38,7 +38,12 @@ const Bottom = () => {
       <div className="flex items-center justify-center gap-4">
         {socialMedia.map((item, idx) => (
           <Link key={idx} href={item.link} shallow target="_blank">
-            <Image src={item.icon} alt="" loading="lazy" className="object-contain aspect-square w-auto h-8" />
+            <Image
+              src={item.icon}
+              alt=""
+              loading="lazy"
+              className="object-contain aspect-square w-auto h-8"
+            />
           </Link>
         ))}
       </div>

@@ -64,8 +64,8 @@ const Top = () => {
     <div
       className={`w-full bg-kerf-teal ${main_padding.x} ${main_padding.y} rounded-t-[50px] text-white flex items-start justify-between lg:gap-20 gap-8 max-lg:flex-wrap`}
     >
-      <div  className="flex flex-col gap-4 w-full max-md:items-center max-md:text-center">
-        <Link  data-aos="fade-up" href="/" shallow>
+      <div className="flex flex-col gap-4 w-full max-md:items-center max-md:text-center">
+        <Link data-aos="fade-up" href="/" shallow>
           <Image
             src={logo}
             alt=""
@@ -75,14 +75,14 @@ const Top = () => {
             className="h-[50px] w-auto object-contain"
           />
         </Link>
-        <p  data-aos="fade-up" className="font-normal text-sm md:max-w-[200px]">
+        <p data-aos="fade-up" className="font-normal text-sm md:max-w-[200px]">
           Neuro Spinal Hospital is a pioneer by bringing the best and the latest
           in Medicine, Technology and Education to serve and heal the community.
         </p>
       </div>
       <div className="flex items-start justify-between lg:gap-16 md:gap-12 gap-6 max-md:flex-wrap ">
         {links.map((item, idx) => (
-          <div  data-aos="fade-up" key={idx} className="flex flex-col gap-4">
+          <div data-aos="fade-up" key={idx} className="flex flex-col gap-4">
             <h3 className="font-bold text-base shrink-0 w-max">{item.title}</h3>
             <div className="flex flex-col gap-2 w-full">
               {item.links.map((link) => (

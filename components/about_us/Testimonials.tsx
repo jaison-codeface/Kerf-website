@@ -63,7 +63,6 @@ const Testimonials = () => {
         autoplay={{
           delay: 3500,
         }}
-        
         speed={1200}
         navigation={{
           enabled: true,
