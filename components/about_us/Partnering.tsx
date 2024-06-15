@@ -24,8 +24,7 @@ const data = [
 const Partnering = () => {
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] md:gap-20 gap-10 items-center h-max z-50`}
-    >
+      classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center text-[#4a4a48]">
         <HeadTitle className="uppercase">
           <span className=" font-light">partnering with le,</span> <br />

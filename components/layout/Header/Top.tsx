@@ -6,8 +6,7 @@ const Top = () => {
   return (
     <SectionWrapper
       classTop="bg-kerf-teal-light"
-      classBottom="justify-end py-3 font-medium text-sm text-center"
-    >
+      classBottom="justify-end py-3 font-medium text-sm text-center">
       <Link href="/doctors" shallow className="">
         Our Doctors
       </Link>{" "}

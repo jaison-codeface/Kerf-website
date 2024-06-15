@@ -10,13 +10,11 @@ const HeroSection = () => {
   return (
     <SectionWrapper
       classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"
-      classBottom="h-full justify-center min-h-svh grid md:grid-cols-2 max-md:pt-40 md:gap-0 gap-10 items-center"
-    >
+      classBottom="h-full justify-center min-h-svh grid md:grid-cols-2 max-md:pt-40 md:gap-0 gap-10 items-center">
       <div className="flex flex-col ">
         <h1
           data-aos="fade-up"
-          className="text-kerf-blue-dark md:text-5xl text-4xl font-bold  "
-        >
+          className="text-kerf-blue-dark md:text-5xl text-4xl font-bold  ">
           Pioneers in complex <br />
           ENT procedures
         </h1>

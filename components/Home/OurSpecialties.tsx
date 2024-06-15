@@ -15,8 +15,7 @@ const data = [
 const OurSpecialties = () => {
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} flex-col items-center  bg-kerf-teal-light  rounded-3xl`}
-    >
+      classBottom={`${main_padding.y} flex-col items-center  bg-kerf-teal-light  rounded-3xl`}>
       <div className={`flex flex-col w-full  items-center px-6`}>
         <HeadSubtitle>OUR SPECIALTIES</HeadSubtitle>
         <HeadTitle className="mt-1 text-center">
@@ -28,8 +27,7 @@ const OurSpecialties = () => {
               key={idx}
               data-aos="fade-up"
               data-aos-delay={idx * 50}
-              className="bg-white flex flex-col items-center px-10 py-8 gap-6 rounded-3xl w-full"
-            >
+              className="bg-white flex flex-col items-center px-10 py-8 gap-6 rounded-3xl w-full">
               <Image src={item.icon} alt="" width={130} height={130} />
               <p className="font-bold uppercase text-lg">{item.title}</p>
             </div>

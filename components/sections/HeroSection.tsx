@@ -21,8 +21,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
     <>
       <SectionWrapper
         classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0 overflow-x-clip"
-        classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10 items-center "
-      >
+        classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10 items-center ">
         <div className="flex items-end justify-end w-max h-full relative z-0  ">
           <Image
             src={bgImage}
@@ -41,8 +40,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
           <div className="flex flex-col md:items-start items-center">
             <h1
               data-aos="fade-up"
-              className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium"
-            >
+              className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium">
               {title}
             </h1>
             <span className="flex items-center md:mt-6 mt-2">
@@ -54,8 +52,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
                   data-aos-delay={50 * idx}
                   className={` text-base font-medium ${
                     idx === 0 ? "text-blue-600" : "text-[#4b5175]"
-                  }`}
-                >
+                  }`}>
                   {item.title}{" "}
                   {idx < breadcrumbs.length - 1 && (
                     <span className="text-[#4b5175]">&nbsp; &#62; &nbsp;</span>
@@ -68,8 +65,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
             href=""
             suppressHydrationWarning
             data-aos="fade-up"
-            className="flex items-center max-md:w-full justify-start  gap-4 px-6 py-3 bg-white rounded-xl font-bold text-base"
-          >
+            className="flex items-center max-md:w-full justify-start  gap-4 px-6 py-3 bg-white rounded-xl font-bold text-base">
             <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] flex items-center justify-center rounded-lg">
               <Image
                 src={phoneFill}

@@ -8,8 +8,7 @@ const ResearchFoundation = () => {
   return (
     <SectionWrapper
       classTop={`relative z-0 ${main_padding.y}`}
-      classBottom={` bg-[#dffeff] rounded-3xl md:py-20 py-12 md:px-14 px-8 flex-col gap-8 `}
-    >
+      classBottom={` bg-[#dffeff] rounded-3xl md:py-20 py-12 md:px-14 px-8 flex-col gap-8 `}>
       <HeadTitle className=" md:w-3/4">
         Kerala ENT Research Foundation(KERF) is a SIngle Specialty hospital with
         critical care for Ear Nose and Throat

@@ -53,8 +53,7 @@ const ContactUs = () => {
             {buttons.map((item, idx) => (
               <NormalBtn
                 key={idx}
-                className={`flex items-center justify-between gap-6  ${idx % 2 === 0 ? "bg-gradient-to-r from-[#36d7c6] to-[#2ebbaf]" : "bg-gradient-to-r from-[#539fbd] to-[#3682a0]"}`}
-              >
+                className={`flex items-center justify-between gap-6  ${idx % 2 === 0 ? "bg-gradient-to-r from-[#36d7c6] to-[#2ebbaf]" : "bg-gradient-to-r from-[#539fbd] to-[#3682a0]"}`}>
                 <div className="flex items-center justify-start gap-6">
                   <Image
                     src={item.icon}

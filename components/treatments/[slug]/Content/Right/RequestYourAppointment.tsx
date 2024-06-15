@@ -8,8 +8,7 @@ const RequestYourAppointment = () => {
   return (
     <form
       action=""
-      className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 py-5 rounded-2xl gap-6"
-    >
+      className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 py-5 rounded-2xl gap-6">
       <h2 data-aos="fade-up" className="text-base font-semibold text-center">
         Request Your Appointment
       </h2>
@@ -54,8 +53,7 @@ const Input = ({
         data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
-        }  capitalize text-sm font-medium`}
-      >
+        }  capitalize text-sm font-medium`}>
         {title}
       </p>
       <input
@@ -90,8 +88,7 @@ const SelectInput = ({
         data-aos="fade-up"
         className={`${
           required && "after:content-['*'] after:text-red-500"
-        }  capitalize text-sm font-medium`}
-      >
+        }  capitalize text-sm font-medium`}>
         {title}
       </p>
       <input
@@ -113,8 +110,7 @@ const SelectInput = ({
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
-        viewBox="0 0 10 6"
-      >
+        viewBox="0 0 10 6">
         <path
           stroke="currentColor"
           strokeLinecap="round"
@@ -128,8 +124,7 @@ const SelectInput = ({
           toggle
             ? "max-h-[200px] overflow-y-scroll py-2 border "
             : "max-h-0 overflow-hidden"
-        }`}
-      >
+        }`}>
         {options.map((item, idx) => (
           <p
             key={idx}
@@ -144,8 +139,7 @@ const SelectInput = ({
             }}
             className={`text-sm font-medium capitalize hover:bg-gray-200 cursor-pointer duration-300 px-4 py-2 ${
               value === item && "bg-gray-200"
-            }`}
-          >
+            }`}>
             {item}
           </p>
         ))}
@@ -166,8 +160,7 @@ const PhoneNumberInput = ({
       <p
         className={`${
           required && "after:content-['*'] after:text-red-500"
-        }  capitalize text-base font-medium`}
-      >
+        }  capitalize text-base font-medium`}>
         {title}
       </p>
       <PhoneInput

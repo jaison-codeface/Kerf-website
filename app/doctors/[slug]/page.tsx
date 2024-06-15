@@ -99,8 +99,7 @@ const page = ({ params }: { params: any }) => {
       />
       <SectionWrapper
         classTop="relative z-0"
-        classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-center`}
-      >
+        classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-center`}>
         <Image
           src={doctorDetail?.image!}
           alt=""
@@ -137,8 +136,7 @@ const page = ({ params }: { params: any }) => {
                 width="20"
                 height="20"
                 color="#21d34b"
-                fill="none"
-              >
+                fill="none">
                 <path
                   d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517"
                   stroke="currentColor"
@@ -160,8 +158,7 @@ const page = ({ params }: { params: any }) => {
           </ul>
           <Link
             href={""}
-            className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500"
-          >
+            className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500">
             book appointment
           </Link>
         </div>

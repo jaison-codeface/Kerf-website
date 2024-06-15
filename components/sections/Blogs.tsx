@@ -21,8 +21,7 @@ const Blogs = ({ blogs }: { blogs: any }) => {
   return (
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
-      classBottom={`${main_padding.t} flex-col overflow-visible`}
-    >
+      classBottom={`${main_padding.t} flex-col overflow-visible`}>
       <HeadTitle className="mt-1">Blogs</HeadTitle>
       <div data-aos="fade-up" className="flex mt-8">
         <Swiper
@@ -51,13 +50,11 @@ const Blogs = ({ blogs }: { blogs: any }) => {
           }}
           speed={1200}
           modules={[Autoplay]}
-          className="mySwiper !ml-0"
-        >
+          className="mySwiper !ml-0">
           {blogs.map((item: any, idx: any) => (
             <SwiperSlide
               key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black"
-            >
+              className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black">
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}
               </h3>

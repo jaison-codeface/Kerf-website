@@ -8,8 +8,7 @@ import CountUp from "react-countup";
 const ExploreOurWorld = () => {
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}
-    >
+      classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
         <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
         <HeadTitle className="mt-1">Explore Our World</HeadTitle>
@@ -27,15 +26,13 @@ const ExploreOurWorld = () => {
       </div>
       <div
         data-aos="fade-up"
-        className="flex items-end justify-center h-full w-full relative z-0"
-      >
+        className="flex items-end justify-center h-full w-full relative z-0">
         <svg
           className="flex w-ful"
           viewBox="0 0 895 791"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-        >
+          xmlnsXlink="http://www.w3.org/1999/xlink">
           <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -47,8 +44,7 @@ const ExploreOurWorld = () => {
               id="pattern0_42_15"
               patternContentUnits="objectBoundingBox"
               width="1"
-              height="1"
-            >
+              height="1">
               <use
                 xlinkHref="#image0_42_15"
                 transform="matrix(0.00390625 0 0 0.00441984 0 -0.0657396)"

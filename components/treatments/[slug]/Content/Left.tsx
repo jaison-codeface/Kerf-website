@@ -48,8 +48,7 @@ const Left = () => {
               width="20"
               height="20"
               color="#21d34b"
-              fill="none"
-            >
+              fill="none">
               <path
                 d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517"
                 stroke="currentColor"

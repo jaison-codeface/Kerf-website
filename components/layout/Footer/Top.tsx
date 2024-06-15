@@ -62,8 +62,7 @@ const links = [
 const Top = () => {
   return (
     <div
-      className={`w-full bg-kerf-teal ${main_padding.x} ${main_padding.y} rounded-t-[50px] text-white flex items-start justify-between lg:gap-20 gap-8 max-lg:flex-wrap`}
-    >
+      className={`w-full bg-kerf-teal ${main_padding.x} ${main_padding.y} rounded-t-[50px] text-white flex items-start justify-between lg:gap-20 gap-8 max-lg:flex-wrap`}>
       <div className="flex flex-col gap-4 w-full max-md:items-center max-md:text-center">
         <Link data-aos="fade-up" href="/" shallow>
           <Image
@@ -90,8 +89,7 @@ const Top = () => {
                   href={link.link}
                   shallow
                   key={idx + link.title}
-                  className="text-sm font-normal w-full min-w-[140px]"
-                >
+                  className="text-sm font-normal w-full min-w-[140px]">
                   {link.title}
                 </Link>
               ))}

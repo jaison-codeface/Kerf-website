@@ -88,8 +88,7 @@ const page = () => {
       <HeroSection breadcrumbs={breadcrumbs} bgImage={dummi} title="Doctors" />
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col`}
-        classTop="relative z-0"
-      >
+        classTop="relative z-0">
         <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
         <HeadTitle className="mt-1">We will treat you well</HeadTitle>
         <div className="md:mt-16 mt-6 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-10 sm:gap-6 gap-4">

@@ -20,8 +20,7 @@ const Doctor = ({ doctors }: { doctors: any }) => {
   return (
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
-      classBottom={`${main_padding.t} flex-col overflow-visible`}
-    >
+      classBottom={`${main_padding.t} flex-col overflow-visible`}>
       <HeadTitle className="mt-1">Docoters</HeadTitle>
       <div data-aos="fade-up" className="flex mt-8">
         <Swiper
@@ -50,13 +49,11 @@ const Doctor = ({ doctors }: { doctors: any }) => {
           }}
           speed={1200}
           modules={[Autoplay]}
-          className="mySwiper !ml-0"
-        >
+          className="mySwiper !ml-0">
           {doctors.map((item: any, idx: any) => (
             <SwiperSlide
               key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end overflow-hidden"
-            >
+              className="relative z-0 !flex flex-col items-start justify-end overflow-hidden">
               <SingleDoctor key={idx} idx={idx} item={item} />
             </SwiperSlide>
           ))}

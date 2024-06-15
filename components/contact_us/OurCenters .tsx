@@ -94,8 +94,7 @@ const OurCenters = () => {
             style={{
               backgroundColor: item.bgColor,
             }}
-            className="px-4 py-8 rounded-xl flex flex-col text-black"
-          >
+            className="px-4 py-8 rounded-xl flex flex-col text-black">
             <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
               {item.title}
             </h2>
@@ -105,8 +104,7 @@ const OurCenters = () => {
                   key={i}
                   suppressHydrationWarning
                   href={link.link ? link.link : "javascript:void(0)"}
-                  className="flex  items-start text-sm gap-2"
-                >
+                  className="flex  items-start text-sm gap-2">
                   <Image
                     src={link.icon ? link.icon : dummiIcon}
                     alt=""

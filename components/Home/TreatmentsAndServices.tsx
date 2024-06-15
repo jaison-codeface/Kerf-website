@@ -25,8 +25,7 @@ const TreatmentsAndServices = () => {
   return (
     <SectionWrapper
       classTop="relative z-0"
-      classBottom={`${main_padding.y} flex-col md:items-center `}
-    >
+      classBottom={`${main_padding.y} flex-col md:items-center `}>
       <HeadSubtitle>TREATMENTS & SERVICES</HeadSubtitle>
       <HeadTitle className="mt-1">Centers of Excellence</HeadTitle>
       <div className="grid md:grid-cols-3 md:gap-10 gap-8 w-full max-w-[900px] mt-8">
@@ -35,8 +34,7 @@ const TreatmentsAndServices = () => {
             key={idx}
             data-aos="fade-up"
             data-aos-delay={idx * 50}
-            className="flex flex-col  justify-between items-center bg-kerf-teal-light md:rounded-3xl rounded-2xl overflow-hidden"
-          >
+            className="flex flex-col  justify-between items-center bg-kerf-teal-light md:rounded-3xl rounded-2xl overflow-hidden">
             <div />
             <Image
               src={item.icon}

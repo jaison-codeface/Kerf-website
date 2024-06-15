@@ -11,12 +11,10 @@ const GetDirection = () => {
   return (
     <SectionWrapper
       classTop="relative z-0"
-      classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-center`}
-    >
+      classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-center`}>
       <div
         data-aos="fade-up"
-        className="bg-[#e8edf1] rounded-xl md:aspect-[16/14] max-md:min-h-[300px]  flex items-center flex-col overflow-hidden"
-      >
+        className="bg-[#e8edf1] rounded-xl md:aspect-[16/14] max-md:min-h-[300px]  flex items-center flex-col overflow-hidden">
         <span className="flex items-center justify-between gap-10 w-full md:py-8 md:px-8 py-4 px-4">
           <h2 className="font-bold md:text-xl text-lg">Get Directions</h2>
           <Image

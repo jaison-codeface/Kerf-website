@@ -13,8 +13,7 @@ const HeadTitle = ({
     className={twMerge(
       "md:text-4xl text-3xl md:leading-[140%] leading-[130%]",
       className
-    )}
-  >
+    )}>
     {" "}
     {children}
   </h1>
@@ -40,8 +39,7 @@ const SectionDescription = ({
 }) => (
   <p
     data-aos="fade-up"
-    className={twMerge("md:text-xl text-base leading-[180%]", className)}
-  >
+    className={twMerge("md:text-xl text-base leading-[180%]", className)}>
     {" "}
     {children}
   </p>

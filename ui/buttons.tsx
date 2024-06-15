@@ -32,8 +32,7 @@ const NormalBtn = ({
             : "bg-white text-black hover:bg-secondary hover:border-secondary hover:text-white duration-300"
         }`,
         className
-      )}
-    >
+      )}>
       {children}
     </Link>
   );
@@ -44,8 +43,7 @@ const BookAppointmentBtn = () => {
     <Link
       data-aos="fade-up"
       href={""}
-      className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500"
-    >
+      className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500">
       book appointment
     </Link>
   );

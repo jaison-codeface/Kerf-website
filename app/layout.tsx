@@ -24,8 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       className="scroll-smooth antialiased"
-      suppressHydrationWarning
-    >
+      suppressHydrationWarning>
       <body className={`${montserrat.className} ${montserrat.variable}`}>
         {children}
       </body>

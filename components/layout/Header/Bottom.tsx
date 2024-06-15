@@ -58,24 +58,21 @@ const Bottom = ({
         {links.map((item, idx) => (
           <div
             key={idx}
-            className="relative z-0 flex items-center justify-center group"
-          >
+            className="relative z-0 flex items-center justify-center group">
             <Link
               onClick={() => setIndex(idx)}
               href={item.link}
               shallow
               className={`text-sm px-4 py-2  rounded-md duration-300 hover:bg-kerf-blue-light inline-flex items-center justify-center gap-2 ${
                 index === idx ? "bg-kerf-blue-light" : ""
-              }`}
-            >
+              }`}>
               {item.title}{" "}
               {item.dropDown && (
                 <svg
                   className={`h-[10px] w-auto group-hover:rotate-90`}
                   viewBox="0 0 8 14"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                  xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M7.02001 5.4919L5.05001 3.52188L1.84001 0.31188C1.16 -0.35812 0 0.12188 0 1.08188V7.3119V12.9219C0 13.8819 1.16 14.3619 1.84001 13.6819L7.02001 8.5019C7.85001 7.6819 7.85001 6.3219 7.02001 5.4919Z"
                     fill="#292D32"
@@ -95,8 +92,7 @@ const Bottom = ({
                           dropDownIndex === dropIdx
                             ? "bg-kerf-blue-light/50"
                             : ""
-                        }`}
-                      >
+                        }`}>
                         {drop.title}
                       </button>
                     ))}
@@ -107,8 +103,7 @@ const Bottom = ({
                       <Link
                         key={dropIdx}
                         href={drop.link}
-                        className="text-sm font-medium"
-                      >
+                        className="text-sm font-medium">
                         {drop.title}
                       </Link>
                     ))}

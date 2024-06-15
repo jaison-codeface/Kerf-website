@@ -22,8 +22,7 @@ const VisionMission = () => {
   ];
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} grid md:grid-cols-2 md:gap-20 gap-10 items-center  z-50`}
-    >
+      classBottom={`${main_padding.y} grid md:grid-cols-2 md:gap-20 gap-10 items-center  z-50`}>
       <div data-aos="fade-up" className=" grid max-h-[620px]">
         <ImageInBorder mainImage={mainImage} className="overflow-hidden" />
       </div>
@@ -35,8 +34,7 @@ const VisionMission = () => {
             data-aos-delay={50 * idx}
             className={`${
               idx === 0 ? "bg-[#dffeff]" : "bg-[#e9ecf1]"
-            } px-8 py-10 w-full h-full rounded-2xl`}
-          >
+            } px-8 py-10 w-full h-full rounded-2xl`}>
             <p className="text-xs uppercase"> {item.subtitle}</p>
             <h3 className="text-xl capitalize mt-1 font-medium">
               {item.title}

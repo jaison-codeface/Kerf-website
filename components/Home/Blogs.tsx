@@ -52,8 +52,7 @@ const Blogs = () => {
   return (
     <SectionWrapper
       classTop="overflow-hidden"
-      classBottom={`${main_padding.y} flex-col overflow-visible`}
-    >
+      classBottom={`${main_padding.y} flex-col overflow-visible`}>
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
       <HeadTitle className="mt-1">Blogs</HeadTitle>
       <div data-aos="fade-up" className="flex w-screen md:mt-16 mt-8">
@@ -84,13 +83,11 @@ const Blogs = () => {
           }}
           speed={1200}
           modules={[Autoplay]}
-          className="mySwiper"
-        >
+          className="mySwiper">
           {data.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg"
-            >
+              className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg">
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}
               </h3>

@@ -17,8 +17,7 @@ const RelatedTreatments = () => {
               data-aos-delay={50 * idx}
               key={idx}
               suppressHydrationWarning
-              className="border border-white rounded-full px-6 py-2 flex items-center justify-between gap-10 uppercase font-medium text-sm hover:bg-white duration-300"
-            >
+              className="border border-white rounded-full px-6 py-2 flex items-center justify-between gap-10 uppercase font-medium text-sm hover:bg-white duration-300">
               {item}
               <span className="text-[#e47c63]">&#10140;</span>
             </Link>

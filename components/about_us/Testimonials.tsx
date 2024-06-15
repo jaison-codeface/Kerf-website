@@ -50,8 +50,7 @@ const Testimonials = () => {
   const swiperRef = useRef<any>();
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} flex-col items-start  z-50`}
-    >
+      classBottom={`${main_padding.y} flex-col items-start  z-50`}>
       <HeadSubtitle className="uppercase">Testimonials</HeadSubtitle>
       <HeadTitle className="mt-1">Explore Our World</HeadTitle>
       <Swiper
@@ -82,15 +81,13 @@ const Testimonials = () => {
           swiperRef.current = swiper;
         }}
         modules={[Autoplay, Navigation]}
-        className="mySwiper rounded-2xl mt-16 w-full"
-      >
+        className="mySwiper rounded-2xl mt-16 w-full">
         {data.map((item, idx) => (
           <SwiperSlide
             key={idx}
             className={`${
               index === idx ? "bg-[#ebe8f9]" : "bg-[#e9ecf1]"
-            } md:!w-[70%] !w-[90%] duration-500 flex flex-col md:px-10 px-6 md:py-10 py-8 rounded-2xl items-start text-[#081332]`}
-          >
+            } md:!w-[70%] !w-[90%] duration-500 flex flex-col md:px-10 px-6 md:py-10 py-8 rounded-2xl items-start text-[#081332]`}>
             <Image
               src={quote}
               alt=""
@@ -129,8 +126,7 @@ const Testimonials = () => {
                     }
                     className={`${
                       item === "left" ? "rotate-180" : ""
-                    } p-3 rounded-full border-white border flex items-center justify-center aspect-square`}
-                  >
+                    } p-3 rounded-full border-white border flex items-center justify-center aspect-square`}>
                     <Image src={arrow} alt="" />
                   </button>
                 ))}

@@ -15,8 +15,7 @@ const ImageInBorder = ({
       className={twMerge(
         "flex items-center justify-center h-full w-full py-5 px-4 border rounded-[16px] border-[#919191]",
         className
-      )}
-    >
+      )}>
       <Image
         src={mainImage}
         alt=""
