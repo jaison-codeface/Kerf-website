@@ -21,8 +21,6 @@ export default function Home() {
 
   // if (!isLoading) return <Loading />;
 
-  
-
   return (
     <Layout>
       <HeroSection />
