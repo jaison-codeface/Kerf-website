@@ -31,4 +31,6 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
   };
   const data = await fecthAPi(query[id]);
   return data;
+  
+  
 }
