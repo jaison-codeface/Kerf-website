@@ -21,7 +21,7 @@ const data = [
   },
 ];
 
-const TreatmentsAndServices = () => {
+const TreatmentsAndServices = ({ data }: { data: homePageType }) => {
   return (
     <SectionWrapper
       classTop="relative z-0"
@@ -29,7 +29,7 @@ const TreatmentsAndServices = () => {
       <HeadSubtitle>TREATMENTS & SERVICES</HeadSubtitle>
       <HeadTitle className="mt-1">Centers of Excellence</HeadTitle>
       <div className="grid md:grid-cols-3 md:gap-10 gap-8 w-full max-w-[900px] mt-8">
-        {data.map((item, idx) => (
+        {/* {data.map((item, idx) => (
           <div
             key={idx}
             data-aos="fade-up"
@@ -47,7 +47,7 @@ const TreatmentsAndServices = () => {
               {item.title}
             </p>
           </div>
-        ))}
+        ))} */}
       </div>
       <RosePetalTexture className="-bottom-32 right-0 rotate-180 z-10" />
     </SectionWrapper>

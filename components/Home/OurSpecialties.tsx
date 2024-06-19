@@ -12,7 +12,7 @@ const data = [
   { title: "RHINOLOGY", icon: dummi },
 ];
 
-const OurSpecialties = () => {
+const OurSpecialties = ({ data }: { data: homePageType }) => {
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-center  bg-kerf-teal-light  rounded-3xl`}>
@@ -22,7 +22,7 @@ const OurSpecialties = () => {
           We will treat you well
         </HeadTitle>
         <div className="grid md:grid-cols-3 md:w-max w-full gap-10 md:mt-16 mt-8">
-          {data.map((item, idx) => (
+          {/* {data.map((item, idx) => (
             <div
               key={idx}
               data-aos="fade-up"
@@ -31,7 +31,7 @@ const OurSpecialties = () => {
               <Image src={item.icon} alt="" width={130} height={130} />
               <p className="font-bold uppercase text-lg">{item.title}</p>
             </div>
-          ))}
+          ))} */}
         </div>
         <NormalBtn className="md:mt-16 mt-6">BOOK APPOINTMENT</NormalBtn>
       </div>

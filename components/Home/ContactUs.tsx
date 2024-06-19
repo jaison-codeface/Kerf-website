@@ -23,7 +23,7 @@ const buttons = [
   },
 ];
 
-const ContactUs = () => {
+const ContactUs = ({ data }: { data: homePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
       <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
