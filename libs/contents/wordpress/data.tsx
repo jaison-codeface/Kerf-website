@@ -6,6 +6,7 @@ import {
   departmentsQuery,
   doctorQuery,
   homeQuery,
+  treatmentQuery,
 } from "./queries";
 
 async function fetchAPI(query = "") {
@@ -40,7 +41,9 @@ type Ids =
   | "blogs"
   | "doctor"
   | "doctors"
-  | "doctor-page";
+  | "doctor-page"
+  | "treatment"
+  | "treatments-related";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
@@ -51,6 +54,8 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     doctor: doctorQuery("single", slug),
     doctors: doctorQuery("all"),
     "doctor-page": doctorQuery("page"),
+    treatment: treatmentQuery("single", slug),
+    "treatments-related": treatmentQuery("related", slug),
   };
   const data = await fetchAPI(query[id]);
   return data;

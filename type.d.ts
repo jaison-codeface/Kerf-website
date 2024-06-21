@@ -236,3 +236,51 @@ interface DepartmentsTaxonomiesType {
     }>;
   };
 }
+
+interface TreatmentCategoriesType {
+  treatmentCategorys: {
+    nodes: Array<{
+      id: string;
+      name: string;
+      slug: string;
+      treatments: {
+        nodes: Array<{
+          title: string;
+          slug: string;
+        }>;
+      };
+    }>;
+  };
+}
+interface TreatmentType {
+  treatments: {
+    nodes: Array<{
+      title: string;
+      treatmentCategorys: {
+        nodes: Array<{
+          name: string;
+          id: string;
+          slug: string;
+        }>;
+      };
+      acf: {
+        bannerImage: ImageType;
+        sectionImage: ImageType;
+        content: string;
+      };
+    }>;
+  };
+}
+interface TreatmentsRelatedType {
+  treatmentCategory: {
+    id: string;
+    name: string;
+    slug: string;
+    treatments: {
+      nodes: Array<{
+        title: string;
+        slug: string;
+      }>;
+    };
+  };
+}

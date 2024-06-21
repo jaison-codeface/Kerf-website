@@ -1,11 +1,14 @@
 import RelatedTreatments from "./RelatedTreatments";
 import RequestYourAppointment from "./RequestYourAppointment";
 
-const Right = () => {
+type Props = {
+  relatedTreatmentsData: any[];
+};
+const Right = ({ relatedTreatmentsData }: Props) => {
   return (
     <div className=" w-full flex flex-col sticky top-[20px] z-50 gap-10">
       <RequestYourAppointment />
-      <RelatedTreatments />
+      <RelatedTreatments relatedTreatmentsData={relatedTreatmentsData} />
     </div>
   );
 };

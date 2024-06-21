@@ -7,8 +7,31 @@ import main_padding from "@/styles/padding";
 import Doctor from "@/components/sections/Doctor";
 import Blogs from "@/components/sections/Blogs";
 import Content from "@/components/treatments/[slug]/Content";
+import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
-const page = () => {
+const page = async ({ params }: { params: { slug: string } }) => {
+  const [data, blogs]: [TreatmentType, BlogsType] = await Promise.all([
+    getContentFromWordPress("treatment", params.slug),
+    getContentFromWordPress("blogs"),
+  ]);
+  const isData = data.treatments.nodes[0];
+
+  const relatedTreatmentsData = () => {
+    // @ts-ignore
+    const d = [];
+    if (isData.treatmentCategorys.nodes.length > 0) {
+      isData.treatmentCategorys.nodes.map(async (item) => {
+        const t: TreatmentsRelatedType = await getContentFromWordPress(
+          "treatments-related",
+          item.id
+        );
+
+        d.push(...t.treatmentCategory.treatments.nodes);
+      });
+    }
+    // @ts-ignore
+    return [...d];
+  };
   const breadcrumbs = [
     {
       title: "Home",
@@ -19,7 +42,7 @@ const page = () => {
       link: "",
     },
     {
-      title: "Otology",
+      title: isData.title,
       link: "",
     },
   ];
@@ -86,44 +109,20 @@ const page = () => {
       ],
     },
   ];
-  const blogs = [
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-  ];
+
   return (
     <Layout>
-      <HeroSection breadcrumbs={breadcrumbs} bgImage={dummi} title="Otology" />
-      <Content />
+      <HeroSection
+        breadcrumbs={breadcrumbs}
+        bgImage={isData.acf.bannerImage.sourceUrl}
+        title={isData.title}
+      />
+      <Content
+        leftData={isData}
+        relatedTreatmentsData={relatedTreatmentsData()}
+      />
       {/* <Doctor doctors={doctors} /> */}
-      {/* <Blogs blogs={blogs} /> */}
+      <Blogs blogs={blogs} />
     </Layout>
   );
 };
