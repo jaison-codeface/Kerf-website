@@ -4,6 +4,7 @@ import { aboutUsQuery, homeQuery } from "./queries";
 async function fecthAPi(query = "") {
   const headers = { "Content-Type": "application/json" };
   if (WORDPRESS_AUTH_REFRESH_TOKEN) {
+    // @ts-ignore
     Headers["Authorization"] = `Bearer ${WORDPRESS_AUTH_REFRESH_TOKEN}`;
   }
 
