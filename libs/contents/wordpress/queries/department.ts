@@ -14,17 +14,15 @@ const data = (type: "all" | "single", id?: string) =>
         }
       }`
     : `{
-        departmentsTaxonomies(where: {name: "${id}"}) {
+        departmentsTaxonomies(where: {slug: "${id}"}) {
           edges {
             node {
               id
               name
               doctors {
-                edges {
-                  node {
+                  nodes {
                    ${doctorQuery}
                   }
-                }
               }
               departments {
                 nodes {

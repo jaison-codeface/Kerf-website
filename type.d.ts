@@ -189,6 +189,7 @@ interface DoctorType {
       title: string;
       slug: string;
       acf: {
+        designation: string;
         bannerImage: ImageType;
         image: ImageType;
         content: string;
@@ -221,6 +222,7 @@ interface DepartmentsTaxonomiesType {
             title: string;
             slug: string;
             acf: {
+              designation: string;
               bannerImage: ImageType;
               image: ImageType;
               content: string;

@@ -32,9 +32,10 @@ const departmentQuery = ` id
           }
           content
         }`;
-const doctorQuery = ` title
+const doctorQuery = `title
                     slug
                     acf: acfDoctor {
+                    designation
                       bannerImage {
                       ${imageQuery}
                       }

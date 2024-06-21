@@ -30,68 +30,6 @@ const page = async () => {
     },
   ];
 
-  const doctors = [
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/gdggdgg",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/iufcvt",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/wwdfcgg",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-  ];
   return (
     <Layout>
       <HeroSection

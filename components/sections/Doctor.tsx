@@ -50,13 +50,15 @@ const Doctor = ({ doctors }: { doctors: any }) => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper !ml-0">
-          {doctors.map((item: any, idx: any) => (
-            <SwiperSlide
-              key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end overflow-hidden">
-              <SingleDoctor key={idx} idx={idx} item={item} />
-            </SwiperSlide>
-          ))}
+          {[...doctors, ...doctors, ...doctors, ...doctors, ...doctors].map(
+            (item: any, idx: any) => (
+              <SwiperSlide
+                key={idx}
+                className="relative z-0 !flex flex-col items-start justify-end overflow-hidden">
+                <SingleDoctor key={idx} idx={idx} item={item} />
+              </SwiperSlide>
+            )
+          )}
         </Swiper>
       </div>
       {/* textures */}
