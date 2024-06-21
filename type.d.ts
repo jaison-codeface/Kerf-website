@@ -155,21 +155,16 @@ interface ContactUsType {
 }
 
 interface DepartmentsType {
-  departments: {
-    edges: Array<{
-      node: {
-        id: string;
-        title: string;
-        slug: string;
-        acf: {
-          bannerImage: ImageType;
-          sectionImage: ImageType;
-          content: string;
-        };
-      };
-    }>;
+  id: string;
+  title: string;
+  slug: string;
+  acf: {
+    bannerImage: ImageType;
+    sectionImage: ImageType;
+    content: string;
   };
 }
+
 interface BlogsType {
   blogs: {
     nodes: Array<{
@@ -212,5 +207,30 @@ interface DoctorPageType {
         subtitle: string;
       };
     };
+  };
+}
+
+interface DepartmentsTaxonomiesType {
+  departmentsTaxonomies: {
+    edges: Array<{
+      node: {
+        id: string;
+        name: string;
+        doctors: {
+          nodes: Array<{
+            title: string;
+            slug: string;
+            acf: {
+              bannerImage: ImageType;
+              image: ImageType;
+              content: string;
+            };
+          }>;
+        };
+        departments: {
+          nodes: DepartmentsType[];
+        };
+      };
+    }>;
   };
 }

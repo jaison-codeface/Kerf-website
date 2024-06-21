@@ -20,5 +20,28 @@ const blogsQuery = `
         content
       }
 `;
+const departmentQuery = ` id
+        title
+        slug
+        acf : acfDepartments {
+          bannerImage {
+            ${imageQuery}
+          }
+          sectionImage {
+             ${imageQuery}
+          }
+          content
+        }`;
+const doctorQuery = ` title
+                    slug
+                    acf: acfDoctor {
+                      bannerImage {
+                      ${imageQuery}
+                      }
+                      image {
+                      ${imageQuery}
+                      }
+                      content
+                    }`;
 
-export { imageQuery, blogsQuery };
+export { imageQuery, blogsQuery, departmentQuery, doctorQuery };

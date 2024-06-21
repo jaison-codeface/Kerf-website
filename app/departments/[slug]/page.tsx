@@ -8,11 +8,12 @@ import Blogs from "@/components/sections/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [data, blogs]: [DepartmentsType, BlogsType] = await Promise.all([
-    getContentFromWordPress("department", params.slug),
-    getContentFromWordPress("blogs"),
-  ]);
-  const isData = data.departments.edges[0].node;
+  const [data, blogs]: [DepartmentsTaxonomiesType, BlogsType] =
+    await Promise.all([
+      getContentFromWordPress("department", params.slug),
+      getContentFromWordPress("blogs"),
+    ]);
+  const isData = data.departmentsTaxonomies.edges[0].node;
   const breadcrumbs = [
     {
       title: "Home",
@@ -23,7 +24,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       link: "javascript:void(0)",
     },
     {
-      title: isData.title,
+      title: isData.name,
       link: "javascript:void(0)",
     },
   ];
@@ -91,16 +92,15 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
-
   return (
     <Layout>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={isData.acf.bannerImage.sourceUrl}
-        title={isData.title}
+        bgImage={isData.departments.nodes[0].acf.bannerImage.sourceUrl}
+        title={isData.name}
       />
-      <Content data={data} />
-      {/* <Doctor doctors={doctors} /> */}
+      <Content data={isData.departments.nodes[0]} />
+      <Doctor doctors={isData.doctors.nodes} />
       <Blogs blogs={blogs} />
     </Layout>
   );

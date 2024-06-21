@@ -1,4 +1,4 @@
-import { imageQuery } from "./modules";
+import { doctorQuery, imageQuery } from "./modules";
 
 const data = (type: "all" | "single" | "page", id?: string) => {
   switch (type) {
@@ -6,12 +6,7 @@ const data = (type: "all" | "single" | "page", id?: string) => {
       return `{
                 doctors {
                   nodes {
-                    title
-                    slug
-                    acf: acfDoctor {
-                      image {
-                        ${imageQuery}
-                      }
+                    ${doctorQuery}
                     }
                   }
                 }
@@ -20,17 +15,7 @@ const data = (type: "all" | "single" | "page", id?: string) => {
       return `{
                 doctors (where: {name: "${id}"}) {
                   nodes {
-                    title
-                    slug
-                    acf: acfDoctor {
-                      bannerImage {
-                      ${imageQuery}
-                      }
-                      image {
-                      ${imageQuery}
-                      }
-                      content
-                    }
+                     ${doctorQuery}
                   }
                 }
               }`;
