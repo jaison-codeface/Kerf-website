@@ -100,7 +100,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         title={isData.title}
       />
       <Content data={data} />
-      <Doctor doctors={doctors} />
+      {/* <Doctor doctors={doctors} /> */}
       <Blogs blogs={blogs} />
     </Layout>
   );

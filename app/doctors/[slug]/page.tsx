@@ -38,13 +38,13 @@ const page = async ({ params }: { params: { slug: string } }) => {
       />
       <SectionWrapper
         classTop="relative z-0"
-        classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-center`}>
+        classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] grid-cols-1 lg:gap-20 gap-10 items-start`}>
         <Image
           src={isData.acf.image.sourceUrl}
           alt={isData.acf.image.altText}
           width={500}
           height={500}
-          className="-z-10 object-contain  object-bottom h-full w-full  rounded-xl overflow-hidden pt-10"
+          className="-z-10 object-contain w-full  rounded-xl overflow-hidden h-max"
         />
         <div className="w-full flex flex-col ">
           <h2 className="text-2xl font-medium">{isData?.title}</h2>
