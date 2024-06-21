@@ -87,7 +87,7 @@ const Blogs = ({ data }: { data: HomePageType }) => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper">
-          {isBlogs.map((item, idx) => (
+          {[...isBlogs, ...isBlogs, ...isBlogs, ...isBlogs,...isBlogs].map((item, idx) => (
             <SwiperSlide
               key={idx}
               className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
