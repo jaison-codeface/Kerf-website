@@ -4,15 +4,17 @@ import React from "react";
 import dummi from "@/assets/images/home/hero session e.png";
 import OurCenters from "@/components/contact_us/OurCenters ";
 import GetDirection from "@/components/contact_us/GetDirection";
+import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
-const page = () => {
+const page = async () => {
+  const data: ContactUsType = await getContentFromWordPress("contact-us");
   const breadcrumbs = [
     {
       title: "Home",
       link: "/",
     },
     {
-      title: "Contact Us",
+      title: data.page.title,
       link: "javascript:void(0)",
     },
   ];
@@ -20,11 +22,11 @@ const page = () => {
     <Layout>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={dummi}
-        title="Contact Us"
+        bgImage={data.page.acf.bannerImage.sourceUrl}
+        title={data.page.title}
       />
-      <OurCenters />
-      <GetDirection />
+      <OurCenters data={data} />
+      <GetDirection  data={data} />
     </Layout>
   );
 };

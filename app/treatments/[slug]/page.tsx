@@ -123,7 +123,7 @@ const page = () => {
       <HeroSection breadcrumbs={breadcrumbs} bgImage={dummi} title="Otology" />
       <Content />
       <Doctor doctors={doctors} />
-      <Blogs blogs={blogs} />
+      {/* <Blogs blogs={blogs} /> */}
     </Layout>
   );
 };

@@ -5,6 +5,7 @@ import main_padding from "@/styles/padding";
 import { HeadTitle } from "@/ui/Typography";
 import SingleDoctor from "@/ui/SingleDoctor";
 import RosePetalTexture from "@/ui/rosePetalTexture";
+import dummi from "@/assets/images/home/hero session e.png";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,7 +18,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-const Blogs = ({ blogs }: { blogs: any }) => {
+const Blogs = ({ blogs }: { blogs: BlogsType }) => {
   return (
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
@@ -51,20 +52,27 @@ const Blogs = ({ blogs }: { blogs: any }) => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper !ml-0">
-          {blogs.map((item: any, idx: any) => (
+          {[
+            ...blogs.blogs.nodes,
+            ...blogs.blogs.nodes,
+            ...blogs.blogs.nodes,
+            ...blogs.blogs.nodes,
+          ].map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black">
+              className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}
               </h3>
               <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
                 Written by :{" "}
-                <span className="font-bold capitalize ">{item.written}</span>
+                <span className="font-bold capitalize ">
+                  {item.author.node.name}
+                </span>
               </p>
               <Image
-                src={item.image}
-                alt=""
+                src={item.acf.featuredImage.sourceUrl}
+                alt={item.acf.featuredImage.altText}
                 fill
                 loading="lazy"
                 className="-z-10 object-cover opacity-70"

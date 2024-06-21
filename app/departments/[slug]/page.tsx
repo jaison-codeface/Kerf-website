@@ -5,19 +5,25 @@ import dummi from "@/assets/images/home/hero session e.png";
 import Content from "@/components/departments/[slug]/Content";
 import Doctor from "@/components/sections/Doctor";
 import Blogs from "@/components/sections/Blogs";
+import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
-const page = () => {
+const page = async ({ params }: { params: { slug: string } }) => {
+  const [data, blogs]: [DepartmentsType, BlogsType] = await Promise.all([
+    getContentFromWordPress("department", params.slug),
+    getContentFromWordPress("blogs"),
+  ]);
+  const isData = data.departments.edges[0].node;
   const breadcrumbs = [
     {
       title: "Home",
       link: "/",
     },
     {
-      title: "Treatments",
+      title: "Departments",
       link: "javascript:void(0)",
     },
     {
-      title: "Orthopedic",
+      title: isData.title,
       link: "javascript:void(0)",
     },
   ];
@@ -84,47 +90,16 @@ const page = () => {
       ],
     },
   ];
-  const blogs = [
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-    {
-      title:
-        "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
-      image: dummi,
-      written: "onship between",
-    },
-  ];
+
 
   return (
     <Layout>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={dummi}
-        title="Doctors Details View"
+        bgImage={isData.acf.bannerImage.sourceUrl}
+        title={isData.title}
       />
-      <Content />
+      <Content data={data} />
       <Doctor doctors={doctors} />
       <Blogs blogs={blogs} />
     </Layout>

@@ -62,20 +62,7 @@ interface HomePageType {
       };
     };
   };
-  blogs: {
-    nodes: Array<{
-      title: string;
-      slug: string;
-      excerpt: string;
-      date: string;
-      author: {
-        node: {
-          name: string;
-        };
-      };
-      featuredImage: ImageType;
-    }>;
-  };
+  blogs: BlogsType;
 }
 
 interface AboutUsPageType {
@@ -134,5 +121,70 @@ interface AboutUsPageType {
         }>;
       };
     };
+  };
+}
+
+interface ContactUsType {
+  page: {
+    title: string;
+    slug: string;
+    acf: {
+      bannerImage: ImageType;
+      ourCenters: {
+        title: string;
+        subtitle: string;
+        centners: Array<{
+          backgroundColor: string;
+          title: any;
+          links: Array<{
+            title: string;
+            icon: ImageType;
+            link: string;
+          }>;
+        }>;
+      };
+      getDirections: {
+        title: any;
+        map: {
+          link: string;
+          image: ImageType;
+        };
+        leftImage: ImageType;
+      };
+    };
+  };
+}
+
+interface DepartmentsType {
+  departments: {
+    edges: Array<{
+      node: {
+        id: string;
+        title: string;
+        slug: string;
+        acf: {
+          bannerImage: ImageType;
+          sectionImage: ImageType;
+          content: string;
+        };
+      };
+    }>;
+  };
+}
+interface BlogsType {
+  blogs: {
+    nodes: Array<{
+      title: string;
+      date: string;
+      author: {
+        node: {
+          name: string;
+        };
+      };
+      acf: {
+        featuredImage: ImageType;
+        content: string;
+      };
+    }>;
   };
 }

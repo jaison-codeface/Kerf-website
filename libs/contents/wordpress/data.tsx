@@ -1,7 +1,13 @@
 import { API_URL, WORDPRESS_AUTH_REFRESH_TOKEN } from "./client";
-import { aboutUsQuery, homeQuery } from "./queries";
+import {
+  aboutUsQuery,
+  blogsQuery,
+  contactUsQuery,
+  departmentsQuery,
+  homeQuery,
+} from "./queries";
 
-async function fecthAPi(query = "") {
+async function fetchAPI(query = "") {
   const headers = { "Content-Type": "application/json" };
   if (WORDPRESS_AUTH_REFRESH_TOKEN) {
     // @ts-ignore
@@ -25,12 +31,15 @@ async function fecthAPi(query = "") {
   return json.data;
 }
 
-type Ids = "home" | "about";
+type Ids = "home" | "about" | "contact-us" | "department" | "blogs";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
     about: aboutUsQuery,
+    "contact-us": contactUsQuery,
+    department: departmentsQuery("single", slug),
+    blogs: blogsQuery,
   };
-  const data = await fecthAPi(query[id]);
+  const data = await fetchAPI(query[id]);
   return data;
 }

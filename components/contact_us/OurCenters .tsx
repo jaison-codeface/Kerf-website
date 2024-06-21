@@ -80,19 +80,20 @@ const data = [
   },
 ];
 
-const OurCenters = () => {
+const OurCenters = ({ data }: { data: ContactUsType }) => {
+  const isData = data.page.acf.ourCenters;
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-start z-50`}>
-      <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
-      <HeadTitle className="mt-1">Our Centers</HeadTitle>
+      <HeadSubtitle>{isData.subtitle}</HeadSubtitle>
+      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
       <div className="grid md:grid-cols-3 sm:grid-cols-2 lg:gap-20 sm:gap-10 gap-6 md:mt-16 mt-6">
-        {data.map((item, idx) => (
+        {isData.centners.map((item, idx) => (
           <div
             key={idx}
             data-aos="fade-up"
             data-aos-delay={50 * idx}
             style={{
-              backgroundColor: item.bgColor,
+              backgroundColor: item.backgroundColor,
             }}
             className="px-4 py-8 rounded-xl flex flex-col text-black">
             <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">

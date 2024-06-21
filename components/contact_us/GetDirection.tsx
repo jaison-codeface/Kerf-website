@@ -6,8 +6,10 @@ import arrowIcon from "@/assets/icons/arrow small.svg";
 import mapImage from "@/assets/images/contact_us/map.png";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
+import Link from "next/link";
 
-const GetDirection = () => {
+const GetDirection = ({ data }: { data: ContactUsType }) => {
+  const isData = data.page.acf.getDirections;
   return (
     <SectionWrapper
       classTop="relative z-0"
@@ -16,7 +18,7 @@ const GetDirection = () => {
         data-aos="fade-up"
         className="bg-[#e8edf1] rounded-xl md:aspect-[16/14] max-md:min-h-[300px]  flex items-center flex-col overflow-hidden">
         <span className="flex items-center justify-between gap-10 w-full md:py-8 md:px-8 py-4 px-4">
-          <h2 className="font-bold md:text-xl text-lg">Get Directions</h2>
+          <h2 className="font-bold md:text-xl text-lg">{isData.title}</h2>
           <Image
             src={directionIcon}
             alt=""
@@ -26,8 +28,16 @@ const GetDirection = () => {
           />
         </span>
         <span className="h-full w-full flex items-end relative z-0 md:px-8 md:py-10 px-4 py-4 flex-1">
-          <Image src={mapImage} alt="" fill className="object-cover -z-10" />
-          <button className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
+          <Image
+            src={isData.map.image.sourceUrl}
+            alt={isData.map.image.altText}
+            fill
+            className="object-cover -z-10"
+          />
+          <Link
+            href={isData.map.link}
+            target="_blank"
+            className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
             <Image
               src={arrowIcon}
               alt=""
@@ -36,13 +46,13 @@ const GetDirection = () => {
               className="aspect-square h-[18px] w-auto rounded-full bg-white p-1 object-contain"
             />
             Get Directions
-          </button>
+          </Link>
         </span>
       </div>
       <Image
         data-aos="fade-up"
-        src={mapImage}
-        alt=""
+        src={isData.leftImage.sourceUrl}
+        alt={isData.leftImage.altText}
         width={600}
         height={400}
         className="rounded-xl overflow-hidden h-full w-full object-cover"

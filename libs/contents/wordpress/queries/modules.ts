@@ -7,23 +7,17 @@ const imageQuery = `sourceUrl
 
 const blogsQuery = `
       title
-      slug
-      excerpt
       date
       author {
         node {
           name
         }
       }
-      featuredImage {
-        node {
-          sourceUrl
-          altText
-          mediaDetails {
-            width
-            height
-          }
+      acf: acfBlog {
+        featuredImage {
+          id
         }
+        content
       }
 `
 
