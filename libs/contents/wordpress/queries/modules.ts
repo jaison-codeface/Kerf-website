@@ -15,10 +15,10 @@ const blogsQuery = `
       }
       acf: acfBlog {
         featuredImage {
-          id
+          ${imageQuery}
         }
         content
       }
-`
+`;
 
 export { imageQuery, blogsQuery };
