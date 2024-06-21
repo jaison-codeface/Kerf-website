@@ -122,7 +122,7 @@ const page = () => {
     <Layout>
       <HeroSection breadcrumbs={breadcrumbs} bgImage={dummi} title="Otology" />
       <Content />
-      <Doctor doctors={doctors} />
+      {/* <Doctor doctors={doctors} /> */}
       {/* <Blogs blogs={blogs} /> */}
     </Layout>
   );
