@@ -47,7 +47,7 @@ const Bottom = ({
           (item) => item.link === decodeURIComponent(pathname)
         )
       ) {
-         return setIndex(i);
+        return setIndex(i);
       }
     }
   }, [links, pathname]);
@@ -113,9 +113,10 @@ const Bottom = ({
                     </>
                   )}
                   <div className="flex flex-col w-full gap-3 ">
-                    {(!item.dropDown
-                      ? item.singleDropDown
-                      : item.dropDown[dropDownIndex].links
+                  {/* @ts-ignore */}
+                    {(item.dropDown
+                      ?  item.dropDown[dropDownIndex].links
+                      : item.singleDropDown &&  item.singleDropDown
                     ).map((drop, dropIdx) => (
                       <Link
                         key={dropIdx}
