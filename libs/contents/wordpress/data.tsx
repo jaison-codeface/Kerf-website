@@ -4,6 +4,7 @@ import {
   blogsQuery,
   contactUsQuery,
   departmentsQuery,
+  doctorQuery,
   homeQuery,
 } from "./queries";
 
@@ -31,7 +32,15 @@ async function fetchAPI(query = "") {
   return json.data;
 }
 
-type Ids = "home" | "about" | "contact-us" | "department" | "blogs";
+type Ids =
+  | "home"
+  | "about"
+  | "contact-us"
+  | "department"
+  | "blogs"
+  | "doctor"
+  | "doctors"
+  | "doctor-page";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
@@ -39,6 +48,9 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     "contact-us": contactUsQuery,
     department: departmentsQuery("single", slug),
     blogs: blogsQuery,
+    doctor: doctorQuery("single", slug),
+    doctors: doctorQuery("all"),
+    "doctor-page": doctorQuery("page"),
   };
   const data = await fetchAPI(query[id]);
   return data;

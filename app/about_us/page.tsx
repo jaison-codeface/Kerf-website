@@ -35,11 +35,11 @@ const page = async () => {
         }
       />
       <ExploreOurWorld data={data} />
-    <ResearchFoundation data={data} />
-       <Chairman data={data} />
-     <VisionMission data={data} />
-       <Partnering data={data} />
-       <Testimonials data={data} />
+      <ResearchFoundation data={data} />
+      <Chairman data={data} />
+      <VisionMission data={data} />
+      <Partnering data={data} />
+      <Testimonials data={data} />
     </Layout>
   );
 };

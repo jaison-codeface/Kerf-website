@@ -15,7 +15,7 @@ const page = () => {
       link: "/",
     },
     {
-      title: "Departments",
+      title: "Treatments",
       link: "",
     },
     {

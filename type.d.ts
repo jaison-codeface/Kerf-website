@@ -187,3 +187,30 @@ interface BlogsType {
     }>;
   };
 }
+
+interface DoctorType {
+  doctors: {
+    nodes: Array<{
+      title: string;
+      slug: string;
+      acf: {
+        bannerImage: ImageType;
+        image: ImageType;
+        content: string;
+      };
+    }>;
+  };
+}
+interface DoctorPageType {
+  page: {
+    id: string;
+    title: string;
+    acf: {
+      bannerImage: ImageType;
+      doctorSection: {
+        title: string;
+        subtitle: string;
+      };
+    };
+  };
+}
