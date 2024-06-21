@@ -17,6 +17,10 @@ const NavMobile = ({
         link: string;
       }[];
     }[];
+    singleDropDown?: {
+      title: string;
+      link: string;
+    }[];
   }[];
 }) => {
   const [toggle, setToggle] = useState(false);
@@ -66,7 +70,7 @@ const NavMobile = ({
       {/*  */}
 
       <div
-        className={`flex flex-col right-6 items-end justify-start gap-3 absolute top-32 bg-kerf-blue-light/50 backdrop-blur-sm  pr-4 pl-10 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 ${
+        className={`flex flex-col right-6 items-end justify-start gap-3 absolute top-32 bg-kerf-blue-light/50 backdrop-blur-sm  pr-4 pl-10 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 h-[calc("auto")] ${
           toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}>
         {links.map((item, idx) => (
@@ -83,7 +87,7 @@ const NavMobile = ({
                   : setDropDown([idx, dropDown[1]])
               }
               className="inline-flex items-center justify-center gap-1">
-              {item.dropDown && (
+              {(item.dropDown || item.singleDropDown) && (
                 <svg
                   className={`h-[10px] w-auto duration-300 rotate-180 ${
                     dropDown[0] === idx && "rotate-90"
@@ -136,6 +140,23 @@ const NavMobile = ({
                         </Link>
                       ))}
                     </span>
+                  </li>
+                ))}
+              </menu>
+            )}
+            {item.singleDropDown && (
+              <menu
+                className={`pr-4 flex flex-col items-end gap-1 ${
+                  dropDown[0] !== idx && "hidden"
+                }`}>
+                {item.singleDropDown.map((drop, dropIdx) => (
+                  <li
+                    onClick={() => setDropDown([dropDown[0], dropIdx])}
+                    key={dropIdx}
+                    className="flex flex-col items-end">
+                    <Link href={drop.link} className="">
+                      {drop.title}
+                    </Link>
                   </li>
                 ))}
               </menu>

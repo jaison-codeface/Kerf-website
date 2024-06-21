@@ -1,4 +1,4 @@
-import { imageQuery } from "./modules";
+import { blogsQuery, imageQuery } from "./modules";
 const data = `{
   page(id: "cG9zdDo3") {
     title
@@ -26,7 +26,7 @@ const data = `{
         sectionTitle
         sectionSubtitle
       }
-      sectionPhilosophy {
+      sectionContactUs {
         sectionDescription
         sectionTitle
         subtitle
@@ -34,12 +34,26 @@ const data = `{
         sectionImage {
            ${imageQuery}
         }
+        links {
+          icon {
+           ${imageQuery}
+          }
+          link
+          linkTitle
+          title
+        }
       }
       sectionSpecialties {
         title
         subtitle
         buttonText
         buttonLink
+        specialties {
+          image {
+           ${imageQuery}
+          }
+          title
+        }
       }
       sectionTreatments {
         title
@@ -51,6 +65,11 @@ const data = `{
           service
         }
       }
+    }
+  }
+  blogs : posts(where: {orderby: {field: MODIFIED, order: DESC}}, last: 14)  {
+  nodes { 
+    ${blogsQuery}
     }
   }
 }`;

@@ -1,5 +1,5 @@
 import { API_URL, WORDPRESS_AUTH_REFRESH_TOKEN } from "./client";
-import { homeQuery } from "./queries";
+import { aboutUsQuery, homeQuery } from "./queries";
 
 async function fecthAPi(query = "") {
   const headers = { "Content-Type": "application/json" };
@@ -24,10 +24,11 @@ async function fecthAPi(query = "") {
   return json.data;
 }
 
-type Ids = "home";
+type Ids = "home" | "about";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
-  const query = {
+  const query: Record<Ids, any> = {
     home: homeQuery,
+    about: aboutUsQuery,
   };
   const data = await fecthAPi(query[id]);
   return data;

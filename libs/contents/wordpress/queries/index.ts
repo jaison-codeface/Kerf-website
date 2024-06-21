@@ -1,2 +1,3 @@
 import homeQuery from "./home";
-export { homeQuery };
+import aboutUsQuery from "./about_us";
+export { homeQuery, aboutUsQuery };

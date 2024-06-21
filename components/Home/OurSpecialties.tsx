@@ -12,28 +12,29 @@ const data = [
   { title: "RHINOLOGY", icon: dummi },
 ];
 
-const OurSpecialties = ({ data }: { data: homePageType }) => {
+const OurSpecialties = ({ data }: { data: HomePageType }) => {
+   const isData = data.page.acf.sectionSpecialties;
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-center  bg-kerf-teal-light  rounded-3xl`}>
       <div className={`flex flex-col w-full  items-center px-6`}>
-        <HeadSubtitle>OUR SPECIALTIES</HeadSubtitle>
+        <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
         <HeadTitle className="mt-1 text-center">
-          We will treat you well
+          {isData.title}
         </HeadTitle>
         <div className="grid md:grid-cols-3 md:w-max w-full gap-10 md:mt-16 mt-8">
-          {/* {data.map((item, idx) => (
+          {isData.specialties.map((item, idx) => (
             <div
               key={idx}
               data-aos="fade-up"
               data-aos-delay={idx * 50}
               className="bg-white flex flex-col items-center px-10 py-8 gap-6 rounded-3xl w-full">
-              <Image src={item.icon} alt="" width={130} height={130} />
+              <Image src={item.image.sourceUrl} alt={item.image.altText} width={130} height={130} />
               <p className="font-bold uppercase text-lg">{item.title}</p>
             </div>
-          ))} */}
+          ))}
         </div>
-        <NormalBtn className="md:mt-16 mt-6">BOOK APPOINTMENT</NormalBtn>
+        <NormalBtn href={`/${isData.buttonLink}`} className="md:mt-16 mt-6">{isData.buttonText}</NormalBtn>
       </div>
     </SectionWrapper>
   );

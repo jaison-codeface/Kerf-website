@@ -27,7 +27,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        primary: "var(--font--montserrat)",
+        primary: "var(--font--google-sans)",
       },
     },
   },

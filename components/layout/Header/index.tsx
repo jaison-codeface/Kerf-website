@@ -67,6 +67,16 @@ const links = [
   {
     title: "Departments",
     link: "",
+        singleDropDown: [
+      {
+        title: "Tympanoplasty",
+        link: "/departments/Tympanoplasty",
+      },
+      {
+        title: "Mastoidectomy",
+        link: "/departments/Tympanoplasty",
+      },
+    ],
   },
   {
     title: "Carers",

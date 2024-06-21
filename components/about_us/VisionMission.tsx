@@ -5,29 +5,17 @@ import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import ImageInBorder from "@/ui/ImageInBorder";
 import mainImage from "@/assets/images/home/our philosophy.webp";
 
-const VisionMission = () => {
-  const data = [
-    {
-      title: "explore our world",
-      subtitle: "our vision",
-      description:
-        "This example creates a simple search bar with an input field and a button. When the button is clicked, theThis example creates a simple search bar with an input field and a button. When the button is clicked, the ",
-    },
-    {
-      title: "explore our world",
-      subtitle: "our mission",
-      description:
-        "This example creates a simple search bar with an input field and a button. When the button is clicked, the This example creates a simple search bar with an input field and a button. When the button is clicked, the ",
-    },
-  ];
+const VisionMission = ({data}:{data : AboutUsPageType}) => {
+  const isData = data.page.acf.sectionVision
+;
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-2 md:gap-20 gap-10 items-center  z-50`}>
       <div data-aos="fade-up" className=" grid max-h-[620px]">
-        <ImageInBorder mainImage={mainImage} className="overflow-hidden" />
+        <ImageInBorder mainImage={isData.sectionImage.sourceUrl} className="overflow-hidden" />
       </div>
       <div className="grid grid-rows-2 gap-6 ">
-        {data.map((item, idx) => (
+        {isData.visionAndMission.map((item, idx) => (
           <div
             key={idx}
             data-aos="fade-up"

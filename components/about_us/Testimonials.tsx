@@ -43,7 +43,8 @@ const data = [
 
 const arrows = ["left", "right"];
 
-const Testimonials = () => {
+const Testimonials = ({data}:{data : AboutUsPageType}) => {
+  const isData = data.page.acf.sectionTestimonials
   const [index, setIndex] = useState(0);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -51,8 +52,8 @@ const Testimonials = () => {
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-start  z-50`}>
-      <HeadSubtitle className="uppercase">Testimonials</HeadSubtitle>
-      <HeadTitle className="mt-1">Explore Our World</HeadTitle>
+      <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
+      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={20}
@@ -82,7 +83,7 @@ const Testimonials = () => {
         }}
         modules={[Autoplay, Navigation]}
         className="mySwiper rounded-2xl mt-16 w-full">
-        {data.map((item, idx) => (
+        {isData.testimonials.map((item, idx) => (
           <SwiperSlide
             key={idx}
             className={`${
@@ -96,13 +97,13 @@ const Testimonials = () => {
               className="h-[35px] w-auto object-contain"
             />
             <p className="mt-4 text-lg font-medium">
-              &ldquo;{item.content}&ldquo;
+              &ldquo;{item.comment}&ldquo;
             </p>
             <div className="w-full flex items-center justify-between gap-10 mt-10">
               <div className="flex items-center justify-start gap-4">
                 <Image
-                  src={item.image}
-                  alt=""
+                  src={item.image.sourceUrl}
+                  alt={item.image.altText}
                   height={40}
                   width={40}
                   className="h-[60px] w-auto  object-cover aspect-square rounded-full"

@@ -9,7 +9,7 @@ import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 export default async function Home() {
-  const data: homePageType = await getContentFromWordPress("home");
+  const data: HomePageType = await getContentFromWordPress("home");
 
   return (
     <Layout>

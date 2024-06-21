@@ -18,6 +18,10 @@ const Bottom = ({
         link: string;
       }[];
     }[];
+    singleDropDown?: {
+      title: string;
+      link: string;
+    }[];
   }[];
 }) => {
   const [index, setIndex] = useState<number | null>(0);
@@ -38,6 +42,12 @@ const Bottom = ({
         )
       ) {
         return setIndex(i);
+      } else if (
+        links[i].singleDropDown?.some(
+          (item) => item.link === decodeURIComponent(pathname)
+        )
+      ) {
+         return setIndex(i);
       }
     }
   }, [links, pathname]);
@@ -67,7 +77,7 @@ const Bottom = ({
                 index === idx ? "bg-kerf-blue-light" : ""
               }`}>
               {item.title}{" "}
-              {item.dropDown && (
+              {(item.dropDown || item.singleDropDown) && (
                 <svg
                   className={`h-[10px] w-auto group-hover:rotate-90`}
                   viewBox="0 0 8 14"
@@ -80,30 +90,37 @@ const Bottom = ({
                 </svg>
               )}
             </Link>
-            {item.dropDown && (
+            {(item.dropDown || item.singleDropDown) && (
               <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
                 <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 py-5 rounded-2xl ">
-                  <div className="flex items-center justify-center gap-10">
-                    {item.dropDown.map((drop, dropIdx) => (
-                      <button
-                        key={dropIdx}
-                        onClick={() => setDropDownIndex(dropIdx)}
-                        className={`capitalize text-base font-medium px-6 py-1 rounded-lg ${
-                          dropDownIndex === dropIdx
-                            ? "bg-kerf-blue-light/50"
-                            : ""
-                        }`}>
-                        {drop.title}
-                      </button>
-                    ))}
-                  </div>
-                  <hr />
+                  {item.dropDown && (
+                    <>
+                      <div className="flex items-center justify-center gap-10">
+                        {item.dropDown.map((drop, dropIdx) => (
+                          <button
+                            key={dropIdx}
+                            onClick={() => setDropDownIndex(dropIdx)}
+                            className={`capitalize text-base font-medium px-6 py-1 rounded-lg ${
+                              dropDownIndex === dropIdx
+                                ? "bg-kerf-blue-light/50"
+                                : ""
+                            }`}>
+                            {drop.title}
+                          </button>
+                        ))}
+                      </div>
+                      <hr />
+                    </>
+                  )}
                   <div className="flex flex-col w-full gap-3 ">
-                    {item.dropDown[dropDownIndex].links.map((drop, dropIdx) => (
+                    {(!item.dropDown
+                      ? item.singleDropDown
+                      : item.dropDown[dropDownIndex].links
+                    ).map((drop, dropIdx) => (
                       <Link
                         key={dropIdx}
                         href={drop.link}
-                        className="text-sm font-medium">
+                        className={`text-sm font-medium ${item.singleDropDown && "hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg"}`}>
                         {drop.title}
                       </Link>
                     ))}

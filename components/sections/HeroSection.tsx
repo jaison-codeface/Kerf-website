@@ -27,6 +27,8 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
             src={bgImage}
             alt=""
             priority
+            width={1000}
+            height={600}
             className="object-contain h-[420px] -z-0  object-right-top"
           />
         </div>

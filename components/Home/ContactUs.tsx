@@ -23,15 +23,16 @@ const buttons = [
   },
 ];
 
-const ContactUs = ({ data }: { data: homePageType }) => {
+const ContactUs = ({ data }: { data: HomePageType }) => {
+  const isData = data.page.acf.sectionContactUs;
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
-      <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
-      <HeadTitle className="mt-1">Explore our world</HeadTitle>
+      <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
+      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
       <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
         <Image
-          src={mainImage}
-          alt=""
+          src={isData.sectionImage.sourceUrl}
+          alt={isData.sectionImage.altText}
           data-aos="fade-up"
           width={800}
           height={500}
@@ -41,23 +42,23 @@ const ContactUs = ({ data }: { data: homePageType }) => {
 
         <div className="flex flex-col">
           <h3 data-aos="fade-up" className="text-3xl font-bold">
-            Expert Doctors. <br />
-            Professional Care.
+            {isData.sectionTitle
+            }
           </h3>
           <p data-aos="fade-up" className="mt-2 text-base leading-[160%]">
-            At Ascent, we continually enhance the comfort of our patient
-            journeys. Our mission is to provide high-quality, cost-
+            {isData.sectionDescription}
           </p>
 
           <div className="grid grid-rows-2 w-full gap-5 mt-6">
-            {buttons.map((item, idx) => (
+            {isData.links.map((item, idx) => (
               <NormalBtn
                 key={idx}
+                href={item.link}
                 className={`flex items-center justify-between gap-6  ${idx % 2 === 0 ? "bg-gradient-to-r from-[#36d7c6] to-[#2ebbaf]" : "bg-gradient-to-r from-[#539fbd] to-[#3682a0]"}`}>
                 <div className="flex items-center justify-start gap-6">
                   <Image
-                    src={item.icon}
-                    alt=""
+                    src={item.icon.sourceUrl}
+                    alt={item.icon.altText}
                     width={20}
                     height={20}
                     loading="lazy"
@@ -67,7 +68,7 @@ const ContactUs = ({ data }: { data: homePageType }) => {
                     <h1 className="font-normal text-lg uppercase leading-[130%]">
                       {item.title}
                     </h1>
-                    <p className="text-xs">{item.subtitle}</p>
+                    <p className="text-xs">{item.linkTitle}</p>
                   </div>
                 </div>
                 <Image

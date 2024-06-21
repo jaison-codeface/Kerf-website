@@ -6,7 +6,7 @@ import dummi from "@/assets/images/home/hero session e.png";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 
-const HeroSection = ({ data }: { data: homePageType }) => {
+const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper
       classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"

@@ -8,8 +8,10 @@ import VisionMission from "@/components/about_us/VisionMission";
 import Layout from "@/components/layout";
 import React from "react";
 import dummi from "@/assets/images/home/hero session e.png";
+import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
-const page = () => {
+const page = async () => {
+  const data: AboutUsPageType = await getContentFromWordPress("about");
   const breadcrumbs = [
     {
       title: "Home",
@@ -24,7 +26,7 @@ const page = () => {
     <Layout>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={dummi}
+        bgImage={data.page.acf.bannerImage.sourceUrl}
         title={
           <>
             {" "}
@@ -32,12 +34,12 @@ const page = () => {
           </>
         }
       />
-      <ExploreOurWorld />
-      <ResearchFoundation />
-      <Chairman />
-      <VisionMission />
-      <Partnering />
-      <Testimonials />
+      <ExploreOurWorld data={data} />
+    <ResearchFoundation data={data} />
+       <Chairman data={data} />
+     <VisionMission data={data} />
+       <Partnering data={data} />
+       <Testimonials data={data} />
     </Layout>
   );
 };

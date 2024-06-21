@@ -5,23 +5,16 @@ import main_padding from "@/styles/padding";
 import second from "@/assets/images/about_us/secod session.webp";
 import CountUp from "react-countup";
 
-const ExploreOurWorld = () => {
+const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
+  const isData = data.page.acf.exploreOurWorld;
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
-        <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
-        <HeadTitle className="mt-1">Explore Our World</HeadTitle>
+        <HeadSubtitle>{isData.sectionSubtitle}</HeadSubtitle>
+        <HeadTitle className="mt-1">{isData.sectionTitle}</HeadTitle>
         <SectionDescription className="mt-4">
-          Kerala ENT Research Foundation (KERF) evolved as a part of independent
-          health concepts among us. We are trying to bring all the recent
-          advances in Oto Rhino Laryngology to our home town. We are mainly
-          looking forward for compe- tent care and research in head and neck
-          diseases. A Hospi- tal is an Institution for healthcare providing
-          patient treat- ment by specialized staff and equipment, often but not
-          always providing for longer term patient stays. Our hospital (KERF)
-          provides quality and efficient treatment using the modern technique
-          and facilities
+          {isData.description}
         </SectionDescription>
       </div>
       <div
@@ -52,9 +45,9 @@ const ExploreOurWorld = () => {
             </pattern>
             <image
               id="image0_42_15"
-              width="371"
-              height="300"
-              xlinkHref={second.src}
+              width={isData.sectionImage.sizes.width}
+              height={isData.sectionImage.sizes.hight}
+              xlinkHref={isData.sectionImage.image.sourceUrl}
             />
           </defs>
         </svg>
@@ -67,12 +60,12 @@ const ExploreOurWorld = () => {
                 enableScrollSpy
                 scrollSpyOnce
                 className="counter"
-                end={5000}
+                end={isData.boxContentText1}
               />
               +
             </h2>
-            <p className="text-[62%] leading-[130%] font-light uppercase ">
-              Patient&apos;s <br /> review
+            <p className="text-[72%] leading-[130%] font-light uppercase w-1/2">
+              {isData.boxContentText2}
             </p>
           </div>
         </div>

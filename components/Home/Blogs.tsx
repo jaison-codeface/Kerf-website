@@ -16,7 +16,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const data = [
+const sdata = [
   {
     title:
       "onship between the current document and another resource. Although LINK has no content, the relationships it defines may be ...",
@@ -49,13 +49,15 @@ const data = [
   },
 ];
 
-const Blogs = () => {
+const Blogs = ({ data }: { data: HomePageType }) => {
+  const isData = data.page.acf.sectionBlog;
+  const isBlogs = data.blogs.nodes;
   return (
     <SectionWrapper
       classTop="overflow-hidden"
       classBottom={`${main_padding.y} flex-col overflow-visible`}>
-      <HeadSubtitle>OUR PHILOSOPHY</HeadSubtitle>
-      <HeadTitle className="mt-1">Blogs</HeadTitle>
+      <HeadSubtitle className="uppercase">{isData.sectionSubtitle}</HeadSubtitle>
+      <HeadTitle className="mt-1">{isData.sectionTitle}</HeadTitle>
       <div data-aos="fade-up" className="flex w-screen md:mt-16 mt-8">
         <Swiper
           slidesPerView={1}
@@ -85,19 +87,19 @@ const Blogs = () => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper">
-          {data.map((item, idx) => (
+          {isBlogs.map((item, idx) => (
             <SwiperSlide
               key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg">
+              className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
               <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                 {item.title}
               </h3>
               <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
                 Written by :{" "}
-                <span className="font-bold capitalize ">{item.written}</span>
+                <span className="font-bold capitalize ">{item.author.node.name}</span>
               </p>
               <Image
-                src={item.image}
+                src={dummi}
                 alt=""
                 fill
                 loading="lazy"
