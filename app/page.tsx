@@ -9,7 +9,10 @@ import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 export default async function Home() {
-  const data: HomePageType = await getContentFromWordPress("home");
+  const [data, blogs]: [HomePageType, BlogsType] = await Promise.all([
+    getContentFromWordPress("home"),
+    getContentFromWordPress("blogs"),
+  ]);
 
   return (
     <Layout>
@@ -18,7 +21,7 @@ export default async function Home() {
       <OurPhilosophy data={data} />
       <OurSpecialties data={data} />
       <ContactUs data={data} />
-      <Blogs data={data} />
+      <Blogs data={data} blogs={blogs} />
     </Layout>
   );
 }

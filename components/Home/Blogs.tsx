@@ -49,9 +49,9 @@ const sdata = [
   },
 ];
 
-const Blogs = ({ data }: { data: HomePageType }) => {
+const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
   const isData = data.page.acf.sectionBlog;
-  const isBlogs = data.blogs.blogs.nodes;
+  const isBlogs = blogs.blogs.nodes;
 
   const isLength = isBlogs.length >= 4;
   return (
