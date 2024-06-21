@@ -20,29 +20,28 @@ const data = (type: "all" | "single" | "related", id?: string) => {
         }`;
     case "single":
       return `{
-                treatments(where: {name: "${id}"}) {
-                  nodes {
-                    title
-                    treatmentCategorys {
-                      nodes {
-                        name
-                        id
-                        slug
-                      }
-                    }
-                    acf: acfTreatment {
-                      bannerImage {
-                        ${imageQuery}
-                        }
-                      }
-                      sectionImage {
-                        ${imageQuery}
-                      }
-                      content
+              treatments(where: {name: "${id}"}) {
+                nodes {
+                  title
+                  treatmentCategorys {
+                    nodes {
+                      name
+                      id
+                      slug
                     }
                   }
+                  acf: acfTreatment {
+                    bannerImage {
+                      ${imageQuery}
+                    }
+                    sectionImage {
+                      ${imageQuery}
+                    }
+                    content
+                  }
                 }
-              }`;
+              }
+            }`;
     case "related":
       return `{
                 treatmentCategory(id: "dGVybToz") {
