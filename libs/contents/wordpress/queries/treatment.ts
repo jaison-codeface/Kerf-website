@@ -44,7 +44,7 @@ const data = (type: "all" | "single" | "related", id?: string) => {
             }`;
     case "related":
       return `{
-                treatmentCategory(id: "dGVybToz") {
+                treatmentCategory(id: "dGVybTo1") {
                   id
                   name
                   slug

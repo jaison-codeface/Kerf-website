@@ -20,7 +20,7 @@ type Props = {
       content: string;
     };
   };
-  relatedTreatmentsData: any[];
+  relatedTreatmentsData: any;
 };
 
 const Content = ({ leftData, relatedTreatmentsData }: Props) => {

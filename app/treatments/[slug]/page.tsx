@@ -10,28 +10,33 @@ import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [data, blogs]: [TreatmentType, BlogsType] = await Promise.all([
+  const [data, treatments, blogs]: [
+    TreatmentType,
+    TreatmentCategoriesType,
+    BlogsType,
+  ] = await Promise.all([
     getContentFromWordPress("treatment", params.slug),
+    getContentFromWordPress("treatments"),
     getContentFromWordPress("blogs"),
   ]);
   const isData = data.treatments.nodes[0];
+  
 
   const relatedTreatmentsData = () => {
-    // @ts-ignore
-    const d = [];
-    if (isData.treatmentCategorys.nodes.length > 0) {
-      isData.treatmentCategorys.nodes.map(async (item) => {
-        const t: TreatmentsRelatedType = await getContentFromWordPress(
-          "treatments-related",
-          item.id
+    if (isData) {
+      return isData.treatmentCategorys.nodes.flatMap((category) => {
+        const matchingCategory = treatments.treatmentCategorys.nodes.find(
+          (item) => item.id === category.id
         );
-
-        d.push(...t.treatmentCategory.treatments.nodes);
+        return matchingCategory
+          ? matchingCategory.treatments.nodes
+          : treatments.treatmentCategorys.nodes.flatMap(
+              (item) => item.treatments.nodes
+            );
       });
     }
-    // @ts-ignore
-    return [...d];
   };
+
   const breadcrumbs = [
     {
       title: "Home",
