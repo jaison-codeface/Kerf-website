@@ -217,6 +217,7 @@ interface DepartmentsTaxonomiesType {
       node: {
         id: string;
         name: string;
+        slug: string;
         doctors: {
           nodes: Array<{
             title: string;
@@ -309,4 +310,9 @@ interface TreatmentsRelatedDoctorsType {
       };
     }>;
   };
+}
+
+interface UtilitiesType {
+  treatments: TreatmentCategoriesType;
+  departments: DepartmentsTaxonomiesType;
 }

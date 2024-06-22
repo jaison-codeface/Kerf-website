@@ -38,6 +38,7 @@ type Ids =
   | "about"
   | "contact-us"
   | "department"
+  | "departments"
   | "blogs"
   | "doctor"
   | "doctors"
@@ -52,6 +53,7 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     about: aboutUsQuery,
     "contact-us": contactUsQuery,
     department: departmentsQuery("single", slug),
+    departments: departmentsQuery("all"),
     blogs: blogsQuery,
     doctor: doctorQuery("single", slug),
     doctors: doctorQuery("all"),
