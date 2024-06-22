@@ -18,7 +18,50 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 
-const Blogs = ({ blogs }: { blogs: BlogsType }) => {
+const Blogs = ({
+  blogs,
+}: {
+  blogs: {
+    title: string;
+    date: string;
+    author: {
+      node: {
+        name: string;
+      };
+    };
+    acf: {
+      featuredImage: ImageType;
+      content: string;
+    };
+  }[];
+}) => {
+  function padArrayToFour() {
+    const result = [...blogs]; // Create a copy of the original array
+    while (result.length < 4) {
+      result.push({
+        title: "",
+        date: "",
+        author: {
+          node: {
+            name: "",
+          },
+        },
+        acf: {
+          featuredImage: {
+            sourceUrl: "",
+            altText: "",
+            mediaDetails: {
+              width: 0,
+              height: 0,
+            },
+          },
+          content: "",
+        },
+      }); // Add empty objects until the length is 4
+    }
+    return result;
+  }
+
   return (
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
@@ -31,7 +74,9 @@ const Blogs = ({ blogs }: { blogs: BlogsType }) => {
           data-aos-duration="700"
           loop
           autoplay={{
+            stopOnLastSlide : true,
             delay: 3500,
+
           }}
           breakpoints={{
             320: {
@@ -52,32 +97,33 @@ const Blogs = ({ blogs }: { blogs: BlogsType }) => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper !ml-0">
-          {[
-            ...blogs.blogs.nodes,
-            ...blogs.blogs.nodes,
-            ...blogs.blogs.nodes,
-            ...blogs.blogs.nodes,
-          ].map((item, idx) => (
-            <SwiperSlide
-              key={idx}
-              className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
-              <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
-                {item.title}
-              </h3>
-              <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
-                Written by :{" "}
-                <span className="font-bold capitalize ">
-                  {item.author.node.name}
-                </span>
-              </p>
-              <Image
-                src={item.acf.featuredImage.sourceUrl}
-                alt={item.acf.featuredImage.altText}
-                fill
-                loading="lazy"
-                className="-z-10 object-cover opacity-70"
-              />
-            </SwiperSlide>
+          {padArrayToFour().map((item, idx) => (
+            <>
+              {item.title ? (
+                <SwiperSlide
+                  key={idx}
+                  className="relative z-0 !flex flex-col items-start justify-end  px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg bg-black after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
+                  <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
+                    Written by :{" "}
+                    <span className="font-bold capitalize ">
+                      {item.author.node.name}
+                    </span>
+                  </p>
+                  <Image
+                    src={item.acf.featuredImage.sourceUrl}
+                    alt={item.acf.featuredImage.altText}
+                    fill
+                    loading="lazy"
+                    className="-z-10 object-cover opacity-70"
+                  />
+                </SwiperSlide>
+              ) : (
+                <SwiperSlide key={idx}></SwiperSlide>
+              )}
+            </>
           ))}
         </Swiper>
       </div>

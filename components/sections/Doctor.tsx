@@ -17,6 +17,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Doctor = ({ doctors }: { doctors: any }) => {
+  function padArrayToFour() {
+    const result = [...doctors]; // Create a copy of the original array
+    while (result.length < 4) {
+      result.push({}); // Add empty objects until the length is 4
+    }
+    return result;
+  }
+
   return (
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
@@ -30,6 +38,7 @@ const Doctor = ({ doctors }: { doctors: any }) => {
           loop
           autoplay={{
             delay: 3500,
+            stopOnLastSlide : true,
           }}
           breakpoints={{
             320: {
@@ -50,15 +59,13 @@ const Doctor = ({ doctors }: { doctors: any }) => {
           speed={1200}
           modules={[Autoplay]}
           className="mySwiper !ml-0">
-          {[...doctors, ...doctors, ...doctors, ...doctors, ...doctors].map(
-            (item: any, idx: any) => (
-              <SwiperSlide
-                key={idx}
-                className="relative z-0 !flex flex-col items-start justify-end overflow-hidden">
-                <SingleDoctor key={idx} idx={idx} item={item} />
-              </SwiperSlide>
-            )
-          )}
+          {padArrayToFour().map((item: any, idx: any) => (
+            <SwiperSlide
+              key={idx}
+              className="relative z-0 !flex flex-col items-start justify-end overflow-hidden">
+              <SingleDoctor key={idx} idx={idx} item={item} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
       {/* textures */}

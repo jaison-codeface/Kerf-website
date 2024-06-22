@@ -42,7 +42,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       />
       <Content data={isData.departments.nodes[0]} />
       <Doctor doctors={isData.doctors.nodes} />
-      <Blogs blogs={blogs} />
+      <Blogs blogs={blogs.blogs.nodes} />
     </Layout>
   );
 };

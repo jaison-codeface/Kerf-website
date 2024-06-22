@@ -1,6 +1,9 @@
 import { departmentQuery, doctorQuery, imageQuery } from "./modules";
 
-const data = (type: "all" | "single" | "related", id?: string) => {
+const data = (
+  type: "all" | "single" | "related" | "related doctors",
+  id?: string
+) => {
   switch (type) {
     case "all":
       return `{
@@ -31,6 +34,11 @@ const data = (type: "all" | "single" | "related", id?: string) => {
                     }
                   }
                   acf: acfTreatment {
+                    treatmentTitle {
+                      id
+                      name
+                      slug
+                    }
                     bannerImage {
                       ${imageQuery}
                     }
@@ -56,6 +64,21 @@ const data = (type: "all" | "single" | "related", id?: string) => {
                   }
                 }
               }`;
+    case "related doctors":
+      return `{
+              treatmentsTaxonomies(where: {slug: "${id}"}) {
+                nodes {
+                  id
+                  name
+                  slug
+                  doctors {
+                    nodes {
+                      ${doctorQuery}
+                    }
+                  }
+                }
+              }
+            }`;
   }
 };
 export default data;

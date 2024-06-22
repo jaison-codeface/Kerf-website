@@ -10,17 +10,18 @@ import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [data, treatments, blogs]: [
+  const [data, treatments, treatmentsRelatedDoctors, blogs]: [
     TreatmentType,
     TreatmentCategoriesType,
+    TreatmentsRelatedDoctorsType,
     BlogsType,
   ] = await Promise.all([
     getContentFromWordPress("treatment", params.slug),
     getContentFromWordPress("treatments"),
+    getContentFromWordPress("treatments-related doctors", params.slug),
     getContentFromWordPress("blogs"),
   ]);
   const isData = data.treatments.nodes[0];
-  
 
   const relatedTreatmentsData = () => {
     if (isData) {
@@ -126,8 +127,12 @@ const page = async ({ params }: { params: { slug: string } }) => {
         leftData={isData}
         relatedTreatmentsData={relatedTreatmentsData()}
       />
-      {/* <Doctor doctors={doctors} /> */}
-      <Blogs blogs={blogs} />
+      <Doctor
+        doctors={
+          treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes
+        }
+      />
+      <Blogs blogs={blogs.blogs.nodes} />
     </Layout>
   );
 };

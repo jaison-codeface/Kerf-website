@@ -267,6 +267,11 @@ interface TreatmentType {
         bannerImage: ImageType;
         sectionImage: ImageType;
         content: string;
+        treatmentTitle: {
+          id: string;
+          name: string;
+          slug: string;
+        };
       };
     }>;
   };
@@ -282,5 +287,26 @@ interface TreatmentsRelatedType {
         slug: string;
       }>;
     };
+  };
+}
+interface TreatmentsRelatedDoctorsType {
+  treatmentsTaxonomies: {
+    nodes: Array<{
+      id: string;
+      name: string;
+      slug: string;
+      doctors: {
+        nodes: Array<{
+          title: string;
+          slug: string;
+          acf: {
+            designation: string;
+            bannerImage: ImageType;
+            image: ImageType;
+            content: string;
+          };
+        }>;
+      };
+    }>;
   };
 }
