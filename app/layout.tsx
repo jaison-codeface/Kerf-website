@@ -23,7 +23,19 @@ export async function generateMetadata(
       siteName: "KERF",
       images: [seo.utility.acf.favIcon.sourceUrl, ...previousImages],
     },
-    icons: seo.utility.acf.favIcon.sourceUrl,
+    icons: {
+      icon: seo.utility.acf.favIcon.sourceUrl,
+      other: [
+        {
+          rel: "preconnect",
+          url: "https://cfuat.in",
+        },
+        {
+          rel: "dns-prefetch",
+          url: "https://cfuat.in",
+        },
+      ],
+    },
   };
 }
 

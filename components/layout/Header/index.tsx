@@ -84,7 +84,6 @@ const Header = () => {
     return d;
   };
 
-  console.log(JSON.stringify(links()));
   return (
     <nav className="w-full absolute top-0 flex flex-col z-50 overflow-x-clip">
       <Top />
