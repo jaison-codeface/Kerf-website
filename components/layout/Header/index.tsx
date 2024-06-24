@@ -11,7 +11,7 @@ import useStore from "@/libs/store";
 const Header = () => {
   const { utilities } = useStore();
 
-  const treatments = utilities.treatments.treatmentCategorys.nodes.map(
+  const treatments = utilities?.treatments?.treatmentCategorys?.nodes.map(
     (item) => {
       const dropDown = {
         title: item.name,
@@ -26,7 +26,7 @@ const Header = () => {
       return dropDown;
     }
   );
-  const departments = utilities.departments.departmentsTaxonomies.edges.map(
+  const departments = utilities?.departments?.departmentsTaxonomies?.edges.map(
     (item) => {
       const singleDropDown = {
         title: item.node.name,

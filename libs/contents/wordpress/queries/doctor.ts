@@ -5,12 +5,11 @@ const data = (type: "all" | "single" | "page", id?: string) => {
     case "all":
       return `{
                 doctors {
-                  nodes {
-                    ${doctorQuery}
+                    nodes {
+                      ${doctorQuery}
                     }
                   }
-                }
-              }`;
+                }`;
     case "single":
       return `{
                 doctors (where: {name: "${id}"}) {

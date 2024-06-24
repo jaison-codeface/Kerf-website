@@ -9,7 +9,7 @@ type Props = {
 };
 
 const UtilitiesProvider = ({ children, data }: Props) => {
-  const setUtilities = useStore(store=> store.setUtilities);
+  const setUtilities = useStore((store) => store.setUtilities);
   setUtilities(data);
 
   return children;

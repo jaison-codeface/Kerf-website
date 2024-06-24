@@ -19,7 +19,7 @@ const Top = ({ data }: { data: FooterType }) => {
           />
         </Link>
         <p data-aos="fade-up" className="font-normal text-sm md:max-w-[200px]">
-        {data.utility.acf.description}
+          {data.utility.acf.description}
         </p>
       </div>
       <div className="flex items-start justify-between lg:gap-16 md:gap-12 gap-6 max-md:flex-wrap ">

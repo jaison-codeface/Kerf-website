@@ -19,14 +19,14 @@ const page = async () => {
     },
   ];
   return (
-    <Layout>
+    <Layout pageTitle={breadcrumbs[1].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={data.page.acf.bannerImage.sourceUrl}
         title={data.page.title}
       />
       <OurCenters data={data} />
-      <GetDirection  data={data} />
+      <GetDirection data={data} />
     </Layout>
   );
 };

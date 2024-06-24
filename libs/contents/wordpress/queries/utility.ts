@@ -40,11 +40,24 @@ const header = `{
     }
   }
 }`;
+const seo = `{
+  utility(id: "cG9zdDoyMzA=") {
+    acf: acfSeo {
+      favIcon {
+       ${imageQuery}
+      }
+      description
+      keyWords
+      title
+    }
+  }
+}`;
 
-const data = (type: "footer" | "header") => {
+const data = (type: "footer" | "header" | "seo") => {
   const query = {
     footer: footer,
     header: header,
+    seo: seo,
   };
 
   // @ts-ignore

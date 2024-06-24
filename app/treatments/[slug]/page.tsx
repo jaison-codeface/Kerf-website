@@ -1,16 +1,19 @@
 import Layout from "@/components/layout";
 import HeroSection from "@/components/sections/HeroSection";
 import React from "react";
-import dummi from "@/assets/images/home/hero session e.png";
-import SectionWrapper from "@/components/SectionWrapper";
-import main_padding from "@/styles/padding";
 import Doctor from "@/components/sections/Doctor";
 import Blogs from "@/components/sections/Blogs";
 import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [data, treatments, treatmentsRelatedDoctors,departmentsTaxonomies, blogs]: [
+  const [
+    data,
+    treatments,
+    treatmentsRelatedDoctors,
+    departmentsTaxonomies,
+    blogs,
+  ]: [
     TreatmentType,
     TreatmentCategoriesType,
     TreatmentsRelatedDoctorsType,
@@ -55,71 +58,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
-  const doctors = [
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/gdggdgg",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/gdggdgg",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/iufcvt",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-    {
-      title: "Dr.Treat you well",
-      designation: "Find & Download Free Graphic Resources",
-      image: dummi,
-      buttons: [
-        {
-          title: "view profile",
-          link: "doctors/wwdfcgg",
-        },
-        {
-          title: "book an appointment",
-          link: "",
-        },
-      ],
-    },
-  ];
-
   return (
-    <Layout>
+    <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={isData.acf.bannerImage.sourceUrl}

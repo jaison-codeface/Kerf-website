@@ -41,7 +41,8 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
         <div className="bg-[#e9eef2] bg-off-gray md:px-20 px-8 md:py-10 py-6  w-full rounded-3xl flex items-center  justify-between max-md:flex-col gap-6">
           <div className="flex flex-col md:items-start items-center">
             <h1
-              data-aos="fade-up" data-aos-anchor="#top"
+              data-aos="fade-up"
+              data-aos-anchor="#top"
               className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium">
               {title}
             </h1>

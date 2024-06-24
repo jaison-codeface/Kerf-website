@@ -13,7 +13,7 @@ const SectionWrapper = ({
 }) => {
   return (
     <section
-    id="top"
+      id="top"
       className={twMerge(`${main_padding.x} w-full flex flex-1`, classTop)}>
       <div
         className={twMerge("max-w-[1650px] mx-auto flex w-full", classBottom)}>

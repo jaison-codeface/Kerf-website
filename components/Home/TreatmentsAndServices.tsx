@@ -22,7 +22,7 @@ const data = [
 ];
 
 const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
-  const isData = data.page.acf.sectionTreatments
+  const isData = data.page.acf.sectionTreatments;
   return (
     <SectionWrapper
       classTop="relative z-0"

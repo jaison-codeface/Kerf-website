@@ -38,7 +38,7 @@ const Doctor = ({ doctors }: { doctors: any }) => {
           loop
           autoplay={{
             delay: 3500,
-            stopOnLastSlide : true,
+            stopOnLastSlide: true,
           }}
           breakpoints={{
             320: {

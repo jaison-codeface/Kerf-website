@@ -43,8 +43,8 @@ const data = [
 
 const arrows = ["left", "right"];
 
-const Testimonials = ({data}:{data : AboutUsPageType}) => {
-  const isData = data.page.acf.sectionTestimonials
+const Testimonials = ({ data }: { data: AboutUsPageType }) => {
+  const isData = data.page.acf.sectionTestimonials;
   const [index, setIndex] = useState(0);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);

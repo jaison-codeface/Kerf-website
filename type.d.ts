@@ -342,11 +342,21 @@ interface HeaderType {
         id: string;
       };
       headerLinks: Array<{
-        [x: string]: { title: string; link: string; }[];
-        dropDown: { title: string; links: { title: string; link: string; }[]; }[];
+        [x: string]: { title: string; link: string }[];
+        dropDown: { title: string; links: { title: string; link: string }[] }[];
         title: string;
         link?: string;
       }>;
+    };
+  };
+}
+interface SeoType {
+  utility: {
+    acf: {
+      favIcon: ImageType;
+      description: string;
+      keyWords: string;
+      title: string;
     };
   };
 }
@@ -356,4 +366,5 @@ interface UtilitiesType {
   departments: DepartmentsTaxonomiesType;
   footer: FooterType;
   header: HeaderType;
+  seo: SeoType;
 }

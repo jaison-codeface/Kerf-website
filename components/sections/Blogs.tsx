@@ -74,9 +74,8 @@ const Blogs = ({
           data-aos-duration="700"
           loop
           autoplay={{
-            stopOnLastSlide : true,
+            stopOnLastSlide: true,
             delay: 3500,
-
           }}
           breakpoints={{
             320: {

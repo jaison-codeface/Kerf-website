@@ -30,7 +30,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
   ];
 
   return (
-    <Layout>
+    <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={isData.acf.bannerImage.sourceUrl}

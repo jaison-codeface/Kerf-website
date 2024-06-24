@@ -7,6 +7,7 @@ import OurSpecialties from "@/components/Home/OurSpecialties";
 import ContactUs from "@/components/Home/ContactUs";
 import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
+import { Metadata } from "next";
 
 export default async function Home() {
   const [data, blogs]: [HomePageType, BlogsType] = await Promise.all([

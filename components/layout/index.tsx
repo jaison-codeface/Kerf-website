@@ -5,10 +5,19 @@ import Footer from "./Footer";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Head from "next/head";
+import useStore from "@/libs/store";
 
 // ..
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = ({
+  children,
+  pageTitle,
+}: {
+  children: ReactNode;
+  pageTitle?: string;
+}) => {
+  const { utilities } = useStore();
   useLayoutEffect(() => {
     if (typeof document !== "undefined") {
       AOS.init({
@@ -20,6 +29,8 @@ const Layout = ({ children }: { children: ReactNode }) => {
   }, []);
   return (
     <>
+      <title>{`${pageTitle ? pageTitle + " | " : ""} ${utilities.seo.utility.acf.title}`}</title>
+
       <main className="flex flex-col w-full flex-1 items-center justify-center text-black  relative z-10">
         <Header />
         {children}

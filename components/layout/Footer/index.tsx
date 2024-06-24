@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <SectionWrapper classBottom={`${main_padding.t} flex-col items-center `}>
       <Top data={utilities.footer} />
-      <Bottom data={utilities.footer}/>
+      <Bottom data={utilities.footer} />
     </SectionWrapper>
   );
 };

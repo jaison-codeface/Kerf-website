@@ -42,8 +42,7 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
 
         <div className="flex flex-col">
           <h3 data-aos="fade-up" className="text-3xl font-bold">
-            {isData.sectionTitle
-            }
+            {isData.sectionTitle}
           </h3>
           <p data-aos="fade-up" className="mt-2 text-base leading-[160%]">
             {isData.sectionDescription}

@@ -18,10 +18,7 @@ function WordPressRichText({ htmlString }: { htmlString: string }) {
       "<li",
       `<li class="inline-flex text-base gap-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#21d34b" fill="none"> <path d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517" stroke="currentColor" strokeWidth="1.5"  strokeLinecap="round"  strokeLinejoin="round"/> <path  d="M7.5 13.8333L11 17.5L21.5 6.5"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>`
     );
-    const i = h.replace(
-      "<ul",
-      `<ul class="mt-3 ">`
-    );
+    const i = h.replace("<ul", `<ul class="mt-3 ">`);
 
     const final = h;
 
@@ -29,7 +26,8 @@ function WordPressRichText({ htmlString }: { htmlString: string }) {
   }, [htmlString]);
   return (
     <div
-      dangerouslySetInnerHTML={{ __html: modifiedHtmlString }} data-aos="fade-up"
+      dangerouslySetInnerHTML={{ __html: modifiedHtmlString }}
+      data-aos="fade-up"
       className="mt-2 text-base text-gray-800"
     />
   );

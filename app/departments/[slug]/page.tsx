@@ -15,7 +15,6 @@ const page = async ({ params }: { params: { slug: string } }) => {
     ]);
   const isData = data.departmentsTaxonomies.edges[0].node;
 
-
   const breadcrumbs = [
     {
       title: "Home",
@@ -31,10 +30,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
-
-
   return (
-    <Layout>
+    <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={isData.departments.nodes[0].acf.bannerImage.sourceUrl}

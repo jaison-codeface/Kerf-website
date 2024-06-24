@@ -31,7 +31,7 @@ const page = async () => {
   ];
 
   return (
-    <Layout>
+    <Layout pageTitle="Doctors">
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={pageData.page.acf.bannerImage.sourceUrl}
