@@ -10,15 +10,17 @@ import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [data, treatments, treatmentsRelatedDoctors, blogs]: [
+  const [data, treatments, treatmentsRelatedDoctors,departmentsTaxonomies, blogs]: [
     TreatmentType,
     TreatmentCategoriesType,
     TreatmentsRelatedDoctorsType,
+    DepartmentsTaxonomiesType,
     BlogsType,
   ] = await Promise.all([
     getContentFromWordPress("treatment", params.slug),
     getContentFromWordPress("treatments"),
     getContentFromWordPress("treatments-related doctors", params.slug),
+    getContentFromWordPress("departments"),
     getContentFromWordPress("blogs"),
   ]);
   const isData = data.treatments.nodes[0];
@@ -126,6 +128,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <Content
         leftData={isData}
         relatedTreatmentsData={relatedTreatmentsData()}
+        departmentsTaxonomies={departmentsTaxonomies}
       />
       <Doctor
         doctors={

@@ -9,6 +9,11 @@ const data = (type: "all" | "single", id?: string) =>
               id
               name
               slug
+               doctors {
+                  nodes {
+                   ${doctorQuery}
+                  }
+              }
             }
           }
         }

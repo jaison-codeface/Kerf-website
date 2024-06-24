@@ -10,6 +10,8 @@ const NormalBtn = ({
   href,
   mode = "blue",
   className,
+  // @ts-ignore
+  props,
 }: {
   children: ReactNode;
   onClick?: () => void;
@@ -22,8 +24,10 @@ const NormalBtn = ({
   return (
     <Link
       // @ts-ignore
+
       onClick={onClick}
       data-aos="fade-up"
+      {...props}
       href={href ? href : "javascript:void(0)"}
       className={twMerge(
         `px-8 py-3  font-bold rounded-lg capitalize ${
