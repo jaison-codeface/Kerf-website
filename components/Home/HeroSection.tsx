@@ -14,6 +14,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
       <div className="flex flex-col ">
         <h1
           data-aos="fade-up"
+          data-aos-anchor="#top"
           className="text-kerf-blue-dark md:text-5xl text-4xl font-bold  ">
           {data.page.acf.homeBanner.sectionTitle.split(",").map((item, idx) => (
             <React.Fragment key={idx}>
