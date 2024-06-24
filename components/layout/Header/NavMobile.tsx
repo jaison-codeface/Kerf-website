@@ -7,21 +7,21 @@ import React, { useState } from "react";
 const NavMobile = ({
   links,
 }: {
-  links: {
+  links: Array<{
     title: string;
-    link: string;
-    dropDown?: {
+    link?: string;
+    dropDown?: Array<{
       title: string;
-      links: {
+      links: Array<{
         title: string;
         link: string;
-      }[];
-    }[];
-    singleDropDown?: {
+      }>;
+    }>;
+    singleDropDown?: Array<{
       title: string;
       link: string;
-    }[];
-  }[];
+    }>;
+  }>;
 }) => {
   const [toggle, setToggle] = useState(false);
   const [dropDown, setDropDown] = useState<any>([0, 0]);

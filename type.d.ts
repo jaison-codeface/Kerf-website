@@ -312,7 +312,48 @@ interface TreatmentsRelatedDoctorsType {
   };
 }
 
+interface FooterType {
+  utility: {
+    id: string;
+    title: string;
+    acf: {
+      logo: ImageType;
+      description: string;
+      footerLinks: Array<{
+        title: string;
+        links: Array<{
+          link?: string;
+          text: string;
+        }>;
+      }>;
+      socialMedia: Array<{
+        link: any;
+        icon: ImageType;
+      }>;
+    };
+  };
+}
+interface HeaderType {
+  utility: {
+    id: string;
+    title: string;
+    acf: {
+      logo: {
+        id: string;
+      };
+      headerLinks: Array<{
+        [x: string]: { title: string; link: string; }[];
+        dropDown: { title: string; links: { title: string; link: string; }[]; }[];
+        title: string;
+        link?: string;
+      }>;
+    };
+  };
+}
+
 interface UtilitiesType {
   treatments: TreatmentCategoriesType;
   departments: DepartmentsTaxonomiesType;
+  footer: FooterType;
+  header: HeaderType;
 }

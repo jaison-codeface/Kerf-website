@@ -8,21 +8,21 @@ import { usePathname } from "next/navigation";
 const Bottom = ({
   links,
 }: {
-  links: {
+  links: Array<{
     title: string;
-    link: string;
-    dropDown?: {
+    link?: string;
+    dropDown?: Array<{
       title: string;
-      links: {
+      links: Array<{
         title: string;
         link: string;
-      }[];
-    }[];
-    singleDropDown?: {
+      }>;
+    }>;
+    singleDropDown?: Array<{
       title: string;
       link: string;
-    }[];
-  }[];
+    }>;
+  }>;
 }) => {
   const [index, setIndex] = useState<number | null>(0);
   const [dropDownIndex, setDropDownIndex] = useState(0);
@@ -31,7 +31,7 @@ const Bottom = ({
   useMemo(() => {
     for (let i = 0; i < links.length; i++) {
       if (
-        links[i].link.includes(
+        links[i].link?.includes(
           pathname.split("/").length > 0 ? pathname : pathname.split("/")[1]
         )
       ) {
@@ -71,7 +71,7 @@ const Bottom = ({
             className="relative z-0 flex items-center justify-center group">
             <Link
               onClick={() => setIndex(idx)}
-              href={item.link}
+              href={item.link ? item.link : "javascript:void(0)"}
               shallow
               className={`text-sm px-4 py-2  rounded-md duration-300 hover:bg-kerf-blue-light inline-flex items-center justify-center gap-2 ${
                 index === idx ? "bg-kerf-blue-light" : ""
@@ -113,10 +113,10 @@ const Bottom = ({
                     </>
                   )}
                   <div className="flex flex-col w-full gap-3 ">
-                  {/* @ts-ignore */}
+                    {/* @ts-ignore */}
                     {(item.dropDown
-                      ?  item.dropDown[dropDownIndex].links
-                      : item.singleDropDown &&  item.singleDropDown
+                      ? item.dropDown[dropDownIndex].links
+                      : item.singleDropDown && item.singleDropDown
                     ).map((drop, dropIdx) => (
                       <Link
                         key={dropIdx}

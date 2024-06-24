@@ -6,26 +6,7 @@ import telegram from "@/assets/icons/telegram-fill.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-const socialMedia = [
-  {
-    icon: fb,
-    link: "",
-  },
-  {
-    icon: instagram,
-    link: "",
-  },
-  {
-    icon: telegram,
-    link: "",
-  },
-  {
-    icon: linkedin,
-    link: "",
-  },
-];
-
-const Bottom = () => {
+const Bottom = ({ data }: { data: FooterType }) => {
   return (
     <div className="flex items-center justify-between md:gap-20 gap-3 w-full py-8 max-md:flex-col-reverse">
       <p className="text-sm max-md:text-center">
@@ -36,11 +17,17 @@ const Bottom = () => {
         </a>
       </p>
       <div className="flex items-center justify-center gap-4">
-        {socialMedia.map((item, idx) => (
-          <Link key={idx} href={item.link} shallow target="_blank">
+        {data.utility.acf.socialMedia.map((item, idx) => (
+          <Link
+            key={idx}
+            href={item.link ? item.link : "javascript:void(0)"}
+            shallow
+            target="_blank">
             <Image
-              src={item.icon}
+              src={item.icon.sourceUrl}
               alt=""
+              width={32}
+              height={32}
               loading="lazy"
               className="object-contain aspect-square w-auto h-8"
             />

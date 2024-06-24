@@ -36,43 +36,63 @@ const Header = () => {
     }
   );
 
-  const links = [
-    {
-      title: "Home",
-      link: "/",
-    },
-    {
-      title: "About",
-      link: "/about_us",
-    },
-    {
-      title: "Treatments",
-      link: "",
-      dropDown: treatments,
-    },
-    {
-      title: "Departments",
-      link: "",
-      singleDropDown: departments,
-    },
-    {
-      title: "Carers",
-      link: "",
-    },
+  // const links = [
+  //   {
+  //     title: "Home",
+  //     link: "/",
+  //   },
+  //   {
+  //     title: "About",
+  //     link: "/about_us",
+  //   },
+  //   {
+  //     title: "Treatments",
+  //     link: "",
+  //     dropDown: treatments,
+  //   },
+  //   {
+  //     title: "Departments",
+  //     link: "",
+  //     singleDropDown: departments,
+  //   },
+  //   {
+  //     title: "Carers",
+  //     link: "",
+  //   },
 
-    {
-      title: "Contact Us",
-      link: "/contact_us",
-    },
-  ];
+  //   {
+  //     title: "Contact Us",
+  //     link: "/contact_us",
+  //   },
+  // ];
+
+  const links = () => {
+    const d = utilities.header.utility.acf.headerLinks;
+    utilities.header.utility.acf.headerLinks.forEach((item, idx) => {
+      // if (item.title.toLowerCase() === "treatments".toLowerCase()) {
+      //   item.dropDown = treatments;
+      // }
+      switch (item.title.toLowerCase()) {
+        case "treatments".toLowerCase():
+          return (d[idx].dropDown = treatments);
+
+        case "Departments".toLowerCase():
+          return (d[idx].singleDropDown = departments);
+      }
+    });
+
+    return d;
+  };
+
+  console.log(JSON.stringify(links()));
   return (
     <nav className="w-full absolute top-0 flex flex-col z-50 overflow-x-clip">
       <Top />
       <SectionWrapper classBottom="items-center justify-between gap-20 py-4">
-        <Bottom links={links} />
+        <Bottom links={links()} />
         {/* mobile  */}
 
-        <NavMobile links={links} />
+        <NavMobile links={links()} />
       </SectionWrapper>
     </nav>
   );
