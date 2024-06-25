@@ -1,5 +1,6 @@
 "use client";
 import { NormalBtn } from "@/ui/buttons";
+import axios from "axios";
 import React, { HTMLInputTypeAttribute, useMemo, useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -48,12 +49,34 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
     var elements = document.querySelectorAll<HTMLInputElement>(
       'input[name="department"], input[name="specialist"]'
     );
-    elements.forEach((item) => (item.value = ""));
-    setFormValues(initialState);
-    try {
-    } catch (error) {
-      throw new Error("");
+
+    let formDataToSend = new FormData();
+
+    for (const key in formValues) {
+      // @ts-ignore
+      formDataToSend.set(`your-${key}`, formValues[key]);
     }
+
+    axios
+      .post(
+        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/1c32b56/feedback",
+        formDataToSend,
+        {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        }
+      )
+      .then((res) => {
+        if (res.data.status === "mail_sent") {
+          console.log(res.data);
+          elements.forEach((item) => (item.value = ""));
+          setFormValues(initialState);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <form

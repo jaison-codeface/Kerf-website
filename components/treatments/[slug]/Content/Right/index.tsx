@@ -9,6 +9,7 @@ const Right = ({ relatedTreatmentsData, departmentsTaxonomies }: Props) => {
   return (
     <div className=" w-full flex flex-col sticky top-[20px] z-50 gap-10">
       <RequestYourAppointment departmentsTaxonomies={departmentsTaxonomies} />
+
       {relatedTreatmentsData && (
         <RelatedTreatments relatedTreatmentsData={relatedTreatmentsData} />
       )}
