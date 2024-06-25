@@ -59,7 +59,7 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
 
     axios
       .post(
-        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/1c32b56/feedback",
+        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/b2ddf82/feedback",
         formDataToSend,
         {
           headers: {
@@ -68,8 +68,8 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
         }
       )
       .then((res) => {
+        console.log(res.data);
         if (res.data.status === "mail_sent") {
-          console.log(res.data);
           elements.forEach((item) => (item.value = ""));
           setFormValues(initialState);
         }
