@@ -72,7 +72,7 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
           },
         }
       );
-      console.log(response.data);
+      console.log(response);
 
       elements.forEach((item) => (item.value = ""));
       setFormValues(initialState);
