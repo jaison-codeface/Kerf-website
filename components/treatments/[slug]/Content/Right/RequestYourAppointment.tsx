@@ -44,7 +44,7 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
     [departmentsTaxonomies.departmentsTaxonomies.edges, isSelectedDepartment]
   );
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     var elements = document.querySelectorAll<HTMLInputElement>(
       'input[name="department"], input[name="specialist"]'
@@ -54,29 +54,31 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
 
     for (const key in formValues) {
       // @ts-ignore
-      formDataToSend.set(`your-${key}`, formValues[key]);
+      formDataToSend.append(`your-${key}`, formValues[key]);
     }
+    console.log(formDataToSend.values());
 
-    axios
-      .post(
-        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/b2ddf82/feedback",
+    try {
+      const response = await axios.post(
+        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/15fa6a9/feedback",
         formDataToSend,
         {
           headers: {
-            "content-type": "multipart/form-data",
+            "Content-Type": "multipart/form-data",
+          },
+          auth: {
+            username: "ContactForm7APIAccess",
+            password: " XWIS7wB27ZAxlAL0AhloYG4E",
           },
         }
-      )
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.status === "mail_sent") {
-          elements.forEach((item) => (item.value = ""));
-          setFormValues(initialState);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      );
+      console.log(response.data);
+
+      elements.forEach((item) => (item.value = ""));
+      setFormValues(initialState);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <form
