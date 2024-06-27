@@ -9,7 +9,7 @@ import RosePetalTexture from "@/ui/rosePetalTexture";
 import Link from "next/link";
 
 const GetDirection = ({ data }: { data: ContactUsType }) => {
-  const isData = data.page.acf.getDirections;
+  const isData = data.page.acf.secondSection;
   return (
     <SectionWrapper
       classTop="relative z-0"
@@ -29,13 +29,13 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
         </span>
         <span className="h-full w-full flex items-end relative z-0 md:px-8 md:py-10 px-4 py-4 flex-1">
           <Image
-            src={isData.map.image.sourceUrl}
-            alt={isData.map.image.altText}
+            src={isData.mapImage.sourceUrl}
+            alt={isData.mapImage.altText}
             fill
             className="object-cover -z-10"
           />
           <Link
-            href={isData.map.link}
+            href={isData.directionLink}
             target="_blank"
             className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
             <Image
@@ -51,8 +51,8 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
       </div>
       <Image
         data-aos="fade-up"
-        src={isData.leftImage.sourceUrl}
-        alt={isData.leftImage.altText}
+        src={isData.sectionImage.sourceUrl}
+        alt={isData.sectionImage.altText}
         width={600}
         height={400}
         className="rounded-xl overflow-hidden h-full w-full object-cover"

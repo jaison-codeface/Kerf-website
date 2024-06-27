@@ -22,7 +22,7 @@ const page = async () => {
     <Layout pageTitle={breadcrumbs[1].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={data.page.acf.bannerImage.sourceUrl}
+        bgImage={data.page.acf.pageHeader.headerBanner.sourceUrl}
         title={data.page.title}
       />
       <OurCenters data={data} />

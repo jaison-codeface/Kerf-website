@@ -3,37 +3,39 @@ import { imageQuery } from "./modules";
 const contact_us = `{
   page(id: "cG9zdDoxMjc=") {
     title
-    slug
-    acf: acfContactUsPage {
-      bannerImage {
-        ${imageQuery}
+    acf : acfContactUs {
+      pageHeader {
+        headerBanner {
+          ${imageQuery}
+        }
+        pageTitle
       }
-      ourCenters {
-        title
+      firstSection {
         subtitle
-        centners {
-          backgroundColor
+        sectionTitle
+        locations {
           title
           links {
-            title
             icon {
               ${imageQuery}
             }
             link
+            title
           }
+        }
+        backgroundColors {
+          color
         }
       }
-      getDirections {
+      secondSection {
         title
-        map {
-          link
-          image {
-            ${imageQuery}
-          }
-        }
-        leftImage {
+        sectionImage {
           ${imageQuery}
         }
+        mapImage {
+          ${imageQuery}
+        }
+        directionLink
       }
     }
   }

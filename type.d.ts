@@ -125,33 +125,35 @@ interface AboutUsPageType {
 
 interface ContactUsType {
   page: {
-    title: string;
-    slug: string;
+    title: string
     acf: {
-      bannerImage: ImageType;
-      ourCenters: {
-        title: string;
-        subtitle: string;
-        centners: Array<{
-          backgroundColor: string;
-          title: any;
+      pageHeader: {
+        headerBanner: ImageType
+        pageTitle: string
+      }
+      firstSection: {
+        subtitle: string
+        sectionTitle: string
+        locations: Array<{
+          title: string
           links: Array<{
-            title: string;
-            icon: ImageType;
-            link: string;
-          }>;
-        }>;
-      };
-      getDirections: {
-        title: any;
-        map: {
-          link: string;
-          image: ImageType;
-        };
-        leftImage: ImageType;
-      };
-    };
-  };
+            icon:  ImageType
+            link: string
+            title: string
+          }>
+        }>
+        backgroundColors: Array<{
+          color: string
+        }>
+      }
+      secondSection: {
+        title : string
+        sectionImage : ImageType
+        mapImage : ImageType
+        directionLink: any
+      }
+    }
+  }
 }
 
 interface DepartmentsType {

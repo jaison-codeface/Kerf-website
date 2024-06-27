@@ -25,14 +25,14 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           {data.page.acf.homeBanner.sectionDescription}
         </SectionDescription>
       </div>
-      <div className="flex items-center justify-end w-full h-full right-0 bottom-0 md:absolute -z-10 overflow-visible ">
+      <div className="flex items-end justify-end w-full h-full right-0 bottom-0 md:absolute -z-10 overflow-visible ">
         <Image
           src={data.page.acf.homeBanner.sectionImage.sourceUrl}
           alt={data.page.acf.homeBanner.sectionImage.altText}
           width={data.page.acf.homeBanner.sectionImage.mediaDetails.width}
           height={data.page.acf.homeBanner.sectionImage.mediaDetails.height}
           priority
-          className="object-contain md:h-[calc(100%-40px)] h-full -z-0  object-right-bottom"
+          className="object-contain md:h-[calc(100%-115px)] h-full -z-0  object-right-bottom"
         />
       </div>
 
