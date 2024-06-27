@@ -38,7 +38,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                     alt=""
                     width={20}
                     height={20}
-                    className="h-[14px] w-auto aspect-square object-contain saturate-0 brightness-0"
+                    className="h-[14px] w-auto aspect-square object-contain"
                   />
                   {link.title}
                 </Link>
