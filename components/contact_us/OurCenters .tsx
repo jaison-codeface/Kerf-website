@@ -23,7 +23,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
               backgroundColor: item.backgroundColor,
             }}
             className="px-4 py-8 rounded-xl flex flex-col text-black">
-            <h2 className="uppercase font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
+            <h2 className="font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
               {item.title}
             </h2>
             <div className="mt-8 flex flex-col gap-5">
