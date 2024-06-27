@@ -36,35 +36,7 @@ const Header = () => {
     }
   );
 
-  // const links = [
-  //   {
-  //     title: "Home",
-  //     link: "/",
-  //   },
-  //   {
-  //     title: "About",
-  //     link: "/about_us",
-  //   },
-  //   {
-  //     title: "Treatments",
-  //     link: "",
-  //     dropDown: treatments,
-  //   },
-  //   {
-  //     title: "Departments",
-  //     link: "",
-  //     singleDropDown: departments,
-  //   },
-  //   {
-  //     title: "Carers",
-  //     link: "",
-  //   },
-
-  //   {
-  //     title: "Contact Us",
-  //     link: "/contact_us",
-  //   },
-  // ];
+ 
 
   const links = () => {
     const d = utilities.header.utility.acf.headerLinks;

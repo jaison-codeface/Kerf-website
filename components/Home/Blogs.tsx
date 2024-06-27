@@ -15,6 +15,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const sdata = [
   {
@@ -74,7 +75,9 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
             },
           },
           content: "",
+          subtitle: "",
         },
+        slug: "",
       }); // Add empty objects until the length is 4
     }
     return result;
@@ -119,25 +122,28 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
           {padArrayToFour().map((item, idx) => (
             <>
               {item.title ? (
-                <SwiperSlide
-                  key={idx}
-                  className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 ">
-                  <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
-                    Written by :{" "}
-                    <span className="font-bold capitalize ">
-                      {item.author.node.name}
-                    </span>
-                  </p>
-                  <Image
-                    src={item.acf.featuredImage.sourceUrl}
-                    alt={item.acf.featuredImage.altText}
-                    fill
-                    loading="lazy"
-                    className="-z-10 object-cover opacity-70"
-                  />
+                <SwiperSlide key={idx}>
+                  <Link
+                    href={`/blogs/${item.slug}`}
+                    shallow
+                    className="relative z-0 !flex flex-col items-start justify-end px-4 py-4 aspect-[9/13] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 max-h-[470px] ">
+                    <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-white font-normal inline line-clamp-1 mt-1">
+                      Written by :{" "}
+                      <span className="font-bold capitalize ">
+                        {item.author.node.name}
+                      </span>
+                    </p>
+                    <Image
+                      src={item.acf.featuredImage.sourceUrl}
+                      alt={item.acf.featuredImage.altText}
+                      fill
+                      loading="lazy"
+                      className="-z-10 object-cover opacity-70"
+                    />
+                  </Link>
                 </SwiperSlide>
               ) : (
                 <SwiperSlide key={idx}></SwiperSlide>

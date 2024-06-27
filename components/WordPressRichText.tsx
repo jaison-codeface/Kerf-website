@@ -12,7 +12,7 @@ function WordPressRichText({ htmlString }: { htmlString: string }) {
     const d = c.replace("<h4", `<h4 class="text-lg font-medium mt-4"`);
     const e = d.replace("<h5", `<h5 class="text-base font-medium mt-4"`);
     const f = e.replace("<h6", `<h6 class="text-sm font-medium mt-4"`);
-    const g = f.replace("<p", `<p class="text-base mt-2"`);
+    const g = f.replace("<p", `<p class="text-lg mt-2 leading-[1.8]"`);
 
     const h = g.replace(
       "<li",

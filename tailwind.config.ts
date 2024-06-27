@@ -19,7 +19,7 @@ const config: Config = {
           },
           teal: {
             DEFAULT: "#33CCCC",
-            light: "#99FFFF",
+            light: "#e4ffff",
           },
           off: {
             gray: "#e9eef2",

@@ -1,4 +1,5 @@
 import main_padding from "@/styles/padding";
+import { BookAppointmentBtn } from "@/ui/buttons";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -22,23 +23,34 @@ const Top = ({ data }: { data: FooterType }) => {
           {data.utility.acf.description}
         </p>
       </div>
-      <div className="flex items-start justify-between lg:gap-16 md:gap-12 gap-6 max-md:flex-wrap ">
-        {data.utility.acf.footerLinks.map((item, idx) => (
-          <div data-aos="fade-up" key={idx} className="flex flex-col gap-4">
-            <h3 className="font-bold text-base shrink-0 w-max">{item.title}</h3>
-            <div className="flex flex-col gap-2 w-full">
-              {item.links.map((link) => (
-                <Link
-                  href={link.link ? link.link : "javascript:void(0)"}
-                  shallow
-                  key={idx + link.text}
-                  className="text-sm font-normal w-full min-w-[180px]">
-                  {link.text}
-                </Link>
-              ))}
+      <div className="flex flex-col items-start gap-6">
+        <div className="flex items-start justify-between lg:gap-16 md:gap-12 gap-6 max-md:flex-wrap ">
+          {data.utility.acf.footerLinks.map((item, idx) => (
+            <div
+              data-aos="fade-up"
+              key={idx}
+              className={`flex flex-col gap-4 ${item.title.toLowerCase() === "QUICK LINKS".toLowerCase() && "md:ml-6"}`}>
+              <h3 className="font-bold text-base shrink-0 w-max">
+                {item.title}
+              </h3>
+              <div className="flex flex-col gap-2 w-full">
+                {item.links.map((link) => (
+                  <Link
+                    href={link.link ? link.link : "javascript:void(0)"}
+                    shallow
+                    key={idx + link.text}
+                    className="text-sm font-normal w-full min-w-[180px]">
+                    {link.text}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <BookAppointmentBtn
+          type="hero section"
+          className="text-kerf-teal [&_span]:bg-kerf-teal"
+        />
       </div>
     </div>
   );

@@ -6,20 +6,7 @@ import dummi from "@/assets/images/home/ear.webp";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 
-const data = [
-  {
-    title: "Our Ear",
-    icon: dummi,
-  },
-  {
-    title: "Our Ear",
-    icon: dummi,
-  },
-  {
-    title: "Our Ear",
-    icon: dummi,
-  },
-];
+
 
 const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
   const isData = data.page.acf.sectionTreatments;
@@ -44,7 +31,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
               height={200}
               className="object-contain aspect-square md:px-11 md:my-10 px-6 my-7"
             />
-            <p className="flex items-center justify-center text-center px-4 py-3 bg-kerf-teal w-full text-white font-bold uppercase text-xl">
+            <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-bold uppercase text-xl">
               {item.service}
             </p>
           </div>

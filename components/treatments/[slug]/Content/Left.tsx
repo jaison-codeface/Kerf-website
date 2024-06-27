@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import second from "@/assets/images/home/our philosophy.webp";
-import { BookAppointmentBtn } from "@/ui/buttons";
 import WordPressRichText from "@/components/WordPressRichText";
 
 type Props = {

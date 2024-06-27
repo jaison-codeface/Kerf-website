@@ -92,10 +92,10 @@ const Bottom = ({
             </Link>
             {(item.dropDown || item.singleDropDown) && (
               <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
-                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 py-5 rounded-2xl ">
+                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-3 py-5 rounded-b-2xl ">
                   {item.dropDown && (
                     <>
-                      <div className="flex items-center justify-center gap-10">
+                      <div className="flex items-center justify-center gap-10 px-3">
                         {item.dropDown.map((drop, dropIdx) => (
                           <button
                             key={dropIdx}
@@ -112,7 +112,7 @@ const Bottom = ({
                       <hr />
                     </>
                   )}
-                  <div className="flex flex-col w-full gap-3 ">
+                  <div className="flex flex-col w-full gap-3 pt-2 ">
                     {/* @ts-ignore */}
                     {(item.dropDown
                       ? item.dropDown[dropDownIndex].links

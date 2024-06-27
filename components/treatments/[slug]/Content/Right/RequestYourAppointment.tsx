@@ -60,7 +60,6 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
 
     try {
       const response = await axios.post(
-        
         "https://cfuat.in/kerf/wp-json/cf7/v1/forms/254/feedback",
         formDataToSend,
         {
@@ -86,8 +85,10 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
       action=""
       name="contact-form"
       onSubmit={handleSubmit}
-      className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 py-5 rounded-2xl gap-6">
-      <h2 data-aos="fade-up" className="text-base font-semibold text-center">
+      className="w-full flex items-center justify-center flex-col bg-[#f4f4f6] px-4 pb-5 rounded-2xl gap-6">
+      <h2
+        data-aos="fade-up"
+        className="text-base font-semibold text-center py-5 bg-black/10 rounded-b-xl px-5">
         Request Your Appointment
       </h2>
       <div className="flex flex-col gap-4 w-full">
@@ -141,11 +142,12 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
         />
       </div>
 
-      <button
+      <NormalBtn
+        // @ts-ignore
         type="submit"
         className="bg-black text-sm px-8 py-3  font-bold rounded-lg capitalize bg-secondary border-secondary text-white  duration-300 hover:opacity-75">
         Request Your Application
-      </button>
+      </NormalBtn>
     </form>
   );
 };
@@ -183,7 +185,7 @@ const Input = ({
         onChange={onChange}
         value={value}
         placeholder={placeholder ? placeholder : title}
-        className="px-4 py-2 bg-white outline-none capitalize  border border-gray-200 rounded-lg   text-sm font-medium"
+        className="px-4 py-4 bg-white outline-none capitalize  border border-gray-200 rounded-lg   text-sm font-medium"
       />
     </label>
   );
@@ -234,7 +236,7 @@ const SelectInput = ({
         onChange={onChange}
         onMouseDown={() => setToggle((prev) => !prev)}
         placeholder={placeholder ? placeholder : title}
-        className="px-4 py-2 bg-white outline-none capitalize  border border-gray-200 rounded-lg   text-sm font-medium cursor-pointer caret-transparent"
+        className="px-4 py-4 bg-white outline-none capitalize  border border-gray-200 rounded-lg   text-sm font-medium cursor-pointer caret-transparent"
       />
       <svg
         className={`w-2.5 h-2.5 ms-2.5 absolute right-4 top-10 pointer-events-none ${

@@ -13,7 +13,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       getContentFromWordPress("department", params.slug),
       getContentFromWordPress("blogs"),
     ]);
-  const isData = data.departmentsTaxonomies.edges[0].node;
+  const isData = data.departmentsTaxonomies?.edges[0].node;
 
   const breadcrumbs = [
     {

@@ -22,7 +22,7 @@ const Layout = ({
     if (typeof document !== "undefined") {
       AOS.init({
         once: true,
-        // disable: true,
+        disable: true,
         duration: 500,
       });
     }

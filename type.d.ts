@@ -169,6 +169,7 @@ interface BlogsType {
   blogs: {
     nodes: Array<{
       title: string;
+      slug: string;
       date: string;
       author: {
         node: {
@@ -178,6 +179,7 @@ interface BlogsType {
       acf: {
         featuredImage: ImageType;
         content: string;
+        subtitle: string;
       };
     }>;
   };

@@ -6,6 +6,7 @@ import RosePetalTexture from "@/ui/rosePetalTexture";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import phoneFill from "@/assets/icons/phone fill.svg";
+import { BookAppointmentBtn } from "@/ui/buttons";
 
 type Props = {
   breadcrumbs: {
@@ -54,7 +55,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
                   data-aos="fade-up"
                   data-aos-delay={50 * idx}
                   data-aos-anchor="#top"
-                  className={` text-base font-medium ${
+                  className={` sm:text-base text-sm font-medium ${
                     idx === 0 ? "text-blue-600" : "text-[#4b5175]"
                   }`}>
                   {item.title}{" "}
@@ -65,23 +66,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
               ))}
             </span>
           </div>
-          <Link
-            href=""
-            suppressHydrationWarning
-            data-aos="fade-up"
-            data-aos-anchor="#top"
-            className="flex items-center max-md:w-full justify-start  gap-4 px-6 py-3 bg-white rounded-xl font-bold text-base">
-            <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] flex items-center justify-center rounded-lg">
-              <Image
-                src={phoneFill}
-                alt=""
-                width={18}
-                height={18}
-                className="object-contain aspect-square"
-              />
-            </span>
-            Book your Appointment
-          </Link>
+          <BookAppointmentBtn type="hero section" />
         </div>
       </SectionWrapper>
     </>

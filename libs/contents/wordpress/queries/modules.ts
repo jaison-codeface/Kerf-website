@@ -8,6 +8,7 @@ const imageQuery = `sourceUrl
 const blogsQuery = `
       title
       date
+      slug
       author {
         node {
           name
@@ -17,6 +18,7 @@ const blogsQuery = `
         featuredImage {
           ${imageQuery}
         }
+        subtitle
         content
       }
 `;
