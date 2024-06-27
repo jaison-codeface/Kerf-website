@@ -60,19 +60,20 @@ const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
 
     try {
       const response = await axios.post(
-        "https://cfuat.in/kerf/wp-json/contact-form-7/v1/contact-forms/15fa6a9/feedback",
+        
+        "https://cfuat.in/kerf/wp-json/cf7/v1/forms/254/feedback",
         formDataToSend,
         {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          auth: {
-            username: "Contact Form7 API Access",
-            password: " XWIS7wB27ZAxlAL0AhloYG4E",
-          },
+          // auth: {
+          //   username: "Contact Form 7 API Access",
+          //   password: "XWIS 7wB2 7ZAx lAL0 Ahlo YG4E",
+          // },
         }
       );
-      console.log(response);
+      console.log(response.data);
 
       elements.forEach((item) => (item.value = ""));
       setFormValues(initialState);

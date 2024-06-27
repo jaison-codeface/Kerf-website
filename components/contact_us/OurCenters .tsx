@@ -6,79 +6,6 @@ import dummiIcon from "@/assets/icons/facebook.svg";
 import Link from "next/link";
 import Image from "next/image";
 
-const data = [
-  {
-    title: "uae",
-    links: [
-      {
-        icon: dummiIcon,
-        title:
-          "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-        link: "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-      },
-      {
-        icon: dummiIcon,
-        title: "nly five centuries",
-        link: "nly five centuries, but also the le",
-      },
-      {
-        icon: dummiIcon,
-        title: "9 94242 9249 42",
-        link: "",
-      },
-    ],
-    bgColor: "#DFFEFF",
-  },
-  {
-    title: "uae",
-    links: [
-      {
-        icon: dummiIcon,
-        title:
-          "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-        link: "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-      },
-      {
-        icon: dummiIcon,
-        title: "nly five centuries",
-        link: "nly five centuries, but also the le",
-      },
-      {
-        icon: dummiIcon,
-        title: "9 94242 9249 42",
-        link: "",
-      },
-    ],
-    bgColor: "#EAE7F8",
-  },
-  {
-    title: "uae",
-    links: [
-      {
-        icon: dummiIcon,
-        title:
-          "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-        link: "nly five centuries, but also the leap into electronic typesetting, remaining essent",
-      },
-      {
-        icon: dummiIcon,
-        title: "nly five centuries",
-        link: "nly five centuries, but also the le ",
-      },
-      {
-        icon: dummiIcon,
-        title: "nly five centuries",
-        link: "nly five centuries, but also the le ",
-      },
-      {
-        icon: dummiIcon,
-        title: "9 94242 9249 42",
-        link: "",
-      },
-    ],
-    bgColor: "#DFFEFF",
-  },
-];
 
 const OurCenters = ({ data }: { data: ContactUsType }) => {
   const isData = data.page.acf.ourCenters;
@@ -107,7 +34,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                   href={link.link ? link.link : "javascript:void(0)"}
                   className="flex  items-start text-sm gap-2">
                   <Image
-                    src={link.icon ? link.icon : dummiIcon}
+                    src={link.icon.sourceUrl ? link.icon.sourceUrl : dummiIcon}
                     alt=""
                     width={20}
                     height={20}
