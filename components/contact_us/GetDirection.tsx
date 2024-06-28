@@ -35,7 +35,7 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
             className="object-cover -z-10"
           />
           <Link
-            href={isData.directionLink}
+            href={isData.directionLink ? isData.directionLink : "javascript:void(0)"}
             target="_blank"
             className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
             <Image
