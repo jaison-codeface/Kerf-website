@@ -10,16 +10,12 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
     <SectionWrapper
       classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"
       classBottom="h-full justify-start min-h-svh grid  max-md:pt-40 md:gap-0 gap-10 items-center">
-      <div className="flex flex-col ">
+      <div className="flex flex-col md:max-w-[60%]  ">
         <h1
           data-aos="fade-up"
           data-aos-anchor="#top"
-          className="text-kerf-blue-dark md:text-5xl text-4xl font-bold  ">
-          {data.page.acf.homeBanner.sectionTitle.split(",").map((item, idx) => (
-            <React.Fragment key={idx}>
-              {item} <br />
-            </React.Fragment>
-          ))}
+          className="text-kerf-blue-dark md:text-5xl text-4xl font-bold ">
+          {data.page.acf.homeBanner.sectionTitle}
         </h1>
         <SectionDescription className="md:mt-4 mt-2">
           {data.page.acf.homeBanner.sectionDescription}
