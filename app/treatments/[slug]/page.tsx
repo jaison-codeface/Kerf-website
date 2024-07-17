@@ -77,7 +77,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
           }
         />
       )}
-      <Blogs blogs={blogs.blogs.nodes} />
+      {blogs.blogs.nodes && <Blogs blogs={blogs.blogs.nodes} />}
     </Layout>
   );
 };
