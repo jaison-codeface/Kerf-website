@@ -70,14 +70,14 @@ const page = async ({ params }: { params: { slug: string } }) => {
         relatedTreatmentsData={relatedTreatmentsData()}
         departmentsTaxonomies={departmentsTaxonomies}
       />
-      {treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes && (
+      {treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes.length > 0 && (
         <Doctor
           doctors={
             treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes
           }
         />
       )}
-      {blogs.blogs.nodes && <Blogs blogs={blogs.blogs.nodes} />}
+      {blogs.blogs.nodes.length > 0 && <Blogs blogs={blogs.blogs.nodes} />}
     </Layout>
   );
 };

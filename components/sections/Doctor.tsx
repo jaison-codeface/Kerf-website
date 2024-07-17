@@ -29,7 +29,7 @@ const Doctor = ({ doctors }: { doctors: any }) => {
     <SectionWrapper
       classTop="overflow-hidden relative z-0"
       classBottom={`${main_padding.t} flex-col overflow-visible`}>
-      <HeadTitle className="mt-1">Docoters</HeadTitle>
+      <HeadTitle className="mt-1">Doctors</HeadTitle>
       <div data-aos="fade-up" className="flex mt-8">
         <Swiper
           slidesPerView={1}
