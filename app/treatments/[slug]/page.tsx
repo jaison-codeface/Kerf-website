@@ -70,11 +70,13 @@ const page = async ({ params }: { params: { slug: string } }) => {
         relatedTreatmentsData={relatedTreatmentsData()}
         departmentsTaxonomies={departmentsTaxonomies}
       />
-      <Doctor
-        doctors={
-          treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes
-        }
-      />
+      {treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes && (
+        <Doctor
+          doctors={
+            treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes
+          }
+        />
+      )}
       <Blogs blogs={blogs.blogs.nodes} />
     </Layout>
   );
