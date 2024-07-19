@@ -10,8 +10,8 @@ const Content = ({ data }: { data: DepartmentsType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
       <Image
-        src={data.acf.bannerImage.sourceUrl}
-        alt={data.acf.bannerImage.altText}
+        src={data.acf.sectionImage.sourceUrl}
+        alt={data.acf.sectionImage.altText}
         data-aos="fade-up"
         width={1200}
         height={600}
