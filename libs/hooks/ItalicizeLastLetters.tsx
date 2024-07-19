@@ -13,7 +13,7 @@ const ItalicizeLastLetters = (
     return (
       <>
         {regularPart} {lineBrick && <br />}
-        <i className="font-italic">{italicPart}</i>
+        <i className="">{italicPart}</i>
       </>
     );
   };
