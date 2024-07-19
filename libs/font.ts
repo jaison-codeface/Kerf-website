@@ -46,13 +46,33 @@ export const googleSans = LocalFont({
 export const fsAlbert = LocalFont({
   src: [
     {
-      path: "../assets/fonts/FSAlbert Regular.otf",
+      path: "../assets/fonts/FSAlbert-Thin.otf",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/FSAlbert-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/FSAlbert-Regular.otf",
       weight: "400",
       style: "normal",
     },
     {
       path: "../assets/fonts/FSAlbert-Bold.otf",
       weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/FSAlbert-ExtraBold.otf",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/FSAlbert-ExtraBold.otf",
+      weight: "800",
       style: "normal",
     },
   ],
