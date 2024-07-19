@@ -125,35 +125,35 @@ interface AboutUsPageType {
 
 interface ContactUsType {
   page: {
-    title: string
+    title: string;
     acf: {
       pageHeader: {
-        headerBanner: ImageType
-        pageTitle: string
-      }
+        headerBanner: ImageType;
+        pageTitle: string;
+      };
       firstSection: {
-        subtitle: string
-        sectionTitle: string
+        subtitle: string;
+        sectionTitle: string;
         locations: Array<{
-          title: string
+          title: string;
           links: Array<{
-            icon:  ImageType
-            link: string
-            title: string
-          }>
-        }>
+            icon: ImageType;
+            link: string;
+            title: string;
+          }>;
+        }>;
         backgroundColors: Array<{
-          color: string
-        }>
-      }
+          color: string;
+        }>;
+      };
       secondSection: {
-        title : string
-        sectionImage : ImageType
-        mapImage : ImageType
-        directionLink: any
-      }
-    }
-  }
+        title: string;
+        sectionImage: ImageType;
+        mapImage: ImageType;
+        directionLink: any;
+      };
+    };
+  };
 }
 
 interface DepartmentsType {
@@ -323,6 +323,7 @@ interface FooterType {
     acf: {
       logo: ImageType;
       description: string;
+      phoneNumber: string;
       footerLinks: Array<{
         title: string;
         links: Array<{

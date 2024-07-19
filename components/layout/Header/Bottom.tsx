@@ -4,6 +4,7 @@ import logo from "@/assets/images/logo.webp";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import Arrow from "@/assets/icons/ArrowRightDouble";
 
 const Bottom = ({
   links,
@@ -64,7 +65,7 @@ const Bottom = ({
           className="object-contain h-[50px] object-left"
         />
       </Link>
-      <div className="lg:flex hidden items-center justify-center gap-2 font-medium ">
+      <div className="lg:flex hidden items-center justify-center gap-4 font-medium ">
         {links.map((item, idx) => (
           <div
             key={idx}
@@ -92,7 +93,7 @@ const Bottom = ({
             </Link>
             {(item.dropDown || item.singleDropDown) && (
               <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
-                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-3 py-5 rounded-b-2xl ">
+                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 min-w-80 py-5 rounded-b-2xl ">
                   {item.dropDown && (
                     <>
                       <div className="flex items-center justify-center gap-10 px-3">
@@ -105,6 +106,7 @@ const Bottom = ({
                                 ? "bg-kerf-blue-light/50"
                                 : ""
                             }`}>
+                           
                             {drop.title}
                           </button>
                         ))}
@@ -121,7 +123,8 @@ const Bottom = ({
                       <Link
                         key={dropIdx}
                         href={drop.link}
-                        className={`text-sm font-medium ${item.singleDropDown && "hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg"}`}>
+                        className={`text-sm font-medium flex items-center gap-2 hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg `}>
+                           <Arrow width={14} height={20} />
                         {drop.title}
                       </Link>
                     ))}
