@@ -1,5 +1,11 @@
 import LocalFont from "next/font/local";
-import { Courgette, Arizonia, Birthstone, Lobster, Kalam } from "next/font/google";
+import {
+  Courgette,
+  Arizonia,
+  Birthstone,
+  Lobster,
+  Kalam,
+} from "next/font/google";
 
 export const googleSans = LocalFont({
   src: [
@@ -37,8 +43,24 @@ export const googleSans = LocalFont({
   variable: "--font--google-sans",
 });
 
+export const fsAlbert = LocalFont({
+  src: [
+    {
+      path: "../assets/fonts/FSAlbert Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/FSAlbert-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font--google-sans",
+});
+
 export const italic = Kalam({
-  weight: ["400","700"],
+  weight: ["400", "700"],
   variable: "--font--italic",
   preload: false,
 });
