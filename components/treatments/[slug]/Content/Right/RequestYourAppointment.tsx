@@ -30,7 +30,7 @@ const initialState: FormType = {
 const RequestYourAppointment = ({ departmentsTaxonomies }: Props) => {
   const [formValues, setFormValues] = useState<FormType>(initialState);
   const [isSelectedDepartment, setIsSelectedDepartment] = useState(
-    departmentsTaxonomies.departmentsTaxonomies.edges[0].node.name
+    departmentsTaxonomies.departmentsTaxonomies?.edges[0]?.node.name
   );
 
   const departments = departmentsTaxonomies.departmentsTaxonomies.edges.map(
@@ -260,16 +260,18 @@ const SelectInput = ({
             ? "max-h-[200px] overflow-y-scroll py-2 border "
             : "max-h-0 overflow-hidden"
         }`}>
-        {options.map((item, idx) => (
-          <p
-            key={idx}
-            onClick={() => handleClick(item)}
-            className={`text-sm font-medium capitalize hover:bg-gray-200 cursor-pointer duration-300 px-4 py-2 ${
-              value === item && "bg-gray-200"
-            }`}>
-            {item}
-          </p>
-        ))}
+        {options
+          ? options.map((item, idx) => (
+              <p
+                key={idx}
+                onClick={() => handleClick(item)}
+                className={`text-sm font-medium capitalize hover:bg-gray-200 cursor-pointer duration-300 px-4 py-2 ${
+                  value === item && "bg-gray-200"
+                }`}>
+                {item}
+              </p>
+            ))
+          : ""}
       </div>
     </label>
   );
