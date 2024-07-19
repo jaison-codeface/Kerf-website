@@ -30,7 +30,7 @@ const VisionMission = ({ data }: { data: AboutUsPageType }) => {
               {item.title}
             </h3>
 
-            <SectionDescription className="mt-2 ">
+            <SectionDescription className="mt-2 md:text-lg text-base">
               {item.description}
             </SectionDescription>
           </div>
