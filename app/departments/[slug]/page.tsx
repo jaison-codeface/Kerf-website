@@ -38,7 +38,9 @@ const page = async ({ params }: { params: { slug: string } }) => {
         title={isData.name}
       />
       <Content data={isData.departments.nodes[0]} />
-      <Doctor doctors={isData.doctors.nodes} />
+      {isData.doctors.nodes.length > 0 && (
+        <Doctor doctors={isData.doctors.nodes} />
+      )}
       <Blogs blogs={blogs.blogs.nodes} />
     </Layout>
   );
