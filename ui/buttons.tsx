@@ -34,7 +34,7 @@ const NormalBtn = ({
       className={twMerge(
         `px-8 py-3  font-bold rounded-lg capitalize ${
           mode === "blue"
-            ? "bg-secondary border-secondary text-white bg-gradient-to-r from-[#539fbd] to-[#3682a0] duration-300 hover:opacity-75"
+            ? "bg-secondary border-secondary text-white bg-gradient-to-r from-[#539fbd] to-[#3682a0] duration-300 hover:hue-rotate-[24deg]"
             : "bg-white text-black hover:bg-secondary hover:border-secondary hover:text-white duration-300"
         }`,
         className
@@ -58,10 +58,10 @@ const BookAppointmentBtn = ({
       data-aos="fade-up"
       data-aos-anchor="#top"
       className={twMerge(
-        "flex items-center max-md:w-full justify-start  gap-4 px-6 py-3 bg-white rounded-xl font-bold text-base",
+        "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-full font-bold text-base group [&_*]:duration-300 hover:text-kerf-blue",
         className
       )}>
-      <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] flex items-center justify-center rounded-lg">
+      <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] group-hover:bg-kerf-blue flex items-center justify-center rounded-full">
         <Image
           src={phoneFill}
           alt=""

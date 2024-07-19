@@ -17,7 +17,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           className="text-kerf-blue-dark md:text-[3.7rem] !tracking-[0.5px] !leading-[1.2] text-4xl font-bold md:max-w-[600px]">
           {data.page.acf.homeBanner.sectionTitle}
         </h1>
-        <SectionDescription className="md:mt-4 mt-2 md:max-w-[500px]">
+        <SectionDescription className="md:mt-4 mt-2 md:max-w-[400px]">
           {data.page.acf.homeBanner.sectionDescription}
         </SectionDescription>
       </div>

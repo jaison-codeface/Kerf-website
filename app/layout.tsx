@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import "@/styles/globals.css";
-import { googleSans } from "@/libs/font";
+import { googleSans , italic} from "@/libs/font";
 import UtilitiesProvider from "@/components/UtilitiesProvider";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
@@ -72,7 +72,7 @@ export default async function RootLayout({
       className="scroll-smooth antialiased"
       suppressHydrationWarning>
       <UtilitiesProvider data={utilitiesData}>
-        <body className={`${googleSans.className} ${googleSans.variable}`}>
+        <body className={`${googleSans.className} ${googleSans.variable} ${italic.variable}`}>
           {children}
         </body>
       </UtilitiesProvider>

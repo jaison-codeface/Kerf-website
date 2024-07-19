@@ -5,8 +5,7 @@ import main_padding from "@/styles/padding";
 import dummi from "@/assets/images/home/ear.webp";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
-
-
+import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
   const isData = data.page.acf.sectionTreatments;
@@ -15,7 +14,9 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
       classTop="relative z-0"
       classBottom={`${main_padding.y} flex-col md:items-center `}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
+      <HeadTitle className="mt-1">
+        {ItalicizeLastLetters(isData.title)}
+      </HeadTitle>
       <div className="grid md:grid-cols-3 md:gap-10 gap-8 w-full max-w-[900px] mt-8">
         {isData.services.map((item, idx) => (
           <div
@@ -29,7 +30,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
               alt={item.image.altText}
               width={200}
               height={200}
-              className="object-contain aspect-square md:px-4 md:my-10 px-6 my-7"
+              className="object-contain aspect-square md:px-0 md:my-10 px-6 my-7"
             />
             <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-bold uppercase text-xl">
               {item.service}

@@ -28,6 +28,7 @@ const config: Config = {
       },
       fontFamily: {
         primary: "var(--font--google-sans)",
+        italic: "var(--font--italic)",
       },
     },
   },

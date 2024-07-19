@@ -15,6 +15,9 @@ const footer = `{
         links {
           link
           text
+           icon {
+            ${imageQuery}
+           }
         }
       }
       socialMedia {

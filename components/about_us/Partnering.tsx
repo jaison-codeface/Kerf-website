@@ -4,6 +4,7 @@ import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import second from "@/assets/images/logo.webp";
 import Image from "next/image";
+import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const sdata = [
   second,
@@ -27,19 +28,15 @@ const Partnering = ({ data }: { data: AboutUsPageType }) => {
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] md:gap-20 gap-10 items-center h-max z-50`}>
-      <div className="flex flex-col h-full justify-center text-[#4a4a48]">
-        <HeadTitle className="uppercase">
-          <span className=" font-light">{isData.title.split(",")[0]},</span>{" "}
-          <br />
-          {isData.title.split(",")[1]}
-        </HeadTitle>
+      <div className="flex flex-col h-full justify-center ">
+        <HeadTitle>{ItalicizeLastLetters(isData.title)}</HeadTitle>
         <span
           data-aos="fade-up"
           className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full"
         />
-        <p data-aos="fade-up" className="text-xl">
+        <SectionDescription data-aos="fade-up">
           {isData.description}
-        </p>
+        </SectionDescription>
       </div>
       <div className="flex flex-wrap items-center justify-center h-full w-full relative z-0 bg-[#dffeff] rounded-2xl gap-10 py-20 px-10">
         {isData.companyLogo.map((item, idx) => (

@@ -30,7 +30,7 @@ const Bottom = ({
   const pathname = usePathname();
 
   useMemo(() => {
-    for (let i = 0; i < links.length; i++) {
+    for (let i = 0; i < links?.length; i++) {
       if (
         links[i].link?.includes(
           pathname.split("/").length > 0 ? pathname : pathname.split("/")[1]
@@ -66,7 +66,7 @@ const Bottom = ({
         />
       </Link>
       <div className="lg:flex hidden items-center justify-center gap-4 font-medium ">
-        {links.map((item, idx) => (
+        {links?.map((item, idx) => (
           <div
             key={idx}
             className="relative z-0 flex items-center justify-center group">

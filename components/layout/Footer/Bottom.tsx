@@ -5,8 +5,8 @@ import Image from "next/image";
 const Bottom = ({ data }: { data: FooterType }) => {
   return (
     <div className="flex items-center justify-between md:gap-20 gap-3 w-full py-8 max-md:flex-col-reverse">
-      <p className="text-sm max-md:text-center">
-        © 2024 KERF Hospital. All rights reserved | Designed by{" "}
+      <p className="text-base max-md:text-center">
+      &#9400; 2024 KERF Hospital. All rights reserved | Designed by{" "}
         <a href="https://codefacetech.com/" target="_blank">
           Codeface
         </a>

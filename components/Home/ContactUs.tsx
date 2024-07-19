@@ -7,6 +7,7 @@ import hospitalIcon from "@/assets/icons/hospital.svg";
 import homeWorkIcon from "@/assets/icons/home work.svg";
 import { NormalBtn } from "@/ui/buttons";
 import arrow from "@/assets/icons/arrow.svg";
+import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const buttons = [
   {
@@ -28,7 +29,10 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
+      <HeadTitle className="mt-1">
+        {" "}
+        {ItalicizeLastLetters(isData.title, 1)}
+      </HeadTitle>
       <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
         <Image
           src={isData.sectionImage.sourceUrl}
@@ -64,10 +68,10 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
                     className="object-contain h-6"
                   />
                   <div className="flex flex-col gap-1">
-                    <h1 className="text-lg font-semibold uppercase leading-[130%]">
+                    <h1 className="text-lg font-bold uppercase leading-[130%]">
                       {item.title}
                     </h1>
-                    <p className="text-xs">{item.linkTitle}</p>
+                    <p className="text-sm">{item.linkTitle}</p>
                   </div>
                 </div>
                 <Image

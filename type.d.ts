@@ -329,6 +329,7 @@ interface FooterType {
         links: Array<{
           link?: string;
           text: string;
+          icon: ImageType;
         }>;
       }>;
       socialMedia: Array<{

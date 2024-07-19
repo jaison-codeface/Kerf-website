@@ -4,6 +4,7 @@ import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
 import second from "@/assets/images/about_us/secod session.webp";
 import CountUp from "react-countup";
+import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page.acf.exploreOurWorld;
@@ -12,14 +13,16 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
       classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
         <HeadSubtitle>{isData.sectionSubtitle}</HeadSubtitle>
-        <HeadTitle className="mt-1">{isData.sectionTitle}</HeadTitle>
+        <HeadTitle className="mt-1">
+          {ItalicizeLastLetters(isData.sectionTitle, 2, true)}
+        </HeadTitle>
         <SectionDescription className="mt-4">
           {isData.description}
         </SectionDescription>
       </div>
       <div
         data-aos="fade-up"
-        className="flex items-end justify-center h-full w-full relative z-0">
+        className="flex items-center justify-center h-max w-full relative z-0">
         <svg
           className="flex w-ful"
           viewBox="0 0 895 791"
@@ -64,7 +67,7 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
               />
               +
             </h2>
-            <p className="text-[72%] leading-[130%] font-light uppercase w-1/2">
+            <p className="text-[62%] leading-[130%] font-light uppercase">
               {isData.boxContentText2}
             </p>
           </div>
