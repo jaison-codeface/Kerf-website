@@ -6,9 +6,8 @@ import ResearchFoundation from "@/components/about_us/ResearchFoundation";
 import Testimonials from "@/components/about_us/Testimonials";
 import VisionMission from "@/components/about_us/VisionMission";
 import Layout from "@/components/layout";
-import React from "react";
-import dummi from "@/assets/images/home/hero session e.png";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
+import {  dummiSectionHead } from "@/assets/images";
 
 const page = async () => {
   const data: AboutUsPageType = await getContentFromWordPress("about");
@@ -26,7 +25,7 @@ const page = async () => {
     <Layout pageTitle={breadcrumbs[1].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={data.page.acf.bannerImage.sourceUrl}
+        bgImage={data.page?.acf.bannerImage.sourceUrl ?? dummiSectionHead}
         title={
           <>
             {" "}

@@ -7,6 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import phoneFill from "@/assets/icons/phone fill.svg";
 import { BookAppointmentBtn } from "@/ui/buttons";
+import { dummiSectionHead } from "@/assets/images";
 
 type Props = {
   breadcrumbs: {
@@ -25,7 +26,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
         classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10 items-center ">
         <div className="flex items-end justify-end w-max h-full relative z-0  ">
           <Image
-            src={bgImage}
+            src={bgImage?? dummiSectionHead}
             alt=""
             priority
             width={1000}

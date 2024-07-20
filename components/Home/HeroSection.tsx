@@ -4,6 +4,7 @@ import { HeadSubtitle, SectionDescription } from "@/ui/Typography";
 
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
+import { dummiSectionHead } from "@/assets/images";
 
 const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
@@ -15,18 +16,18 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           data-aos="fade-up"
           data-aos-anchor="#top"
           className="text-kerf-blue-dark md:text-[3.7rem] !tracking-[0.5px] !leading-[1.2] text-4xl font-bold md:max-w-[600px]">
-          {data.page.acf.homeBanner.sectionTitle}
+          {data.page?.acf.homeBanner.sectionTitle}
         </h1>
         <SectionDescription className="md:mt-4 mt-2 md:max-w-[400px]">
-          {data.page.acf.homeBanner.sectionDescription}
+          {data.page?.acf.homeBanner.sectionDescription}
         </SectionDescription>
       </div>
       <div className="flex items-end justify-end w-full h-full right-0 bottom-0 md:absolute -z-10 overflow-visible ">
         <Image
-          src={data.page.acf.homeBanner.sectionImage.sourceUrl}
-          alt={data.page.acf.homeBanner.sectionImage.altText}
-          width={data.page.acf.homeBanner.sectionImage.mediaDetails.width}
-          height={data.page.acf.homeBanner.sectionImage.mediaDetails.height}
+          src={data.page?.acf.homeBanner.sectionImage.sourceUrl ?? dummiSectionHead}
+          alt={data.page?.acf.homeBanner.sectionImage.altText}
+          width={data.page?.acf.homeBanner.sectionImage.mediaDetails.width}
+          height={data.page?.acf.homeBanner.sectionImage.mediaDetails.height}
           priority
           className="object-contain md:h-[calc(100%-115px)] h-full -z-0  object-right-bottom"
         />

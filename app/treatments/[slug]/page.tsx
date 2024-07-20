@@ -5,6 +5,7 @@ import Doctor from "@/components/sections/Doctor";
 import Blogs from "@/components/sections/Blogs";
 import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
+import { dummiSectionHead } from "@/assets/images";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const [
@@ -62,7 +63,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
     <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={isData.acf.bannerImage.sourceUrl}
+        bgImage={isData?.acf.bannerImage?.sourceUrl ?? dummiSectionHead}
         title={isData.title}
       />
       <Content

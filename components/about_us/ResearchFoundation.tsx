@@ -6,7 +6,7 @@ import { HeadTitle, SectionDescription } from "@/ui/Typography";
 import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
-  const isData = data.page.acf.sectionAboutKerf;
+  const isData = data.page?.acf.sectionAboutKerf;
   return (
     <SectionWrapper
       classTop={`relative z-0 ${main_padding.y}`}

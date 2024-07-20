@@ -8,6 +8,7 @@ import homeWorkIcon from "@/assets/icons/home work.svg";
 import { NormalBtn } from "@/ui/buttons";
 import arrow from "@/assets/icons/arrow.svg";
 import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
+import { dummiSection } from "@/assets/images";
 
 const buttons = [
   {
@@ -25,7 +26,7 @@ const buttons = [
 ];
 
 const ContactUs = ({ data }: { data: HomePageType }) => {
-  const isData = data.page.acf.sectionContactUs;
+  const isData = data.page?.acf.sectionContactUs;
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
@@ -35,7 +36,7 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
       </HeadTitle>
       <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
         <Image
-          src={isData.sectionImage.sourceUrl}
+          src={isData.sectionImage.sourceUrl ?? dummiSection}
           alt={isData.sectionImage.altText}
           data-aos="fade-up"
           width={800}
@@ -53,37 +54,38 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
           </SectionDescription>
 
           <div className="grid grid-rows-2 w-full gap-5 mt-6">
-            {isData.links.map((item, idx) => (
-              <NormalBtn
-                key={idx}
-                href={item.link}
-                className={`flex items-center justify-between gap-6 2xl:min-h-[120px]  ${idx % 2 === 0 ? "bg-gradient-to-r from-[#36d7c6] to-[#2ebbaf]" : "bg-gradient-to-r from-[#539fbd] to-[#3682a0]"}`}>
-                <div className="flex items-center justify-start gap-6">
-                  <Image
-                    src={item.icon.sourceUrl}
-                    alt={item.icon.altText}
-                    width={20}
-                    height={20}
-                    loading="lazy"
-                    className="object-contain h-6"
-                  />
-                  <div className="flex flex-col gap-1">
-                    <h1 className="text-lg font-bold uppercase leading-[130%]">
-                      {item.title}
-                    </h1>
-                    <p className="text-sm">{item.linkTitle}</p>
+            {isData.links &&
+              isData.links.map((item, idx) => (
+                <NormalBtn
+                  key={idx}
+                  href={item.link}
+                  className={`flex items-center justify-between gap-6 2xl:min-h-[120px]  ${idx % 2 === 0 ? "bg-gradient-to-r from-[#36d7c6] to-[#2ebbaf]" : "bg-gradient-to-r from-[#539fbd] to-[#3682a0]"}`}>
+                  <div className="flex items-center justify-start gap-6">
+                    <Image
+                      src={item.icon.sourceUrl ?? dummiSection}
+                      alt={item.icon.altText}
+                      width={20}
+                      height={20}
+                      loading="lazy"
+                      className="object-contain h-6"
+                    />
+                    <div className="flex flex-col gap-1">
+                      <h1 className="text-lg font-bold uppercase leading-[130%]">
+                        {item.title}
+                      </h1>
+                      <p className="text-sm">{item.linkTitle}</p>
+                    </div>
                   </div>
-                </div>
-                <Image
-                  src={arrow}
-                  alt=""
-                  width={20}
-                  height={10}
-                  className="object-contain h-4
+                  <Image
+                    src={arrow}
+                    alt=""
+                    width={20}
+                    height={10}
+                    className="object-contain h-4
                 "
-                />
-              </NormalBtn>
-            ))}
+                  />
+                </NormalBtn>
+              ))}
           </div>
         </div>
       </div>

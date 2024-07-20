@@ -1,3 +1,4 @@
+import { dummiSection } from "@/assets/images";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,7 +14,7 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
             shallow
             className=" gap-6 flex items-center">
             <Image
-              src={item.acf.featuredImage.sourceUrl}
+              src={item?.acf.featuredImage.sourceUrl ?? dummiSection}
               alt=""
               width={400}
               height={400}
@@ -32,7 +33,7 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
                 {item.title}
               </h5>
               <p className="line-clamp-2 !text-xs mt-1 font-semibold leading-[120%]">
-                {item.acf.subtitle}
+                {item?.acf.subtitle}
               </p>
             </div>
           </Link>

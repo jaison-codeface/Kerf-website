@@ -16,6 +16,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
+import { dummiSection } from "@/assets/images";
 
 const sdata = [
   {
@@ -51,7 +52,7 @@ const sdata = [
 ];
 
 const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
-  const isData = data.page.acf.sectionBlog;
+  const isData = data.page?.acf.sectionBlog;
   const isBlogs = blogs.blogs.nodes;
 
   function padArrayToFour() {
@@ -131,8 +132,8 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
                       {item.title}
                     </h3>
                     <Image
-                      src={item.acf.featuredImage.sourceUrl}
-                      alt={item.acf.featuredImage.altText}
+                      src={item?.acf.featuredImage.sourceUrl ?? dummiSection}
+                      alt={item?.acf.featuredImage.altText}
                       fill
                       loading="lazy"
                       className="-z-10 object-cover opacity-70"

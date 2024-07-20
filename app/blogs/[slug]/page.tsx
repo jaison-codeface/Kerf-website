@@ -1,3 +1,4 @@
+import { dummiSection } from "@/assets/images";
 import SectionWrapper from "@/components/SectionWrapper";
 import WordPressRichText from "@/components/WordPressRichText";
 import NavigationBtns from "@/components/blogs/NavigationBtns";
@@ -49,7 +50,7 @@ const page = async ({ params }: any) => {
   return (
     <Layout>
       <Image
-        src={data.acf.featuredImage.sourceUrl}
+        src={data?.acf.featuredImage.sourceUrl ?? dummiSection}
         alt=""
         width={1440}
         height={900}
@@ -59,11 +60,11 @@ const page = async ({ params }: any) => {
       <SectionWrapper classBottom={`${main_padding.y} md:gap-20 gap-10 max-md:flex-col`}>
         <div className=" flex flex-col  ">
           <HeadTitle>{data.title}</HeadTitle>
-          <p className="inline-flex">
+          {/* <p className="inline-flex">
             {formattedDate} - By&nbsp;
             <p className="capitalize">{data.author.node.name}</p>
-          </p>
-          <WordPressRichText htmlString={data.acf.content} />
+          </p> */}
+          <WordPressRichText htmlString={data?.acf.content} />
         </div>
         <RecentBlogs data={blogs} />
       </SectionWrapper>

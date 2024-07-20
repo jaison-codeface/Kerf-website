@@ -6,9 +6,10 @@ import dummi from "@/assets/images/home/ear.webp";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
+import { dummiSection } from "@/assets/images";
 
 const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
-  const isData = data.page.acf.sectionTreatments;
+  const isData = data.page?.acf.sectionTreatments;
   return (
     <SectionWrapper
       classTop="relative z-0"
@@ -26,7 +27,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
             className="flex flex-col  justify-between items-center bg-gradient-to-t from-kerf-teal via-kerf-teal-light to-kerf-teal-light md:rounded-3xl rounded-2xl overflow-hidden">
             <div />
             <Image
-              src={item.image.sourceUrl}
+              src={item.image.sourceUrl ?? dummiSection}
               alt={item.image.altText}
               width={200}
               height={200}

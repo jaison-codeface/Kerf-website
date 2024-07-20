@@ -37,7 +37,7 @@ const Header = () => {
   );
 
   const links = () => {
-    const d = utilities.header?.utility.acf.headerLinks;
+    const d = utilities.header?.utility?.acf.headerLinks;
     utilities.header?.utility?.acf.headerLinks.forEach((item, idx) => {
       // if (item.title.toLowerCase() === "treatments".toLowerCase()) {
       //   item.dropDown = treatments;

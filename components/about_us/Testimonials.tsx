@@ -1,9 +1,8 @@
 "use client";
-import React, { MutableRefObject, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import second from "@/assets/images/about_us/Dr.Sunil K.jpg";
 import Image from "next/image";
 import quote from "@/assets/icons/quote.svg";
 import arrow from "@/assets/icons/arrow small.svg";
@@ -17,35 +16,12 @@ import { Autoplay, Navigation } from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
-
-const data = [
-  {
-    content:
-      "Arbitrary variants are like arbitrary values but for doing on-the-fly selector modification, like you can with built-in pseudo-class variants like hover:{utility} or responsive variants like md:{utility} but using square bracket notation directly in your H",
-    name: "rbitrary variants are",
-    designation: "tility} or respons",
-    image: second,
-  },
-  {
-    content:
-      "Arbitrary variants are like arbitrary values but for doing on-the-fly selector modification, like you can with built-in pseudo-class variants like hover:{utility} or responsive variants like md:{utility} but using square bracket notation directly in your H",
-    name: "rbitrary variants are",
-    designation: "tility} or respons",
-    image: second,
-  },
-  {
-    content:
-      "Arbitrary variants are like arbitrary values but for doing on-the-fly selector modification, like you can with built-in pseudo-class variants like hover:{utility} or responsive variants like md:{utility} but using square bracket notation directly in your H",
-    name: "rbitrary variants are",
-    designation: "tility} or respons",
-    image: second,
-  },
-];
+import { dummiDoctor } from "@/assets/images";
 
 const arrows = ["left", "right"];
 
 const Testimonials = ({ data }: { data: AboutUsPageType }) => {
-  const isData = data.page.acf.sectionTestimonials;
+  const isData = data.page?.acf.sectionTestimonials;
   const [index, setIndex] = useState(0);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
@@ -54,7 +30,9 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-start  z-50`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1">{ItalicizeLastLetters(isData.title)}</HeadTitle>
+      <HeadTitle className="mt-1">
+        {ItalicizeLastLetters(isData.title)}
+      </HeadTitle>
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={20}
@@ -103,7 +81,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
             <div className="w-full flex items-center justify-between gap-10 mt-10">
               <div className="flex items-center justify-start gap-4">
                 <Image
-                  src={item.image.sourceUrl}
+                  src={item.image.sourceUrl ?? dummiDoctor}
                   alt={item.image.altText}
                   height={40}
                   width={40}

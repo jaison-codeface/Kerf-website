@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { NormalBtn } from "./buttons";
+import { dummiDoctor } from "@/assets/images";
 
 const SingleDoctor = ({
   item,
@@ -38,7 +39,7 @@ const SingleDoctor = ({
           className="relative z-0 w-full bg-[#e6e6e6] rounded-lg overflow-hidden flex flex-col items-start justify-end text-white  group  min-h-[260px]">
           <div className="absolute w-full flex flex-col overflow-hidden left-0 bottom-0 px-4 py-6">
             <h2 className="font-bold text-base ">{item.title}</h2>
-            <p className="text-sm font-light mt-1">{item.acf.designation}</p>
+            <p className="text-sm font-light mt-1">{item?.acf.designation}</p>
             <div className="grid gap-1  mt-3 max-h-0 overflow-hidden group-hover:max-h-[900px] duration-700 ">
               {buttons.map((btn, btnIdx: any) => (
                 <NormalBtn
@@ -51,8 +52,8 @@ const SingleDoctor = ({
             </div>
           </div>
           <Image
-            src={item.acf.image.sourceUrl}
-            alt={item.acf.image.altText}
+            src={item?.acf.image.sourceUrl ?? dummiDoctor}
+            alt={item?.acf.image.altText}
             width={300}
             height={300}
             className="-z-10 object-contain  object-bottom h-full w-full"

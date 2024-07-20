@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import WordPressRichText from "@/components/WordPressRichText";
+import { dummiSection } from "@/assets/images";
 
 type Props = {
   data: {
@@ -24,8 +25,8 @@ const Left = ({ data }: Props) => {
   return (
     <div className="flex flex-col items-center">
       <Image
-        src={data.acf.sectionImage.sourceUrl}
-        alt={data.acf.sectionImage.altText}
+        src={data?.acf.sectionImage?.sourceUrl ?? dummiSection}
+        alt={data?.acf.sectionImage?.altText}
         data-aos="fade-up"
         width={1200}
         height={600}
@@ -35,7 +36,7 @@ const Left = ({ data }: Props) => {
         <h2 data-aos="fade-up" className="text-2xl font-medium">
           {data.title}
         </h2>
-        <WordPressRichText htmlString={data.acf.content} />
+        <WordPressRichText htmlString={data?.acf.content} />
       </div>
     </div>
   );

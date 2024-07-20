@@ -5,6 +5,7 @@ import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import second from "@/assets/images/logo.webp";
 import Image from "next/image";
 import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
+import { dummiSection } from "@/assets/images";
 
 const sdata = [
   second,
@@ -23,7 +24,7 @@ const sdata = [
 ];
 
 const Partnering = ({ data }: { data: AboutUsPageType }) => {
-  const isData = data.page.acf.sectionMedicalInsurance;
+  const isData = data.page?.acf.sectionMedicalInsurance;
 
   return (
     <SectionWrapper
@@ -44,7 +45,7 @@ const Partnering = ({ data }: { data: AboutUsPageType }) => {
             data-aos="fade-up"
             data-aos-delay={50 * idx}
             key={idx}
-            src={item.logoImage.sourceUrl}
+            src={item.logoImage.sourceUrl ?? dummiSection}
             alt={item.logoImage.altText}
             width={100}
             height={100}

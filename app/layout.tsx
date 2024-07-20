@@ -12,19 +12,19 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    title: seo.utility.acf.title,
-    description: seo.utility.acf.description,
-    keywords: seo.utility.acf.keyWords,
+    title: seo.utility?.acf.title,
+    description: seo.utility?.acf.description,
+    keywords: seo.utility?.acf.keyWords,
     openGraph: {
       type: "website",
       url: "",
-      title: seo.utility.acf.title,
-      description: seo.utility.acf.description,
+      title: seo.utility?.acf.title,
+      description: seo.utility?.acf.description,
       siteName: "KERF",
-      images: [seo.utility.acf.favIcon.sourceUrl, ...previousImages],
+      images: [seo.utility?.acf.favIcon.sourceUrl, ...previousImages],
     },
     icons: {
-      icon: seo.utility.acf.favIcon.sourceUrl,
+      icon: seo.utility?.acf.favIcon.sourceUrl,
       other: [
         {
           rel: "preconnect",

@@ -6,7 +6,7 @@ import ImageInBorder from "@/ui/ImageInBorder";
 import mainImage from "@/assets/images/home/our philosophy.webp";
 
 const VisionMission = ({ data }: { data: AboutUsPageType }) => {
-  const isData = data.page.acf.sectionVision;
+  const isData = data.page?.acf.sectionVision;
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-2 md:gap-20 gap-10 items-center  z-50`}>

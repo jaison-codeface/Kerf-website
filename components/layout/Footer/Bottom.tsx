@@ -12,7 +12,7 @@ const Bottom = ({ data }: { data: FooterType }) => {
         </a>
       </p>
       <div className="flex items-center justify-center gap-4">
-        {data.utility.acf.socialMedia.map((item, idx) => (
+        {data.utility?.acf.socialMedia.map((item, idx) => (
           <Link
             key={idx}
             href={item.link ? item.link : "javascript:void(0)"}

@@ -1,3 +1,4 @@
+import { dummiSection } from "@/assets/images";
 import Image from "next/image";
 import React from "react";
 import { twMerge } from "tailwind-merge";
@@ -17,7 +18,7 @@ const ImageInBorder = ({
         className
       )}>
       <Image
-        src={mainImage}
+        src={mainImage ?? dummiSection}
         alt=""
         width={100}
         height={100}

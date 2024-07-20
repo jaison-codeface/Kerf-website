@@ -7,9 +7,10 @@ import mapImage from "@/assets/images/contact_us/map.png";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import Link from "next/link";
+import { dummiSection } from "@/assets/images";
 
 const GetDirection = ({ data }: { data: ContactUsType }) => {
-  const isData = data.page.acf.secondSection;
+  const isData = data.page?.acf.secondSection;
   return (
     <SectionWrapper
       classTop="relative z-0"
@@ -29,13 +30,15 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
         </span>
         <span className="h-full w-full flex items-end relative z-0 md:px-8 md:py-10 px-4 py-4 flex-1">
           <Image
-            src={isData.mapImage.sourceUrl}
+            src={isData.mapImage.sourceUrl ?? dummiSection}
             alt={isData.mapImage.altText}
             fill
             className="object-cover -z-10"
           />
           <Link
-            href={isData.directionLink ? isData.directionLink : "javascript:void(0)"}
+            href={
+              isData.directionLink ? isData.directionLink : "javascript:void(0)"
+            }
             target="_blank"
             className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
             <Image
@@ -51,7 +54,7 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
       </div>
       <Image
         data-aos="fade-up"
-        src={isData.sectionImage.sourceUrl}
+        src={isData.sectionImage.sourceUrl ?? dummiSection}
         alt={isData.sectionImage.altText}
         width={600}
         height={400}

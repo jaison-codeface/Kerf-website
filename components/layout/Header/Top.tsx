@@ -10,10 +10,10 @@ const Top = () => {
       classTop="bg-kerf-teal-light"
       classBottom="justify-end py-3 font-medium text-sm text-center">
       <Link
-        href={`tel:${utilities.footer?.utility.acf.phoneNumber}`}
+        href={`tel:${utilities.footer?.utility?.acf.phoneNumber}`}
         shallow
         className="">
-        {utilities.footer?.utility.acf.phoneNumber}
+        {utilities.footer?.utility?.acf.phoneNumber}
       </Link>{" "}
       &nbsp; |&nbsp; Book an Appointment
     </SectionWrapper>
