@@ -81,7 +81,14 @@ const Top = ({ data }: { data: FooterType }) => {
                         className="h-4 w-auto object-contain group-hover:invert"
                       />
                     )}
-                    {isQuickLinks(item) && <Arrow width={20} height={20} color="#fff" className="group-hover:invert" />}
+                    {isQuickLinks(item) && (
+                      <Arrow
+                        width={20}
+                        height={20}
+                        color="#fff"
+                        className="group-hover:invert"
+                      />
+                    )}
                     {link.text}
                   </Link>
                 ))}
