@@ -70,7 +70,7 @@ const NavMobile = ({
       {/*  */}
 
       <div
-        className={`flex flex-col right-6 items-end justify-start gap-3 absolute top-32 bg-kerf-blue-light/50 backdrop-blur-sm  pr-4 pl-10 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 h-[calc("auto")] ${
+        className={`flex flex-col right-6 items-end justify-start gap-3 absolute top-32 bg-kerf-blue-light/50 backdrop-blur-sm  pr-4 pl-10 py-6 rounded-[10px] shadow-md z-50 w-max lg:hidden duration-300 h-[calc("auto")] text-lg ${
           toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}>
         {links?.map((item, idx) => (

@@ -23,7 +23,7 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
           width={800}
           height={500}
           loading="lazy"
-          className="w-full h-full object-cover rounded-xl overflow-hidden max-md:aspect-square"
+          className="w-full h-full object-cover rounded-xl overflow-hidden max-md:aspect-square max-md:h-[400px]"
         />
 
         <div className="flex flex-col">
