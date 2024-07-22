@@ -56,7 +56,7 @@ const Top = ({ data }: { data: FooterType }) => {
       </div>
       <div
         className={`flex flex-col items-start md:gap-10 gap-6 justify-between lg:h-full px-10  ${main_padding.y}`}>
-        <div className="flex items-start justify-between lg:gap-12 md:gap-10 gap-6 max-md:flex-wrap ">
+        <div className="flex items-start justify-between lg:gap-12 md:gap-10 gap-8 max-md:flex-wrap ">
           {data.utility?.acf.footerLinks.map((item, idx) => (
             <div
               data-aos="fade-up"
