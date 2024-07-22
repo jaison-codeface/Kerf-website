@@ -10,6 +10,8 @@ import Link from "next/link";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import WordPressRichText from "@/components/WordPressRichText";
 import { dummiDoctor } from "@/assets/images";
+import useStore from "@/libs/store";
+import { BookAppointmentBtn } from "@/ui/buttons";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const data: DoctorType = await getContentFromWordPress("doctor", params.slug);
@@ -50,11 +52,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         <div className="w-full flex flex-col ">
           <h2 className="text-2xl font-medium">{isData?.title}</h2>
           <WordPressRichText htmlString={isData?.acf.content} />
-          <Link
-            href={""}
-            className="px-10 py-4 rounded-lg bg-[#3398cc] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500">
-            book appointment
-          </Link>
+          <BookAppointmentBtn />
         </div>
         {/* textures */}
         <RosePetalTexture className="rotate-180 bottom-0 right-0" />

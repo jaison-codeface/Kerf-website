@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import Link from "next/link";
 import Image from "next/image";
 import phoneFill from "@/assets/icons/phone fill.svg";
+import useStore from "@/libs/store";
 
 const NormalBtn = ({
   children,
@@ -51,9 +52,12 @@ const BookAppointmentBtn = ({
   type?: "hero section";
   className?: string;
 }) => {
+  const { utilities } = useStore();
   return type === "hero section" ? (
     <Link
-      href=""
+      href={
+        utilities.bookAndAppointment.utility.acf.link ?? "javascript:void(0)"
+      }
       suppressHydrationWarning
       data-aos="fade-up"
       data-aos-anchor="#top"
@@ -70,17 +74,19 @@ const BookAppointmentBtn = ({
           className="object-contain aspect-square"
         />
       </span>
-      Book your Appointment
+      {utilities.bookAndAppointment.utility.acf.title}
     </Link>
   ) : (
     <Link
       data-aos="fade-up"
-      href={""}
+      href={
+        utilities.bookAndAppointment.utility.acf.link ?? "javascript:void(0)"
+      }
       className={twMerge(
-        "px-10 py-4 rounded-lg bg-gradient-to-r from-[#539fbd] to-[#3682a0] sm:max-w-max text-center mt-6 font-bold text-white uppercase hover:opacity-90 duration-500",
+        "px-10 py-4 rounded-lg hover:hue-rotate-[26deg] bg-gradient-to-r from-[#539fbd] to-[#3682a0] sm:max-w-max text-center mt-6 font-bold text-white  duration-500",
         className
       )}>
-      book appointment
+      {utilities.bookAndAppointment.utility.acf.title}
     </Link>
   );
 };

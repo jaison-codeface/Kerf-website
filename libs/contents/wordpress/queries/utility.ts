@@ -57,11 +57,24 @@ const seo = `{
   }
 }`;
 
-const data = (type: "footer" | "header" | "seo") => {
+const bookAndAppointment = `{
+  utility(id: "cG9zdDo0NTQ=") {
+    acf: acfBookAndAppointment {
+      title
+      link
+      backgroundImageForTreatmentSection {
+      ${imageQuery}
+      }
+    }
+  }
+}`;
+
+const data = (type: "footer" | "header" | "seo" | "bookAndAppointment") => {
   const query = {
-    footer: footer,
-    header: header,
-    seo: seo,
+    footer,
+    header,
+    seo,
+    bookAndAppointment,
   };
 
   // @ts-ignore

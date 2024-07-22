@@ -147,10 +147,12 @@ interface ContactUsType {
         }>;
       };
       secondSection: {
-        title: string;
         sectionImage: ImageType;
-        mapImage: ImageType;
-        directionLink: any;
+        locations: {
+          title: string;
+          link: string;
+          image: ImageType;
+        }[];
       };
     };
   };
@@ -366,6 +368,15 @@ interface SeoType {
     };
   };
 }
+interface BookAndAppointmentType {
+  utility: {
+    acf: {
+      title: string;
+      link: string;
+      backgroundImageForTreatmentSection :ImageType
+    };
+  };
+}
 
 interface UtilitiesType {
   treatments: TreatmentCategoriesType;
@@ -373,4 +384,5 @@ interface UtilitiesType {
   footer: FooterType;
   header: HeaderType;
   seo: SeoType;
+  bookAndAppointment: BookAndAppointmentType;
 }

@@ -8,23 +8,15 @@ import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import { dummiSectionHead } from "@/assets/images";
 
 const page = async ({ params }: { params: { slug: string } }) => {
-  const [
-    data,
-    treatments,
-    treatmentsRelatedDoctors,
-    departmentsTaxonomies,
-    blogs,
-  ]: [
+  const [data, treatments, treatmentsRelatedDoctors, blogs]: [
     TreatmentType,
     TreatmentCategoriesType,
     TreatmentsRelatedDoctorsType,
-    DepartmentsTaxonomiesType,
     BlogsType,
   ] = await Promise.all([
     getContentFromWordPress("treatment", params.slug),
     getContentFromWordPress("treatments"),
     getContentFromWordPress("treatments-related doctors", params.slug),
-    getContentFromWordPress("departments"),
     getContentFromWordPress("blogs"),
   ]);
   const isData = data.treatments.nodes[0];
@@ -69,9 +61,9 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <Content
         leftData={isData}
         relatedTreatmentsData={relatedTreatmentsData()}
-        departmentsTaxonomies={departmentsTaxonomies}
       />
-      {treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0]?.doctors.nodes.length > 0 && (
+      {treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0]?.doctors.nodes
+        .length > 0 && (
         <Doctor
           doctors={
             treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes

@@ -10,6 +10,7 @@ import RosePetalTexture from "@/ui/rosePetalTexture";
 import SingleDoctor from "@/ui/SingleDoctor";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
+
 const page = async () => {
   const [pageData, doctorsData]: [DoctorPageType, DoctorType] =
     await Promise.all([

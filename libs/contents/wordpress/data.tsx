@@ -51,7 +51,8 @@ type Ids =
   | "treatments-related doctors"
   | "footer"
   | "seo"
-  | "header";
+  | "header"
+  | "bookAndAppointment";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
@@ -71,6 +72,7 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     footer: utilityQuery("footer"),
     header: utilityQuery("header"),
     seo: utilityQuery("seo"),
+    bookAndAppointment: utilityQuery("bookAndAppointment"),
   };
   const data = await fetchAPI(query[id]);
   return data;

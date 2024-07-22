@@ -21,13 +21,11 @@ type Props = {
     };
   };
   relatedTreatmentsData: any;
-  departmentsTaxonomies: DepartmentsTaxonomiesType;
 };
 
 const Content = ({
   leftData,
   relatedTreatmentsData,
-  departmentsTaxonomies,
 }: Props) => {
   return (
     <SectionWrapper
@@ -36,7 +34,6 @@ const Content = ({
       <Left data={leftData} />{" "}
       <Right
         relatedTreatmentsData={relatedTreatmentsData}
-        departmentsTaxonomies={departmentsTaxonomies}
       />
     </SectionWrapper>
   );

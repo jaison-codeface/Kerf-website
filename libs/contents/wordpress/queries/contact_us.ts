@@ -28,14 +28,16 @@ const contact_us = `{
         }
       }
       secondSection {
-        title
         sectionImage {
           ${imageQuery}
         }
-        mapImage {
-          ${imageQuery}
+        locations {
+          title
+          link
+          image {
+            ${imageQuery}
+          }
         }
-        directionLink
       }
     }
   }

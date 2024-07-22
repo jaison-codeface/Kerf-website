@@ -67,7 +67,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
             key={idx}
             className={`${
               index === idx ? "bg-[#ebe8f9]" : "bg-[#e9ecf1]"
-            } md:!w-[70%] !w-[90%] duration-500 flex flex-col md:px-10 px-6 md:py-10 py-8 rounded-2xl items-start text-[#081332]`}>
+            } md:!w-[70%] !w-[90%] duration-500  !flex flex-col md:px-10 px-6 md:py-10 py-8 rounded-2xl items-start text-[#081332]`}>
             <Image
               src={quote}
               alt=""
@@ -78,7 +78,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
             <p className="mt-4 text-lg font-medium">
               &ldquo;{item.comment}&ldquo;
             </p>
-            <div className="w-full flex items-center justify-between gap-10 mt-10">
+            <div className="w-full flex items-center justify-between gap-10 pt-10 mt-auto">
               <div className="flex items-center justify-start gap-4">
                 <Image
                   src={item.image.sourceUrl ?? dummiDoctor}

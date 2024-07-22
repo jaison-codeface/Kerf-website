@@ -44,18 +44,20 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [treatments, departments, footer, header, seo]: [
+  const [treatments, departments, footer, header, seo, bookAndAppointment]: [
     TreatmentCategoriesType,
     DepartmentsTaxonomiesType,
     FooterType,
     HeaderType,
     SeoType,
+    BookAndAppointmentType,
   ] = await Promise.all([
     getContentFromWordPress("treatments"),
     getContentFromWordPress("departments"),
     getContentFromWordPress("footer"),
     getContentFromWordPress("header"),
     getContentFromWordPress("seo"),
+    getContentFromWordPress("bookAndAppointment"),
   ]);
 
   const utilitiesData: UtilitiesType = {
@@ -64,6 +66,7 @@ export default async function RootLayout({
     footer,
     header,
     seo,
+    bookAndAppointment,
   };
 
   return (
