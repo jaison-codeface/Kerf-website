@@ -11,10 +11,10 @@ type Props = {
 const RelatedTreatments = ({ relatedTreatmentsData }: Props) => {
   return (
     <div className="w-full flex flex-col">
-      <h2 data-aos="fade-up" className="text-base font-bold">
+      <h2 data-aos="fade-up" className="sm:text-[1.7rem] text-lg font-bold">
         Related Treatments
       </h2>
-      <div className="flex flex-col gap-1 px-4 py-6   bg-gradient-to-t from-[#b4c7c1] via-[#d7ece5] to-[#d7ece5]  w-full rounded-2xl mt-4">
+      <div className="flex flex-col gap-1 px-4 py-6   bg-gradient-to-t from-[#79a3b8] via-[#98cbe5] to-[#98cbe5]  w-full rounded-2xl mt-4">
         {relatedTreatmentsData.slice(0, 7).map((item, idx) => (
           <Link
             href={`/treatments/${item.slug}`}

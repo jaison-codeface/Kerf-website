@@ -74,7 +74,7 @@ const Bottom = ({
               onClick={() => setIndex(idx)}
               href={item.link ? item.link : "javascript:void(0)"}
               shallow
-              className={`text-sm px-4 py-2  rounded-md duration-300 hover:bg-kerf-blue-light inline-flex items-center justify-center gap-2 ${
+              className={`px-4 py-2  rounded-md duration-300 text-base hover:bg-kerf-blue-light inline-flex items-center justify-center gap-2 ${
                 index === idx ? "bg-kerf-blue-light" : ""
               }`}>
               {item.title}{" "}

@@ -6,6 +6,8 @@ import blogsQuery from "./blogs";
 import doctorQuery from "./doctor";
 import treatmentQuery from "./treatment";
 import utilityQuery from "./utility";
+import privacyAndPolicyQuery from "./privacyAndPolicy";
+import termsAndConditionsQuery from "./termsAndConditions";
 
 export {
   homeQuery,
@@ -16,4 +18,6 @@ export {
   doctorQuery,
   treatmentQuery,
   utilityQuery,
+  privacyAndPolicyQuery,
+  termsAndConditionsQuery,
 };

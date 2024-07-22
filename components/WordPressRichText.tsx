@@ -5,13 +5,13 @@ function WordPressRichText({ htmlString = "" }: { htmlString: string }) {
   const modifiedHtmlString = useMemo(() => {
     const a = htmlString.replace(
       "<h1>",
-      `<h1 class="text-3xl font-medium mt-4">`
+      `<h1 class="text-3xl font-bold mt-4">`
     );
-    const b = a.replaceAll("<h2", `<h2 class="text-2xl font-medium mt-4"`);
-    const c = b.replaceAll("<h3", `<h3 class="text-xl font-medium mt-4"`);
-    const d = c.replaceAll("<h4", `<h4 class="text-lg font-medium mt-4"`);
-    const e = d.replaceAll("<h5", `<h5 class="text-base font-medium mt-4"`);
-    const f = e.replaceAll("<h6", `<h6 class="text-sm font-medium mt-4"`);
+    const b = a.replaceAll("<h2", `<h2 class="text-[1.7rem] font-bold mt-4"`);
+    const c = b.replaceAll("<h3", `<h3 class="text-xl font-bold mt-4"`);
+    const d = c.replaceAll("<h4", `<h4 class="text-lg font-bold mt-4"`);
+    const e = d.replaceAll("<h5", `<h5 class="text-base font-bold mt-4"`);
+    const f = e.replaceAll("<h6", `<h6 class="text-sm font-bold mt-4"`);
     const g = f.replaceAll("<p", `<p class="text-lg mt-2 leading-[1.8]"`);
 
     const h = g.replaceAll(

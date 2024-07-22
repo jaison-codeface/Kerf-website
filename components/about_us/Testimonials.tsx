@@ -15,7 +15,6 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 import { dummiDoctor } from "@/assets/images";
 
 const arrows = ["left", "right"];
@@ -31,7 +30,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
       classBottom={`${main_padding.y} flex-col items-start  z-50`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
       <HeadTitle className="mt-1">
-        {ItalicizeLastLetters(isData.title)}
+        {isData.title}
       </HeadTitle>
       <Swiper
         slidesPerView={"auto"}

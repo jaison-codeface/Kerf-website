@@ -5,7 +5,6 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import dummiIcon from "@/assets/icons/facebook.svg";
 import Link from "next/link";
 import Image from "next/image";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 
 const OurCenters = ({ data }: { data: ContactUsType }) => {
   const isData = data.page?.acf.firstSection;
@@ -16,7 +15,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
       classBottom={`${main_padding.y} flex-col sm:items-center items-start z-50`}>
       <HeadSubtitle>{isData.subtitle}</HeadSubtitle>
       <HeadTitle className="mt-1 sm:text-center">
-        {ItalicizeLastLetters(isData.sectionTitle, 2, true)}
+        {isData.sectionTitle}
       </HeadTitle>
       <div className="flex items-start justify-center flex-wrap lg:gap-20 sm:gap-10 gap-6 md:mt-16 mt-6">
         {isData.locations &&

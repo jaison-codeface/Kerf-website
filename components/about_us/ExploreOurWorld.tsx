@@ -2,9 +2,7 @@
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
-import second from "@/assets/images/about_us/secod session.webp";
 import CountUp from "react-countup";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 import { dummiSection } from "@/assets/images";
 
 const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
@@ -15,7 +13,7 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
       <div className="flex flex-col h-full justify-center">
         <HeadSubtitle>{isData.sectionSubtitle}</HeadSubtitle>
         <HeadTitle className="mt-1">
-          {ItalicizeLastLetters(isData.sectionTitle, 2, true)}
+          {isData.sectionTitle}
         </HeadTitle>
         <SectionDescription className="mt-4">
           {isData.description}

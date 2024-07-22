@@ -2,11 +2,9 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import dummi from "@/assets/icons/our specialities.webp";
 import Image from "next/image";
 import { NormalBtn } from "@/ui/buttons";
 import RosePetalTexture from "@/ui/rosePetalTexture";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 import { dummiSection } from "@/assets/images";
 
 const OurSpecialties = ({ data }: { data: HomePageType }) => {
@@ -18,7 +16,7 @@ const OurSpecialties = ({ data }: { data: HomePageType }) => {
         <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
         <HeadTitle className="mt-1 text-center">
           {" "}
-          {ItalicizeLastLetters(isData.title)}
+          {isData.title}
         </HeadTitle>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10 md:mt-16 mt-8">
           {isData.specialties.map((item, idx) => (

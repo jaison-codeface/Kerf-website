@@ -22,9 +22,9 @@ const Top = ({ data }: { data: FooterType }) => {
     item.title.toLowerCase() === "QUICK LINKS".toLowerCase();
   return (
     <div
-      className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white flex items-start justify-between lg:gap-20 gap-8 max-lg:flex-wrap overflow-hidden`}>
+      className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white grid lg:grid-cols-[1fr_2fr]  lg:gap-20 gap-8 max-lg:flex-wrap overflow-hidden`}>
       <div
-        className={`flex flex-col gap-4 w-full max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full px-10  ${main_padding.y}`}>
+        className={`flex flex-col gap-4  max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full md:px-10 px-6 lg:pr-16 ${main_padding.y}`}>
         <Link data-aos="fade-up" href="/" shallow>
           <Image
             src={data.utility?.acf.logo.sourceUrl}
@@ -42,15 +42,15 @@ const Top = ({ data }: { data: FooterType }) => {
         </p>
         {phoneNumber && (
           <Link
-            href={`tel:${phoneNumber}`}
+            href={`${phoneNumber.link}`}
             suppressHydrationWarning
-            className="text-[1.1rem] font-semibold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 w-max px-3 py-2 rounded-lg bg-transparent hover:bg-white/45 hover:text-black group duration-300">
+            className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 w-max px-3 py-2 rounded-lg bg-transparent hover:bg-white/45 hover:text-black group duration-300">
             <Image
               src={phoneIcon}
               alt=""
               className="group-hover:invert duration-300"
             />
-            {phoneNumber}
+            {phoneNumber.title}
           </Link>
         )}
       </div>
@@ -62,7 +62,7 @@ const Top = ({ data }: { data: FooterType }) => {
               data-aos="fade-up"
               key={idx}
               className={`flex flex-col gap-4 ${isQuickLinks(item) && "md:ml-6"}`}>
-              <h3 className="font-bold text-base shrink-0 w-max relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white">
+              <h3 className="font-bold text-xl shrink-0 w-max relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white">
                 {item.title}
               </h3>
               <div className="flex flex-col gap-3 w-full">
@@ -71,7 +71,7 @@ const Top = ({ data }: { data: FooterType }) => {
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow
                     key={idx + link.text}
-                    className="text-sm font-normal w-full min-w-[180px] flex items-center gap-3 group duration-300 [&_*]:duration-300 hover:text-black">
+                    className="text-[1.1rem] leading-[2rem] font-semibold w-full min-w-[180px] max-w-[250px] flex items-center gap-3 group duration-300 [&_*]:duration-300 hover:text-black">
                     {link.icon && (
                       <Image
                         src={link.icon.sourceUrl}

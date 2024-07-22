@@ -29,7 +29,6 @@ const Layout = ({
   }, []);
   return (
     <>
-
       <title>{`${pageTitle ? pageTitle + " | " : ""} ${utilities?.seo?.utility?.acf?.title}`}</title>
 
       <main className="flex flex-col w-full flex-1 items-center justify-center text-black  relative z-10">
@@ -40,6 +39,5 @@ const Layout = ({
     </>
   );
 };
-
 
 export default Layout;

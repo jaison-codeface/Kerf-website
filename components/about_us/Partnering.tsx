@@ -2,26 +2,10 @@ import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
-import second from "@/assets/images/logo.webp";
+
 import Image from "next/image";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 import { dummiSection } from "@/assets/images";
 
-const sdata = [
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-  second,
-];
 
 const Partnering = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page?.acf.sectionMedicalInsurance;
@@ -30,7 +14,7 @@ const Partnering = ({ data }: { data: AboutUsPageType }) => {
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-[1fr_1.4fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center ">
-        <HeadTitle>{ItalicizeLastLetters(isData.title)}</HeadTitle>
+        <HeadTitle>{isData.title}</HeadTitle>
         <span
           data-aos="fade-up"
           className="h-0.5 w-[200px] my-4 bg-[#4a4a48] rounded-full"

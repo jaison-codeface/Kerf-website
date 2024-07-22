@@ -1,29 +1,10 @@
 import main_padding from "@/styles/padding";
 import SectionWrapper from "../SectionWrapper";
-import mainImage from "@/assets/images/home/contact us.webp";
 import Image from "next/image";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
-import hospitalIcon from "@/assets/icons/hospital.svg";
-import homeWorkIcon from "@/assets/icons/home work.svg";
 import { NormalBtn } from "@/ui/buttons";
-import arrow from "@/assets/icons/arrow.svg";
-import ItalicizeLastLetters from "@/libs/hooks/ItalicizeLastLetters";
 import { dummiSection } from "@/assets/images";
-
-const buttons = [
-  {
-    title: "HOSPITAL",
-    subtitle: "Book an Appointment",
-    link: "",
-    icon: hospitalIcon,
-  },
-  {
-    title: "INTERNATIONAL PATIENT CARE",
-    subtitle: "Visit Now",
-    link: "",
-    icon: homeWorkIcon,
-  },
-];
+import Arrow from '@/assets/icons/ArrowRightDouble'
 
 const ContactUs = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.sectionContactUs;
@@ -32,7 +13,7 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
       <HeadTitle className="mt-1">
         {" "}
-        {ItalicizeLastLetters(isData.title, 1)}
+        {isData.title}
       </HeadTitle>
       <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
         <Image
@@ -70,20 +51,14 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
                       className="object-contain h-6"
                     />
                     <div className="flex flex-col gap-1">
-                      <h1 className="text-lg font-bold uppercase leading-[130%]">
+                      <h1 className="text-[1.2rem] font-bold uppercase leading-[130%]">
                         {item.title}
                       </h1>
                       <p className="text-sm">{item.linkTitle}</p>
                     </div>
                   </div>
-                  <Image
-                    src={arrow}
-                    alt=""
-                    width={20}
-                    height={10}
-                    className="object-contain h-4
-                "
-                  />
+                  <Arrow height={20} width={20} color="#fff" className="w-5 h-5 shrink-0" />
+             
                 </NormalBtn>
               ))}
           </div>

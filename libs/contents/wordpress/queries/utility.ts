@@ -9,7 +9,10 @@ const footer = `{
         ${imageQuery}
       }
       description
-      phoneNumber
+      phoneNumber {
+        link
+        title
+      }
       footerLinks {
         title
         links {

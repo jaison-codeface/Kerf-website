@@ -325,7 +325,10 @@ interface FooterType {
     acf: {
       logo: ImageType;
       description: string;
-      phoneNumber: string;
+      phoneNumber: {
+        link: string;
+        title: string;
+      };
       footerLinks: Array<{
         title: string;
         links: Array<{
@@ -373,7 +376,7 @@ interface BookAndAppointmentType {
     acf: {
       title: string;
       link: string;
-      backgroundImageForTreatmentSection :ImageType
+      backgroundImageForTreatmentSection: ImageType;
     };
   };
 }
@@ -385,4 +388,13 @@ interface UtilitiesType {
   header: HeaderType;
   seo: SeoType;
   bookAndAppointment: BookAndAppointmentType;
+}
+
+interface TermsAndPolicyType {
+  page: {
+    acf: {
+      bannerImage: ImageType;
+      content: string;
+    };
+  };
 }

@@ -62,10 +62,10 @@ const BookAppointmentBtn = ({
       data-aos="fade-up"
       data-aos-anchor="#top"
       className={twMerge(
-        "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-full font-bold text-base group [&_*]:duration-300 hover:text-kerf-blue",
+        "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-[15px] leading-[1.5rem] font-bold text-[1.1rem] group [&_*]:duration-300 hover:text-kerf-blue",
         className
       )}>
-      <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] group-hover:bg-kerf-blue flex items-center justify-center rounded-full">
+      <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] group-hover:bg-kerf-blue flex items-center justify-center rounded-[12px]">
         <Image
           src={phoneFill}
           alt=""

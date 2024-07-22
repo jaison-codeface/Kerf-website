@@ -33,7 +33,7 @@ const Left = ({ data }: Props) => {
         className="md:aspect-[16/7] aspect-video rounded-xl overflow-hidden object-cover "
       />
       <div className=" flex flex-col  mt-16">
-        <h2 data-aos="fade-up" className="text-2xl font-medium">
+        <h2 data-aos="fade-up" className="text-[2rem] font-extrabold">
           {data.title}
         </h2>
         <WordPressRichText htmlString={data?.acf.content} />
