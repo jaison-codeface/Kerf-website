@@ -8,15 +8,9 @@ import phoneIcon from "@/assets/icons/phone regular.svg";
 import Arrow from "@/assets/icons/ArrowRightDouble";
 
 const Top = ({ data }: { data: FooterType }) => {
-  const {
-    utilities: {
-      footer: {
-        utility: {
-          acf: { phoneNumber },
-        },
-      },
-    },
-  } = useStore();
+  const { utilities } = useStore();
+
+  const phoneNumber = utilities.footer?.utility?.acf.phoneNumber
 
   const isQuickLinks = (item: any) =>
     item.title.toLowerCase() === "QUICK LINKS".toLowerCase();
