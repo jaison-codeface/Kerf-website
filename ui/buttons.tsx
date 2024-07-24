@@ -56,7 +56,7 @@ const BookAppointmentBtn = ({
   return type === "hero section" ? (
     <Link
       href={
-        utilities.bookAndAppointment.utility.acf.link ?? "javascript:void(0)"
+        utilities.bookAndAppointment?.utility?.acf.link ?? "javascript:void(0)"
       }
       suppressHydrationWarning
       data-aos="fade-up"
@@ -74,19 +74,19 @@ const BookAppointmentBtn = ({
           className="object-contain aspect-square"
         />
       </span>
-      {utilities.bookAndAppointment.utility.acf.title}
+      {utilities.bookAndAppointment?.utility?.acf.title}
     </Link>
   ) : (
     <Link
       data-aos="fade-up"
       href={
-        utilities.bookAndAppointment.utility.acf.link ?? "javascript:void(0)"
+        utilities.bookAndAppointment?.utility?.acf.link ?? "javascript:void(0)"
       }
       className={twMerge(
         "px-10 py-4 rounded-lg hover:hue-rotate-[26deg] bg-gradient-to-r from-[#539fbd] to-[#3682a0] sm:max-w-max text-center mt-6 font-bold text-white  duration-500",
         className
       )}>
-      {utilities.bookAndAppointment.utility.acf.title}
+      {utilities.bookAndAppointment?.utility?.acf.title}
     </Link>
   );
 };
