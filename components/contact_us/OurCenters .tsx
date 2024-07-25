@@ -41,11 +41,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                           href={link.link ? link.link : "javascript:void(0)"}
                           className="flex  items-start text-sm gap-2">
                           <Image
-                            src={
-                              link.icon.sourceUrl
-                                ? link.icon.sourceUrl
-                                : dummiIcon
-                            }
+                            src={link?.icon?.sourceUrl ?? dummiIcon}
                             alt=""
                             width={20}
                             height={20}

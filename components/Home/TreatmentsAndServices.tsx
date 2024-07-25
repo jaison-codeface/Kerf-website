@@ -12,7 +12,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
     <SectionWrapper
       classTop="relative z-0"
       classBottom={`${main_padding.y} flex-col md:items-center `}>
-      <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
+      <HeadSubtitle className="">{isData.subtitle}</HeadSubtitle>
       <HeadTitle className="mt-1">
         {isData.title}
       </HeadTitle>

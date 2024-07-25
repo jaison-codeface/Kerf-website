@@ -7,7 +7,7 @@ import { dummiSection } from "@/assets/images";
 
 const Content = ({ data }: { data: DepartmentsType }) => {
   return (
-    <SectionWrapper classBottom={`${main_padding.y} flex-col items-center`}>
+    <SectionWrapper classBottom={`${main_padding.b} flex-col items-center`}>
       {/* <Image
         src={data?.acf.sectionImage.sourceUrl ?? dummiSection}
         alt={data?.acf.sectionImage.altText}
