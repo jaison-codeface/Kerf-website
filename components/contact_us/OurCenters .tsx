@@ -29,7 +29,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                     backgroundColor: isData.backgroundColors[idx].color,
                   }}
                   className="px-4 py-8 rounded-xl flex flex-col text-black h-full sm:w-[300px]">
-                  <h2 className="font-medium text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
+                  <h2 className="font-bold text-lg relative z-0 after:absolute after:w-[40px] after:h-[2px] after:bg-black after:left-0 after:-bottom-1 after:rounded-full">
                     {item.title}
                   </h2>
                   <div className="mt-8 flex flex-col gap-5">
@@ -39,13 +39,13 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                           key={i}
                           suppressHydrationWarning
                           href={link.link ? link.link : "javascript:void(0)"}
-                          className="flex  items-start text-sm gap-2">
+                          className="flex  items-start  gap-2 leading-8 text-xl">
                           <Image
                             src={link?.icon?.sourceUrl ?? dummiIcon}
                             alt=""
                             width={20}
                             height={20}
-                            className="h-[16px] w-auto aspect-square object-contain"
+                            className="h-[16px] w-auto aspect-square object-contain translate-y-1.5"
                           />
                           {link.title}
                         </Link>

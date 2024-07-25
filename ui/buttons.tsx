@@ -30,12 +30,13 @@ const NormalBtn = ({
 
       onClick={onClick}
       data-aos="fade-up"
+      shallow
       {...props}
       href={href ? href : "javascript:void(0)"}
       className={twMerge(
         `px-8 py-3  font-bold rounded-lg capitalize ${
           mode === "blue"
-            ? "bg-secondary border-secondary text-white bg-gradient-to-r from-[#539fbd] to-[#3682a0] duration-300 hover:hue-rotate-[24deg]"
+            ? "bg-secondary border-secondary text-white hover:from-[#72a3f3] hover:to-[#6692d8] bg-gradient-to-r from-[#5880bf] to-[#456597] duration-300"
             : "bg-white text-black hover:bg-secondary hover:border-secondary hover:text-white duration-300"
         }`,
         className
@@ -62,10 +63,10 @@ const BookAppointmentBtn = ({
       data-aos="fade-up"
       data-aos-anchor="#top"
       className={twMerge(
-        "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-[15px] leading-[1.5rem] font-bold text-[1.1rem] group [&_*]:duration-300 hover:text-kerf-blue",
+        "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-[15px] leading-[1.5rem] font-bold text-[1.1rem] group [&_*]:duration-300 text-kerf-blue hover:bg-slate-600/20 duration-300",
         className
       )}>
-      <span className="h-[45px] w-[45px] shrink-0 bg-[#5eb996] group-hover:bg-kerf-blue flex items-center justify-center rounded-[12px]">
+      <span className="h-[45px] w-[45px] shrink-0 bg-kerf-blue  flex items-center justify-center rounded-[12px]">
         <Image
           src={phoneFill}
           alt=""
@@ -83,7 +84,7 @@ const BookAppointmentBtn = ({
         utilities.bookAndAppointment?.utility?.acf.link ?? "javascript:void(0)"
       }
       className={twMerge(
-        "px-10 py-4 rounded-lg hover:hue-rotate-[26deg] bg-gradient-to-r from-[#539fbd] to-[#3682a0] sm:max-w-max text-center mt-6 font-bold text-white  duration-500",
+        "px-10 py-4 rounded-lg hover:from-[#72a3f3] hover:to-[#6692d8] bg-gradient-to-r from-[#5880bf] to-[#456597] sm:max-w-max text-center mt-6 font-bold text-white  duration-500",
         className
       )}>
       {utilities.bookAndAppointment?.utility?.acf.title}

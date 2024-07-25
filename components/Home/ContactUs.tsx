@@ -15,7 +15,7 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
         {" "}
         {isData.title}
       </HeadTitle>
-      <div className="grid md:grid-cols-[2fr_1fr] md:mt-16 mt-8 md:gap-20 gap-10">
+      <div className="grid md:grid-cols-[1.7fr_1fr] md:mt-16 mt-8 md:gap-16 gap-10">
         <Image
           src={isData.sectionImage.sourceUrl ?? dummiSection}
           alt={isData.sectionImage.altText}
@@ -51,10 +51,10 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
                       className="object-contain h-6"
                     />
                     <div className="flex flex-col gap-1">
-                      <h1 className="text-[1.2rem] font-bold uppercase leading-[130%]">
+                      <h1 className="text-[1.2rem] font-bold uppercase leading-[130%] shrink-0">
                         {item.title}
                       </h1>
-                      <p className="text-sm">{item.linkTitle}</p>
+                      <p className="text-base">{item.linkTitle}</p>
                     </div>
                   </div>
                   <Arrow height={20} width={20} color="#fff" className="w-5 h-5 shrink-0" />

@@ -6,9 +6,9 @@ const Bottom = ({ data }: { data: FooterType }) => {
   return (
     <div className="flex items-center justify-between md:gap-20 gap-3 w-full py-8 max-md:flex-col-reverse">
       <p className="text-base max-md:text-center">
-      &#9400; 2024 KERF Hospital. All rights reserved | Designed by{" "}
+        &#9400; 2024 KERF Hospital. All rights reserved | Designed by{" "}
         <a href="https://codefacetech.com/" target="_blank">
-          Codeface
+          Codeface Technologies
         </a>
       </p>
       <div className="flex items-center justify-center gap-4">

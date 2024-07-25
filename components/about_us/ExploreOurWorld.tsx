@@ -2,8 +2,9 @@
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
-import CountUp from "react-countup";
-import { dummiSection } from "@/assets/images";
+
+import { dummiLogo, dummiSection } from "@/assets/images";
+import Image from "next/image";
 
 const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page?.acf.exploreOurWorld;
@@ -12,9 +13,7 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
       classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
         <HeadSubtitle>{isData.sectionSubtitle}</HeadSubtitle>
-        <HeadTitle className="mt-1">
-          {isData.sectionTitle}
-        </HeadTitle>
+        <HeadTitle className="mt-1">{isData.sectionTitle}</HeadTitle>
         <SectionDescription className="mt-4">
           {isData.description}
         </SectionDescription>
@@ -49,28 +48,23 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
               id="image0_42_15"
               width={isData.sectionImage.sizes.width}
               height={isData.sectionImage.sizes.hight}
-              xlinkHref={isData.sectionImage.image.sourceUrl ?? dummiSection.src}
+              xlinkHref={
+                isData.sectionImage.image.sourceUrl ?? dummiSection.src
+              }
             />
           </defs>
         </svg>
-        <div className="bg-[#d7ece3] rounded-[20px] p-4 absolute left-0 bottom-0 w-[28%] aspect-square">
-          <div className="border-2 border-white rounded-[16px] h-full w-full justify-center flex flex-col items-center text-center text-[#415061]">
-            <h2 className="font-black text-[133%] ">
-              {" "}
-              <CountUp
-                duration={2}
-                enableScrollSpy
-                scrollSpyOnce
-                className="counter"
-                end={isData.boxContentText1}
-              />
-              +
-            </h2>
-            <p className="text-[62%] leading-[130%] font-light uppercase">
-              {isData.boxContentText2}
-            </p>
+        <div className="bg-[#d7ece3] rounded-[20px] p-3 absolute left-0 bottom-0 w-[28%] aspect-square">
+          <div className="border-2 border-white rounded-[16px] h-full w-full justify-center flex flex-col items-center text-center text-[#415061] p-3">
+            <Image
+              src={isData.sectionImage.logo.sourceUrl ?? dummiLogo}
+              alt=""
+              width={isData.sectionImage.logo.mediaDetails.width}
+              height={isData.sectionImage.logo.mediaDetails.height}
+            />
           </div>
         </div>
+        
       </div>
     </SectionWrapper>
   );

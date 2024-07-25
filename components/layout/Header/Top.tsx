@@ -12,7 +12,7 @@ const Top = () => {
       <Link
         href={`${utilities.footer?.utility?.acf.phoneNumber.link}`}
         shallow
-        className="font-bold">
+        className="font-bold text-base">
         {utilities.footer?.utility?.acf.phoneNumber.title}
       </Link>{" "}
       &nbsp; |&nbsp; Book an Appointment

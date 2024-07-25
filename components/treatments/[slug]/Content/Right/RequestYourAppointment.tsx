@@ -8,7 +8,7 @@ import Image from "next/image";
 const RequestYourAppointment = () => {
   const { utilities } = useStore();
   return (
-    <div className="w-full flex items-end justify-center  bg-[#f4f4f6] px-4 py-3 rounded-2xl relative z-0 overflow-hidden aspect-square">
+    <div className="w-full flex items-end justify-center  bg-[#f4f4f6] px-4 py-3 rounded-2xl relative z-0 overflow-hidden aspect-[16/11]">
       <Image
         src={
           utilities.bookAndAppointment?.utility?.acf

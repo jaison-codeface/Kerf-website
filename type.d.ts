@@ -50,6 +50,7 @@ interface HomePageType {
         specialties: {
           image: ImageType;
           title: string;
+          link: string;
         }[];
       };
       sectionTreatments: {
@@ -96,6 +97,7 @@ interface AboutUsPageType {
             hight: string;
             width: number;
           };
+          logo: ImageType;
         };
         description: string;
         boxContentText1: number;

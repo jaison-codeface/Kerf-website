@@ -10,13 +10,13 @@ import Arrow from "@/assets/icons/ArrowRightDouble";
 const Top = ({ data }: { data: FooterType }) => {
   const { utilities } = useStore();
 
-  const phoneNumber = utilities.footer?.utility?.acf.phoneNumber
+  const phoneNumber = utilities.footer?.utility?.acf.phoneNumber;
 
   const isQuickLinks = (item: any) =>
     item.title.toLowerCase() === "QUICK LINKS".toLowerCase();
   return (
     <div
-      className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white grid lg:grid-cols-[1fr_2fr]  lg:gap-20 gap-8 max-lg:flex-wrap overflow-hidden`}>
+      className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white grid lg:grid-cols-[1fr_2fr]  lg:gap-10 gap-8 max-lg:flex-wrap overflow-hidden`}>
       <div
         className={`flex flex-col gap-4  max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full md:px-10 px-6 lg:pr-16 ${main_padding.y}`}>
         <Link data-aos="fade-up" href="/" shallow>
@@ -38,11 +38,11 @@ const Top = ({ data }: { data: FooterType }) => {
           <Link
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
-            className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 w-max px-3 py-2 rounded-lg bg-transparent hover:bg-white/45 hover:text-black group duration-300">
+            className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 hover:bg-slate-600/20 hover:text-white w-max px-3 pb-2 pt-2.5 rounded-lg  bg-white/45 text-black group duration-300 ">
             <Image
               src={phoneIcon}
               alt=""
-              className="group-hover:invert duration-300"
+              className="invert duration-300 group-hover:invert-0"
             />
             {phoneNumber.title}
           </Link>
@@ -50,12 +50,12 @@ const Top = ({ data }: { data: FooterType }) => {
       </div>
       <div
         className={`flex flex-col items-start md:gap-10 gap-6 justify-between lg:h-full px-10  ${main_padding.y}`}>
-        <div className="flex items-start justify-between lg:gap-12 md:gap-10 gap-8 max-md:flex-wrap ">
+        <div className="flex lg:grid grid-cols-3 items-start justify-between lg:gap-12 md:gap-10 gap-8  w-full flex-wrap">
           {data?.utility?.acf.footerLinks.map((item, idx) => (
             <div
               data-aos="fade-up"
               key={idx}
-              className={`flex flex-col gap-4 ${isQuickLinks(item) && "md:ml-6"}`}>
+              className={`flex flex-col gap-4 shrink-0 `}>
               <h3 className="font-bold text-xl shrink-0 w-max relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white">
                 {item.title}
               </h3>
@@ -65,14 +65,14 @@ const Top = ({ data }: { data: FooterType }) => {
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow
                     key={idx + link.text}
-                    className="text-[1.1rem] leading-[2rem] font-semibold w-full min-w-[180px] max-w-[250px] flex items-center gap-3 group duration-300 [&_*]:duration-300 hover:text-black">
+                    className={`text-[1.1rem] leading-[2rem] font-semibold w-full min-w-[180px] max-w-[200px]  flex items-center gap-3 group duration-300 [&_*]:duration-300  ${isQuickLinks(item) && "hover:text-black"}`}>
                     {link.icon && (
                       <Image
                         src={link.icon.sourceUrl}
                         alt={link.icon.altText}
                         width={20}
                         height={20}
-                        className="h-4 w-auto object-contain group-hover:invert"
+                        className="h-4 w-auto object-contain"
                       />
                     )}
                     {isQuickLinks(item) && (

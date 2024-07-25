@@ -23,9 +23,9 @@ const RelatedTreatments = ({ relatedTreatmentsData }: Props) => {
             key={idx}
             shallow
             suppressHydrationWarning
-            className="border border-white rounded-lg px-6 py-4 flex items-center justify-between gap-10 uppercase font-medium text-sm hover:bg-white duration-300">
+            className="border border-white rounded-lg text-white px-6 py-4 flex items-center justify-between gap-10 uppercase font-bold text-sm hover:bg-gray-600/20 duration-300">
             {item.title}
-            <Arrow color="#e47c63" width={18} height={18} />
+            <Arrow color="#fff" width={18} height={18} />
           </Link>
         ))}
       </div>

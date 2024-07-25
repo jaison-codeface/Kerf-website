@@ -8,11 +8,11 @@ type Props = {
 const Right = ({ relatedTreatmentsData, }: Props) => {
   return (
     <div className=" w-full flex flex-col sticky top-[20px] z-50 gap-10">
-      <RequestYourAppointment  />
-
       {relatedTreatmentsData && (
         <RelatedTreatments relatedTreatmentsData={relatedTreatmentsData} />
       )}
+      <RequestYourAppointment  />
+
     </div>
   );
 };

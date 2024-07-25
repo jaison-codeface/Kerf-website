@@ -92,8 +92,8 @@ const Bottom = ({
               )}
             </Link>
             {(item.dropDown || item.singleDropDown) && (
-              <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
-                <div className="flex flex-col gap-3  bg-white border border-gray-300 px-4 min-w-80 py-5 rounded-b-2xl ">
+              <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500 pointer-events-none">
+                <div className="flex flex-col gap-3 pointer-events-auto bg-white border border-gray-300 px-4 min-w-80 py-5 rounded-b-2xl ">
                   {item.dropDown && (
                     <>
                       <div className="flex items-center justify-center gap-10 px-3">
@@ -101,7 +101,7 @@ const Bottom = ({
                           <button
                             key={dropIdx}
                             onClick={() => setDropDownIndex(dropIdx)}
-                            className={`capitalize text-base font-medium px-6 py-1 rounded-lg ${
+                            className={`capitalize text-base font-bold px-6 py-1 rounded-lg ${
                               dropDownIndex === dropIdx
                                 ? "bg-kerf-blue-light/50"
                                 : ""
@@ -123,7 +123,7 @@ const Bottom = ({
                       <Link
                         key={dropIdx}
                         href={drop.link}
-                        className={`text-sm font-medium flex items-center gap-2 hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg `}>
+                        className={`text-sm font-bold flex items-center gap-2 hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg `}>
                            <Arrow width={14} height={20} />
                         {drop.title}
                       </Link>

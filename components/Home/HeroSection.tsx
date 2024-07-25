@@ -5,6 +5,7 @@ import { HeadSubtitle, SectionDescription } from "@/ui/Typography";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import { dummiSectionHead } from "@/assets/images";
+import { BookAppointmentBtn } from "@/ui/buttons";
 
 const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
@@ -21,10 +22,13 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
         <SectionDescription className="md:mt-4 mt-2 md:max-w-[400px]">
           {data.page?.acf.homeBanner.sectionDescription}
         </SectionDescription>
+        <BookAppointmentBtn />
       </div>
       <div className="flex items-end justify-end w-full h-full right-0 bottom-0 md:absolute -z-10 overflow-visible ">
         <Image
-          src={data.page?.acf.homeBanner.sectionImage.sourceUrl ?? dummiSectionHead}
+          src={
+            data.page?.acf.homeBanner.sectionImage.sourceUrl ?? dummiSectionHead
+          }
           alt={data.page?.acf.homeBanner.sectionImage.altText}
           width={data.page?.acf.homeBanner.sectionImage.mediaDetails.width}
           height={data.page?.acf.homeBanner.sectionImage.mediaDetails.height}

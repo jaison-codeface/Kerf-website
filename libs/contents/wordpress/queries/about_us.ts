@@ -40,6 +40,9 @@ const data = `{
             hight
             width
           }
+          logo {
+           ${imageQuery}
+          }
         }
         description
         boxContentText1

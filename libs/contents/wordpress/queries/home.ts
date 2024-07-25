@@ -53,6 +53,7 @@ const data = `{
            ${imageQuery}
           }
           title
+          link
         }
       }
       sectionTreatments {

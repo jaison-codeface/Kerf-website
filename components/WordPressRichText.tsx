@@ -16,9 +16,9 @@ function WordPressRichText({ htmlString = "" }: { htmlString: string }) {
 
     const h = g.replaceAll(
       "<li>",
-      `<li class="block relative pl-7 text-base gap-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#21d34b" fill="none" class="inline absolute left-0 top-0"> <path d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517" stroke="currentColor" strokeWidth="1.5"  strokeLinecap="round"  strokeLinejoin="round"/> <path  d="M7.5 13.8333L11 17.5L21.5 6.5"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>`
+      `<li class="block relative pl-7 text-base leading-8 gap-1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#21d34b" fill="none" class="inline absolute left-0 top-0"> <path d="M2.5 13.8333L6 17.5L7.02402 16.4272M16.5 6.5L10.437 12.8517" stroke="currentColor" strokeWidth="1.5"  strokeLinecap="round"  strokeLinejoin="round"/> <path  d="M7.5 13.8333L11 17.5L21.5 6.5"  stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>`
     );
-    const i = h.replaceAll("<ul", `<ul class="mt-3 flex flex-col"`);
+    const i = h.replaceAll("<ul", `<ul class="mt-3 flow-root sm:[column-count:2] flex-col"`);
     const j = i.replaceAll("<strong", `<strong class=""`);
 
     const final = j;
