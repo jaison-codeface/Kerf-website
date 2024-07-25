@@ -7,7 +7,6 @@ import OurSpecialties from "@/components/Home/OurSpecialties";
 import ContactUs from "@/components/Home/ContactUs";
 import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
-import { Metadata } from "next";
 import Testimonials from "@/components/about_us/Testimonials";
 
 export default async function Home() {

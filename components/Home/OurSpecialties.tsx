@@ -30,7 +30,7 @@ const OurSpecialties = ({ data }: { data: HomePageType }) => {
                 width={130}
                 height={130}
               />
-              <p className="font-bold uppercase text-[clamp(0.75rem,0.5135rem+0.5405vw,1rem)] text-center py-2 bg-black/10 rounded-t-xl px-5 w-full h-max">
+              <p className="font-bold uppercase text-[clamp(0.75rem,0.1346rem+0.9615vw,1rem)] text-center py-2 bg-black/10 rounded-t-xl px-5 w-full h-max">
                 {item.title}
               </p>
             </Link>
