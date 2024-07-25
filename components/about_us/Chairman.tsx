@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
@@ -6,22 +6,27 @@ import Image from "next/image";
 import { dummiDoctor } from "@/assets/images";
 import WordPressRichText from "../WordPressRichText";
 import { useState } from "react";
+import { NormalBtn } from "@/ui/buttons";
 
 const Chairman = ({ data }: { data: AboutUsPageType }) => {
-  const [readMore, setReadMore] = useState(false)
+  const [readMore, setReadMore] = useState(false);
   const isData = data.page?.acf.sectionChairman;
 
   return (
     <SectionWrapper
-      classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
+      classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-start h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
         <HeadTitle className="mt-1">{isData.title}</HeadTitle>
         <HeadSubtitle>{isData.subtitle}</HeadSubtitle>
-        <SectionDescription className={`mt-4 duration-300 ${readMore ? "max-h-[9999px]" : "max-h-[400px]"}`}>
+        <SectionDescription
+          className={`mt-4 duration-300 overflow-hidden ${readMore ? "max-h-[9999px]" : "max-h-[400px]"}`}>
           <WordPressRichText htmlString={isData.description} />
-          <button></button>
         </SectionDescription>
-
+        <button
+          onClick={() => setReadMore(!readMore)}
+          className="-mt-4 pt-8 flex items-center justify-start w-full bg-gradient-to-t from-white  to-transparent">
+          <NormalBtn>{readMore ? "Read Less" : "Read More"}</NormalBtn>
+        </button>
       </div>
 
       <Image
@@ -30,7 +35,7 @@ const Chairman = ({ data }: { data: AboutUsPageType }) => {
         alt={isData.image.altText}
         width={isData.image.mediaDetails.width}
         height={isData.image.mediaDetails.height}
-        className="w-full h-full object-cover overflow-hidden rounded-lg"
+        className="w-full h-auto object-center overflow-hidden rounded-lg"
       />
     </SectionWrapper>
   );
