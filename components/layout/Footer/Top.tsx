@@ -21,8 +21,8 @@ const Top = ({ data }: { data: FooterType }) => {
         className={`flex flex-col gap-4  max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full md:px-10 px-6 lg:pr-16 ${main_padding.y}`}>
         <Link data-aos="fade-up" href="/" shallow>
           <Image
-            src={data.utility?.acf.logo.sourceUrl}
-            alt={data.utility?.acf.logo.altText}
+            src={data?.utility?.acf.logo.sourceUrl}
+            alt={data?.utility?.acf.logo.altText}
             loading="lazy"
             height={60}
             width={200}
@@ -32,7 +32,7 @@ const Top = ({ data }: { data: FooterType }) => {
         <p
           data-aos="fade-up"
           className=" text-[1.1rem] font-semibold tracking-[-0.5px] md:max-w-[300px]">
-          {data.utility?.acf.description}
+          {data?.utility?.acf.description}
         </p>
         {phoneNumber && (
           <Link
@@ -51,7 +51,7 @@ const Top = ({ data }: { data: FooterType }) => {
       <div
         className={`flex flex-col items-start md:gap-10 gap-6 justify-between lg:h-full px-10  ${main_padding.y}`}>
         <div className="flex items-start justify-between lg:gap-12 md:gap-10 gap-8 max-md:flex-wrap ">
-          {data.utility?.acf.footerLinks.map((item, idx) => (
+          {data?.utility?.acf.footerLinks.map((item, idx) => (
             <div
               data-aos="fade-up"
               key={idx}

@@ -24,15 +24,15 @@ type Props = {
 const Left = ({ data }: Props) => {
   return (
     <div className="flex flex-col items-center">
-      <Image
+      {/* <Image
         src={data?.acf.sectionImage?.sourceUrl ?? dummiSection}
         alt={data?.acf.sectionImage?.altText}
         data-aos="fade-up"
         width={1200}
         height={600}
         className="md:aspect-[16/7] aspect-video rounded-xl overflow-hidden object-cover "
-      />
-      <div className=" flex flex-col  mt-16">
+      /> */}
+      <div className=" flex flex-col  ">
         <h2 data-aos="fade-up" className="text-[2rem] font-extrabold">
           {data.title}
         </h2>
