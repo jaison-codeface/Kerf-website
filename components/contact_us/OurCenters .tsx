@@ -9,7 +9,6 @@ import Image from "next/image";
 const OurCenters = ({ data }: { data: ContactUsType }) => {
   const isData = data.page?.acf.firstSection;
 
-  console.log(isData.locations);
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col sm:items-center items-start z-50`}>

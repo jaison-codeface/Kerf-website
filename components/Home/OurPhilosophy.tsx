@@ -9,7 +9,7 @@ import ImageInBorder from "@/ui/ImageInBorder";
 const OurPhilosophy = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.sectionAbout;
 
-  console.log(isData.description.toString());
+
   return (
     <SectionWrapper
       classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-center h-max z-50`}>
