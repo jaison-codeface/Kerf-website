@@ -12,7 +12,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
     <SectionWrapper
       classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"
       classBottom="h-full justify-start min-h-svh grid  max-md:pt-40 md:gap-0 gap-10 items-center">
-      <div className="flex flex-col">
+      <div className="flex flex-col md:pt-40">
         <h1
           data-aos="fade-up"
           data-aos-anchor="#top"

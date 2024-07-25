@@ -4,6 +4,8 @@ import main_padding from "@/styles/padding";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import { HeadTitle, SectionDescription } from "@/ui/Typography";
 import CountUp from "react-countup";
+import crRadios from '@/assets/images/corner radius.png'
+import Image from "next/image";
 
 const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page?.acf.sectionAboutKerf;
@@ -19,7 +21,7 @@ const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
           {isData.content}
         </SectionDescription>
 
-        <div className="bg-white p-4 absolute z-20 right-0 top-0  rounded-[24px]">
+        <div className="bg-white pl-4 pb-4 absolute z-20 right-0 top-0 max-md:hidden rounded-bl-[20px]">
           <div className="bg-[#d7ece3] rounded-[20px] p-4 aspect-square w-max">
             <div className="border-2 border-white rounded-[16px] h-full w-full justify-center flex flex-col items-center text-center text-[#415061] p-4">
               <h2 className="font-black text-2xl ">
@@ -38,6 +40,9 @@ const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
               </p>
             </div>
           </div>
+          <Image src={crRadios} alt="" className="absolute left-[-36px] top-0 h-[36px] w-[36px] aspect-square object-contain" />
+          <Image src={crRadios} alt="" className="absolute bottom-[-36px] right-0 h-[36px] w-[36px] aspect-square object-contain" />
+        
         </div>
         {/* textures */}
       </SectionWrapper>

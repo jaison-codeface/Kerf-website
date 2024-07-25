@@ -23,14 +23,14 @@ const OurSpecialties = ({ data }: { data: HomePageType }) => {
               href={`/treatments/${item.link}`}
               data-aos="fade-up"
               data-aos-delay={idx * 50}
-              className="bg-white flex flex-col justify-between items-center px-10 pt-8 gap-6 rounded-3xl w-full border border-transparent cursor-pointer hover:bg-kerf-blue-light/20 hover:border-gray-700/30 duration-300">
+              className="bg-white flex flex-col justify-between items-center px-10 pt-8 gap-6 rounded-3xl w-full border border-transparent cursor-pointer hover:bg-kerf-blue hover:border-gray-700/30 duration-300">
               <Image
                 src={item.image.sourceUrl ?? dummiSection}
                 alt={item.image.altText}
                 width={130}
                 height={130}
               />
-              <p className="font-bold uppercase text-base  text-center py-2 bg-black/10 rounded-t-xl px-5 w-full h-max">
+              <p className="font-bold uppercase text-[clamp(0.75rem,0.5135rem+0.5405vw,1rem)] text-center py-2 bg-black/10 rounded-t-xl px-5 w-full h-max">
                 {item.title}
               </p>
             </Link>

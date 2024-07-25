@@ -2,6 +2,7 @@
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
+import crRadios from "@/assets/images/corner radius.png";
 
 import { dummiLogo, dummiSection } from "@/assets/images";
 import Image from "next/image";
@@ -20,51 +21,36 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
       </div>
       <div
         data-aos="fade-up"
-        className="flex items-center justify-center h-max w-full relative z-0">
-        <svg
-          className="flex w-ful"
-          viewBox="0 0 895 791"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink">
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M625.15 33C625.15 14.7746 610.376 0 592.15 0H35C15.67 0 0 15.67 0 35V489C0 507.225 14.7746 522 33 522H230C257.062 522 279 543.938 279 571V758C279 776.225 293.775 791 312 791H860C879.33 791 895 775.33 895 756V326.411C895 308.185 880.225 293.411 862 293.411H674.15C647.089 293.411 625.15 271.473 625.15 244.411V33Z"
-            fill="url(#pattern0_42_15)"
-          />
-          <defs>
-            <pattern
-              id="pattern0_42_15"
-              patternContentUnits="objectBoundingBox"
-              width="1"
-              height="1">
-              <use
-                xlinkHref="#image0_42_15"
-                transform="matrix(0.00390625 0 0 0.00441984 0 -0.0657396)"
+        className="flex items-center justify-center h-max w-full relative z-0 rounded-[20px] overflow-hidden">
+        <Image
+          src={isData.sectionImage.image.sourceUrl}
+          alt=""
+          width={isData.sectionImage.image.mediaDetails.width}
+          height={isData.sectionImage.image.mediaDetails.height}
+        />
+
+        <div className="absolute left-0 bottom-0 pt-4 pr-4 rounded-tr-[20px] bg-white w-[28%]">
+          <div className="bg-[#d7ece3] rounded-[20px] p-3   aspect-square">
+            <div className="border-2 border-white rounded-[16px] ovh h-full w-full justify-center flex flex-col items-center text-center text-[#415061] p-3">
+              <Image
+                src={isData.sectionImage.logo.sourceUrl ?? dummiLogo}
+                alt=""
+                width={isData.sectionImage.logo.mediaDetails.width}
+                height={isData.sectionImage.logo.mediaDetails.height}
               />
-            </pattern>
-            <image
-              id="image0_42_15"
-              width={isData.sectionImage.sizes.width}
-              height={isData.sectionImage.sizes.hight}
-              xlinkHref={
-                isData.sectionImage.image.sourceUrl ?? dummiSection.src
-              }
-            />
-          </defs>
-        </svg>
-        <div className="bg-[#d7ece3] rounded-[20px] p-3 absolute left-0 bottom-0 w-[28%] aspect-square">
-          <div className="border-2 border-white rounded-[16px] h-full w-full justify-center flex flex-col items-center text-center text-[#415061] p-3">
-            <Image
-              src={isData.sectionImage.logo.sourceUrl ?? dummiLogo}
-              alt=""
-              width={isData.sectionImage.logo.mediaDetails.width}
-              height={isData.sectionImage.logo.mediaDetails.height}
-            />
+            </div>
           </div>
+          <Image
+            src={crRadios}
+            alt=""
+            className="absolute left-0 top-[-24px] h-[24px] w-[24px] aspect-square object-contain rotate-180"
+          />
+          <Image
+            src={crRadios}
+            alt=""
+            className="absolute bottom-0 right-[-24px] h-[24px] w-[24px] aspect-square object-contain rotate-180"
+          />
         </div>
-        
       </div>
     </SectionWrapper>
   );

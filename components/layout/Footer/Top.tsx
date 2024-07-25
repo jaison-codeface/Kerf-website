@@ -38,11 +38,11 @@ const Top = ({ data }: { data: FooterType }) => {
           <Link
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
-            className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 hover:bg-slate-600/20 hover:text-white w-max px-3 pb-2 pt-2.5 rounded-lg  bg-white/45 text-black group duration-300 ">
+            className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 hover:bg-slate-600/20 hover:text-white w-max px-3 pb-2 pt-2.5 rounded-lg   text-white group duration-300 ">
             <Image
               src={phoneIcon}
               alt=""
-              className="invert duration-300 group-hover:invert-0"
+              className="duration-300 "
             />
             {phoneNumber.title}
           </Link>
@@ -65,7 +65,7 @@ const Top = ({ data }: { data: FooterType }) => {
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow
                     key={idx + link.text}
-                    className={`text-[1.1rem] leading-[2rem] font-semibold w-full min-w-[180px] max-w-[200px]  flex items-center gap-3 group duration-300 [&_*]:duration-300  ${isQuickLinks(item) && "hover:text-black"}`}>
+                    className={`text-[1.1rem] leading-[2rem] font-semibold w-full min-w-[180px] max-w-[200px]  flex items-center gap-3 group duration-300 [&_*]:duration-300 cursor-default  ${isQuickLinks(item) && "hover:text-black !cursor-pointer"}`}>
                     {link.icon && (
                       <Image
                         src={link.icon.sourceUrl}
@@ -92,7 +92,7 @@ const Top = ({ data }: { data: FooterType }) => {
         </div>
         <BookAppointmentBtn
           type="hero section"
-          className="text-kerf-teal [&_span]:bg-kerf-teal"
+          className="text-kerf-teal [&_span]:bg-kerf-teal  hover:text-white"
         />
       </div>
     </div>
