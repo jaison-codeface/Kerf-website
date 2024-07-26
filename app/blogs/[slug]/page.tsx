@@ -9,15 +9,6 @@ import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import main_padding from "@/styles/padding";
 import { HeadTitle } from "@/ui/Typography";
 import Image from "next/image";
-import Link from "next/link";
-
-// export async function generateStaticParams() {
-//   const data: BlogsType = await getPageContent("blogs");
-
-//   return data.blogs.edges.map((post) => ({
-//     blog_id: post.node.slug,
-//   }));
-// }
 
 const page = async ({ params }: any) => {
   const blogs: BlogsType = await getContentFromWordPress("blogs");
