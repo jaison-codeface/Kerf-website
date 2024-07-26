@@ -44,14 +44,14 @@ const page = async () => {
         <HeadTitle className="mt-1 text-center max-w-[700px]">
           {isPageData.doctorSection.title}
         </HeadTitle>
-        <div className="mt-16 grid md:gap-20   ">
+        <div className="mt-16 grid gap-20   ">
           {isTreatmentsData.map((item, idx) => (
             <div
               key={idx}
-              className={`flex  gap-8 sm:px-10 px-6 flex-col items-start `}>
+              className={`flex  gap-8 flex-col items-start `}>
               <HeadTitle>{item.name}</HeadTitle>
 
-              <div className="grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10">
+              <div className="grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2  w-full md:gap-10 gap-8">
                 {item.treatments.nodes.map((treatment, index) => (
                   <Link
                     key={index}

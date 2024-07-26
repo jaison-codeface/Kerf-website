@@ -12,8 +12,9 @@ const OurSpecialties = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.sectionSpecialties;
   return (
     <SectionWrapper
+      classTop="md:mt-20"
       classBottom={`${main_padding.y} sm:px-10 px-6 flex-col items-center  bg-gradient-to-t from-kerf-teal via-kerf-teal-light to-kerf-teal-light  rounded-3xl relative z-0 w-full`}>
-      <div className={`flex flex-col w-full  items-center`}>
+      <div className={`flex flex-col w-full  items-center `}>
         <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
         <HeadTitle className="mt-1 text-center"> {isData.title}</HeadTitle>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10 md:mt-16 mt-8">

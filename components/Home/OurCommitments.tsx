@@ -7,7 +7,7 @@ import { dummiSection } from "@/assets/images";
 const OurCommitments = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.ourCommitments;
   return (
-    <SectionWrapper classBottom={`  flex-col items-center   w-full`}>
+    <SectionWrapper classTop="md:mt-20" classBottom={`  flex-col items-center   w-full`}>
       <div
         className={`flex flex-col w-full  items-center relative z-0 ${main_padding.y}`}>
         <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>

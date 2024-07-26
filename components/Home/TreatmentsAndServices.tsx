@@ -10,7 +10,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.sectionTreatments;
   return (
     <SectionWrapper
-      classTop="relative z-0"
+      classTop="relative z-0 md:mt-20"
       classBottom={`${main_padding.y} flex-col md:items-center `}>
       <HeadSubtitle className="">{isData.subtitle}</HeadSubtitle>
       <HeadTitle className="mt-1 ">{isData.title}</HeadTitle>
