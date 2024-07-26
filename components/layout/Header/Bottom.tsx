@@ -80,6 +80,7 @@ const Bottom = ({
               onClick={() => setIndex(idx)}
               href={item.link ? item.link : "javascript:void(0)"}
               shallow
+              prefetch={true}
               className={`px-4 py-2  rounded-md duration-300 text-[clamp(0.75rem,0.5135rem+0.5405vw,1rem)] hover:bg-kerf-blue-light inline-flex items-center justify-center gap-2 ${
                 index === idx ? "bg-kerf-blue-light" : ""
               }`}>

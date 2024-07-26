@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start",
     "lint": "next lint",
     "formate": " prettier . --write"
   },
@@ -19,6 +19,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^18",
     "react-phone-input-2": "^2.15.1",
+    "sharp": "^0.33.4",
     "swiper": "^11.1.1",
     "tailwind-merge": "^2.3.0",
     "zustand": "^4.5.2"
