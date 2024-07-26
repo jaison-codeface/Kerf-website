@@ -16,6 +16,16 @@ const data = (
                 nodes {
                   title
                   slug
+                  id
+                  acf: acfTreatment {
+                    treatmentTitle {
+                      name
+                    }
+                    content
+                    bannerImage {
+                      ${imageQuery}
+                    }
+                  }
                 }
               }
             }

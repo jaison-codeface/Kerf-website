@@ -49,6 +49,12 @@ const Bottom = ({
         )
       ) {
         return setIndex(i);
+      } else if (
+        links[i].link?.includes(
+          pathname.split("/").length > 0 ? pathname.split("/")[1] : pathname
+        )
+      ) {
+        return setIndex(i);
       }
     }
   }, [links, pathname]);
@@ -106,7 +112,6 @@ const Bottom = ({
                                 ? "bg-kerf-blue-light/50"
                                 : ""
                             }`}>
-                           
                             {drop.title}
                           </button>
                         ))}
@@ -124,7 +129,7 @@ const Bottom = ({
                         key={dropIdx}
                         href={drop.link}
                         className={`text-sm font-bold flex items-center gap-2 hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg `}>
-                           <Arrow width={14} height={20} />
+                        <Arrow width={14} height={20} />
                         {drop.title}
                       </Link>
                     ))}

@@ -16,7 +16,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
         <h1
           data-aos="fade-up"
           data-aos-anchor="#top"
-          className="text-kerf-blue-dark md:text-[3.7rem] !tracking-[0.5px] !leading-[1.2] text-4xl font-bold md:max-w-[600px]">
+          className="text-kerf-blue-dark md:text-[3.7rem] !leading-[1.2] text-4xl font-bold md:max-w-[600px]">
           {data.page?.acf.homeBanner.sectionTitle}
         </h1>
         <SectionDescription className="md:mt-4 mt-2 md:max-w-[400px]">

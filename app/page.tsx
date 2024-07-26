@@ -8,6 +8,7 @@ import ContactUs from "@/components/Home/ContactUs";
 import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import Testimonials from "@/components/about_us/Testimonials";
+import OurCommitments from "@/components/Home/OurCommitments";
 
 export default async function Home() {
   const [data, blogs, about]: [HomePageType, BlogsType, AboutUsPageType] =
@@ -23,6 +24,7 @@ export default async function Home() {
       <TreatmentsAndServices data={data} />
       <OurPhilosophy data={data} />
       <OurSpecialties data={data} />
+      <OurCommitments data={data} />
       <ContactUs data={data} />
       <Blogs data={data} blogs={blogs} />
       <Testimonials data={about} />

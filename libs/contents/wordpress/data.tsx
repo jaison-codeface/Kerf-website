@@ -9,6 +9,7 @@ import {
   privacyAndPolicyQuery,
   termsAndConditionsQuery,
   treatmentQuery,
+  treatmentsPageQuery,
   utilityQuery,
 } from "./queries";
 
@@ -56,7 +57,8 @@ type Ids =
   | "header"
   | "bookAndAppointment"
   | "privacyAndPolicy"
-  | "termsAndConditions";
+  | "termsAndConditions"
+  | "treatments page";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
@@ -79,6 +81,7 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     bookAndAppointment: utilityQuery("bookAndAppointment"),
     privacyAndPolicy: privacyAndPolicyQuery,
     termsAndConditions: termsAndConditionsQuery,
+    "treatments page": treatmentsPageQuery,
   };
   const data = await fetchAPI(query[id]);
   return data;

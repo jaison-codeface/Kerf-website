@@ -22,9 +22,21 @@ const data = `{
         buttonText
         buttonLink
       }
+
       sectionBlog {
         sectionTitle
         sectionSubtitle
+      }
+      ourCommitments {
+        title
+        subtitle
+        commitments{
+          description
+          title
+          image {
+            ${imageQuery}
+          }
+        }
       }
       sectionContactUs {
         sectionDescription
@@ -48,6 +60,11 @@ const data = `{
         subtitle
         buttonText
         buttonLink
+        specialtiesForHome {
+          name
+          slug
+          id
+        }
         specialties {
           image {
            ${imageQuery}

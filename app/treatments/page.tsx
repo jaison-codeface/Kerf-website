@@ -7,45 +7,82 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import Link from "next/link";
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
-import SingleDoctor from "@/ui/SingleDoctor";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
-
+import { dummiSection } from "@/assets/images";
 
 const page = async () => {
-  const [pageData, doctorsData]: [DoctorPageType, DoctorType] =
+  const [pageData, treatments]: [DoctorPageType, TreatmentCategoriesType] =
     await Promise.all([
-      getContentFromWordPress("doctor-page"),
-      getContentFromWordPress("doctors"),
+      getContentFromWordPress("treatments page"),
+      getContentFromWordPress("treatments"),
     ]);
 
   const isPageData = pageData.page.acf;
-  const isDoctorsData = doctorsData.doctors.nodes;
+  const isTreatmentsData = treatments.treatmentCategorys.nodes;
   const breadcrumbs = [
     {
       title: "Home",
       link: "/",
     },
     {
-      title: "Doctors",
+      title: "Treatments",
       link: "javascript:void(0)",
     },
   ];
 
   return (
-    <Layout pageTitle="Doctors">
+    <Layout pageTitle="Treatments">
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={pageData.page?.acf.bannerImage.sourceUrl}
-        title="Doctors"
+        title="Treatments"
       />
       <SectionWrapper
-        classBottom={`${main_padding.y} flex-col`}
+        classBottom={`${main_padding.y} flex-col items-center`}
         classTop="relative z-0">
         <HeadSubtitle>{isPageData.doctorSection.subtitle}</HeadSubtitle>
-        <HeadTitle className="mt-1">{isPageData.doctorSection.title}</HeadTitle>
-        <div className="md:mt-16 mt-6 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 md:gap-10 sm:gap-6 gap-4">
-          {isDoctorsData.map((item, idx) => (
-            <SingleDoctor key={idx} idx={idx} item={item} />
+        <HeadTitle className="mt-1 text-center max-w-[700px]">
+          {isPageData.doctorSection.title}
+        </HeadTitle>
+        <div className="mt-16 grid md:gap-20   ">
+          {isTreatmentsData.map((item, idx) => (
+            <div
+              key={idx}
+              className={`flex  gap-8 sm:px-10 px-6 flex-col items-start `}>
+              <HeadTitle>{item.name}</HeadTitle>
+
+              <div className="grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10">
+                {item.treatments.nodes.map((treatment, index) => (
+                  <Link
+                    key={index}
+                    href={`/treatments/${treatment.slug}`}
+                    data-aos="fade-up"
+                    data-aos-delay={idx * 50}
+                    className="bg-gradient-to-b from-kerf-teal-light to-kerf-teal hover:rotate-[.5deg] to-[170%]  flex flex-col justify-start items-center px-4 py-3 rounded-xl w-full group   cursor-pointer hover:bg-kerf-blue  duration-300">
+                    <div className="overflow-hidden rounded-xl">
+                      <Image
+                        src={
+                          treatment?.acf?.bannerImage?.sourceUrl ?? dummiSection
+                        }
+                        alt={treatment?.acf?.bannerImage?.altText}
+                        width={130}
+                        height={130}
+                        className="aspect-[16/11] h-auto  object-cover w-full  group-hover:scale-105 duration-300 "
+                      />
+                    </div>
+                    <p className="font-bold uppercase text-xl text-start w-full h-max mt-4">
+                      {treatment.acf.treatmentTitle.name}
+                    </p>
+                    <div className="text-sm line-clamp-3 text-start mt-1">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: treatment.acf.content,
+                        }}></p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         {/* textures */}

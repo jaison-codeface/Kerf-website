@@ -43,7 +43,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
     {
       title: "Treatments",
-      link: "",
+      link: "/treatments",
     },
     {
       title: isData.title,

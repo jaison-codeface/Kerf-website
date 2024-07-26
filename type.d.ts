@@ -29,6 +29,15 @@ interface HomePageType {
         sectionTitle: string;
         sectionSubtitle: string;
       };
+      ourCommitments: {
+        title: string;
+        subtitle: string;
+        commitments: {
+          description: string;
+          title: string;
+          image: ImageType;
+        }[];
+      };
       sectionContactUs: {
         sectionDescription: string;
         sectionTitle: string;
@@ -47,6 +56,11 @@ interface HomePageType {
         subtitle: string;
         buttonText: string;
         buttonLink: string;
+        specialtiesForHome: {
+          name: string;
+          slug: string;
+          id: string;
+        }[];
         specialties: {
           image: ImageType;
           title: string;
@@ -256,6 +270,14 @@ interface TreatmentCategoriesType {
         nodes: Array<{
           title: string;
           slug: string;
+          id: string;
+          acf: {
+            treatmentTitle: {
+              name: string;
+            };
+            content: string;
+            bannerImage: ImageType;
+          };
         }>;
       };
     }>;

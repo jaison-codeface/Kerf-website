@@ -1,11 +1,8 @@
 import Layout from "@/components/layout";
 import HeroSection from "@/components/sections/HeroSection";
-import dummi from "@/assets/images/home/hero session e.png";
 import SectionWrapper from "@/components/SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
-import Link from "next/link";
-import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import SingleDoctor from "@/ui/SingleDoctor";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";

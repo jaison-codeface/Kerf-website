@@ -12,10 +12,8 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
     <SectionWrapper
       classTop="relative z-0"
       classBottom={`${main_padding.y} flex-col md:items-center `}>
-      <HeadSubtitle className="text-base">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1 md:text-5xl">
-        {isData.title}
-      </HeadTitle>
+      <HeadSubtitle className="">{isData.subtitle}</HeadSubtitle>
+      <HeadTitle className="mt-1 ">{isData.title}</HeadTitle>
       <div className="grid md:grid-cols-3 md:gap-10 gap-8 w-full max-w-[900px] mt-8">
         {isData.services.map((item, idx) => (
           <div

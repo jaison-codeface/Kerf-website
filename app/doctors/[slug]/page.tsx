@@ -1,17 +1,13 @@
-import Layout from "@/components/layout";
-import React from "react";
-import dummi from "@/assets/images/home/hero session e.png";
-import HeroSection from "@/components/sections/HeroSection";
-import RosePetalTexture from "@/ui/rosePetalTexture";
-import main_padding from "@/styles/padding";
-import SectionWrapper from "@/components/SectionWrapper";
-import Image from "next/image";
-import Link from "next/link";
-import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
-import WordPressRichText from "@/components/WordPressRichText";
 import { dummiDoctor } from "@/assets/images";
-import useStore from "@/libs/store";
+import SectionWrapper from "@/components/SectionWrapper";
+import WordPressRichText from "@/components/WordPressRichText";
+import Layout from "@/components/layout";
+import HeroSection from "@/components/sections/HeroSection";
+import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
+import main_padding from "@/styles/padding";
 import { BookAppointmentBtn } from "@/ui/buttons";
+import RosePetalTexture from "@/ui/rosePetalTexture";
+import Image from "next/image";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const data: DoctorType = await getContentFromWordPress("doctor", params.slug);
@@ -37,7 +33,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={isData?.acf.bannerImage.sourceUrl}
-        title="Doctors Details View"
+        title={isData.title}
       />
       <SectionWrapper
         classTop="relative z-0"
@@ -50,8 +46,14 @@ const page = async ({ params }: { params: { slug: string } }) => {
           className="-z-10 object-contain w-full  rounded-xl overflow-hidden h-max"
         />
         <div className="w-full flex flex-col ">
-          <h2 className="text-2xl font-medium">{isData?.title}</h2>
-          <WordPressRichText htmlString={isData?.acf.content} />
+          <h2 data-aos="fade-up" className="text-[2rem] font-extrabold">
+            {isData?.title}
+          </h2>
+          <div
+            style={{}}
+            className="w-full xl:max-h-[500px] md:max-h-[400px] md:overflow-y-scroll custom-scrollbar">
+            <WordPressRichText htmlString={isData?.acf.content} />
+          </div>
           <BookAppointmentBtn />
         </div>
         {/* textures */}

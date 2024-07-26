@@ -8,6 +8,8 @@ import treatmentQuery from "./treatment";
 import utilityQuery from "./utility";
 import privacyAndPolicyQuery from "./privacyAndPolicy";
 import termsAndConditionsQuery from "./termsAndConditions";
+import treatmentsPageQuery from "./treatments_page";
+
 
 export {
   homeQuery,
@@ -20,4 +22,5 @@ export {
   utilityQuery,
   privacyAndPolicyQuery,
   termsAndConditionsQuery,
+  treatmentsPageQuery
 };
