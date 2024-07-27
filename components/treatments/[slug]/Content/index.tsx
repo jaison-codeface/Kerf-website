@@ -16,7 +16,7 @@ type Props = {
     };
     acf: {
       bannerImage: ImageType;
-      sectionImage: ImageType;
+      icon: ImageType;
       content: string;
     };
   };

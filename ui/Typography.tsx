@@ -25,7 +25,7 @@ const HeadSubtitle = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <p data-aos="fade-up" className={twMerge("text-sm  font-semibold", className)}>
+  <p data-aos="fade-up" className={twMerge("text-base uppercase  font-semibold", className)}>
     {" "}
     {children}
   </p>

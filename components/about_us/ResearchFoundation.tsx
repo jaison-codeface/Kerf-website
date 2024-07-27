@@ -46,7 +46,7 @@ const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
         </div>
         {/* textures */}
       </SectionWrapper>
-      <RosePetalTexture className=" -top-20 left-0 z-0 opacity-60" />
+      <RosePetalTexture className=" -top-20 left-0 -z-10 opacity-60" />
     </div>
   );
 };

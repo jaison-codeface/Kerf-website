@@ -1,4 +1,5 @@
 import Layout from "@/components/layout";
+import Loading from "./loading";
 
 import HeroSection from "@/components/Home/HeroSection";
 import TreatmentsAndServices from "@/components/Home/TreatmentsAndServices";

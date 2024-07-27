@@ -92,7 +92,7 @@ const Top = ({ data }: { data: FooterType }) => {
         </div>
         <BookAppointmentBtn
           type="hero section"
-          className="text-kerf-teal [&_span]:bg-kerf-teal  hover:text-white"
+          className="text-[#1c7777] [&_span]:bg-[#1c7777]  hover:text-white"
         />
       </div>
     </div>

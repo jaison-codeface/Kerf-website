@@ -2,10 +2,10 @@
 import SectionWrapper from "../SectionWrapper";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import main_padding from "@/styles/padding";
-import crRadios from "@/assets/images/corner radius.png";
 
 import { dummiLogo, dummiSection } from "@/assets/images";
 import Image from "next/image";
+import IconBox from "@/ui/IconBox";
 
 const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page?.acf.exploreOurWorld;
@@ -29,28 +29,10 @@ const ExploreOurWorld = ({ data }: { data: AboutUsPageType }) => {
           height={isData.sectionImage.image.mediaDetails.height}
         />
 
-        <div className="absolute left-0 bottom-0 pt-4 pr-4 rounded-tr-[20px] bg-white w-[28%]">
-          <div className="bg-[#d7ece3] rounded-[20px] p-3   aspect-square">
-            <div className="border-2 border-white rounded-[16px] ovh h-full w-full justify-center flex flex-col items-center text-center text-[#415061] p-3">
-              <Image
-                src={isData.sectionImage.logo.sourceUrl ?? dummiLogo}
-                alt=""
-                width={isData.sectionImage.logo.mediaDetails.width}
-                height={isData.sectionImage.logo.mediaDetails.height}
-              />
-            </div>
-          </div>
-          <Image
-            src={crRadios}
-            alt=""
-            className="absolute left-0 top-[-24px] h-[24px] w-[24px] aspect-square object-contain rotate-180"
-          />
-          <Image
-            src={crRadios}
-            alt=""
-            className="absolute bottom-0 right-[-24px] h-[24px] w-[24px] aspect-square object-contain rotate-180"
-          />
-        </div>
+        <IconBox
+          image={isData?.sectionImage?.logo?.sourceUrl}
+          sizes={{ main: "w-[28%]" }}
+        />
       </div>
     </SectionWrapper>
   );

@@ -275,6 +275,7 @@ interface TreatmentCategoriesType {
             treatmentTitle: {
               name: string;
             };
+            icon: ImageType;
             content: string;
             bannerImage: ImageType;
           };
@@ -296,7 +297,7 @@ interface TreatmentType {
       };
       acf: {
         bannerImage: ImageType;
-        sectionImage: ImageType;
+        icon: ImageType;
         content: string;
         treatmentTitle: {
           id: string;

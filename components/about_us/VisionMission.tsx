@@ -25,12 +25,12 @@ const VisionMission = ({ data }: { data: AboutUsPageType }) => {
             className={`${
               idx === 0 ? "bg-[#dffeff]" : "bg-[#e9ecf1]"
             } px-8 py-10 w-full h-full rounded-2xl`}>
-            <HeadSubtitle className="text-xs uppercase"> {item.subtitle}</HeadSubtitle>
-            <h3 className="text-2xl  capitalize mt-1 font-semibold">
+            <HeadSubtitle className="text-sm uppercase"> {item.subtitle}</HeadSubtitle>
+            <h3 className="text-3xl  capitalize mt-1 font-semibold">
               {item.title}
             </h3>
 
-            <SectionDescription className="mt-2 md:text-[1.2rem] !leading-[2rem] text-base">
+            <SectionDescription className="mt-2 md:text-[clamp(0.75rem,-0.3577rem+1.7308vw,1.2rem)] !leading-[2rem] text-base">
               {item.description}
             </SectionDescription>
           </div>

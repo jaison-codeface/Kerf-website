@@ -12,11 +12,11 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
     <SectionWrapper
       classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0"
       classBottom="h-full justify-start min-h-svh grid  max-md:pt-40 md:gap-0 gap-10 items-center">
-      <div className="flex flex-col md:pt-40">
+      <div className="flex flex-col md:pt-24">
         <h1
           data-aos="fade-up"
           data-aos-anchor="#top"
-          className="text-kerf-blue-dark md:text-[3.7rem] !leading-[1.2] text-4xl font-bold md:max-w-[600px]">
+          className="text-kerf-blue-dark md:text-[3.7rem] !leading-[1.2] text-4xl font-extrabold md:max-w-[700px]">
           {data.page?.acf.homeBanner.sectionTitle}
         </h1>
         <SectionDescription className="md:mt-4 mt-2 md:max-w-[400px]">

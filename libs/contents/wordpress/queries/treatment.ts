@@ -25,6 +25,9 @@ const data = (
                     bannerImage {
                       ${imageQuery}
                     }
+                    icon {
+                      ${imageQuery}
+                    }
                   }
                 }
               }
@@ -52,7 +55,7 @@ const data = (
                     bannerImage {
                       ${imageQuery}
                     }
-                    sectionImage {
+                    icon {
                       ${imageQuery}
                     }
                     content

@@ -17,11 +17,11 @@ const Chairman = ({ data }: { data: AboutUsPageType }) => {
       classBottom={`${main_padding.y} grid md:grid-cols-[1.4fr_1fr] md:gap-20 gap-10 items-start h-max z-50`}>
       <div className="flex flex-col h-full justify-center">
         <HeadSubtitle>{isData.subtitle}</HeadSubtitle>
-        <HeadTitle className="mt-1">{isData.title}</HeadTitle>
-        <SectionDescription
-          className={`mt-4 duration-300 overflow-hidden ${readMore ? "max-h-[9999px]" : "max-h-[400px]"}`}>
+        <HeadTitle className="mt-1 md:text-5xl">{isData.title}</HeadTitle>
+        <div
+          className={`mt-4 duration-300 overflow-hidden md:text-[1.2rem] text-base md:leading-[1.8] leading-[180%] ${readMore ? "" : " line-clamp-[14]"}`}>
           <WordPressRichText htmlString={isData.description} />
-        </SectionDescription>
+        </div>
         <button
           onClick={() => setReadMore(!readMore)}
           className="-mt-4 pt-8 flex items-center justify-start w-full bg-gradient-to-t from-white  to-transparent">
