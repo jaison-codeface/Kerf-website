@@ -12,19 +12,24 @@ import Testimonials from "@/components/about_us/Testimonials";
 import OurCommitments from "@/components/Home/OurCommitments";
 
 export default async function Home() {
-  const [data, blogs, about]: [HomePageType, BlogsType, AboutUsPageType] =
-    await Promise.all([
-      getContentFromWordPress("home"),
-      getContentFromWordPress("blogs"),
-      getContentFromWordPress("about"),
-    ]);
+  const [data, blogs, about, treatments]: [
+    HomePageType,
+    BlogsType,
+    AboutUsPageType,
+    TreatmentCategoriesType,
+  ] = await Promise.all([
+    getContentFromWordPress("home"),
+    getContentFromWordPress("blogs"),
+    getContentFromWordPress("about"),
+    getContentFromWordPress("treatments"),
+  ]);
 
   return (
     <Layout>
       <HeroSection data={data} />
       <TreatmentsAndServices data={data} />
       <OurPhilosophy data={data} />
-      <OurSpecialties data={data} />
+      <OurSpecialties data={data} treatments={treatments} />
       <OurCommitments data={data} />
       <ContactUs data={data} />
       <Blogs data={data} blogs={blogs} />

@@ -19,7 +19,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
     getContentFromWordPress("treatments-related doctors", params.slug),
     getContentFromWordPress("blogs"),
   ]);
-  const isData = data.treatments.nodes[0];
+  const isData = data?.treatments?.nodes[0];
 
   const relatedTreatmentsData = () => {
     if (isData) {
@@ -46,7 +46,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       link: "/treatments",
     },
     {
-      title: isData.title,
+      title: isData?.title,
       link: "",
     },
   ];
@@ -56,7 +56,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={isData?.acf.bannerImage?.sourceUrl ?? dummiSectionHead}
-        title={isData.title}
+        title={isData?.title}
       />
       <Content
         leftData={isData}
@@ -66,11 +66,11 @@ const page = async ({ params }: { params: { slug: string } }) => {
         .length > 0 && (
         <Doctor
           doctors={
-            treatmentsRelatedDoctors.treatmentsTaxonomies.nodes[0].doctors.nodes
+            treatmentsRelatedDoctors?.treatmentsTaxonomies?.nodes[0]?.doctors.nodes
           }
         />
       )}
-      {blogs.blogs.nodes.length > 0 && <Blogs blogs={blogs.blogs.nodes} />}
+      {blogs?.blogs?.nodes.length > 0 && <Blogs blogs={blogs?.blogs?.nodes} />}
     </Layout>
   );
 };

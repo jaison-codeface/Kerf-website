@@ -10,6 +10,8 @@ import RosePetalTexture from "@/ui/rosePetalTexture";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import { dummiSection } from "@/assets/images";
 import { NormalBtn } from "@/ui/buttons";
+import IconBox from "@/ui/IconBox";
+import crPng from "@/assets/images/corner radius lb.png";
 
 const page = async () => {
   const [pageData, treatments]: [DoctorPageType, TreatmentCategoriesType] =
@@ -56,7 +58,7 @@ const page = async () => {
                     key={index}
                     data-aos="fade-up"
                     data-aos-delay={idx * 50}
-                    className="bg-gradient-to-b from-kerf-teal-light to-[#d5fdfd] hover:rotate-[.5deg] to-[170%]  flex flex-col justify-start items-start px-4 py-3 rounded-xl w-full group   cursor-pointer hover:bg-kerf-blue  duration-300">
+                    className="bg-gradient-to-b from-kerf-teal-light to-[#d5fdfd] hover:rotate-[.5deg] to-[170%]  flex flex-col justify-start items-start p-4 rounded-xl w-full group   cursor-pointer hover:bg-kerf-blue  duration-300 relative z-0">
                     <div className="overflow-hidden rounded-xl">
                       <Image
                         src={
@@ -82,6 +84,26 @@ const page = async () => {
                       className="mt-4">
                       Read More
                     </NormalBtn>
+
+                    <div className="pl-4 pb-4 bg-kerf-teal-light absolute top-0 right-0 sm:w-[30%] w-[130px] aspect-square h-auto rounded-bl-[20px]">
+                      <IconBox
+                        direction="top right"
+                        image={treatment?.acf?.icon?.sourceUrl}
+                        sizes={{
+                          main: "w-[100%] relative",
+                        }}
+                      />
+                      <Image
+                        src={crPng}
+                        alt=""
+                        className={`absolute aspect-square object-contain left-[-18px] top-[13px] h-[18px] w-[18px] rotate-180 `}
+                      />
+                      <Image
+                        src={crPng}
+                        alt=""
+                        className={`absolute aspect-square object-contain right-[16px] bottom-[-18px] h-[18px] w-[18px] rotate-180 `}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>

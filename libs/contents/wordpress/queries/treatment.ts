@@ -28,6 +28,7 @@ const data = (
                     icon {
                       ${imageQuery}
                     }
+                    showInHomePage
                   }
                 }
               }

@@ -278,6 +278,7 @@ interface TreatmentCategoriesType {
             icon: ImageType;
             content: string;
             bannerImage: ImageType;
+            showInHomePage: boolean;
           };
         }>;
       };
