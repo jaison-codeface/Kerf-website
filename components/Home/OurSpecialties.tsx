@@ -100,7 +100,7 @@ const OurSpecialties = ({
                 Read More
               </NormalBtn> */}
 
-              <div className="p-3 bg-white duration-300 absolute top-0 right-0 sm:w-[30%] w-[130px] aspect-square h-auto rounded-[22px] flex items-center justify-center">
+              <div className="p-3 bg-white duration-300 absolute top-0 right-0 sm:w-[30%] w-[80px] aspect-square h-auto rounded-[22px] flex items-center justify-center">
                 <Image
                   src={item?.acf?.icon?.sourceUrl ?? dummiLogo}
                   alt=""
