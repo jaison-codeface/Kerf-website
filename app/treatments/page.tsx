@@ -73,11 +73,17 @@ const page = async () => {
                     <p className="font-bold uppercase text-xl text-start w-full h-max mt-4">
                       {treatment.title}
                     </p>
-                    <div className="text-sm line-clamp-3 text-start mt-1 leading-5">
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: treatment.acf.content,
-                        }}></p>
+                    <div>
+                      <div className="text-sm line-clamp-3 text-start mt-1 leading-5 relative z-0">
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: treatment.acf.content,
+                          }}></p>
+                        <span className="absolute bg-gradient-to-l from-[#e4ffff] to-transparent from-[86%] bottom-0 right-0 text-[#e4ffff] w-[60%] text-end ">
+                          vcvsdvsdv
+                        </span>
+                      </div>
+                      ...
                     </div>
                     <NormalBtn
                       href={`/treatments/${treatment.slug}`}

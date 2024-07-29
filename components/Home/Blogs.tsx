@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { Fragment } from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
@@ -122,9 +122,9 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
           modules={[Autoplay]}
           className="mySwiper">
           {padArrayToFour().map((item, idx) => (
-            <>
+            <Fragment  key={idx}>
               {item.title ? (
-                <SwiperSlide key={idx}>
+                <SwiperSlide>
                   <div
                 
                     className="relative z-0 !flex flex-col items-start justify-end px-4 py-8 group aspect-[9/10] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 max-h-[470px] ">
@@ -148,7 +148,7 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
               ) : (
                 <SwiperSlide key={idx}></SwiperSlide>
               )}
-            </>
+            </Fragment>
           ))}
         </Swiper>
       </div>
