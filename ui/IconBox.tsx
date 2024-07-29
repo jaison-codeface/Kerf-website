@@ -46,7 +46,7 @@ const IconBox = ({
     return d;
   };
 
-  console.log(classNames().main);
+
   return (
     <div className={`absolute  bg-white ${sizes.main} ${classNames().main}`}>
       <div

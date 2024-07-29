@@ -30,7 +30,7 @@ const SingleDoctor = ({
     },
     {
       title: "book an appointment",
-      link: utilities.bookAndAppointment.utility.acf.link,
+      link: utilities?.bookAndAppointment?.utility?.acf?.link,
     },
   ];
   return (
