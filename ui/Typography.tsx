@@ -11,7 +11,7 @@ const HeadTitle = ({
   <h1
     data-aos="fade-up"
     className={twMerge(
-      "md:text-4xl text-3xl md:leading-[140%] font-bold leading-[130%]",
+      "md:text-4xl text-3xl md:leading-[140%] font-extrabold leading-[130%]",
       className
     )}>
     {" "}

@@ -53,23 +53,6 @@ const OurSpecialties = ({
         <HeadTitle className="mt-1 text-center"> {isData.title}</HeadTitle>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10 md:mt-16 mt-8">
           {getHomePageTreatments().map((item, idx) => (
-            // <Link
-            //   key={idx}
-            //   href={`/treatments/${item.slug}`}
-            //   data-aos="fade-up"
-            //   data-aos-delay={idx * 50}
-            //   className="bg-white flex flex-col justify-between items-center px-10 pt-8 gap-6 rounded-3xl w-full border border-transparent cursor-pointer hover:bg-kerf-blue hover:border-gray-700/30 duration-300">
-            //   <Image
-            //     src={item.acf.icon.sourceUrl ?? dummiSection}
-            //     alt={item.acf.icon.altText}
-            //     width={130}
-            //     height={130}
-            //     className="object-contain aspect-square"
-            //   />
-            //   <p className="font-bold uppercase text-[clamp(0.75rem,0.1346rem+0.8615vw,1rem)] text-center py-2 bg-black/10 rounded-t-xl px-5 w-full h-max">
-            //     {item.title}
-            //   </p>
-            // </Link>
 
             <Link
               suppressHydrationWarning
@@ -87,18 +70,10 @@ const OurSpecialties = ({
                   className="aspect-[16/11] h-auto  object-cover w-full  group-hover:scale-105 duration-300 "
                 />
               </div>
-              <p className="font-bold uppercase text-xl text-start w-full h-max mt-4">
+              <p className="font-bold uppercase text-[1.1rem] text-start w-full h-max mt-4">
                 {item.title}
               </p>
-              {/* <div className="text-sm line-clamp-3 text-start mt-1 leading-5">
-                <p
-                  dangerouslySetInnerHTML={{
-                    __html: item.acf.content,
-                  }}></p>
-              </div> */}
-              {/* <NormalBtn href={`/treatments/${item.slug}`} className="mt-4">
-                Read More
-              </NormalBtn> */}
+
 
               <div className="p-3 bg-white duration-300 absolute top-0 right-0 sm:w-[30%] w-[80px] aspect-square h-auto rounded-[22px] flex items-center justify-center">
                 <Image

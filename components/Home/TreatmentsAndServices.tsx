@@ -29,7 +29,7 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
               height={200}
               className="object-contain aspect-square md:px-0 md:my-10 px-6 my-7"
             />
-            <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-black capitalize text-lg">
+            <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-black capitalize md:text-[1.4rem] text-lg">
               {item.service}
             </p>
           </div>

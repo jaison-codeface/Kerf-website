@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import directionIcon from "@/assets/icons/get direction.svg";
@@ -11,6 +11,7 @@ import { dummiSection } from "@/assets/images";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import 'swiper/css/effect-creative';
 import { Autoplay, Navigation } from "swiper/modules";
 
 const GetDirection = ({ data }: { data: ContactUsType }) => {
@@ -43,6 +44,16 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
             <Swiper
               speed={800}
               ref={swiperRef}
+              effect="creative"
+              creativeEffect={{
+                prev: {
+                  shadow: true,
+                  translate: ["-20%", 0, -1],
+                },
+                next: {
+                  translate: ["100%", 0, 0],
+                },
+              }}
               spaceBetween={0}
               slidesPerView={1}
               loop>
