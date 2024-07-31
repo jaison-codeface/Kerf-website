@@ -23,7 +23,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
     <>
       <SectionWrapper
         classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0 overflow-x-clip "
-        classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10 md:items-end items-center ">
+        classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10  items-center ">
         <div className="flex items-end justify-end w-max h-full relative z-0  ">
           <Image
             src={bgImage?? dummiSectionHead}

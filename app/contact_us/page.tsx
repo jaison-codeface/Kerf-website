@@ -29,7 +29,7 @@ const page = async () => {
         title={data.page.title}
       />
       <OurCenters data={data} />
-      <GetDirection data={data} />
+      {/* <GetDirection data={data} /> */}
     </Layout>
   );
 };

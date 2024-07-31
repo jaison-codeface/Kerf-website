@@ -1,8 +1,8 @@
+import { dummiLogo } from "@/assets/images";
 import SectionWrapper from "../SectionWrapper";
 import main_padding from "@/styles/padding";
 import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import Image from "next/image";
-import { dummiSection } from "@/assets/images";
 
 const OurCommitments = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.ourCommitments;
@@ -20,10 +20,10 @@ const OurCommitments = ({ data }: { data: HomePageType }) => {
               data-aos="fade-up"
               data-aos-delay={idx * 50}
               key={idx}
-              className="grid gap-5 px-6 sm:py-4 py-6 bg-kerf-teal-light rounded-lg w-full">
-              <div className="w-full  flex items-center justify-center rounded-lg overflow-hidden">
+              className="grid gap-5 px-6 sm:py-4 py-6 bg-kerf-teal-light rounded-lg w-full cursor-pointer group hover:bg-kerf-blue duration-300 [&_*]:duration-300">
+              <div className="w-[60px]  flex items-center justify-center rounded-lg overflow-hidden">
                 <Image
-                  src={item.image.sourceUrl}
+                  src={item?.image?.sourceUrl ?? dummiLogo}
                   alt=""
                   width={60}
                   height={60}
@@ -31,11 +31,11 @@ const OurCommitments = ({ data }: { data: HomePageType }) => {
                   className="object-contain w-full h-auto"
                 />
               </div>
-              <div className="flex flex-col">
-                <h2 className="font-bold text-2xl text-kerf-blue">
+              <div className="flex flex-col gap-2">
+                <h2 className="font-bold text-3xl text-kerf-blue group-hover:text-white">
                   {item.title}
                 </h2>
-                <p>{item.description}</p>
+                <p className="group-hover:text-white/70 duration-300" >{item.description}</p>
               </div>
             </div>
           ))}

@@ -4,7 +4,6 @@ import { googleSans, italic, fsAlbert } from "@/libs/font";
 import UtilitiesProvider from "@/components/UtilitiesProvider";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 
-
 export async function generateMetadata(
   {},
   parent: ResolvingMetadata
@@ -61,6 +60,8 @@ export default async function RootLayout({
     getContentFromWordPress("bookAndAppointment"),
   ]);
 
+ 
+
   const utilitiesData: UtilitiesType = {
     treatments,
     departments,
@@ -69,8 +70,6 @@ export default async function RootLayout({
     seo,
     bookAndAppointment,
   };
-
-
 
   return (
     <html

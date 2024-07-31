@@ -23,6 +23,10 @@ export default async function Home() {
     getContentFromWordPress("about"),
     getContentFromWordPress("treatments"),
   ]);
+  
+  const d = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const s = await d(3000);
 
   return (
     <Layout>

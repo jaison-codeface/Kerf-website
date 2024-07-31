@@ -33,7 +33,7 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           width={data.page?.acf.homeBanner.sectionImage.mediaDetails.width}
           height={data.page?.acf.homeBanner.sectionImage.mediaDetails.height}
           priority
-          className="object-contain md:h-[calc(100%-115px)] h-full -z-0  object-right-bottom"
+          className="object-contain md:h-[calc(100%-125px)] h-full -z-0  object-right-bottom"
         />
       </div>
 
