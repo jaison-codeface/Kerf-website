@@ -8,11 +8,11 @@ const Top = () => {
   return (
     <SectionWrapper
       classTop="bg-kerf-teal-light"
-      classBottom="justify-end py-3 font-medium text-sm text-center">
+      classBottom="justify-end py-3 font-medium text-sm text-center items-baseline">
       <Link
         href={`${utilities.footer?.utility?.acf.phoneNumber.link}`}
         shallow
-        className="font-bold text-base">
+        className="font-bold text-base ">
         {utilities.footer?.utility?.acf.phoneNumber.title}
       </Link>{" "}
       &nbsp; |&nbsp; Book an Appointment
