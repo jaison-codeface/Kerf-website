@@ -39,11 +39,7 @@ const Top = ({ data }: { data: FooterType }) => {
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
             className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 hover:bg-slate-600/20 hover:text-white w-max px-3 pb-2 pt-2.5 rounded-lg   text-white group duration-300 ">
-            <Image
-              src={phoneIcon}
-              alt=""
-              className="duration-300 "
-            />
+            <Image src={phoneIcon} alt="" className="duration-300 " />
             {phoneNumber.title}
           </Link>
         )}

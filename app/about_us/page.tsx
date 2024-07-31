@@ -7,7 +7,7 @@ import Testimonials from "@/components/about_us/Testimonials";
 import VisionMission from "@/components/about_us/VisionMission";
 import Layout from "@/components/layout";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
-import {  dummiSectionHead } from "@/assets/images";
+import { dummiSectionHead } from "@/assets/images";
 
 const page = async () => {
   const data: AboutUsPageType = await getContentFromWordPress("about");

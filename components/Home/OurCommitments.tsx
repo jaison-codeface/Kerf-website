@@ -20,7 +20,7 @@ const OurCommitments = ({ data }: { data: HomePageType }) => {
               data-aos="fade-up"
               data-aos-delay={idx * 50}
               key={idx}
-              className="grid gap-5 px-6 sm:py-4 py-6 bg-kerf-teal-light rounded-lg w-full cursor-pointer group hover:bg-kerf-blue duration-300 [&_*]:duration-300">
+              className="grid gap-5 px-6 sm:py-4 py-6 bg-kerf-teal-light rounded-lg w-full group hover:bg-kerf-blue duration-300 [&_*]:duration-300">
               <div className="w-[60px]  flex items-center justify-center rounded-lg overflow-hidden">
                 <Image
                   src={item?.image?.sourceUrl ?? dummiLogo}
@@ -35,7 +35,9 @@ const OurCommitments = ({ data }: { data: HomePageType }) => {
                 <h2 className="font-bold text-3xl text-kerf-blue group-hover:text-white">
                   {item.title}
                 </h2>
-                <p className="group-hover:text-white/70 duration-300" >{item.description}</p>
+                <p className="group-hover:text-white/70 duration-300">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}

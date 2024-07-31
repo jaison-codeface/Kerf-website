@@ -4,17 +4,14 @@ import Image from "next/image";
 import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import { NormalBtn } from "@/ui/buttons";
 import { dummiSection } from "@/assets/images";
-import Arrow from '@/assets/icons/ArrowRightDouble'
+import Arrow from "@/assets/icons/ArrowRightDouble";
 
 const ContactUs = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.sectionContactUs;
   return (
     <SectionWrapper classBottom={`${main_padding.y} flex-col`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1">
-        {" "}
-        {isData.title}
-      </HeadTitle>
+      <HeadTitle className="mt-1"> {isData.title}</HeadTitle>
       <div className="grid md:grid-cols-[1.7fr_1fr] md:mt-16 mt-8 md:gap-16 gap-10">
         <Image
           src={isData.sectionImage.sourceUrl ?? dummiSection}
@@ -50,15 +47,19 @@ const ContactUs = ({ data }: { data: HomePageType }) => {
                       loading="lazy"
                       className="object-contain h-6"
                     />
-                    <div className="flex flex-col gap-1">
-                      <h1 className="text-[1.2rem] font-bold uppercase leading-[130%] shrink-0">
+                    <div className="flex flex-col gap-0">
+                      <h1 className="text-[1.2rem] font-extrabold uppercase leading-[130%] shrink-0">
                         {item.title}
                       </h1>
                       <p className="text-base">{item.linkTitle}</p>
                     </div>
                   </div>
-                  <Arrow height={20} width={20} color="#fff" className="w-5 h-5 shrink-0" />
-             
+                  <Arrow
+                    height={20}
+                    width={20}
+                    color="#fff"
+                    className="w-5 h-5 shrink-0"
+                  />
                 </NormalBtn>
               ))}
           </div>

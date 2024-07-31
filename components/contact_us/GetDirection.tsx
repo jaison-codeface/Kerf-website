@@ -11,7 +11,7 @@ import { dummiSection } from "@/assets/images";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
-import 'swiper/css/effect-creative';
+import "swiper/css/effect-creative";
 import { Autoplay, Navigation } from "swiper/modules";
 
 const GetDirection = ({ data }: { data: ContactUsType }) => {

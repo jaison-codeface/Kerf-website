@@ -6,6 +6,7 @@ import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import { dummiSectionHead } from "@/assets/images";
 import { BookAppointmentBtn } from "@/ui/buttons";
+import Banner from "@/assets/images/home/Banner";
 
 const HeroSection = ({ data }: { data: HomePageType }) => {
   return (
@@ -24,8 +25,8 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
         </SectionDescription>
         <BookAppointmentBtn />
       </div>
-      <div className="flex items-end justify-end w-full h-full right-0 bottom-0 md:absolute -z-10 overflow-visible ">
-        <Image
+      <div className="flex items-end justify-end w-full h-full right-0 bottom-0 md:absolute z-10 overflow-visible ">
+        {/* <Image
           src={
             data.page?.acf.homeBanner.sectionImage.sourceUrl ?? dummiSectionHead
           }
@@ -34,7 +35,8 @@ const HeroSection = ({ data }: { data: HomePageType }) => {
           height={data.page?.acf.homeBanner.sectionImage.mediaDetails.height}
           priority
           className="object-contain md:h-[calc(100%-125px)] h-full -z-0  object-right-bottom"
-        />
+        /> */}
+        <Banner className="md:h-[calc(100%-125px)] h-full -z-0 w-auto" />
       </div>
 
       {/* textures */}

@@ -10,7 +10,6 @@ import privacyAndPolicyQuery from "./privacyAndPolicy";
 import termsAndConditionsQuery from "./termsAndConditions";
 import treatmentsPageQuery from "./treatments_page";
 
-
 export {
   homeQuery,
   aboutUsQuery,
@@ -22,5 +21,5 @@ export {
   utilityQuery,
   privacyAndPolicyQuery,
   termsAndConditionsQuery,
-  treatmentsPageQuery
+  treatmentsPageQuery,
 };

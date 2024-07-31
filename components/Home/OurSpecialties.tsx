@@ -53,7 +53,6 @@ const OurSpecialties = ({
         <HeadTitle className="mt-1 text-center"> {isData.title}</HeadTitle>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10 md:mt-16 mt-8">
           {getHomePageTreatments().map((item, idx) => (
-
             <Link
               suppressHydrationWarning
               key={idx}
@@ -73,7 +72,6 @@ const OurSpecialties = ({
               <p className="font-bold uppercase text-[1.1rem] text-start w-full h-max mt-4">
                 {item.title}
               </p>
-
 
               <div className="p-3 bg-white duration-300 absolute top-0 right-0 sm:w-[30%] w-[80px] aspect-square h-auto rounded-[22px] flex items-center justify-center">
                 <Image

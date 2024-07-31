@@ -24,7 +24,6 @@ type Props = {
 const Left = ({ data }: Props) => {
   return (
     <div className="flex flex-col items-center">
-
       <div className=" flex flex-col  ">
         <h2 data-aos="fade-up" className="text-[2rem] font-extrabold">
           {data.title}

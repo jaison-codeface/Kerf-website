@@ -22,9 +22,7 @@ const NavigationBtns = ({
           data-aos-delay={idx * 300}
           key={idx}>
           {item.link && (
-            <NormalBtn
-              href={item.link}
-              className="">
+            <NormalBtn href={item.link} className="">
               {item.title}
             </NormalBtn>
           )}

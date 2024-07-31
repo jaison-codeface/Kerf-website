@@ -122,12 +122,10 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
           modules={[Autoplay]}
           className="mySwiper">
           {padArrayToFour().map((item, idx) => (
-            <Fragment  key={idx}>
+            <Fragment key={idx}>
               {item.title ? (
                 <SwiperSlide>
-                  <div
-                
-                    className="relative z-0 !flex flex-col items-start justify-end px-4 py-8 group aspect-[9/10] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 max-h-[470px] ">
+                  <div className="relative z-0 !flex flex-col items-start justify-end px-4 py-8 group aspect-[9/10] overflow-hidden rounded-lg after:absolute after:w-full after:h-1/2 after:bg-gradient-to-t to-transparent from-black/90 after:bottom-0 after:left-0 after:-z-10 max-h-[470px] ">
                     <h3 className="font-bold capitalize text-base line-clamp-3 text-white leading-tight">
                       {item.title}
                     </h3>

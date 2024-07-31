@@ -29,9 +29,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
     <SectionWrapper
       classBottom={`${main_padding.y} flex-col items-start  z-50`}>
       <HeadSubtitle className="uppercase">{isData.subtitle}</HeadSubtitle>
-      <HeadTitle className="mt-1">
-        {isData.title}
-      </HeadTitle>
+      <HeadTitle className="mt-1">{isData.title}</HeadTitle>
       <Swiper
         slidesPerView={"auto"}
         spaceBetween={20}

@@ -26,7 +26,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
         classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10  items-center ">
         <div className="flex items-end justify-end w-max h-full relative z-0  ">
           <Image
-            src={bgImage?? dummiSectionHead}
+            src={bgImage ?? dummiSectionHead}
             alt=""
             priority
             width={1000}

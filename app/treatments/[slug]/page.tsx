@@ -66,7 +66,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
         .length > 0 && (
         <Doctor
           doctors={
-            treatmentsRelatedDoctors?.treatmentsTaxonomies?.nodes[0]?.doctors.nodes
+            treatmentsRelatedDoctors?.treatmentsTaxonomies?.nodes[0]?.doctors
+              .nodes
           }
         />
       )}

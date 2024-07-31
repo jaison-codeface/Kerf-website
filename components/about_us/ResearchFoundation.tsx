@@ -4,7 +4,7 @@ import main_padding from "@/styles/padding";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import { HeadTitle, SectionDescription } from "@/ui/Typography";
 import CountUp from "react-countup";
-import crRadios from '@/assets/images/corner radius.png'
+import crRadios from "@/assets/images/corner radius.png";
 import Image from "next/image";
 
 const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
@@ -40,9 +40,16 @@ const ResearchFoundation = ({ data }: { data: AboutUsPageType }) => {
               </p>
             </div>
           </div>
-          <Image src={crRadios} alt="" className="absolute left-[-36px] top-0 h-[36px] w-[36px] aspect-square object-contain" />
-          <Image src={crRadios} alt="" className="absolute bottom-[-36px] right-0 h-[36px] w-[36px] aspect-square object-contain" />
-        
+          <Image
+            src={crRadios}
+            alt=""
+            className="absolute left-[-36px] top-0 h-[36px] w-[36px] aspect-square object-contain"
+          />
+          <Image
+            src={crRadios}
+            alt=""
+            className="absolute bottom-[-36px] right-0 h-[36px] w-[36px] aspect-square object-contain"
+          />
         </div>
         {/* textures */}
       </SectionWrapper>

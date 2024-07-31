@@ -60,8 +60,6 @@ export default async function RootLayout({
     getContentFromWordPress("bookAndAppointment"),
   ]);
 
- 
-
   const utilitiesData: UtilitiesType = {
     treatments,
     departments,

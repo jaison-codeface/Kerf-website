@@ -48,7 +48,8 @@ const page = async ({ params }: any) => {
         className="object-cover sm:h-[90vh] w-full -z-10 sm:max-h-[80vh] max-sm:h-[80vh]"
       />
 
-      <SectionWrapper classBottom={`${main_padding.y} md:gap-20 gap-10 max-md:flex-col`}>
+      <SectionWrapper
+        classBottom={`${main_padding.y} md:gap-20 gap-10 max-md:flex-col`}>
         <div className=" flex flex-col  ">
           <HeadTitle>{data.title}</HeadTitle>
           {/* <p className="inline-flex">

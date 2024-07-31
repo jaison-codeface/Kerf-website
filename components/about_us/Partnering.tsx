@@ -6,7 +6,6 @@ import { HeadSubtitle, HeadTitle, SectionDescription } from "@/ui/Typography";
 import Image from "next/image";
 import { dummiSection } from "@/assets/images";
 
-
 const Partnering = ({ data }: { data: AboutUsPageType }) => {
   const isData = data.page?.acf.sectionMedicalInsurance;
 

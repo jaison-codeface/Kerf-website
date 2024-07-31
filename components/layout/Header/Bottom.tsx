@@ -99,7 +99,7 @@ const Bottom = ({
               )}
             </Link>
             {(item.dropDown || item.singleDropDown) && (
-              <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500 pointer-events-none">
+              <div className="pt-16 absolute  z-50 top-0 group-hover:translate-y-0 -translate-y-[900px] duration-500">
                 <div className="flex flex-col gap-3 pointer-events-auto bg-white border border-gray-300 px-4 min-w-80 py-5 rounded-b-2xl ">
                   {item.dropDown && (
                     <>

@@ -35,7 +35,10 @@ const page = async ({ params }: { params: { slug: string } }) => {
     <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
-        bgImage={isData.departments.nodes[0]?.acf?.bannerImage.sourceUrl ?? dummiSectionHead}
+        bgImage={
+          isData.departments.nodes[0]?.acf?.bannerImage.sourceUrl ??
+          dummiSectionHead
+        }
         title={isData.name}
       />
       <Content data={isData.departments.nodes[0]} />
