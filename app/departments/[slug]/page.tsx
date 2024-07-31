@@ -36,13 +36,13 @@ const page = async ({ params }: { params: { slug: string } }) => {
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={
-          isData.departments.nodes[0]?.acf?.bannerImage.sourceUrl ??
+          isData.departments.nodes[0]?.acf?.bannerImage?.sourceUrl ??
           dummiSectionHead
         }
         title={isData.name}
       />
-      <Content data={isData.departments.nodes[0]} />
-      {isData.doctors.nodes.length > 0 && (
+      <Content data={isData?.departments?.nodes[0]?.acf?.content} />
+      {isData?.doctors?.nodes.length > 0 && (
         <Doctor doctors={isData.doctors.nodes} />
       )}
       <Blogs blogs={blogs.blogs.nodes} />

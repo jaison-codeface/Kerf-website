@@ -6,6 +6,7 @@ import {
   departmentsQuery,
   doctorQuery,
   homeQuery,
+  internationalPatientCarePageQuery,
   privacyAndPolicyQuery,
   termsAndConditionsQuery,
   treatmentQuery,
@@ -58,7 +59,8 @@ type Ids =
   | "bookAndAppointment"
   | "privacyAndPolicy"
   | "termsAndConditions"
-  | "treatments page";
+  | "treatments page"
+  | "international patient care page";
 export async function getContentFromWordPress(id: Ids, slug?: string) {
   const query: Record<Ids, any> = {
     home: homeQuery,
@@ -82,6 +84,7 @@ export async function getContentFromWordPress(id: Ids, slug?: string) {
     privacyAndPolicy: privacyAndPolicyQuery,
     termsAndConditions: termsAndConditionsQuery,
     "treatments page": treatmentsPageQuery,
+    "international patient care page": internationalPatientCarePageQuery,
   };
   const data = await fetchAPI(query[id]);
   return data;

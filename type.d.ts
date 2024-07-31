@@ -79,6 +79,20 @@ interface HomePageType {
   };
 }
 
+interface InternationalPatientCareType {
+  page: {
+    title: string;
+    acf: {
+      bannerImage: ImageType;
+      content: any;
+    };
+    cta: {
+      backgroundImage: ImageType;
+      title: string;
+    };
+  };
+}
+
 interface AboutUsPageType {
   page: {
     id: string;
