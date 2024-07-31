@@ -14,7 +14,7 @@ const RelatedTreatments = ({ relatedTreatmentsData }: Props) => {
       <h2 data-aos="fade-up" className="sm:text-[1.7rem] text-lg font-bold">
         Related Treatments
       </h2>
-      <div className="flex flex-col gap-1 px-4 py-6   bg-gradient-to-t from-[#79a3b8] via-[#98cbe5] to-[#98cbe5]  w-full rounded-2xl mt-4">
+      <div className="flex flex-col gap-4 px-4 py-6   bg-gradient-to-t from-[#79a3b8] via-[#98cbe5] to-[#98cbe5]  w-full rounded-2xl mt-4">
         {relatedTreatmentsData.slice(0, 7).map((item, idx) => (
           <Link
             href={`/treatments/${item.slug}`}
