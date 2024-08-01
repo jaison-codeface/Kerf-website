@@ -10,6 +10,7 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
         {[...data.blogs.nodes].splice(0, 4).map((item, idx) => (
           <Link
             key={idx}
+            shallow
             href={`/blogs/${item.slug}`}
             shallow
             className=" gap-6 flex items-center">

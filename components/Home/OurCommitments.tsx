@@ -8,7 +8,7 @@ const OurCommitments = ({ data }: { data: HomePageType }) => {
   const isData = data.page?.acf.ourCommitments;
   return (
     <SectionWrapper
-      classTop="md:mt-20"
+      classTop="md:mt-14"
       classBottom={`  flex-col items-center   w-full`}>
       <div
         className={`flex flex-col w-full  items-center relative z-0 ${main_padding.y}`}>

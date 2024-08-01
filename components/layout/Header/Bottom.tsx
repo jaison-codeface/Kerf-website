@@ -61,7 +61,7 @@ const Bottom = ({
 
   return (
     <div className="flex  items-center justify-between xl:gap-20 gap-12 w-full">
-      <Link href="/">
+      <Link href="/" shallow suppressHydrationWarning>
         <Image
           src={logo}
           alt=""
@@ -78,6 +78,7 @@ const Bottom = ({
             className="relative z-0 flex items-center justify-center group">
             <Link
               onClick={() => setIndex(idx)}
+              suppressHydrationWarning
               href={item.link ? item.link : "javascript:void(0)"}
               shallow
               prefetch={true}
@@ -129,6 +130,7 @@ const Bottom = ({
                       <Link
                         key={dropIdx}
                         href={drop.link}
+                        shallow
                         className={`text-sm font-bold flex items-center gap-2 hover:bg-kerf-blue-light/50 px-6 py-2 rounded-lg `}>
                         <Arrow width={14} height={20} />
                         {drop.title}

@@ -38,10 +38,16 @@ const Top = ({ data }: { data: FooterType }) => {
           <Link
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
+            shallow
             className="text-[1.4rem] mt-4 font-bold tracking-[-0.5px] flex items-center gap-4 border border-white hover:border-opacity-45 hover:bg-slate-600/20 hover:text-white w-max px-3 pb-2 pt-2.5 rounded-lg   text-white group duration-300 ">
             <Image src={phoneIcon} alt="" className="duration-300 " />
             {phoneNumber.title}
           </Link>
+        )}
+        {data.utility.acf.opTime.time && (
+          <p className="mt-4 font-bold">
+            {data.utility.acf.opTime.title} : {data.utility.acf.opTime.time}
+          </p>
         )}
       </div>
       <div
@@ -58,6 +64,7 @@ const Top = ({ data }: { data: FooterType }) => {
               <div className="flex flex-col gap-3 w-full">
                 {item.links.map((link) => (
                   <Link
+                    suppressHydrationWarning
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow
                     key={idx + link.text}

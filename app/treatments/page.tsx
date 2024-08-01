@@ -58,7 +58,7 @@ const page = async () => {
                     key={index}
                     data-aos="fade-up"
                     data-aos-delay={idx * 50}
-                    className="bg-gradient-to-b from-kerf-teal-light to-[#d5fdfd] hover:rotate-[.5deg] to-[170%]  flex flex-col justify-start items-start p-4 rounded-xl w-full group   cursor-pointer hover:bg-kerf-blue  duration-300 relative z-0">
+                    className="bg-gradient-to-b from-kerf-teal-light to-[#d5fdfd] hover:!rotate-[1deg] to-[170%]  flex flex-col justify-start items-start p-4 rounded-xl w-full group   cursor-pointer hover:bg-kerf-blue  duration-300 relative z-0">
                     <div className="overflow-hidden rounded-xl">
                       <Image
                         src={
@@ -85,11 +85,13 @@ const page = async () => {
                       </div>
                       ...
                     </div>
+                    <div className="mt-auto flex">
                     <NormalBtn
                       href={`/treatments/${treatment.slug}`}
-                      className="mt-4">
+                      className="mt-4 ">
                       Read More
                     </NormalBtn>
+                    </div>
 
                     <div className="pl-4 pb-4 bg-kerf-teal-light absolute top-0 right-0 sm:w-[30%] w-[130px] aspect-square h-auto rounded-bl-[20px]">
                       <IconBox

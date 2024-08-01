@@ -13,6 +13,10 @@ const footer = `{
         link
         title
       }
+      opTime {
+        time
+        title
+      }
       footerLinks {
         title
         links {

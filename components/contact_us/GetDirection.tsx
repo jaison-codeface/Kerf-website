@@ -109,8 +109,10 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
 
           <div className="flex justify-between  w-full h-max">
             <Link
+              suppressHydrationWarning
               href={isData.locations[index].link ?? "javascript:void(0)"}
               target="_blank"
+              shallow
               className="flex items-center justify-center rounded-full px-4 py-2.5 bg-[#020d2b] text-white gap-2 font-bold text-sm">
               <Image
                 src={arrowIcon}
@@ -122,7 +124,7 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
               Get Directions
             </Link>
 
-            <div className="flex items-center h-auto justify-center gap-3 ">
+            {/* <div className="flex items-center h-auto justify-center gap-3 ">
               {arrow.map((item, idx) => (
                 <Image
                   key={idx}
@@ -134,7 +136,7 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
                   className={`cursor-pointer aspect-square h-full w-auto object-contain rounded-full bg-white p-3 hover:bg-gray-400 duration-300 ${idx === 0 && "rotate-180"}`}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </span>
       </div>

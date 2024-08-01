@@ -37,6 +37,7 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                         <Link
                           key={i}
                           suppressHydrationWarning
+                          shallow
                           href={link.link ? link.link : "javascript:void(0)"}
                           className="flex  items-start  gap-2 leading-8 text-xl">
                           <Image

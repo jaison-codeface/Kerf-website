@@ -135,7 +135,11 @@ const NavMobile = ({
                         dropDown[1] === dropIdx ? "flex" : "hidden"
                       }`}>
                       {drop.links.map((link, linkIdx) => (
-                        <Link key={linkIdx} href={link.link} className="pr-4">
+                        <Link
+                          key={linkIdx}
+                          href={link.link}
+                          shallow
+                          className="pr-4">
                           {link.title}
                         </Link>
                       ))}
@@ -154,7 +158,7 @@ const NavMobile = ({
                     onClick={() => setDropDown([dropDown[0], dropIdx])}
                     key={dropIdx}
                     className="flex flex-col items-end">
-                    <Link href={drop.link} className="">
+                    <Link href={drop.link} shallow className="">
                       {drop.title}
                     </Link>
                   </li>

@@ -11,7 +11,6 @@ import termsAndConditionsQuery from "./termsAndConditions";
 import treatmentsPageQuery from "./treatments_page";
 import internationalPatientCarePageQuery from "./international-patient-care";
 
-
 export {
   homeQuery,
   aboutUsQuery,
@@ -23,5 +22,6 @@ export {
   utilityQuery,
   privacyAndPolicyQuery,
   termsAndConditionsQuery,
-  treatmentsPageQuery, internationalPatientCarePageQuery
+  treatmentsPageQuery,
+  internationalPatientCarePageQuery,
 };

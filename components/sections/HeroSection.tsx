@@ -52,8 +52,10 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
               {breadcrumbs.map((item, idx) => (
                 <Link
                   key={idx}
+                  suppressHydrationWarning
                   href={item.link ? item.link : "javascript:void(0)"}
                   data-aos="fade-up"
+                  shallow
                   data-aos-delay={50 * idx}
                   data-aos-anchor="#top"
                   className={` sm:text-base text-sm font-medium ${

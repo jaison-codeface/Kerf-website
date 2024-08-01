@@ -15,7 +15,13 @@ const Top = () => {
         className="font-bold text-base ">
         {utilities.footer?.utility?.acf.phoneNumber.title}
       </Link>{" "}
-      &nbsp; |&nbsp; Book an Appointment
+      &nbsp; |&nbsp;
+      <Link
+        href={`${utilities.bookAndAppointment.utility.acf.link}`}
+        shallow
+        className="underline">
+        Book an Appointment
+      </Link>
     </SectionWrapper>
   );
 };

@@ -32,6 +32,7 @@ const NormalBtn = ({
       data-aos="fade-up"
       shallow
       {...props}
+      suppressHydrationWarning
       href={href ? href : "javascript:void(0)"}
       className={twMerge(
         `px-8 py-3  font-bold rounded-lg capitalize ${
@@ -62,6 +63,7 @@ const BookAppointmentBtn = ({
       suppressHydrationWarning
       data-aos="fade-up"
       data-aos-anchor="#top"
+      shallow
       className={twMerge(
         "flex items-center max-md:w-full justify-start  gap-4 px-4 py-3 bg-white rounded-[15px] leading-[1.5rem] font-bold text-[1.1rem] group [&_*]:duration-300 text-kerf-blue hover:bg-slate-600/20 duration-300",
         className
@@ -80,9 +82,11 @@ const BookAppointmentBtn = ({
   ) : (
     <Link
       data-aos="fade-up"
+      suppressHydrationWarning
       href={
         utilities.bookAndAppointment?.utility?.acf.link ?? "javascript:void(0)"
       }
+      shallow
       className={twMerge(
         "px-10 py-4 rounded-lg hover:from-[#72a3f3] hover:to-[#6692d8] bg-gradient-to-r from-[#5880bf] to-[#456597] sm:max-w-max text-center mt-6 font-bold text-white  duration-500",
         className

@@ -7,7 +7,7 @@ const Bottom = ({ data }: { data: FooterType }) => {
     <div className="flex items-center justify-between md:gap-20 gap-3 w-full py-8 max-md:flex-col-reverse">
       <p className="text-base max-md:text-center">
         &#9400; 2024 KERF Hospital. All rights reserved | Designed by{" "}
-        <a href="https://codefacetech.com/" target="_blank">
+        <a href="https://codefacetech.com/" target="_blank" className="text-[#f9d10d]">
           Codeface Technologies
         </a>
       </p>
@@ -15,6 +15,7 @@ const Bottom = ({ data }: { data: FooterType }) => {
         {data?.utility?.acf.socialMedia.map((item, idx) => (
           <Link
             key={idx}
+            suppressHydrationWarning
             href={item.link ? item.link : "javascript:void(0)"}
             shallow
             target="_blank">

@@ -369,6 +369,10 @@ interface FooterType {
         link: string;
         title: string;
       };
+      opTime: {
+        time: string;
+        title: string;
+      };
       footerLinks: Array<{
         title: string;
         links: Array<{
