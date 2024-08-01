@@ -13,7 +13,7 @@ const Bottom = ({ data }: { data: FooterType }) => {
       </p>
       <div className="flex items-center justify-center gap-4">
         {data?.utility?.acf.socialMedia.map((item, idx) => (
-          <Link
+          <Link rel="noindex" 
             key={idx}
             suppressHydrationWarning
             href={item.link ? item.link : "javascript:void(0)"}

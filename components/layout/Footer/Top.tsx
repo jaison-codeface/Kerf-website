@@ -19,7 +19,7 @@ const Top = ({ data }: { data: FooterType }) => {
       className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white grid lg:grid-cols-[1fr_2fr]  lg:gap-10 gap-8 max-lg:flex-wrap overflow-hidden`}>
       <div
         className={`flex flex-col gap-4  max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full md:px-10 px-6 lg:pr-16 ${main_padding.y}`}>
-        <Link data-aos="fade-up" href="/" shallow>
+        <Link rel="noindex"  data-aos="fade-up" href="/" shallow>
           <Image
             src={data?.utility?.acf.logo.sourceUrl}
             alt={data?.utility?.acf.logo.altText}
@@ -35,7 +35,7 @@ const Top = ({ data }: { data: FooterType }) => {
           {data?.utility?.acf.description}
         </p>
         {phoneNumber && (
-          <Link
+          <Link rel="noindex" 
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
             shallow
@@ -63,7 +63,7 @@ const Top = ({ data }: { data: FooterType }) => {
               </h3>
               <div className="flex flex-col gap-3 w-full">
                 {item.links.map((link) => (
-                  <Link
+                  <Link rel="noindex" 
                     suppressHydrationWarning
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow

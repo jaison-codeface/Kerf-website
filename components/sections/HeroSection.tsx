@@ -50,7 +50,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
             </h1>
             <span className="flex items-center md:mt-6 mt-2">
               {breadcrumbs.map((item, idx) => (
-                <Link
+                <Link rel="noindex" 
                   key={idx}
                   suppressHydrationWarning
                   href={item.link ? item.link : "javascript:void(0)"}

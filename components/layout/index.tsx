@@ -4,7 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css"; // You can also use <Link rel="noindex" > for styles
 import Head from "next/head";
 import useStore from "@/libs/store";
 

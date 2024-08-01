@@ -137,7 +137,10 @@ const Blogs = ({ data, blogs }: { data: HomePageType; blogs: BlogsType }) => {
                       className="-z-10 object-cover opacity-70 group-hover:scale-105 duration-300"
                     />
                     <div className="group-hover:max-h-96  max-h-0 flex  overflow-hidden duration-500">
-                      <NormalBtn className="mt-4" href={`/blogs/${item.slug}`}>
+                      <NormalBtn
+                        aria-label="Visit our blog for updates"
+                        className="mt-4"
+                        href={`/blogs/${item.slug}`}>
                         Read More
                       </NormalBtn>
                     </div>

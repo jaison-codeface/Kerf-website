@@ -8,9 +8,10 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
       <h3 className="text-lg text-secondary font-semibold ">Recent Blogs</h3>
       <div className="flex flex-col gap-6 mt-4 ">
         {[...data.blogs.nodes].splice(0, 4).map((item, idx) => (
-          <Link
+          <Link rel="noindex" 
             key={idx}
             shallow
+            aria-label="Visit our blog next"
             href={`/blogs/${item.slug}`}
             className=" gap-6 flex items-center">
             <Image
