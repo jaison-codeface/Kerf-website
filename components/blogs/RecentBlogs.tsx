@@ -11,8 +11,7 @@ const RecentBlogs = ({ data }: { data: BlogsType }) => {
           <Link
             key={idx}
             shallow
-            href={`/blogs/${item.slug}`}
-            shallow
+            href={`/blogs/${item.slug
             className=" gap-6 flex items-center">
             <Image
               src={item?.acf.featuredImage.sourceUrl ?? dummiSection}
