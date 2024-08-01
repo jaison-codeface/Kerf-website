@@ -92,6 +92,7 @@ const Testimonials = ({ data }: { data: AboutUsPageType }) => {
               <div className="flex items-center justify-center gap-4 max-md:hidden">
                 {arrows.map((item, idx) => (
                   <button
+                    name="kerf btn"
                     key={idx}
                     ref={
                       item === "left" ? navigationPrevRef : navigationNextRef

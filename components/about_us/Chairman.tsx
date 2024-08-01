@@ -23,6 +23,7 @@ const Chairman = ({ data }: { data: AboutUsPageType }) => {
           <WordPressRichText htmlString={isData.description} />
         </div>
         <button
+          name="kerf btn"
           onClick={() => setReadMore(!readMore)}
           className="-mt-4 pt-8 flex items-center justify-start w-full bg-gradient-to-t from-white  to-transparent">
           <NormalBtn>{readMore ? "Read Less" : "Read More"}</NormalBtn>

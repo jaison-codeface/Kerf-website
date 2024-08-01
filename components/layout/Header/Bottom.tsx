@@ -108,6 +108,7 @@ const Bottom = ({
                         {item.dropDown.map((drop, dropIdx) => (
                           <button
                             key={dropIdx}
+                            name="kerf btn"
                             onClick={() => setDropDownIndex(dropIdx)}
                             className={`capitalize text-base font-bold px-6 py-1 rounded-lg ${
                               dropDownIndex === dropIdx
