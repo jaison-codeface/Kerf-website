@@ -19,7 +19,7 @@ const Chairman = ({ data }: { data: AboutUsPageType }) => {
         <HeadSubtitle>{isData.subtitle}</HeadSubtitle>
         <HeadTitle className="mt-1 md:text-5xl">{isData.title}</HeadTitle>
         <div
-          className={`mt-4 duration-300 md:text-[1.2rem] text-base md:leading-[1.8] leading-[180%] ${readMore ? "" : " line-clamp-[14]"}`}>
+          className={`mt-4 duration-300 md:text-[1.2rem] text-base md:leading-[1.8] leading-[180%] overflow-hidden ${readMore ? "max-md:max-h-[99999px]" : "md:line-clamp-[14] max-md:max-h-[300px]"}`}>
           <WordPressRichText htmlString={isData.description} />
         </div>
         <button
