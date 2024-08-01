@@ -61,7 +61,11 @@ const Bottom = ({
 
   return (
     <div className="flex  items-center justify-between xl:gap-20 gap-12 w-full">
-      <Link href="/" shallow suppressHydrationWarning>
+      <Link
+        href="/"
+        shallow
+        suppressHydrationWarning
+        aria-label="logo icon">
         <Image
           src={logo}
           alt=""
