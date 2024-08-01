@@ -61,7 +61,8 @@ const Bottom = ({
 
   return (
     <div className="flex  items-center justify-between xl:gap-20 gap-12 w-full">
-      <Link rel="noindex" 
+      <Link
+        rel="noindex"
         href="/"
         shallow
         suppressHydrationWarning
@@ -80,7 +81,8 @@ const Bottom = ({
           <div
             key={idx}
             className="relative z-0 flex items-center justify-center group">
-            <Link rel="noindex" 
+            <Link
+              rel="noindex"
               onClick={() => setIndex(idx)}
               suppressHydrationWarning
               href={item.link ? item.link : "javascript:void(0)"}
@@ -132,7 +134,8 @@ const Bottom = ({
                       ? item.dropDown[dropDownIndex].links
                       : item.singleDropDown && item.singleDropDown
                     ).map((drop, dropIdx) => (
-                      <Link rel="noindex" 
+                      <Link
+                        rel="noindex"
                         key={dropIdx}
                         href={drop.link}
                         shallow

@@ -86,11 +86,11 @@ const page = async () => {
                       ...
                     </div>
                     <div className="mt-auto flex">
-                    <NormalBtn
-                      href={`/treatments/${treatment.slug}`}
-                      className="mt-4 ">
-                      Read More
-                    </NormalBtn>
+                      <NormalBtn
+                        href={`/treatments/${treatment.slug}`}
+                        className="mt-4 ">
+                        Read More
+                      </NormalBtn>
                     </div>
 
                     <div className="pl-4 pb-4 bg-kerf-teal-light absolute top-0 right-0 sm:w-[30%] w-[130px] aspect-square h-auto rounded-bl-[20px]">

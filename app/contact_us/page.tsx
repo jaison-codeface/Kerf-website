@@ -21,9 +21,8 @@ const page = async () => {
     },
   ];
 
-
   return (
-    <Layout pageTitle={breadcrumbs[1].title} >
+    <Layout pageTitle={breadcrumbs[1].title}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={

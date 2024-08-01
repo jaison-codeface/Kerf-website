@@ -35,7 +35,8 @@ const Banner = (props: React.SVGProps<SVGSVGElement>) => {
         <path
           opacity={0.7}
           d="M327.529 -12.3613H13614.1V6.17806H327.529V-12.3613Z"
-          fill="#02477A" className="max-md:hidden"
+          fill="#02477A"
+          className="max-md:hidden"
         />
         <rect
           x={1674.72}
@@ -50,7 +51,7 @@ const Banner = (props: React.SVGProps<SVGSVGElement>) => {
           y={2680.85}
           width={992.272}
           height={550.002}
-           className="box"
+          className="box"
           fill="url(#pattern1_194_10)"
         />
         <rect
@@ -58,7 +59,7 @@ const Banner = (props: React.SVGProps<SVGSVGElement>) => {
           y={4257.88}
           width={1046.14}
           height={550.002}
-           className="box"
+          className="box"
           fill="url(#pattern2_194_10)"
         />
       </g>

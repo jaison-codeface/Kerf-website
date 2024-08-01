@@ -16,7 +16,8 @@ const RelatedTreatments = ({ relatedTreatmentsData }: Props) => {
       </h2>
       <div className="flex flex-col gap-4 px-4 py-6   bg-gradient-to-t from-[#79a3b8] via-[#98cbe5] to-[#98cbe5]  w-full rounded-2xl mt-4">
         {relatedTreatmentsData.slice(0, 7).map((item, idx) => (
-          <Link rel="noindex" 
+          <Link
+            rel="noindex"
             href={`/treatments/${item.slug}`}
             data-aos="fade-up"
             data-aos-delay={50 * idx}

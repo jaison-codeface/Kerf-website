@@ -108,7 +108,8 @@ const GetDirection = ({ data }: { data: ContactUsType }) => {
           </div>
 
           <div className="flex justify-between  w-full h-max">
-            <Link rel="noindex" 
+            <Link
+              rel="noindex"
               suppressHydrationWarning
               href={isData.locations[index].link ?? "javascript:void(0)"}
               target="_blank"

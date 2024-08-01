@@ -74,7 +74,8 @@ const NavMobile = ({
           toggle ? "translate-x-[0%]" : "translate-x-[200%]"
         }`}>
         {links?.map((item, idx) => (
-          <Link rel="noindex" 
+          <Link
+            rel="noindex"
             key={idx}
             suppressHydrationWarning
             href={item.link ? item.link : "javascript:void(0)"}
@@ -135,7 +136,8 @@ const NavMobile = ({
                         dropDown[1] === dropIdx ? "flex" : "hidden"
                       }`}>
                       {drop.links.map((link, linkIdx) => (
-                        <Link rel="noindex" 
+                        <Link
+                          rel="noindex"
                           key={linkIdx}
                           href={link.link}
                           shallow
@@ -158,7 +160,7 @@ const NavMobile = ({
                     onClick={() => setDropDown([dropDown[0], dropIdx])}
                     key={dropIdx}
                     className="flex flex-col items-end">
-                    <Link rel="noindex"  href={drop.link} shallow className="">
+                    <Link rel="noindex" href={drop.link} shallow className="">
                       {drop.title}
                     </Link>
                   </li>

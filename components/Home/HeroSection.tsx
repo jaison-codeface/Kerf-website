@@ -1,6 +1,6 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
-import {  SectionDescription } from "@/ui/Typography";
+import { SectionDescription } from "@/ui/Typography";
 
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";

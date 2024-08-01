@@ -34,7 +34,8 @@ const OurCenters = ({ data }: { data: ContactUsType }) => {
                   <div className="mt-8 flex flex-col gap-5">
                     {item.links &&
                       item.links.map((link, i) => (
-                        <Link rel="noindex" 
+                        <Link
+                          rel="noindex"
                           key={i}
                           suppressHydrationWarning
                           shallow

@@ -75,7 +75,7 @@ export default async function Home() {
   ];
 
   return (
-    <Layout  jsonLds={jsonLds}>
+    <Layout jsonLds={jsonLds}>
       <HeroSection data={data} />
       <TreatmentsAndServices data={data} />
       <OurPhilosophy data={data} />

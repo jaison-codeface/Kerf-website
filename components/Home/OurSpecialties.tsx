@@ -53,7 +53,8 @@ const OurSpecialties = ({
         <HeadTitle className="mt-1 text-center"> {isData.title}</HeadTitle>
         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2  w-full gap-10 md:mt-16 mt-8">
           {getHomePageTreatments().map((item, idx) => (
-            <Link rel="noindex" 
+            <Link
+              rel="noindex"
               suppressHydrationWarning
               key={idx}
               href={`/treatments/${item.slug}`}

@@ -25,7 +25,8 @@ const NormalBtn = ({
   const router = useRouter();
 
   return (
-    <Link rel="noindex" 
+    <Link
+      rel="noindex"
       // @ts-ignore
 
       onClick={onClick}
@@ -56,7 +57,8 @@ const BookAppointmentBtn = ({
 }) => {
   const { utilities } = useStore();
   return type === "hero section" ? (
-    <Link rel="noindex" 
+    <Link
+      rel="noindex"
       href={
         utilities.bookAndAppointment?.utility?.acf.link ?? "javascript:void(0)"
       }
@@ -80,7 +82,8 @@ const BookAppointmentBtn = ({
       {utilities.bookAndAppointment?.utility?.acf.title}
     </Link>
   ) : (
-    <Link rel="noindex" 
+    <Link
+      rel="noindex"
       data-aos="fade-up"
       suppressHydrationWarning
       href={
