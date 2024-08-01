@@ -19,7 +19,7 @@ const Top = ({ data }: { data: FooterType }) => {
       className={`w-full  bg-gradient-to-t from-[#1f7979] via-kerf-teal to-kerf-teal rounded-t-[50px] text-white grid lg:grid-cols-[1fr_2fr]  lg:gap-10 gap-8 max-lg:flex-wrap overflow-hidden`}>
       <div
         className={`flex flex-col gap-4  max-md:items-center max-md:text-center bg-[#539fbd] lg:h-full md:px-10 px-6 lg:pr-16 ${main_padding.y}`}>
-        <Link rel="noindex"  data-aos="fade-up" href="/" shallow>
+        <Link rel="noindex" data-aos="fade-up" href="/" shallow>
           <Image
             src={data?.utility?.acf.logo.sourceUrl}
             alt={data?.utility?.acf.logo.altText}
@@ -35,7 +35,8 @@ const Top = ({ data }: { data: FooterType }) => {
           {data?.utility?.acf.description}
         </p>
         {phoneNumber && (
-          <Link rel="noindex" 
+          <Link
+            rel="noindex"
             href={`${phoneNumber.link}`}
             suppressHydrationWarning
             shallow
@@ -44,9 +45,10 @@ const Top = ({ data }: { data: FooterType }) => {
             {phoneNumber.title}
           </Link>
         )}
-        {data.utility.acf.opTime.time && (
+        {data?.utility?.acf?.opTime?.time && (
           <p className="mt-4 font-bold">
-            {data.utility.acf.opTime.title} : {data.utility.acf.opTime.time}
+            {data?.utility?.acf?.opTime?.title} :{" "}
+            {data?.utility?.acf?.opTime?.time}
           </p>
         )}
       </div>
@@ -57,13 +59,14 @@ const Top = ({ data }: { data: FooterType }) => {
             <div
               data-aos="fade-up"
               key={idx}
-              className={`flex flex-col gap-4 shrink-0 `}>
+              className={`flex flex-col gap-4 shrink-0 ${isQuickLinks(item) && "max-md:!hidden"}`}>
               <h3 className="font-bold text-xl shrink-0 w-max relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-white">
                 {item.title}
               </h3>
               <div className="flex flex-col gap-3 w-full">
                 {item.links.map((link) => (
-                  <Link rel="noindex" 
+                  <Link
+                    rel="noindex"
                     suppressHydrationWarning
                     href={link.link ? link.link : "javascript:void(0)"}
                     shallow

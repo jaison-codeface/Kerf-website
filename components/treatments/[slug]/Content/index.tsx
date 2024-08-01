@@ -27,7 +27,7 @@ const Content = ({ leftData, relatedTreatmentsData }: Props) => {
   return (
     <SectionWrapper
       classTop="relative z-0"
-      classBottom={`${main_padding.y} grid md:grid-cols-[1fr_0.5fr] grid-cols-1 lg:gap-20 gap-10 items-start`}>
+      classBottom={`${main_padding.y} max-sm:!pt-0 grid md:grid-cols-[1fr_0.5fr] grid-cols-1 lg:gap-20 gap-10 items-start`}>
       <Left data={leftData} />{" "}
       <Right relatedTreatmentsData={relatedTreatmentsData} />
     </SectionWrapper>

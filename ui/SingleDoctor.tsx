@@ -48,7 +48,7 @@ const SingleDoctor = ({
                 <NormalBtn
                   key={btnIdx}
                   href={btn.link}
-                  className="text-sm font-normal text-center py-2">
+                  className="text-sm font-normal text-center py-3">
                   {btn.title}
                 </NormalBtn>
               ))}

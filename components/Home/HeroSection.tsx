@@ -1,10 +1,9 @@
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
-import { HeadSubtitle, SectionDescription } from "@/ui/Typography";
+import {  SectionDescription } from "@/ui/Typography";
 
 import Image from "next/image";
 import RosePetalTexture from "@/ui/rosePetalTexture";
-import { dummiSectionHead } from "@/assets/images";
 import { BookAppointmentBtn } from "@/ui/buttons";
 import Banner from "@/assets/images/home/Banner";
 import bannerImg from "@/assets/images/home/banner.webp";
