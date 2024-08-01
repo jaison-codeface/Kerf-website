@@ -8,6 +8,7 @@ import VisionMission from "@/components/about_us/VisionMission";
 import Layout from "@/components/layout";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import { dummiSectionHead } from "@/assets/images";
+import { WithContext, AboutPage } from "schema-dts";
 
 const page = async () => {
   const data: AboutUsPageType = await getContentFromWordPress("about");
@@ -21,8 +22,11 @@ const page = async () => {
       link: "javascript:void(0)",
     },
   ];
+
+
+
   return (
-    <Layout pageTitle={breadcrumbs[1].title}>
+    <Layout pageTitle={breadcrumbs[1].title} >
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={data.page?.acf.bannerImage.sourceUrl ?? dummiSectionHead}

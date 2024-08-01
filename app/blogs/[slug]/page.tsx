@@ -9,6 +9,7 @@ import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import main_padding from "@/styles/padding";
 import { HeadTitle } from "@/ui/Typography";
 import Image from "next/image";
+import { WithContext, Blog } from "schema-dts";
 
 const page = async ({ params }: any) => {
   const blogs: BlogsType = await getContentFromWordPress("blogs");
@@ -38,8 +39,21 @@ const page = async ({ params }: any) => {
     day: "numeric",
   });
 
+  const jsonLd: WithContext<Blog> = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Blogs",
+    hasPart: blogs.blogs.nodes.map((item) => {
+      return {
+        "@type": "Blog",
+        name: item.title,
+        url: `https://www.kerfenthospital.com/blogs/${item.slug}`,
+      };
+    }),
+  };
+
   return (
-    <Layout>
+    <Layout jsonLd={jsonLd}>
       <Image
         src={data?.acf.featuredImage.sourceUrl ?? dummiSection}
         alt=""

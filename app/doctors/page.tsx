@@ -6,6 +6,7 @@ import { HeadSubtitle, HeadTitle } from "@/ui/Typography";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 import SingleDoctor from "@/ui/SingleDoctor";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
+import { WithContext, BreadcrumbList } from "schema-dts";
 
 const page = async () => {
   const [pageData, doctorsData]: [DoctorPageType, DoctorType] =
@@ -27,8 +28,20 @@ const page = async () => {
     },
   ];
 
+  const jsonLd: WithContext<BreadcrumbList> = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: isDoctorsData.splice(0, 5).map((item, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: item.title,
+      item: "https://www.kerfenthospital.com/doctors/" + item.slug,
+    })),
+    url: "https://www.kerfenthospital.com/doctors",
+  };
+
   return (
-    <Layout pageTitle="Doctors">
+    <Layout pageTitle="Doctors" jsonLd={jsonLd}>
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={pageData.page?.acf.bannerImage.sourceUrl}

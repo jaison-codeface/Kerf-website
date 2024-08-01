@@ -13,9 +13,13 @@ import useStore from "@/libs/store";
 const Layout = ({
   children,
   pageTitle,
+  jsonLd,
+  jsonLds,
 }: {
   children: ReactNode;
   pageTitle?: string;
+  jsonLd?: any;
+  jsonLds?: any[];
 }) => {
   const { utilities } = useStore();
   useLayoutEffect(() => {
@@ -36,6 +40,21 @@ const Layout = ({
         {children}
         <Footer />
       </main>
+
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      {jsonLds &&
+        jsonLds.map((jsonLd, idx) => (
+          <script
+            key={idx}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        ))}
     </>
   );
 };

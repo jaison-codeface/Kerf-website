@@ -28,8 +28,54 @@ export default async function Home() {
 
   const s = await d(3000);
 
+  const jsonLds = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      url: "https://www.kerfenthospital.com",
+      logo: "https://www.kerfenthospital.com/_next/static/media/logo.4b84ce0f.webp",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.kerfenthospital.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "About Us",
+          item: "https://www.kerfenthospital.com/about_us",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Contact Us",
+          item: "https://www.kerfenthospital.com/contact_us",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Our Treatments",
+          item: "https://www.kerfenthospital.com/treatments",
+        },
+
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: "Our Doctors",
+          item: "https://www.kerfenthospital.com/doctors",
+        },
+      ],
+    },
+  ];
+
   return (
-    <Layout>
+    <Layout  jsonLds={jsonLds}>
       <HeroSection data={data} />
       <TreatmentsAndServices data={data} />
       <OurPhilosophy data={data} />

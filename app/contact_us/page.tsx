@@ -6,6 +6,7 @@ import OurCenters from "@/components/contact_us/OurCenters ";
 import GetDirection from "@/components/contact_us/GetDirection";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import { dummiSectionHead } from "@/assets/images";
+import { WithContext, ContactPage } from "schema-dts";
 
 const page = async () => {
   const data: ContactUsType = await getContentFromWordPress("contact-us");
@@ -19,8 +20,10 @@ const page = async () => {
       link: "javascript:void(0)",
     },
   ];
+
+
   return (
-    <Layout pageTitle={breadcrumbs[1].title}>
+    <Layout pageTitle={breadcrumbs[1].title} >
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={
