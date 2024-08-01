@@ -10,6 +10,7 @@ import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import Testimonials from "@/components/about_us/Testimonials";
 import OurCommitments from "@/components/Home/OurCommitments";
+import { WithContext, WebPage } from "schema-dts";
 
 export default async function Home() {
   const [data, blogs, about, treatments]: [
@@ -34,6 +35,22 @@ export default async function Home() {
       "@type": "Organization",
       url: "https://www.kerfenthospital.com",
       logo: "https://www.kerfenthospital.com/_next/static/media/logo.4b84ce0f.webp",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Kerala ENT Research Foundation",
+      "@id": "https://www.kerfenthospital.com/#webpage",
+      url: "https://www.kerfenthospital.com",
+      inLanguage: "en",
+      significantLink: [
+        "https://www.kerfenthospital.com/about_us",
+        "https://www.kerfenthospital.com/contact_us",
+        "https://www.kerfenthospital.com/doctors",
+        "https://www.kerfenthospital.com/international-patient-care",
+        "https://www.kerfenthospital.com/treatments",
+        "https://www.kerfenthospital.com/terms-and-conditions",
+      ],
     },
     {
       "@context": "https://schema.org",
