@@ -23,6 +23,7 @@ export async function generateMetadata(
       siteName: "KERF",
       images: [seo.utility?.acf.favIcon.sourceUrl, ...previousImages],
     },
+    robots: "index, follow",
     icons: {
       icon: seo.utility?.acf.favIcon.sourceUrl,
       other: [
