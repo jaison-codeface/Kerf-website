@@ -16,7 +16,7 @@ const Top = () => {
         className="font-bold text-base ">
         {utilities.footer?.utility?.acf?.phoneNumber?.title}
       </Link>{" "}
-      &nbsp; |&nbsp;
+      &nbsp; | &nbsp;&nbsp;
       <Link
         rel="noindex"
         href={`${utilities?.bookAndAppointment?.utility?.acf?.link}`}

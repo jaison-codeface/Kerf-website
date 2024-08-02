@@ -45,7 +45,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
             <h1
               data-aos="fade-up"
               data-aos-anchor="#top"
-              className="md:text-3xl text-2xl font-bold text-[#020c2a] [&_span]:font-medium">
+              className="md:text-3xl text-2xl font-extrabold text-[#020c2a] [&_span]:font-medium">
               {title}
             </h1>
             <span className="flex items-center md:mt-6 mt-2">

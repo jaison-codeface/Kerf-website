@@ -20,16 +20,16 @@ const TreatmentsAndServices = ({ data }: { data: HomePageType }) => {
             key={idx}
             data-aos="fade-up"
             data-aos-delay={idx * 50}
-            className="flex flex-col  justify-between items-center bg-gradient-to-t from-kerf-teal via-kerf-teal-light to-kerf-teal-light md:rounded-3xl rounded-2xl overflow-hidden">
+            className="flex flex-col  justify-between items-center bg-gradient-to-t from-kerf-teal via-kerf-teal-light to-kerf-teal-light md:rounded-3xl rounded-2xl overflow-hidden group hover:bg-opacity-95 duration-300">
             <div />
             <Image
               src={item.image.sourceUrl ?? dummiSection}
               alt={item.image.altText}
               width={200}
               height={200}
-              className="object-contain aspect-square md:px-0 md:my-10 px-6 my-7"
+              className="object-contain aspect-square md:px-0 md:my-10 px-6 my-7 group-hover:scale-105 duration-300"
             />
-            <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-black capitalize md:text-[1.4rem] text-lg">
+            <p className="flex items-center justify-center text-center px-4 py-3 bg-gradient-to-r from-[#539fbd] to-[#3682a0] w-full text-white font-black capitalize md:text-[1.4rem] text-lg ">
               {item.service}
             </p>
           </div>

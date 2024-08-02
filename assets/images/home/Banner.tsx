@@ -36,7 +36,7 @@ const Banner = (props: React.SVGProps<SVGSVGElement>) => {
           opacity={0.7}
           d="M327.529 -12.3613H13614.1V6.17806H327.529V-12.3613Z"
           fill="#02477A"
-          className="max-md:hidden"
+          className="max-lg:hidden"
         />
         <rect
           x={1674.72}

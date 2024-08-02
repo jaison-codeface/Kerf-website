@@ -22,7 +22,7 @@ const Bottom = ({ data }: { data: FooterType }) => {
             suppressHydrationWarning
             href={item.link ? item.link : "javascript:void(0)"}
             shallow
-            target="_blank">
+            target="_blank" className="group hover:brightness-0 duration-300">
             <Image
               src={item.icon.sourceUrl}
               alt=""

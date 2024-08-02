@@ -31,7 +31,7 @@ const page = async () => {
   const jsonLd: WithContext<BreadcrumbList> = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: isDoctorsData.splice(0, 5).map((item, idx) => ({
+    itemListElement: isDoctorsData.map((item, idx) => ({
       "@type": "ListItem",
       position: idx + 1,
       name: item.title,

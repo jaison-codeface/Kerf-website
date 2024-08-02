@@ -10,7 +10,7 @@ import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import Testimonials from "@/components/about_us/Testimonials";
 import OurCommitments from "@/components/Home/OurCommitments";
-import { WithContext, WebPage } from "schema-dts";
+
 
 export default async function Home() {
   const [data, blogs, about, treatments]: [
