@@ -1,6 +1,6 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import React, { useMemo, useState } from "react";
-import logo from "@/assets/images/logo.webp";
+import logo from "@/assets/images/logo.svg";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";

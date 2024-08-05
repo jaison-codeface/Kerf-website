@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "@/assets/images/logo.webp";
+import logo from "@/assets/images/logo.svg";
 import "@/styles/loading.css";
 
 const loading = () => {

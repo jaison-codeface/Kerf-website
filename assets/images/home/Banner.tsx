@@ -32,12 +32,7 @@ const Banner = (props: React.SVGProps<SVGSVGElement>) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       {...props}>
       <g clipPath="url(#clip0_194_10)">
-        <path
-          opacity={0.7}
-          d="M327.529 -12.3613H13614.1V6.17806H327.529V-12.3613Z"
-          fill="#02477A"
-          className="max-lg:hidden"
-        />
+
         <rect
           x={1674.72}
           y={2082.59}
