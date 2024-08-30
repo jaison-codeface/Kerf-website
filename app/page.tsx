@@ -10,7 +10,7 @@ import Blogs from "@/components/Home/Blogs";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import Testimonials from "@/components/about_us/Testimonials";
 import OurCommitments from "@/components/Home/OurCommitments";
-
+import Surgery from "@/components/Home/Surgery";
 
 export default async function Home() {
   const [data, blogs, about, treatments]: [
@@ -97,6 +97,7 @@ export default async function Home() {
       <TreatmentsAndServices data={data} />
       <OurPhilosophy data={data} />
       <OurSpecialties data={data} treatments={treatments} />
+      <Surgery data={data} />
       <OurCommitments data={data} />
       <ContactUs data={data} />
       <Blogs data={data} blogs={blogs} />

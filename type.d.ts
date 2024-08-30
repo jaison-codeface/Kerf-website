@@ -61,10 +61,16 @@ interface HomePageType {
           slug: string;
           id: string;
         }[];
-        specialties: {
-          image: ImageType;
+      };
+      sectionSurgery: {
+        title: string;
+        subtitle: string;
+        content: {
           title: string;
-          link: string;
+          image: ImageType;
+          surgeries: {
+            title: string;
+          }[];
         }[];
       };
       sectionTreatments: {

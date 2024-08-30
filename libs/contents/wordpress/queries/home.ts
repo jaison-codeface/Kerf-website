@@ -65,12 +65,18 @@ const data = `{
           slug
           id
         }
-        specialties {
-          image {
-           ${imageQuery}
-          }
+      }
+      sectionSurgery {
+        title
+        subtitle
+        content {
           title
-          link
+          image {
+            ${imageQuery}
+          }
+          surgeries {
+            title
+          }
         }
       }
       sectionTreatments {
