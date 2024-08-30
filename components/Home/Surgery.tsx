@@ -54,7 +54,7 @@ const Surgery = ({ data }: { data: HomePageType }) => {
               key={idx}
               data-aos="fade-up"
               data-aos-delay={idx * 50}
-              className="flex items-start flex-col justify-start gap-8 bg-kerf-teal p-4 rounded-xl text-white pb-8 duration-500 group hover:!rotate-1">
+              className="flex items-start flex-col justify-start gap-8 bg-[#e3ffff] p-4 rounded-xl text-white pb-8 duration-500 group hover:!rotate-1">
               {item.image.sourceUrl && (
                 <div className="h-auto aspect-video w-full  relative z-0  overflow-hidden rounded-lg ">
                   <Image
@@ -66,13 +66,13 @@ const Surgery = ({ data }: { data: HomePageType }) => {
                 </div>
               )}
               <div className="flex w-full justify-center  flex-col gap-4">
-                <h2 className="font-bold text-3xl text-white">{item.title}</h2>
+                <h2 className="font-bold text-3xl text-black">{item.title}</h2>
                 <menu className="flex items-start justify-start flex-wrap gap-2">
                   {item.surgeries &&
                     item.surgeries.map((i, d) => (
                       <li
                         key={d}
-                        className="px-3 py-1 text-base bg-[#05a5a5] text-white  rounded-lg overflow-hidden">
+                        className="px-3 py-1 text-base bg-[#05a5a5] text-white  rounded-lg overflow-hidden capitalize">
                         {i.title}
                       </li>
                     ))}
