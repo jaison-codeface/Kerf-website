@@ -59,7 +59,7 @@ const SingleDoctor = ({
             alt={item?.acf.image.altText}
             width={300}
             height={300}
-            className="-z-10 object-cover  object-bottom h-full w-full"
+            className="-z-10 sm:object-cover object-contain  object-bottom h-full w-full"
           />
           <span className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t to-transparent from-kerf-blue-dark/50  -z-[5]" />
         </div>
