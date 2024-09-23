@@ -45,7 +45,8 @@ const page = async () => {
       <HeroSection
         breadcrumbs={breadcrumbs}
         bgImage={pageData.page?.acf.bannerImage.sourceUrl}
-        title="Doctors"
+        title="Doctors" 
+        isDoters
       />
       <SectionWrapper
         classBottom={`${main_padding.y} flex-col`}

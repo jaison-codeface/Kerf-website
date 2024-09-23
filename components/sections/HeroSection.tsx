@@ -1,4 +1,3 @@
-
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import RosePetalTexture from "@/ui/rosePetalTexture";
@@ -15,23 +14,30 @@ type Props = {
   }[];
   bgImage: string | StaticImageData;
   title: string | JSX.Element;
-  hideBookAppointment? : boolean
+  hideBookAppointment?: boolean;
+  isDoters?: boolean;
 };
 
-const HeroSection = ({ breadcrumbs, bgImage, title, hideBookAppointment = true }: Props) => {
+const HeroSection = ({
+  breadcrumbs,
+  bgImage,
+  title,
+  hideBookAppointment = true,
+  isDoters = false,
+}: Props) => {
   return (
     <>
       <SectionWrapper
         classTop="bg-gradient-to-tl from-kerf-blue via-transparent to-transparent via-40% relative z-0 overflow-x-clip "
         classBottom="h-[550px] flex-col  max-md:pt-40 md:gap-0 gap-10  items-center ">
-        <div className="flex items-end justify-end w-max h-full relative z-0  ">
+        <div className={`flex items-end justify-end  h-full relative z-0 ${!isDoters ? "w-max" : "w-full"} `}>
           <Image
             src={bgImage ?? dummiSectionHead}
             alt=""
             priority
             width={1000}
             height={600}
-            className="object-contain h-[420px] -z-0  object-right-top"
+            className={`object-contain h-[420px] -z-0   ${!isDoters ? "object-right-top" : "object-center"} `}
           />
         </div>
 
