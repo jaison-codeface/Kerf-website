@@ -51,7 +51,9 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
-
+  const hideBookAppointment = () => {
+    return params.slug.includes("speech-therapy") ? false : true;
+  };
 
   return (
     <Layout pageTitle={breadcrumbs[2].title}>
@@ -59,6 +61,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         breadcrumbs={breadcrumbs}
         bgImage={isData?.acf.bannerImage?.sourceUrl ?? dummiSectionHead}
         title={isData?.title}
+        hideBookAppointment={hideBookAppointment()}
       />
       <Content
         leftData={isData}

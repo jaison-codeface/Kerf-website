@@ -1,4 +1,4 @@
-"use client"
+
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
 import RosePetalTexture from "@/ui/rosePetalTexture";
@@ -7,7 +7,6 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { BookAppointmentBtn } from "@/ui/buttons";
 import { dummiSectionHead } from "@/assets/images";
-import HideBookAppointment from "@/libs/hooks/hideBookAppointment";
 
 type Props = {
   breadcrumbs: {
@@ -16,9 +15,10 @@ type Props = {
   }[];
   bgImage: string | StaticImageData;
   title: string | JSX.Element;
+  hideBookAppointment? : boolean
 };
 
-const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
+const HeroSection = ({ breadcrumbs, bgImage, title, hideBookAppointment = true }: Props) => {
   return (
     <>
       <SectionWrapper
@@ -70,7 +70,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
               ))}
             </span>
           </div>
-          {HideBookAppointment() && <BookAppointmentBtn type="hero section" />}
+          {hideBookAppointment && <BookAppointmentBtn type="hero section" />}
         </div>
       </SectionWrapper>
     </>
