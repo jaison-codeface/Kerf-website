@@ -1,13 +1,13 @@
+"use client"
 import React from "react";
 import SectionWrapper from "../SectionWrapper";
-import { SectionDescription } from "@/ui/Typography";
 import RosePetalTexture from "@/ui/rosePetalTexture";
 
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import phoneFill from "@/assets/icons/phone fill.svg";
 import { BookAppointmentBtn } from "@/ui/buttons";
 import { dummiSectionHead } from "@/assets/images";
+import HideBookAppointment from "@/libs/hooks/hideBookAppointment";
 
 type Props = {
   breadcrumbs: {
@@ -70,7 +70,7 @@ const HeroSection = ({ breadcrumbs, bgImage, title }: Props) => {
               ))}
             </span>
           </div>
-          <BookAppointmentBtn type="hero section" />
+          {HideBookAppointment() && <BookAppointmentBtn type="hero section" />}
         </div>
       </SectionWrapper>
     </>
