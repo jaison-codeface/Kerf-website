@@ -51,6 +51,8 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
+
+
   return (
     <Layout pageTitle={breadcrumbs[2].title}>
       <HeroSection
