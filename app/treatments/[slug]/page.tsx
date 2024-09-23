@@ -6,6 +6,7 @@ import Blogs from "@/components/sections/Blogs";
 import Content from "@/components/treatments/[slug]/Content";
 import { getContentFromWordPress } from "@/libs/contents/wordpress/data";
 import { dummiSectionHead } from "@/assets/images";
+import HideBookAppointment from "@/libs/hooks/hideBookAppointment";
 
 const page = async ({ params }: { params: { slug: string } }) => {
   const [data, treatments, treatmentsRelatedDoctors, blogs]: [
@@ -51,9 +52,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
     },
   ];
 
-  const hideBookAppointment = () => {
-    return params.slug.includes("speech-therapy") ? false : true;
-  };
+ 
 
   return (
     <Layout pageTitle={breadcrumbs[2].title}>
@@ -61,7 +60,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
         breadcrumbs={breadcrumbs}
         bgImage={isData?.acf.bannerImage?.sourceUrl ?? dummiSectionHead}
         title={isData?.title}
-        hideBookAppointment={hideBookAppointment()}
+        hideBookAppointment={HideBookAppointment(params.slug)}
       />
       <Content
         leftData={isData}
